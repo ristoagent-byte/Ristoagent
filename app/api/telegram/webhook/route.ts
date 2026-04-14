@@ -3,10 +3,13 @@ import { verifyWebhookSecret, sendMessage } from "@/lib/telegram";
 import { createServerClient } from "@/lib/supabase-server";
 import { chat, detectLanguage } from "@/lib/claude";
 import { checkAvailability, createCalendarEvent } from "@/lib/google-calendar";
+import { Resend } from "resend";
 import type { TelegramUpdate, Business, Message } from "@/types";
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function POST(request: NextRequest) {
-  if (!verifyWebhookSecret(request, process.env.TELEGRAM_WEBHOOK_SECRET!)) {
+  if (!verifyWebhookSecret(request, process.env.TELEGRAM_WEBHOOK_SECRET!.trim())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -43,6 +46,35 @@ export async function POST(request: NextRequest) {
       .from("conversations")
       .update({ last_message_at: new Date().toISOString() })
       .eq("id", conversationId);
+
+    // Handle feedback response
+    if (existingConversation.awaiting_feedback) {
+      const rating = parseInt(incomingText.trim(), 10);
+      const validRating = rating >= 1 && rating <= 5 ? rating : null;
+
+      await supabase.from("feedbacks").insert({
+        business_id: business.id,
+        conversation_id: conversationId,
+        rating: validRating,
+        comment: validRating ? null : incomingText.trim(),
+      });
+
+      await supabase
+        .from("conversations")
+        .update({ awaiting_feedback: false })
+        .eq("id", conversationId);
+
+      const thankYou = validRating
+        ? `Grazie mille per il tuo ${validRating}⭐! Il tuo feedback è prezioso per noi. A presto! 🙏`
+        : `Grazie per il tuo feedback! Lo terremo in grande considerazione. A presto! 🙏`;
+
+      if (business.telegram_bot_token) {
+        await sendMessage(business.telegram_bot_token, chatId, thankYou);
+      }
+      await supabase.from("messages").insert({ conversation_id: conversationId, text: incomingText, sender: "customer" });
+      await supabase.from("messages").insert({ conversation_id: conversationId, text: thankYou, sender: "ai" });
+      return NextResponse.json({ ok: true });
+    }
   } else {
     const { data: bizData } = await supabase
       .from("businesses")
@@ -133,7 +165,38 @@ export async function POST(request: NextRequest) {
         status: "confirmed",
       });
 
-      return { success: true, eventId: event.eventId };
+      // Send email notification to business owner
+      try {
+        const { data: userData } = await supabase.auth.admin.getUserById(business.user_id);
+        const ownerEmail = userData?.user?.email;
+        if (ownerEmail) {
+          await resend.emails.send({
+            from: "RistoAgent <onboarding@resend.dev>",
+            to: ownerEmail,
+            subject: `📅 Nuova prenotazione — ${business.name}`,
+            html: `
+              <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto; padding: 24px;">
+                <h2 style="color: #0EA5E9;">Nuova prenotazione ricevuta!</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+                  <tr><td style="padding: 8px 0; color: #666;">Cliente</td><td style="padding: 8px 0; font-weight: 600;">${input.customer_name}</td></tr>
+                  <tr><td style="padding: 8px 0; color: #666;">Data</td><td style="padding: 8px 0; font-weight: 600;">${input.date}</td></tr>
+                  <tr><td style="padding: 8px 0; color: #666;">Orario</td><td style="padding: 8px 0; font-weight: 600;">${input.time}</td></tr>
+                  <tr><td style="padding: 8px 0; color: #666;">Persone</td><td style="padding: 8px 0; font-weight: 600;">${input.party_size ?? 1}</td></tr>
+                  ${input.notes ? `<tr><td style="padding: 8px 0; color: #666;">Note</td><td style="padding: 8px 0;">${input.notes}</td></tr>` : ""}
+                </table>
+                <a href="https://ristoagent.com/dashboard" style="display: inline-block; margin-top: 24px; padding: 12px 24px; background: #0EA5E9; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                  Vedi dashboard →
+                </a>
+              </div>
+            `,
+          });
+        }
+      } catch (emailErr) {
+        console.error("Email notification failed:", emailErr);
+      }
+
+      const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.name)}`;
+      return { success: true, eventId: event.eventId, maps_link: mapsLink };
     }
 
     return { error: "Unknown tool" };

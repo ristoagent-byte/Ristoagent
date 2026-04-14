@@ -21,9 +21,11 @@ const STEPS = [
 
 type FormData = {
   businessName: string;
-  businessType: string;
+  businessTypes: string[];
+  partitaIva: string;
   services: string;
   openingHours: string;
+  extraInfo: string;
   telegramToken: string;
 };
 
@@ -41,21 +43,61 @@ function OnboardingInner() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState<FormData>({
-    businessName: "", businessType: "", services: "", openingHours: "", telegramToken: "",
+    businessName: "", businessTypes: [], partitaIva: "", services: "", openingHours: "", extraInfo: "", telegramToken: "",
   });
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(async ({ data }) => {
       if (!data.user) { router.push("/auth"); return; }
       setUserId(data.user.id);
+
+      // Load existing business data if present
+      const { data: biz } = await supabase
+        .from("businesses")
+        .select("*")
+        .eq("user_id", data.user.id)
+        .single();
+
+      if (biz) {
+        const b = biz as Record<string, string>;
+        setBusinessId(b.id);
+        const rawServices: string = b.services ?? "";
+        const splitMarker = "\n\nINFORMAZIONI PRATICHE:\n";
+        const splitIdx = rawServices.indexOf(splitMarker);
+        const servicesOnly = splitIdx >= 0 ? rawServices.slice(0, splitIdx) : rawServices;
+        const extraInfoOnly = splitIdx >= 0 ? rawServices.slice(splitIdx + splitMarker.length) : "";
+        setForm((f) => ({
+          ...f,
+          businessName: b.name ?? "",
+          businessTypes: b.type ? b.type.split(", ") : [],
+          partitaIva: b.partita_iva ?? "",
+          services: servicesOnly,
+          openingHours: b.opening_hours ?? "",
+          extraInfo: extraInfoOnly,
+        }));
+        if (b.google_access_token) setGoogleConnected(true);
+      }
     });
     if (searchParams.get("google") === "connected") setGoogleConnected(true);
     if (searchParams.get("error") === "google_denied") setError("Accesso Google negato. Riprova.");
     if (searchParams.get("error") === "google_failed") setError("Errore connessione Google. Riprova.");
   }, []);
 
-  const update = (field: keyof FormData, value: string) =>
+  const update = (field: keyof FormData, value: string | string[]) =>
     setForm((f) => ({ ...f, [field]: value }));
+
+  async function handleCheckPivaAndProceed() {
+    setLoading(true); setError("");
+    const piva = form.partitaIva.trim().toUpperCase();
+    const res = await fetch(`/api/business/check-piva?piva=${encodeURIComponent(piva)}&userId=${userId}`);
+    const data = await res.json();
+    setLoading(false);
+    if (!res.ok || data.blocked) {
+      setError("La prova gratuita è già stata utilizzata per questa attività (P.IVA già registrata). Scegli un piano per continuare.");
+      return;
+    }
+    setStep(2);
+  }
 
   async function handleSaveStep2() {
     setLoading(true); setError("");
@@ -65,8 +107,9 @@ function OnboardingInner() {
       headers: { "Content-Type": "application/json", "x-user-id": userId! },
       body: JSON.stringify({
         name: form.businessName,
-        type: form.businessType,
-        services: form.services,
+        type: form.businessTypes.join(", "),
+        partita_iva: form.partitaIva.trim().toUpperCase(),
+        services: form.services + (form.extraInfo ? `\n\nINFORMAZIONI PRATICHE:\n${form.extraInfo}` : ""),
         opening_hours: form.openingHours,
       }),
     });
@@ -92,7 +135,9 @@ function OnboardingInner() {
     if (!res.ok) { setError(data.error); setLoading(false); return; }
     setBotUsername(data.telegram_bot_username);
 
-    const qrRes = await fetch(`/api/qrcode?username=${data.telegram_bot_username}`);
+    const qrRes = await fetch(`/api/qrcode?username=${data.telegram_bot_username}`, {
+      headers: { "x-user-id": userId! },
+    });
     if (qrRes.ok) {
       const blob = await qrRes.blob();
       setQrDataUrl(URL.createObjectURL(blob));
@@ -111,9 +156,9 @@ function OnboardingInner() {
   }
 
   const canProceed = () => {
-    if (step === 1) return form.businessName.trim() && form.businessType;
-    if (step === 2) return form.services.trim() && form.openingHours.trim();
-    if (step === 3) return googleConnected;
+    if (step === 1) return form.businessName.trim() && form.businessTypes.length > 0 && form.partitaIva.trim().length >= 5;
+    if (step === 2) return form.services.trim() && form.openingHours.trim() && form.businessName.trim();
+    if (step === 3) return true;
     if (step === 4) return form.telegramToken.trim().length > 20;
     return true;
   };
@@ -123,18 +168,19 @@ function OnboardingInner() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "radial-gradient(ellipse at top, #0f1f2e 0%, #0a0f0d 60%)",
+      background: "radial-gradient(ellipse at top, #1a2f3a 0%, #111a14 60%)",
       display: "flex", flexDirection: "column", alignItems: "center",
       padding: "2rem 1rem 4rem",
-      fontFamily: "'DM Sans', 'Segoe UI', sans-serif", color: "#e8f0e9",
+      fontFamily: "'DM Sans', 'Segoe UI', sans-serif", color: "#f0f8f2",
     }}>
-      <a href="/" style={{ fontSize: "1.4rem", fontWeight: 700, color: "#0EA5E9",
-        textDecoration: "none", marginBottom: "2.5rem" }}>RistoAgent</a>
+      <a href="/" style={{ textDecoration: "none", marginBottom: "2.5rem" }}>
+        <img src="/logo.png" alt="RistoAgent" style={{ height: 44, width: "auto", }} />
+      </a>
 
       <div style={{
-        background: "#0f1610", border: "1px solid #1e2b20", borderRadius: "1.4rem",
+        background: "#1a2420", border: "1px solid #2e4035", borderRadius: "1.4rem",
         padding: "2.5rem 2rem", width: "100%", maxWidth: "540px",
-        boxShadow: "0 24px 80px rgba(0,0,0,0.5)",
+        boxShadow: "0 24px 80px rgba(0,0,0,0.4)",
       }}>
         {/* Step indicators */}
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "1rem" }}>
@@ -176,41 +222,66 @@ function OnboardingInner() {
         {/* STEP 1 */}
         {step === 1 && (
           <div>
-            <h1 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "0.4rem" }}>
+            <h1 style={{ fontSize: "1.8rem", fontWeight: 700, marginBottom: "0.4rem", color: "#f0f8f2" }}>
               Raccontaci la tua attività
             </h1>
-            <p style={{ color: "#7a9b7e", fontSize: "0.88rem", marginBottom: "1.8rem" }}>
+            <p style={{ color: "#9ab8a0", fontSize: "0.92rem", marginBottom: "1.8rem" }}>
               Queste informazioni permettono all&apos;AI di rispondere correttamente ai tuoi clienti.
             </p>
-            <label style={{ display: "block", fontSize: "0.75rem", textTransform: "uppercase",
-              letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: "0.5rem" }}>
+            <label style={{ display: "block", fontSize: "0.78rem", textTransform: "uppercase",
+              letterSpacing: "0.07em", color: "#a0c0a8", marginBottom: "0.5rem", fontWeight: 600 }}>
               Nome attività *
             </label>
             <input placeholder="es. Trattoria da Mario"
               value={form.businessName} onChange={(e) => update("businessName", e.target.value)}
-              autoFocus style={{ width: "100%", padding: "0.75rem 1rem", background: "#131a14",
-                border: "1px solid #1e2b20", borderRadius: "0.6rem", color: "#e8f0e9",
-                fontSize: "0.95rem", fontFamily: "inherit", outline: "none",
+              autoFocus style={{ width: "100%", padding: "0.85rem 1rem", background: "#131a14",
+                border: "1px solid #2a3f2e", borderRadius: "0.6rem", color: "#f0f8f2",
+                fontSize: "1rem", fontFamily: "inherit", outline: "none",
                 marginBottom: "1.2rem", boxSizing: "border-box" }} />
-            <label style={{ display: "block", fontSize: "0.75rem", textTransform: "uppercase",
-              letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: "0.5rem" }}>
-              Tipo di attività *
+            <label style={{ display: "block", fontSize: "0.78rem", textTransform: "uppercase",
+              letterSpacing: "0.07em", color: "#a0c0a8", marginBottom: "0.3rem", fontWeight: 600 }}>
+              Tipo di attività * <span style={{ fontSize: "0.72rem", color: "#6a8a72", fontWeight: 400, textTransform: "none" }}>(puoi selezionarne più di uno)</span>
             </label>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
-              {BUSINESS_TYPES.map((t) => (
-                <button key={t} onClick={() => update("businessType", t)} style={{
-                  padding: "0.6rem 0.8rem",
-                  background: form.businessType === t ? "rgba(14,165,233,0.1)" : "#131a14",
-                  border: `1px solid ${form.businessType === t ? "#0EA5E9" : "#1e2b20"}`,
-                  borderRadius: "0.6rem",
-                  color: form.businessType === t ? "#0EA5E9" : "#7a9b7e",
-                  fontSize: "0.8rem", fontFamily: "inherit", cursor: "pointer", textAlign: "left",
-                  transition: "all 0.2s",
-                }}>
-                  {t}
-                </button>
-              ))}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem",
+              marginBottom: "1.2rem" }}>
+              {BUSINESS_TYPES.map((t) => {
+                const selected = form.businessTypes.includes(t);
+                return (
+                  <button key={t} onClick={() => {
+                    const curr = form.businessTypes;
+                    update("businessTypes", selected
+                      ? curr.filter((x) => x !== t)
+                      : [...curr, t]);
+                  }} style={{
+                    padding: "0.7rem 0.8rem",
+                    background: selected ? "rgba(14,165,233,0.15)" : "#131a14",
+                    border: `1px solid ${selected ? "#0EA5E9" : "#2a3f2e"}`,
+                    borderRadius: "0.6rem",
+                    color: selected ? "#0EA5E9" : "#c0d8c8",
+                    fontSize: "0.85rem", fontFamily: "inherit", cursor: "pointer", textAlign: "left",
+                    transition: "all 0.2s", fontWeight: selected ? 600 : 400,
+                  }}>
+                    {selected ? "✓ " : ""}{t}
+                  </button>
+                );
+              })}
             </div>
+            <label style={{ display: "block", fontSize: "0.78rem", textTransform: "uppercase",
+              letterSpacing: "0.07em", color: "#a0c0a8", marginBottom: "0.5rem", fontWeight: 600 }}>
+              Partita IVA / Codice Fiscale attività *
+            </label>
+            <input
+              placeholder="es. IT12345678901 oppure BRNLSN73L17B745U"
+              value={form.partitaIva}
+              onChange={(e) => update("partitaIva", e.target.value.toUpperCase())}
+              style={{ width: "100%", padding: "0.85rem 1rem", background: "#131a14",
+                border: "1px solid #2a3f2e", borderRadius: "0.6rem", color: "#f0f8f2",
+                fontSize: "0.95rem", fontFamily: "monospace", outline: "none",
+                boxSizing: "border-box" }}
+            />
+            <p style={{ fontSize: "0.75rem", color: "#6a8a72", marginTop: "0.4rem" }}>
+              Accettiamo P.IVA (es. IT12345678901) o Codice Fiscale (16 caratteri). Usato solo per verificare l&apos;unicità della prova gratuita.
+            </p>
           </div>
         )}
 
@@ -218,29 +289,43 @@ function OnboardingInner() {
         {step === 2 && (
           <div>
             <h1 style={{ fontSize: "1.6rem", fontWeight: 700, marginBottom: "0.4rem" }}>
-              Servizi & Orari
+              Insegna all&apos;AI la tua attività
             </h1>
             <p style={{ color: "#7a9b7e", fontSize: "0.88rem", marginBottom: "1.8rem" }}>
-              L&apos;AI userà queste informazioni per rispondere ai clienti in modo preciso.
+              Rispondi alle 3 domande — l&apos;AI userà queste info per rispondere ai clienti come una receptionist.
             </p>
+
             <label style={{ display: "block", fontSize: "0.75rem", textTransform: "uppercase",
               letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: "0.5rem" }}>
-              Servizi offerti *
+              1. Quali servizi/prodotti offri? (con prezzi se disponibili) *
             </label>
             <textarea
-              placeholder={"es.\n- Taglio capelli uomo/donna €15\n- Colorazione €40\n- Barba €10"}
-              value={form.services} onChange={(e) => update("services", e.target.value)} rows={5}
+              placeholder={"es.\n- Pizza margherita €8\n- Taglio uomo €15, donna €25\n- Visita medica €50\n- Lezione privata €30/h"}
+              value={form.services} onChange={(e) => update("services", e.target.value)} rows={4}
               style={{ width: "100%", padding: "0.75rem 1rem", background: "#131a14",
                 border: "1px solid #1e2b20", borderRadius: "0.6rem", color: "#e8f0e9",
                 fontSize: "0.88rem", fontFamily: "inherit", lineHeight: 1.6, resize: "vertical",
                 outline: "none", marginBottom: "1.2rem", boxSizing: "border-box" }} />
+
             <label style={{ display: "block", fontSize: "0.75rem", textTransform: "uppercase",
               letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: "0.5rem" }}>
-              Orari di apertura *
+              2. Orari di apertura e come si prenota? *
             </label>
             <textarea
-              placeholder={"es.\nLun–Ven: 9:00–19:00\nSabato: 9:00–17:00\nDomenica: chiuso"}
+              placeholder={"es.\nLun–Ven: 9:00–19:00, Sab: 9:00–13:00, Dom: chiuso\nPrenotazioni: via Telegram o chiamando il 333-1234567\nDurata media appuntamento: 45 min"}
               value={form.openingHours} onChange={(e) => update("openingHours", e.target.value)}
+              rows={4} style={{ width: "100%", padding: "0.75rem 1rem", background: "#131a14",
+                border: "1px solid #1e2b20", borderRadius: "0.6rem", color: "#e8f0e9",
+                fontSize: "0.88rem", fontFamily: "inherit", lineHeight: 1.6, resize: "vertical",
+                outline: "none", marginBottom: "1.2rem", boxSizing: "border-box" }} />
+
+            <label style={{ display: "block", fontSize: "0.75rem", textTransform: "uppercase",
+              letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: "0.5rem" }}>
+              3. Indirizzo, come raggiungerci e note importanti (opzionale)
+            </label>
+            <textarea
+              placeholder={"es.\nVia Roma 12, Milano — 50m dalla fermata metro Duomo\nParcheggio gratuito in Via Verdi\nAccettiamo carte e contanti\nPortare documento per la prima visita"}
+              value={form.extraInfo} onChange={(e) => update("extraInfo", e.target.value)}
               rows={4} style={{ width: "100%", padding: "0.75rem 1rem", background: "#131a14",
                 border: "1px solid #1e2b20", borderRadius: "0.6rem", color: "#e8f0e9",
                 fontSize: "0.88rem", fontFamily: "inherit", lineHeight: 1.6, resize: "vertical",
@@ -414,7 +499,8 @@ function OnboardingInner() {
             )}
             <button
               onClick={() => {
-                if (step === 2) handleSaveStep2();
+                if (step === 1) handleCheckPivaAndProceed();
+                else if (step === 2) handleSaveStep2();
                 else if (step === 4) handleSaveTelegramToken();
                 else setStep((s) => s + 1);
               }}

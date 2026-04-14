@@ -6,24 +6,34 @@ const anthropic = new Anthropic({
 });
 
 function buildSystemPrompt(business: Business, language: "it" | "en"): string {
+  const now = new Date();
+  const today = now.toLocaleDateString("en-CA", { timeZone: "Europe/Rome" }); // YYYY-MM-DD in Italy
+  const todayFormatted = now.toLocaleDateString("it-IT", { timeZone: "Europe/Rome", weekday: "long", year: "numeric", month: "long", day: "numeric" });
   const langInstruction =
     language === "it"
-      ? "Rispondi SEMPRE in italiano, con tono caldo e professionale."
-      : "Always reply in English, with a warm and professional tone.";
+      ? "Rispondi SEMPRE in italiano, con tono caldo e professionale. NON usare mai l'inglese a meno che il cliente non scriva in inglese."
+      : "Always reply in English, with a warm and professional tone. Only use English if the customer writes in English.";
+
+  const customInfoSection = business.custom_info
+    ? `\nAdditional business information (menu, services, details):\n${business.custom_info}`
+    : "";
 
   return `You are a virtual assistant for "${business.name}", a ${business.type} in Italy.
+
+Today's date: ${todayFormatted} (${today}). Use this to interpret relative dates like "tomorrow", "next week", etc.
 
 ${langInstruction}
 
 Business information:
-- Services: ${business.services}
-- Opening hours: ${business.opening_hours}
+- Services, prices and practical info: ${business.services ?? "non specificato"}
+- Opening hours and bookings: ${business.opening_hours ?? "non specificato"}${customInfoSection}
 
 Your responsibilities:
 - Answer questions about services, prices, and opening hours
 - Manage bookings: collect date, time, party size, and customer name before booking
 - Use the check_availability tool BEFORE confirming any booking
 - Use the create_booking tool to finalize confirmed bookings
+- When create_booking succeeds, always include the maps_link from the tool result at the end of the confirmation message, labeled as "📍 Come raggiungerci:" (in Italian) or "📍 How to find us:" (in English)
 - Never invent information not listed above
 - Keep replies concise and friendly
 - If you don't know something, say so honestly`;
@@ -136,6 +146,9 @@ export async function chat(
 }
 
 export function detectLanguage(text: string): "it" | "en" {
-  const italianWords = /\b(ciao|grazie|buon|vorrei|sono|siete|avete|per|con|una|uno|della|del|che|non|ho|ha|salve|buongiorno|buonasera)\b/i;
-  return italianWords.test(text) ? "it" : "en";
+  const englishWords = /\b(hello|hi|hey|please|thank|thanks|book|booking|available|availability|what|when|where|how|can|could|would|is|are|do|does|have|has|the|and|for|with|this|that|your|you|me|my|want|need|help|open|close|price|cost)\b/i;
+  const italianWords = /\b(ciao|grazie|buon|vorrei|sono|siete|avete|per|con|una|uno|della|del|che|non|ho|ha|salve|buongiorno|buonasera|prenot|orari|servizi|disponib|quanto|quando|dove|come|posso|voglio|mi|il|la|lo|le|gli|un|una|questo|quello)\b/i;
+  const itScore = (text.match(italianWords) ?? []).length;
+  const enScore = (text.match(englishWords) ?? []).length;
+  return enScore > itScore ? "en" : "it";
 }

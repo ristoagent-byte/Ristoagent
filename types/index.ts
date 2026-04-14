@@ -20,7 +20,11 @@ export interface Business {
   google_access_token: string | null;
   google_refresh_token: string | null;
   google_calendar_id: string | null;
-  plan: "starter" | "pro";
+  plan: "trial" | "flexible" | "starter" | "pro";
+  partita_iva: string | null;
+  trial_used: boolean;
+  trial_started_at: string | null;
+  custom_info: string | null;
   created_at: string;
 }
 
@@ -31,7 +35,19 @@ export interface Conversation {
   customer_name: string;
   language: "it" | "en";
   last_message_at: string;
+  awaiting_feedback: boolean;
   created_at: string;
+}
+
+export interface Feedback {
+  id: string;
+  business_id: string;
+  conversation_id: string;
+  booking_id: string | null;
+  rating: number | null;
+  comment: string | null;
+  created_at: string;
+  conversations?: { customer_name: string };
 }
 
 export interface Message {
@@ -52,6 +68,7 @@ export interface Booking {
   party_size: number;
   google_event_id: string | null;
   status: "confirmed" | "cancelled";
+  feedback_sent_at: string | null;
   created_at: string;
 }
 

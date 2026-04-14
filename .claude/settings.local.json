@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(python:*)",
+      "Bash(npm list:*)",
+      "Read(//c/Users/Admin/**)",
+      "Bash(node -e \"require\\('pdf-parse'\\); require\\('mammoth'\\); require\\('xlsx'\\); console.log\\('OK'\\)\")",
+      "Bash(ls /c/Users/Admin/Downloads/*.jpg /c/Users/Admin/Downloads/*.jpeg /c/Users/Admin/Downloads/*.png)",
+      "Bash(vercel:*)",
+      "Bash(curl:*)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npx next:*)",
+      "Bash(ls \"C:/Users/Admin/OneDrive/RISTOAGENT/\"*.csv)",
+      "Bash(ls \"C:/Users/Admin/OneDrive/RISTOAGENT/marketing/\"*.csv)",
+      "Bash(python3 -c ':*)",
+      "WebFetch(domain:www.ristoconnect.com)"
+    ]
+  }
+}

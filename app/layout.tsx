@@ -1,8 +1,14 @@
 import "./globals.css";
+import SupportChat from "@/components/SupportChat";
 
 export const metadata = {
   title: "RistoAgent",
   description: "AI per ristoranti",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -12,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it">
-      <body>{children}</body>
+      <body>
+        {children}
+        <SupportChat />
+      </body>
     </html>
   );
 }

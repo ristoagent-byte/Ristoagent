@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
   const { data, error } = await supabase
     .from("businesses")
-    .insert({ ...body, user_id: userId })
+    .insert({ ...body, user_id: userId, plan: "trial", trial_started_at: new Date().toISOString() })
     .select()
     .single();
 
@@ -50,16 +50,16 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const webhookUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/telegram/webhook`;
+    const webhookUrl = `${process.env.NEXT_PUBLIC_APP_URL?.trim()}/api/telegram/webhook`;
     const webhookResult = await setWebhook(
       body.telegram_bot_token,
       webhookUrl,
-      process.env.TELEGRAM_WEBHOOK_SECRET!
+      process.env.TELEGRAM_WEBHOOK_SECRET!.trim()
     );
 
     if (!webhookResult.ok) {
       return NextResponse.json(
-        { error: "Impossibile registrare il webhook Telegram." },
+        { error: `Webhook Telegram: ${webhookResult.description ?? "errore sconosciuto"}` },
         { status: 500 }
       );
     }
@@ -67,12 +67,28 @@ export async function PUT(request: NextRequest) {
     body.telegram_bot_username = botInfo.result?.username;
   }
 
-  const { data, error } = await supabase
+  const { data: existing } = await supabase
     .from("businesses")
-    .update(body)
+    .select("id")
     .eq("user_id", userId)
-    .select()
     .single();
+
+  let data, error;
+
+  if (existing) {
+    ({ data, error } = await supabase
+      .from("businesses")
+      .update(body)
+      .eq("user_id", userId)
+      .select()
+      .single());
+  } else {
+    ({ data, error } = await supabase
+      .from("businesses")
+      .insert({ ...body, user_id: userId })
+      .select()
+      .single());
+  }
 
   if (error) return NextResponse.json({ error: error.message }, { status: 400 });
   return NextResponse.json(data);
