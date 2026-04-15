@@ -55,14 +55,5 @@ export async function sendMonitorAlert(text: string): Promise<void> {
   const botToken = process.env.MONITOR_BOT_TOKEN;
   const chatId = process.env.MONITOR_OWNER_CHAT_ID;
   if (!botToken || !chatId) return;
-
-  await fetch(`${TELEGRAM_API}${botToken}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text,
-      parse_mode: "HTML",
-    }),
-  });
+  await sendMessage(botToken, chatId, text);
 }
