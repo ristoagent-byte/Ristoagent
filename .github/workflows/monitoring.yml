@@ -51,13 +51,13 @@ jobs:
           CHAT_ID: ${{ secrets.OWNER_CHAT_ID }}
           STATUS: ${{ steps.check1.outputs.status }}
         run: |
-          TIME=$(date -u '+%H:%M - %d %b %Y')
           python3 -c "
           import urllib.request, json, os
+          from datetime import datetime, timezone
           token = os.environ['BOT_TOKEN']
           chat_id = os.environ['CHAT_ID']
           status = os.environ['STATUS']
-          time = os.environ['TIME']
+          time = datetime.now(timezone.utc).strftime('%H:%M - %d %b %Y')
           text = (
             '🚨 ALERT RISTOAGENT\n'
             '━━━━━━━━━━━━━━━━━━━\n'
@@ -76,11 +76,6 @@ jobs:
           urllib.request.urlopen(req)
           print('Alert sent')
           "
-        env:
-          TIME: ${{ steps.check1.outputs.duration }}
-          BOT_TOKEN: ${{ secrets.MONITOR_BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.OWNER_CHAT_ID }}
-          STATUS: ${{ steps.check1.outputs.status }}
 
       - name: All good
         if: steps.check1.outputs.status == '200'
