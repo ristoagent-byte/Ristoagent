@@ -93,3 +93,32 @@ export async function PUT(request: NextRequest) {
   if (error) return NextResponse.json({ error: error.message }, { status: 400 });
   return NextResponse.json(data);
 }
+
+export async function DELETE(request: NextRequest) {
+  const userId = request.headers.get("x-user-id");
+  if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const supabase = createServerClient();
+
+  const { data: biz } = await supabase
+    .from("businesses")
+    .select("id")
+    .eq("user_id", userId)
+    .single();
+
+  if (biz) {
+    await supabase.from("feedbacks").delete().eq("business_id", biz.id);
+    const { data: convs } = await supabase.from("conversations").select("id").eq("business_id", biz.id);
+    const convIds = convs?.map(c => c.id) ?? [];
+    if (convIds.length > 0) {
+      await supabase.from("messages").delete().in("conversation_id", convIds);
+    }
+    await supabase.from("bookings").delete().eq("business_id", biz.id);
+    await supabase.from("conversations").delete().eq("business_id", biz.id);
+    await supabase.from("businesses").delete().eq("id", biz.id);
+  }
+
+  await supabase.auth.admin.deleteUser(userId);
+
+  return NextResponse.json({ ok: true });
+}

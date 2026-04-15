@@ -29,6 +29,8 @@ export default function Dashboard() {
   const [broadcastMsg, setBroadcastMsg] = useState("");
   const [broadcastLoading, setBroadcastLoading] = useState(false);
   const [broadcastResult, setBroadcastResult] = useState<string | null>(null);
+  const [deleteConfirm, setDeleteConfirm] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
@@ -723,6 +725,58 @@ export default function Dashboard() {
                   </a>
                 )}
               </div>
+            </div>
+
+            <div style={{ ...card, borderColor: "#3a2020" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 8, color: "#ff6b6b" }}>
+                Elimina account
+              </h3>
+              <p style={{ fontSize: 12, color: "#8696a0", marginBottom: 16, lineHeight: 1.5 }}>
+                Questa azione è irreversibile. Verranno eliminati il tuo account, il business, tutte le conversazioni, prenotazioni e feedback.
+              </p>
+              {!deleteConfirm ? (
+                <button onClick={() => setDeleteConfirm(true)} style={{
+                  background: "transparent", border: "1px solid #3a2020", borderRadius: 8,
+                  color: "#ff6b6b", fontSize: 12, padding: "6px 14px", cursor: "pointer", fontFamily: "inherit",
+                }}>
+                  Elimina il mio account
+                </button>
+              ) : (
+                <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+                  <p style={{ fontSize: 13, color: "#ff6b6b", margin: 0 }}>Sei sicuro? Non potrai tornare indietro.</p>
+                  <button
+                    disabled={deleting}
+                    onClick={async () => {
+                      if (!userId) return;
+                      setDeleting(true);
+                      const res = await fetch("/api/business", {
+                        method: "DELETE",
+                        headers: { "x-user-id": userId },
+                      });
+                      if (res.ok) {
+                        await supabase.auth.signOut();
+                        router.push("/auth");
+                      } else {
+                        alert("Errore durante l'eliminazione. Riprova.");
+                        setDeleting(false);
+                        setDeleteConfirm(false);
+                      }
+                    }}
+                    style={{
+                      background: "#ff6b6b", border: "none", borderRadius: 8,
+                      color: "#fff", fontSize: 12, padding: "6px 14px", cursor: "pointer",
+                      fontFamily: "inherit", opacity: deleting ? 0.6 : 1,
+                    }}>
+                    {deleting ? "Eliminazione..." : "Conferma eliminazione"}
+                  </button>
+                  <button onClick={() => setDeleteConfirm(false)} style={{
+                    background: "transparent", border: "1px solid #1e3022", borderRadius: 8,
+                    color: "#7a9b7e", fontSize: 12, padding: "6px 14px", cursor: "pointer", fontFamily: "inherit",
+                  }}>
+                    Annulla
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}
