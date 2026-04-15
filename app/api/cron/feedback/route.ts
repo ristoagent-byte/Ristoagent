@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase-server";
-import { sendMessage } from "@/lib/telegram";
+import { sendMessage, sendMonitorAlert } from "@/lib/telegram";
 
 // Vercel Cron: runs every 30 minutes
 // Finds confirmed bookings that happened 2+ hours ago with no feedback sent yet,
@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
   let sent = 0;
 
   for (const booking of bookings ?? []) {
-    const biz = booking.businesses as { telegram_bot_token: string | null; name: string } | null;
+    const biz = (booking.businesses as unknown) as { telegram_bot_token: string | null; name: string } | null;
     if (!biz?.telegram_bot_token) continue;
 
     // Filter: booking datetime + 2h must be in the past
@@ -69,6 +69,46 @@ export async function GET(req: NextRequest) {
       sent++;
     } catch (err) {
       console.error(`Feedback send failed for booking ${booking.id}:`, err);
+    }
+  }
+
+  // Anomaly check: if there are active paid businesses but no messages in the last 6h
+  const { count: activeCount } = await supabase
+    .from("businesses")
+    .select("*", { count: "exact", head: true })
+    .in("plan", ["starter", "pro", "flexible", "founding_starter", "founding_pro"]);
+
+  if ((activeCount ?? 0) > 0) {
+    const sixHoursAgo = new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString();
+    const { count: recentMessages } = await supabase
+      .from("messages")
+      .select("*", { count: "exact", head: true })
+      .gte("created_at", sixHoursAgo);
+
+    if ((recentMessages ?? 0) === 0) {
+      const { data: lastMsg } = await supabase
+        .from("messages")
+        .select("created_at")
+        .order("created_at", { ascending: false })
+        .limit(1);
+
+      const lastMsgTime = lastMsg?.[0]?.created_at
+        ? new Date(lastMsg[0].created_at).toLocaleTimeString("it-IT", {
+            hour: "2-digit",
+            minute: "2-digit",
+            timeZone: "Europe/Rome",
+          })
+        : "sconosciuta";
+
+      await sendMonitorAlert(
+        `⚠️ <b>ANOMALIA RISTOAGENT</b>\n` +
+        `━━━━━━━━━━━━━━━━━━━\n` +
+        `Nessun messaggio Telegram da 6h\n` +
+        `Business attivi (paid): ${activeCount}\n` +
+        `Ultimo messaggio: ${lastMsgTime}\n` +
+        `━━━━━━━━━━━━━━━━━━━\n` +
+        `Verifica webhook Telegram`
+      );
     }
   }
 
