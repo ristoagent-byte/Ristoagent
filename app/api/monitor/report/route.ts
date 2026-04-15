@@ -117,21 +117,21 @@ export async function GET(req: NextRequest) {
     }
 
     const telegramMessage = [
-      `📊 <b>Report RistoAgent — ${dateStr}</b>`,
+      `📊 Report RistoAgent — ${dateStr}`,
       ``,
-      `🌐 <b>Infrastruttura</b>`,
+      `🌐 Infrastruttura`,
       `  • Database: ✅ ok`,
       `  • Cron feedback: ${cronOk ? "✅ ok" : "❌ non girato ieri"}`,
       ``,
-      `📈 <b>Ultime 24h</b>`,
+      `📈 Ultime 24h`,
       `  • Nuovi utenti: ${newUsers ?? 0}`,
       `  • Business attivi: ${activeBusinesses ?? 0}`,
       `  • Messaggi ricevuti: ${messagesReceived ?? 0}`,
       `  • Prenotazioni create: ${bookingsCreated ?? 0}`,
       `  • Feedback raccolti: ${feedbacksCollected ?? 0}`,
       ...(warningLines.length > 0
-        ? [``, `⚠️ <b>Attenzione</b>`, ...warningLines]
-        : [``, `✅ <b>Nessuna anomalia</b>`]),
+        ? [``, `⚠️ Attenzione`, ...warningLines]
+        : [``, `✅ Nessuna anomalia`]),
     ].join("\n");
 
     return NextResponse.json({

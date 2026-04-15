@@ -118,9 +118,8 @@ jobs:
           token = os.environ["MONITOR_BOT_TOKEN"]
           chat_id = os.environ["OWNER_CHAT_ID"]
           payload = json.dumps({
-            "chat_id": chat_id,
-            "text": message,
-            "parse_mode": "HTML"
+            "chat_id": int(chat_id),
+            "text": message
           }).encode("utf-8")
 
           req = urllib.request.Request(
