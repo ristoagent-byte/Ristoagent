@@ -1,0 +1,120 @@
+name: RistoAgent Monitoring
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # health check every 30 minutes
+    - cron: '0 7 * * *'      # daily report at 07:00 UTC (08:00 Italy)
+  workflow_dispatch:           # allows manual run for testing
+
+jobs:
+  health-check:
+    name: Health Check
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && github.event.schedule == '*/30 * * * *')
+    steps:
+      - name: Check site (first attempt)
+        id: check1
+        run: |
+          START=$(date +%s%3N)
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "${{ secrets.APP_URL }}/api/health" 2>/dev/null || echo "000")
+          END=$(date +%s%3N)
+          DURATION=$((END - START))
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "duration=${DURATION}ms" >> $GITHUB_OUTPUT
+
+      - name: Wait 60s and retry if failed
+        if: steps.check1.outputs.status != '200'
+        run: sleep 60
+
+      - name: Check site (second attempt)
+        id: check2
+        if: steps.check1.outputs.status != '200'
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "${{ secrets.APP_URL }}/api/health" 2>/dev/null || echo "000")
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+
+      - name: Send DOWN alert if both checks fail
+        if: steps.check1.outputs.status != '200' && steps.check2.outputs.status != '200'
+        run: |
+          TIME=$(date -u '+%H:%M — %d %b %Y')
+          TEXT="🚨 ALERT RISTOAGENT%0A━━━━━━━━━━━━━━━━━━━%0A❌ Sito non raggiungibile%0A⏰ ${TIME}%0AStatus: ${{ steps.check1.outputs.status }}%0A🔁 2 check consecutivi falliti%0A━━━━━━━━━━━━━━━━━━━%0A⚡ Controlla Vercel dashboard"
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.MONITOR_BOT_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.OWNER_CHAT_ID }}&text=${TEXT}&parse_mode=HTML"
+
+      - name: Log OK
+        if: steps.check1.outputs.status == '200'
+        run: echo "✅ Site online (${{ steps.check1.outputs.duration }})"
+
+  daily-report:
+    name: Daily Report
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'schedule' && github.event.schedule == '0 7 * * *')
+    steps:
+      - name: Check uptime
+        id: uptime
+        run: |
+          START=$(date +%s%3N)
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "${{ secrets.APP_URL }}/api/health" 2>/dev/null || echo "000")
+          END=$(date +%s%3N)
+          DURATION=$((END - START))
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "duration=${DURATION}ms" >> $GITHUB_OUTPUT
+
+      - name: Fetch metrics from report endpoint
+        id: report
+        run: |
+          curl -s --max-time 15 \
+            -H "x-monitor-secret: ${{ secrets.MONITOR_SECRET }}" \
+            "${{ secrets.APP_URL }}/api/monitor/report" \
+            -o /tmp/report_response.json
+
+      - name: Send daily report via Telegram
+        run: |
+          UPTIME_STATUS="${{ steps.uptime.outputs.status }}"
+          UPTIME_DURATION="${{ steps.uptime.outputs.duration }}"
+          python3 - <<'EOF'
+          import json, urllib.request, os, sys
+
+          with open('/tmp/report_response.json') as f:
+            try:
+              data = json.load(f)
+              message = data.get('telegramMessage', '⚠️ Errore nel recupero metriche')
+            except Exception as e:
+              message = f'⚠️ Errore parsing risposta: {e}'
+
+          # Inject uptime line
+          uptime_status = os.environ.get('UPTIME_STATUS', '000')
+          uptime_duration = os.environ.get('UPTIME_DURATION', '?')
+          if uptime_status == '200':
+            uptime_line = f'  • Sito: ✅ online ({uptime_duration})'
+          else:
+            uptime_line = f'  • Sito: ❌ NON RAGGIUNGIBILE (status: {uptime_status})'
+
+          message = message.replace('  • Database:', uptime_line + '\n  • Database:')
+
+          token = os.environ['MONITOR_BOT_TOKEN']
+          chat_id = os.environ['OWNER_CHAT_ID']
+
+          payload = json.dumps({
+            'chat_id': chat_id,
+            'text': message,
+            'parse_mode': 'HTML'
+          }).encode('utf-8')
+
+          req = urllib.request.Request(
+            f'https://api.telegram.org/bot{token}/sendMessage',
+            data=payload,
+            headers={'Content-Type': 'application/json'}
+          )
+          resp = urllib.request.urlopen(req)
+          print(resp.read().decode())
+          EOF
+        env:
+          UPTIME_STATUS: ${{ steps.uptime.outputs.status }}
+          UPTIME_DURATION: ${{ steps.uptime.outputs.duration }}
+          MONITOR_BOT_TOKEN: ${{ secrets.MONITOR_BOT_TOKEN }}
+          OWNER_CHAT_ID: ${{ secrets.OWNER_CHAT_ID }}
