@@ -48,9 +48,12 @@ export async function POST(req: NextRequest) {
   try {
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
+      customer_update: { address: "auto", name: "auto" },
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
       mode: "subscription",
+      automatic_tax: { enabled: true },
+      tax_id_collection: { enabled: true },
       subscription_data: {
         metadata: { userId, businessId: biz.id, planId },
         ...(planId === "flexible" ? { cancel_at_period_end: true } : {}),

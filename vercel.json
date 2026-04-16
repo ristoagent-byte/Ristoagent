@@ -2,7 +2,12 @@
   "crons": [
     {
       "path": "/api/cron/feedback",
-      "schedule": "*/30 * * * *"
+      "schedule": "0 21 * * *"
     }
-  ]
+  ],
+  "functions": {
+    "app/api/telegram/webhook/route.ts": {
+      "maxDuration": 60
+    }
+  }
 }

@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   description: "Informativa sul trattamento dei dati personali di RistoAgent ai sensi del GDPR.",
 };
 
-const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <section style={{ marginBottom: "2.5rem" }}>
+const Section = ({ title, children, id }: { title: string; children: React.ReactNode; id?: string }) => (
+  <section id={id} style={{ marginBottom: "2.5rem" }}>
     <h2 style={{ fontSize: "1.1rem", fontWeight: 600, color: "#0EA5E9",
       textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "1rem" }}>
       {title}
@@ -116,7 +116,7 @@ export default function PrivacyPage() {
           </p>
         </Section>
 
-        <Section title="Cookie">
+        <Section title="Cookie" id="cookie">
           <p style={p}>
             RistoAgent utilizza esclusivamente cookie tecnici necessari al funzionamento del servizio
             (sessione di autenticazione). Non vengono utilizzati cookie di profilazione o di terze parti

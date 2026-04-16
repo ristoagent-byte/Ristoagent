@@ -1,5 +1,6 @@
 import "./globals.css";
 import SupportChat from "@/components/SupportChat";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "RistoAgent",
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body>
         {children}
         <SupportChat />
+        <Analytics />
       </body>
     </html>
   );

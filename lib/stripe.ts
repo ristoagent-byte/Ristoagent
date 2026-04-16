@@ -8,4 +8,6 @@ export const PRICE_IDS: Record<string, string> = {
   flexible: process.env.STRIPE_PRICE_FLEXIBLE!.trim(),
   starter: process.env.STRIPE_PRICE_STARTER!.trim(),
   pro: process.env.STRIPE_PRICE_PRO!.trim(),
+  founding_starter: process.env.STRIPE_PRICE_FOUNDING_STARTER!.trim(),
+  founding_pro: process.env.STRIPE_PRICE_FOUNDING_PRO!.trim(),
 };

@@ -4,6 +4,31 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseBrowser } from "@/lib/supabase-browser";
 
+const FOUNDING_SLOTS = 20;
+
+const foundingPlans = [
+  {
+    id: "founding_starter",
+    name: "Starter",
+    price: "19",
+    wasPrice: "29",
+    billingNote: "Rinnovo mensile · Prezzo bloccato per sempre",
+    desc: "Per attività con clienti abituali.",
+    features: ["300 operazioni/mese", "1 Bot Telegram", "Google Calendar", "FAQ automatiche"],
+    featured: false,
+  },
+  {
+    id: "founding_pro",
+    name: "Pro",
+    price: "29",
+    wasPrice: "49",
+    billingNote: "Rinnovo mensile · Prezzo bloccato per sempre",
+    desc: "Per attività in crescita, senza limiti.",
+    features: ["Operazioni illimitate", "1 Bot Telegram", "Google Calendar", "Analisi e report", "Supporto prioritario"],
+    featured: true,
+  },
+];
+
 const plans = [
   {
     id: "flexible",
@@ -40,6 +65,7 @@ export default function UpgradePage() {
   const [loading, setLoading] = useState<string | null>(null);
   const [trialExpired, setTrialExpired] = useState(false);
   const [currentPlan, setCurrentPlan] = useState<string | null>(null);
+  const [foundingSlotsTaken, setFoundingSlotsTaken] = useState(0);
 
   useEffect(() => {
     supabase.auth.getUser().then(async ({ data }) => {
@@ -49,6 +75,12 @@ export default function UpgradePage() {
       const plan = (biz as { plan?: string } | null)?.plan;
       if (plan) setCurrentPlan(plan);
     });
+    // Conta posti founding members già occupati
+    supabase
+      .from("businesses")
+      .select("id", { count: "exact" })
+      .in("plan", ["founding_starter", "founding_pro"])
+      .then(({ count }) => setFoundingSlotsTaken(count ?? 0));
     const expired = new URLSearchParams(window.location.search).get("expired");
     if (expired === "1") setTrialExpired(true);
   }, []);
@@ -116,6 +148,95 @@ export default function UpgradePage() {
       <p style={{ color: "#7a9b7e", marginBottom: "3rem", textAlign: "center" }}>
         Disdici quando vuoi · Assistenza inclusa
       </p>
+
+      {/* ── Founding Members ── */}
+      {foundingSlotsTaken < FOUNDING_SLOTS && (
+        <div style={{ maxWidth: 720, width: "100%", marginBottom: "3rem" }}>
+          <div style={{ background: "linear-gradient(135deg,#1a0f00,#0f0a00)", border: "1px solid #f97316",
+            borderRadius: 16, padding: "1.5rem 2rem", marginBottom: "1.5rem", textAlign: "center" }}>
+            <p style={{ color: "#f97316", fontWeight: 700, fontSize: "0.75rem",
+              textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.3rem" }}>
+              🔥 Offerta Founding Members
+            </p>
+            <p style={{ color: "#fde68a", fontSize: "1.1rem", fontWeight: 600, marginBottom: "0.3rem" }}>
+              Prezzi bloccati per sempre — solo per i primi {FOUNDING_SLOTS} clienti
+            </p>
+            <p style={{ color: "#92400e", fontSize: "0.82rem" }}>
+              {FOUNDING_SLOTS - foundingSlotsTaken} posti rimasti su {FOUNDING_SLOTS}
+            </p>
+          </div>
+
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+            {foundingPlans.map((plan) => {
+              const isCurrent = currentPlan === plan.id;
+              return (
+                <div key={plan.id} style={{
+                  ...card,
+                  flex: "1 1 280px", maxWidth: 340,
+                  border: isCurrent ? "2px solid #22c55e" : plan.featured ? "1px solid #f97316" : "1px solid #3d2200",
+                  background: plan.featured ? "linear-gradient(145deg,#1a0f00,#0f0a00)" : "#110c00",
+                }}>
+                  {isCurrent && (
+                    <span style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
+                      background: "#22c55e", color: "#0a0f0d", fontSize: "0.7rem", fontWeight: 700,
+                      padding: "0.2rem 0.8rem", borderRadius: 999, textTransform: "uppercase",
+                      letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
+                      ✓ Piano attuale
+                    </span>
+                  )}
+                  {!isCurrent && plan.featured && (
+                    <span style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
+                      background: "#f97316", color: "#fff", fontSize: "0.7rem", fontWeight: 600,
+                      padding: "0.2rem 0.8rem", borderRadius: 999, textTransform: "uppercase",
+                      letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
+                      Consigliato
+                    </span>
+                  )}
+                  <p style={{ fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.08em",
+                    color: "#f97316", marginBottom: "0.8rem" }}>{plan.name}</p>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", marginBottom: "0.2rem" }}>
+                    <p style={{ fontSize: "2.8rem", fontWeight: 700, fontFamily: "monospace", lineHeight: 1 }}>
+                      €{plan.price}<span style={{ fontSize: "1rem", color: "#7a9b7e", fontFamily: "inherit", fontWeight: 400 }}>/mese</span>
+                    </p>
+                    <p style={{ fontSize: "1rem", color: "#4b2e00", textDecoration: "line-through" }}>€{plan.wasPrice}</p>
+                  </div>
+                  <p style={{ fontSize: "0.72rem", color: "#f97316", marginBottom: "0.6rem" }}>
+                    {plan.billingNote}
+                  </p>
+                  <p style={{ fontSize: "0.84rem", color: "#7a9b7e", marginBottom: "1.5rem" }}>{plan.desc}</p>
+                  <ul style={{ listStyle: "none", padding: 0, marginBottom: "2rem" }}>
+                    {plan.features.map((f) => (
+                      <li key={f} style={{ fontSize: "0.85rem", color: "#e9edef",
+                        padding: "0.35rem 0", borderBottom: "1px solid #3d2200",
+                        display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                        <span style={{ color: "#f97316", fontSize: "0.7rem" }}>✓</span> {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => !isCurrent && handleChoosePlan(plan.id)}
+                    disabled={loading === plan.id || isCurrent}
+                    style={{ width: "100%", padding: "0.85rem",
+                      background: isCurrent ? "#0d2010" : "#f97316",
+                      border: isCurrent ? "1px solid #22c55e" : "none",
+                      borderRadius: 999,
+                      color: isCurrent ? "#22c55e" : "#fff",
+                      fontSize: "0.95rem", fontWeight: 600, fontFamily: "inherit",
+                      cursor: isCurrent ? "default" : "pointer",
+                      opacity: loading === plan.id ? 0.6 : 1 }}>
+                    {loading === plan.id ? "..." : isCurrent ? "Piano attivo" : `Scegli Founding ${plan.name} →`}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <h2 style={{ fontSize: "0.8rem", fontWeight: 600, color: "#7a9b7e", marginBottom: "1.5rem",
+        textAlign: "center", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+        {foundingSlotsTaken < FOUNDING_SLOTS ? "— Piani standard —" : "Scegli il tuo piano"}
+      </h2>
 
       <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center",
         maxWidth: 1020, width: "100%" }}>

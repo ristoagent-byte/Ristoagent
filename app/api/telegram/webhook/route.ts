@@ -3,6 +3,7 @@ import { verifyWebhookSecret, sendMessage } from "@/lib/telegram";
 import { createServerClient } from "@/lib/supabase-server";
 import { chat, detectLanguage } from "@/lib/claude";
 import { checkAvailability, createCalendarEvent } from "@/lib/google-calendar";
+import { transcribeVoice } from "@/lib/whisper";
 import { Resend } from "resend";
 import type { TelegramUpdate, Business, Message } from "@/types";
 
@@ -16,7 +17,39 @@ export async function POST(request: NextRequest) {
   const update: TelegramUpdate = await request.json();
   const message = update.message;
 
-  if (!message?.text || !message.chat) {
+  if (!message?.chat) {
+    return NextResponse.json({ ok: true });
+  }
+
+  // Gestione messaggi vocali: trascrivi prima di procedere
+  let incomingText: string | null = message.text ?? null;
+
+  if (!incomingText && message.voice) {
+    console.log("[Voice] Received voice message, file_id:", message.voice.file_id);
+    // Recupera il bot token dalla prima business disponibile per poter scaricare il file
+    const supabaseTemp = createServerClient();
+    const { data: bizForToken, error: bizErr } = await supabaseTemp
+      .from("businesses")
+      .select("telegram_bot_token")
+      .not("telegram_bot_token", "is", null)
+      .limit(1)
+      .single();
+
+    if (bizErr) {
+      console.error("[Voice] Error fetching business token:", bizErr);
+    }
+
+    if (bizForToken?.telegram_bot_token) {
+      console.log("[Voice] Got bot token, calling Whisper...");
+      incomingText = await transcribeVoice(bizForToken.telegram_bot_token, message.voice.file_id);
+      console.log("[Voice] Whisper result:", incomingText ? `"${incomingText.slice(0, 50)}"` : "null");
+    } else {
+      console.error("[Voice] No business with bot token found");
+    }
+  }
+
+  if (!incomingText) {
+    console.log("[Webhook] No text to process, returning ok");
     return NextResponse.json({ ok: true });
   }
 
@@ -25,7 +58,6 @@ export async function POST(request: NextRequest) {
     [message.from?.first_name, message.from?.last_name]
       .filter(Boolean)
       .join(" ") || "Cliente";
-  const incomingText = message.text;
 
   const supabase = createServerClient();
 

@@ -14,12 +14,12 @@ const steps = [
   },
   {
     n: "2",
-    title: "Crea il bot Telegram",
-    body: "Con BotFather (gratuito) ottieni un token. Lo incolli in RistoAgent e il bot è pronto.",
+    title: "Attiva il tuo agente AI su Telegram",
+    body: "Con BotFather (gratuito) ottieni un token. Lo incolli in RistoAgent e l'agente è pronto.",
   },
   {
     n: "3",
-    title: "I clienti scrivono, il bot risponde",
+    title: "I clienti scrivono, l'agente risponde",
     body: "Prenotazioni, domande, conferme — tutto gestito in automatico. Tu guardi i risultati dalla dashboard.",
   },
 ];
@@ -90,7 +90,7 @@ export default function Home() {
 
         <span className="hero-tag">
           <span className="hero-dot" />
-          Il tuo assistente virtuale che risponde ai clienti e gestisce prenotazioni
+          Il tuo agente AI che risponde ai clienti e gestisce prenotazioni
         </span>
 
         <h1>
@@ -100,8 +100,8 @@ export default function Home() {
         </h1>
 
         <p className="subheadline">
-          RistoAgent risponde al posto tuo — 24 ore su 24, 7 giorni su 7, anche di notte.<br />
-          Gestisce prenotazioni, domande e conferme su Telegram<br />
+          RistoAgent è il tuo agente AI — risponde al posto tuo 24 ore su 24, 7 giorni su 7.<br />
+          Gestisce prenotazioni, cancellazioni, messaggi scritti e vocali su Telegram<br />
           mentre tu pensi al tuo lavoro.
         </p>
 
@@ -209,6 +209,65 @@ export default function Home() {
 
       <hr className="divider" />
 
+      {/* QR CODE */}
+      <section className="section" id="qrcode">
+        <div style={{
+          display: "flex", gap: "3rem", alignItems: "center", flexWrap: "wrap",
+          justifyContent: "center", maxWidth: 820, margin: "0 auto",
+        }}>
+          {/* QR mockup */}
+          <div style={{
+            background: "#ffffff", borderRadius: "1.2rem", padding: "1.5rem",
+            display: "flex", flexDirection: "column", alignItems: "center", gap: "0.8rem",
+            boxShadow: "0 0 60px rgba(14,165,233,0.15)", flexShrink: 0,
+          }}>
+            <div style={{
+              width: 120, height: 120, background: "#f0f0f0", borderRadius: "0.6rem",
+              display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 4, padding: 10,
+            }}>
+              {Array.from({ length: 25 }).map((_, i) => (
+                <div key={i} style={{
+                  background: [0,1,2,5,9,10,14,15,19,20,21,22,24].includes(i) ? "#1a1a2e" : "#f0f0f0",
+                  borderRadius: 2,
+                }} />
+              ))}
+            </div>
+            <p style={{ fontSize: "0.7rem", color: "#64748b", fontFamily: "monospace" }}>
+              t.me/tuoristorante_bot
+            </p>
+          </div>
+
+          {/* Testo */}
+          <div style={{ flex: 1, minWidth: 260 }}>
+            <p className="section-label">QR Code incluso</p>
+            <h2 style={{ marginBottom: "1rem" }}>
+              Un QR code che porta<br />i clienti direttamente<br />al tuo bot.
+            </h2>
+            <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+              Appena crei il tuo account ricevi un QR code personalizzato.
+              Mettilo ovunque i tuoi clienti ti trovano — i clienti lo inquadrano
+              e atterrano direttamente sulla chat Telegram con il tuo assistente.
+              Zero app da scaricare, zero attriti.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              {[
+                "Sul menu, sui tavoli e alla cassa",
+                "Sui volantini e nelle campagne social",
+                "Scaricabile in alta risoluzione dalla dashboard",
+                "Funziona con qualsiasi fotocamera",
+              ].map((f) => (
+                <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                  <span style={{ color: "var(--green)", fontSize: "0.75rem" }}>✓</span>
+                  <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{f}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
       {/* PRICING */}
       <section className="section pricing-section" id="pricing">
         <p className="section-label">Prezzi</p>
@@ -224,6 +283,28 @@ export default function Home() {
           </div>
           <a href="/auth" className="btn-primary" style={{ whiteSpace: "nowrap" }}>
             Scegli →
+          </a>
+        </div>
+
+        {/* Founding Members */}
+        <div style={{
+          background: "linear-gradient(135deg, #1a0f00, #0f0a00)",
+          border: "1px solid #f97316", borderRadius: "1rem",
+          padding: "1.5rem 2rem", marginBottom: "2rem", textAlign: "center",
+        }}>
+          <p style={{ color: "#f97316", fontWeight: 700, fontSize: "0.75rem",
+            textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
+            🔥 Offerta Founding Members — Solo 20 posti
+          </p>
+          <p style={{ color: "#fde68a", fontSize: "1.1rem", fontWeight: 600, marginBottom: "0.3rem" }}>
+            Entra adesso e blocca il prezzo per sempre
+          </p>
+          <p style={{ color: "#92400e", fontSize: "0.85rem", marginBottom: "1.2rem" }}>
+            Starter a <strong style={{ color: "#fde68a" }}>€19/mese</strong> (invece di €29) ·
+            Pro a <strong style={{ color: "#fde68a" }}>€29/mese</strong> (invece di €49)
+          </p>
+          <a href="/auth" className="btn-primary" style={{ background: "#f97316" }}>
+            Approfitta dell&apos;offerta →
           </a>
         </div>
 
@@ -246,6 +327,63 @@ export default function Home() {
         </div>
       </section>
 
+      <hr className="divider" />
+
+      {/* ROADMAP */}
+      <section className="section" id="roadmap">
+        <p className="section-label">Visione futura</p>
+        <h2>Oggi gestisce i clienti.<br />Domani gestisce il tuo business.</h2>
+        <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem", textAlign: "center" }}>
+          RistoAgent diventerà una piattaforma integrata per ogni aspetto della tua attività.
+        </p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.2rem", maxWidth: 900, margin: "0 auto" }}>
+          {[
+            { icon: "🛒", label: "In arrivo", title: "Ordinazioni dirette", body: "I clienti potranno ordinare direttamente via Telegram — antipasti, piatti, bevande — con il tuo menù digitale integrato." },
+            { icon: "🎯", label: "In arrivo", title: "Promozioni mirate", body: "Invia offerte personalizzate ai clienti che hai già servito: sconti sul compleanno, happy hour, promozioni last-minute." },
+            { icon: "🎟️", label: "In arrivo", title: "Buoni sconto", body: "Crea e distribuisci coupon digitali direttamente via Telegram. Il cliente li usa alla cassa, tu monitori i riscatti." },
+            { icon: "📦", label: "In arrivo", title: "Gestione magazzino", body: "Collega le ordinazioni alle scorte. L'agente ti avvisa quando un ingrediente sta per finire e ti suggerisce gli acquisti." },
+            { icon: "📊", label: "In arrivo", title: "Analisi fatturato", body: "Dashboard con andamento vendite, piatti più ordinati, fasce orarie più redditizie e confronto settimana su settimana." },
+            { icon: "🧠", label: "In arrivo", title: "Strategia di marketing AI", body: "L'agente analizza i tuoi dati e genera un piano d'azione concreto: quali clienti recuperare, quando fare promozioni, cosa comunicare." },
+            { icon: "📈", label: "In arrivo", title: "Analisi di mercato", body: "Dati aggregati anonimi su clienti, preferenze e abitudini nel tuo quartiere. Capisci il mercato locale prima dei tuoi competitor." },
+            { icon: "🎙️", label: "Disponibile ora", title: "Messaggi vocali", body: "L'agente capisce e risponde anche ai messaggi vocali su Telegram. Il cliente parla, l'agente trascrive, elabora e risponde." },
+          ].map((item) => {
+            const isLive = item.label === "Disponibile ora";
+            return (
+            <div key={item.title} style={{
+              background: "var(--surface)", border: `1px solid ${isLive ? "rgba(249,115,22,0.35)" : "var(--border)"}`,
+              borderRadius: "1rem", padding: "1.4rem 1.5rem", position: "relative",
+            }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
+                <span style={{ fontSize: "1.4rem" }}>{item.icon}</span>
+                <span style={{
+                  fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  color: isLive ? "#f97316" : "var(--green)",
+                  background: isLive ? "rgba(249,115,22,0.1)" : "rgba(34,197,94,0.1)",
+                  padding: "0.2rem 0.6rem", borderRadius: 999,
+                }}>{item.label}</span>
+              </div>
+              <h3 style={{ fontSize: "0.95rem", fontWeight: 600, marginBottom: "0.5rem" }}>{item.title}</h3>
+              <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6 }}>{item.body}</p>
+            </div>
+            );
+          })}
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "1.2rem" }}>
+            Chi entra ora come Founding Member avrà accesso prioritario a tutte le nuove funzionalità.
+          </p>
+          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="/auth" className="btn-primary">Entra ora →</a>
+            <a href="/roadmap" className="btn-secondary">Vedi roadmap completa</a>
+          </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
       {/* FOOTER */}
       <footer className="footer">
         <img src="/logo.png" alt="RistoAgent" style={{ height: 36, width: "auto", borderRadius: 6, marginBottom: 4 }} />
@@ -253,6 +391,7 @@ export default function Home() {
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
           <a href="/legal" style={{ fontSize: "0.72rem", color: "#3a5c3e", textDecoration: "none" }}>Note legali</a>
           <a href="/privacy" style={{ fontSize: "0.72rem", color: "#3a5c3e", textDecoration: "none" }}>Privacy Policy</a>
+          <a href="/privacy#cookie" style={{ fontSize: "0.72rem", color: "#3a5c3e", textDecoration: "none" }}>Cookie Policy</a>
           <a href="/terms" style={{ fontSize: "0.72rem", color: "#3a5c3e", textDecoration: "none" }}>Termini di Servizio</a>
           <span style={{ fontSize: "0.72rem", color: "#3a5c3e" }}>Made for local businesses 🇮🇹</span>
         </div>

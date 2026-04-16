@@ -8,6 +8,7 @@
 
 html {
   font-size: 100%;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
@@ -190,6 +191,24 @@ h1 em {
   background: var(--accent);
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(37, 211, 102, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
 }
 
 .btn-ghost {
@@ -586,7 +605,7 @@ h2 {
   .subheadline { font-size: 0.95rem; }
   .cta-group { flex-direction: column; align-items: stretch; }
   .cta-group a { text-align: center; }
-  .chat-window { width: 100%; max-width: 100%; }
+  .chat-window { width: min(380px, 90vw); }
 
   /* Sections */
   .section { padding: 3rem 1.2rem; }
