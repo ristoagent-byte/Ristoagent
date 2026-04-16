@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "RistoAgent — Il tuo assistente Telegram che non dorme mai",
+  title: "RistoAgent — Agente AI per prenotazioni ristorante su Telegram",
   description:
-    "Non hai tempo per rispondere ai clienti? RistoAgent gestisce prenotazioni e messaggi Telegram al posto tuo, 24 ore su 24.",
+    "RistoAgent gestisce prenotazioni, cancellazioni e messaggi Telegram per il tuo ristorante, 24h su 24. Setup in 10 minuti, prova gratis 15 giorni.",
 };
 
 const steps = [
@@ -15,7 +15,7 @@ const steps = [
   {
     n: "2",
     title: "Attiva il tuo agente AI su Telegram",
-    body: "Con BotFather (gratuito) ottieni un token. Lo incolli in RistoAgent e l'agente è pronto.",
+    body: "Ricevi una guida passo-passo. In 5 minuti il tuo bot Telegram è attivo e risponde ai clienti del ristorante.",
   },
   {
     n: "3",
@@ -30,7 +30,7 @@ const plans = [
     price: "29",
     badge: null,
     billingNote: "Rinnovo mensile automatico",
-    desc: "Per attività con clienti abituali.",
+    desc: "Per ristoranti con flusso regolare di prenotazioni.",
     features: [
       "300 messaggi/mese",
       "1 Bot Telegram",
@@ -90,7 +90,7 @@ export default function Home() {
 
         <span className="hero-tag">
           <span className="hero-dot" />
-          Il tuo agente AI che risponde ai clienti e gestisce prenotazioni
+          L&apos;agente AI per ristoranti — prenotazioni, messaggi e clienti automatizzati
         </span>
 
         <h1>
@@ -100,7 +100,7 @@ export default function Home() {
         </h1>
 
         <p className="subheadline">
-          RistoAgent è il tuo agente AI — risponde al posto tuo 24 ore su 24, 7 giorni su 7.<br />
+          RistoAgent è l&apos;agente AI per il tuo ristorante — risponde al posto tuo 24 ore su 24, 7 giorni su 7.<br />
           Gestisce prenotazioni, cancellazioni, messaggi scritti e vocali su Telegram<br />
           mentre tu pensi al tuo lavoro.
         </p>
@@ -182,7 +182,7 @@ export default function Home() {
           non si stanca mai.
         </h2>
         <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem" }}>
-          RistoAgent impara la tua attività e risponde ai clienti come faresti tu —<br />
+          RistoAgent impara la tua attività e risponde ai clienti del tuo ristorante come faresti tu —<br />
           in italiano o in inglese, a qualsiasi ora.
         </p>
 
