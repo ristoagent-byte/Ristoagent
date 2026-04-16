@@ -268,10 +268,10 @@ export default function Dashboard() {
   <div class="parties">
     <div class="party">
       <h3>Fornitore</h3>
-      <p><strong>RistoAgent s.r.o.</strong></p>
-      <p>IČO: 06043194</p>
-      <p>Blanická 922/25, Vinohrady</p>
-      <p>120 00 Praha 2, CZ</p>
+      <p><strong>Alessandro Bernabé — RistoAgent</strong></p>
+      <p>OSVČ — Imprenditore individuale</p>
+      <p>IČO: 06043194 · DIČ: CZ684205475</p>
+      <p>Praha, CZ</p>
       <p>ristoagent@gmail.com</p>
     </div>
     <div class="party">
