@@ -31,6 +31,9 @@ export default function Dashboard() {
   const [broadcastResult, setBroadcastResult] = useState<string | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [invoiceForm, setInvoiceForm] = useState({
+    ragioneSociale: "", piva: "", codiceFiscale: "", indirizzo: "", cap: "", citta: "",
+  });
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
@@ -205,6 +208,110 @@ export default function Dashboard() {
     a.download = `procedure-${(row.name ?? "ristoagent").toLowerCase().replace(/\s+/g, "-")}.txt`;
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  function generateInvoice() {
+    const planLabels: Record<string, { name: string; price: string }> = {
+      starter:  { name: "RistoAgent Starter",   price: "€29,00" },
+      pro:      { name: "RistoAgent Pro",        price: "€49,00" },
+      flexible: { name: "RistoAgent Flessibile", price: "€39,00" },
+    };
+    const plan = planLabels[business?.plan ?? ""] ?? { name: "RistoAgent", price: "—" };
+    const now = new Date();
+    const invoiceDate = now.toLocaleDateString("it-IT");
+    const periodStart = new Date(now.getFullYear(), now.getMonth(), 1).toLocaleDateString("it-IT");
+    const periodEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0).toLocaleDateString("it-IT");
+    const invoiceNum = `RA-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
+    // Escape user input to prevent XSS in the generated PDF
+    const esc = (s: string) => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+    const html = `<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Fattura ${invoiceNum}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #1a1a1a; padding: 48px; max-width: 780px; margin: 0 auto; }
+  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+  .logo { font-size: 22px; font-weight: 800; color: #111; }
+  .logo span { color: #f97316; }
+  .invoice-title { text-align: right; }
+  .invoice-title h1 { font-size: 28px; font-weight: 700; color: #111; }
+  .invoice-title p { color: #666; font-size: 12px; margin-top: 4px; }
+  .parties { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 36px; padding: 24px; background: #f8f9fa; border-radius: 8px; }
+  .party h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 10px; }
+  .party p { line-height: 1.7; color: #333; }
+  .party strong { color: #111; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+  thead th { padding: 10px 14px; background: #111; color: #fff; text-align: left; font-size: 12px; font-weight: 600; }
+  thead th:last-child { text-align: right; }
+  tbody td { padding: 14px; border-bottom: 1px solid #eee; }
+  tbody td:last-child { text-align: right; font-weight: 600; }
+  .totals { margin-left: auto; width: 260px; border-collapse: collapse; }
+  .totals td { padding: 7px 14px; }
+  .totals tr:last-child td { font-size: 15px; font-weight: 700; border-top: 2px solid #111; padding-top: 12px; }
+  .note { margin-top: 40px; padding: 16px; background: #f8f9fa; border-radius: 6px; font-size: 11px; color: #888; line-height: 1.7; }
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Risto<span>Agent</span></div>
+    <div class="invoice-title">
+      <h1>Fattura</h1>
+      <p>N. ${invoiceNum}</p>
+      <p>Data: ${invoiceDate}</p>
+    </div>
+  </div>
+  <div class="parties">
+    <div class="party">
+      <h3>Fornitore</h3>
+      <p><strong>RistoAgent s.r.o.</strong></p>
+      <p>IČO: 06043194</p>
+      <p>Blanická 922/25, Vinohrady</p>
+      <p>120 00 Praha 2, CZ</p>
+      <p>ristoagent@gmail.com</p>
+    </div>
+    <div class="party">
+      <h3>Cliente</h3>
+      <p><strong>${esc(invoiceForm.ragioneSociale) || "—"}</strong></p>
+      ${invoiceForm.piva ? `<p>P.IVA: ${esc(invoiceForm.piva)}</p>` : ""}
+      ${invoiceForm.codiceFiscale ? `<p>C.F.: ${esc(invoiceForm.codiceFiscale)}</p>` : ""}
+      ${invoiceForm.indirizzo ? `<p>${esc(invoiceForm.indirizzo)}</p>` : ""}
+      ${invoiceForm.cap || invoiceForm.citta ? `<p>${[esc(invoiceForm.cap), esc(invoiceForm.citta)].filter(Boolean).join(" ")}</p>` : ""}
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Descrizione</th><th>Periodo</th><th>Importo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${plan.name} — abbonamento mensile</td>
+        <td style="color:#666">${periodStart} – ${periodEnd}</td>
+        <td>${plan.price}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="totals">
+    <tr><td style="color:#666">Imponibile</td><td>${plan.price}</td></tr>
+    <tr><td style="color:#666">IVA</td><td style="font-size:11px;color:#888">Reverse charge (art. 7-ter DPR 633/72)</td></tr>
+    <tr><td>Totale</td><td>${plan.price}</td></tr>
+  </table>
+  <div class="note">
+    <strong>Note:</strong> Operazione non soggetta ad IVA ai sensi dell'art. 7-ter DPR 633/72 — prestazione di servizi resa da soggetto passivo UE.<br>
+    Pagamento effettuato tramite carta di credito. Conservare questo documento ai fini fiscali.
+  </div>
+</body>
+</html>`;
+
+    const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const win = window.open(url, "_blank");
+    if (win) setTimeout(() => win.print(), 400);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
   }
 
   const card: React.CSSProperties = {
@@ -725,6 +832,48 @@ export default function Dashboard() {
                   </a>
                 )}
               </div>
+            </div>
+
+            <div style={card}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#9ab8a0" }}>
+                Fatturazione
+              </h3>
+              <p style={{ fontSize: 12, color: "#5a6a62", marginBottom: 20, lineHeight: 1.5 }}>
+                Inserisci i tuoi dati fiscali per generare una fattura PDF del tuo abbonamento mensile corrente.
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
+                {[
+                  { label: "Ragione sociale / Nome", key: "ragioneSociale", full: true },
+                  { label: "Partita IVA", key: "piva", full: false },
+                  { label: "Codice Fiscale", key: "codiceFiscale", full: false },
+                  { label: "Indirizzo (via e numero)", key: "indirizzo", full: true },
+                  { label: "CAP", key: "cap", full: false },
+                  { label: "Città", key: "citta", full: false },
+                ].map(({ label, key, full }) => (
+                  <div key={key} style={{ gridColumn: full ? "1 / -1" : "auto" }}>
+                    <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: 4 }}>{label}</p>
+                    <input
+                      value={invoiceForm[key as keyof typeof invoiceForm]}
+                      onChange={(e) => setInvoiceForm(f => ({ ...f, [key]: e.target.value }))}
+                      style={{ width: "100%", padding: "8px 12px", background: "#131a14",
+                        border: "1px solid #1e3022", borderRadius: 8, color: "#e8f0e9",
+                        fontSize: 13, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }}
+                    />
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={generateInvoice}
+                disabled={!invoiceForm.ragioneSociale.trim()}
+                style={{ padding: "8px 20px", background: "#0EA5E9", border: "none",
+                  borderRadius: 999, color: "#fff", fontSize: 13, fontWeight: 700,
+                  fontFamily: "inherit", cursor: !invoiceForm.ragioneSociale.trim() ? "not-allowed" : "pointer",
+                  opacity: !invoiceForm.ragioneSociale.trim() ? 0.5 : 1 }}>
+                🧾 Genera fattura PDF
+              </button>
+              <p style={{ fontSize: 11, color: "#5a6a62", marginTop: 10 }}>
+                Si aprirà una nuova finestra — usa "Stampa → Salva come PDF" per scaricarla.
+              </p>
             </div>
 
             <div style={{ ...card, borderColor: "#3a2020" }}>
