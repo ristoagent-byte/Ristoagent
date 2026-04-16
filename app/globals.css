@@ -160,7 +160,7 @@ h1 em {
   margin-top: 1.5rem;
   font-size: clamp(1rem, 2.2vw, 1.25rem);
   color: var(--muted);
-  max-width: 700px;
+  max-width: 860px;
   font-weight: 300;
   animation: fadeUp 0.7s 0.2s ease both;
 }
@@ -560,12 +560,12 @@ h2 {
   border-top: 1px solid var(--border);
   padding: 2.5rem 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   max-width: 1100px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .footer p {
@@ -627,7 +627,7 @@ h2 {
   .plan { padding: 1.5rem 1.2rem; }
 
   /* Footer */
-  .footer { flex-direction: column; text-align: center; padding: 2rem 1.2rem; }
+  .footer { padding: 2rem 1.2rem; }
 
   /* Support chat bubble — keep away from bottom nav on mobile */
   /* (already fixed positioned, no change needed) */
