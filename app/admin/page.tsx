@@ -60,7 +60,7 @@ export default function AdminPanel() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [tab, setTab] = useState<"overview" | "customers" | "invoices">("overview");
+  const [tab, setTab] = useState<"overview" | "customers" | "invoices" | "email">("overview");
   const [customerFilter, setCustomerFilter] = useState<"all" | "paying" | "trial">("all");
 
   useEffect(() => {
@@ -153,21 +153,25 @@ export default function AdminPanel() {
       </header>
 
       <nav style={S.tabs}>
-        {(["overview", "customers", "invoices"] as const).map((t) => (
+        {(["overview", "customers", "invoices", "email"] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
             style={{ ...S.tab, ...(tab === t ? S.tabActive : {}) }}
           >
-            {t === "overview" ? "Panoramica" : t === "customers" ? `Clienti (${stats.customers.length})` : `Fatture (${stats.stripe.invoices.length})`}
+            {t === "overview"
+              ? "Panoramica"
+              : t === "customers"
+              ? `Clienti (${stats.customers.length})`
+              : t === "invoices"
+              ? `Fatture (${stats.stripe.invoices.length})`
+              : "📧 Email Marketing"}
           </button>
         ))}
       </nav>
 
       {tab === "overview" && (
         <>
-          <CampaignReminder />
-
           <section style={S.grid}>
             <KPI label="MRR" value={fmtEur(stats.stripe.mrrEur)} hint={`${stats.stripe.activeSubs} abbonamenti attivi`} />
             <KPI label="Incasso 30gg" value={fmtEur(stats.stripe.revenue30dEur)} hint="Fatture pagate" />
@@ -261,6 +265,8 @@ export default function AdminPanel() {
           </div>
         </section>
       )}
+
+      {tab === "email" && <EmailMarketingTab />}
 
       {tab === "invoices" && (
         <section style={S.card}>
@@ -398,6 +404,139 @@ function CampaignReminder() {
         </table>
       </div>
     </section>
+  );
+}
+
+type EmailStats = {
+  generatedAt: string;
+  totals: { inviate: number; errori: number; poolTotale: number; poolRimanente: number; coperturaPct: number };
+  today: { date: string; invio: any; quotaUsata: number; quotaLimite: number };
+  next: { prossimo: any; inviiRimanenti: number };
+  milano: { poolTotale: number; inviate: number; steps: Array<{ id: string; label: string; inviate: number; pool: number; pct: number }> };
+  osm: { poolTotale: number; inviate: number; batchesDone: number; byCity: Array<{ citta: string; inviate: number; pool: number; pct: number; rimanenti: number }> };
+};
+
+function EmailMarketingTab() {
+  const supabase = getSupabaseBrowser();
+  const [data, setData] = useState<EmailStats | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      const { data: sess } = await supabase.auth.getSession();
+      if (!sess.session) return;
+      const res = await fetch("/api/admin/email-marketing", {
+        headers: { Authorization: `Bearer ${sess.session.access_token}` },
+        cache: "no-store",
+      });
+      if (!res.ok) {
+        setErr("Errore caricamento statistiche email");
+        return;
+      }
+      setData((await res.json()) as EmailStats);
+    })();
+  }, []);
+
+  if (err) return <section style={S.card}><p style={{ color: "#f97316" }}>{err}</p></section>;
+  if (!data) return <section style={S.card}><p style={{ color: "var(--muted)" }}>Caricamento…</p></section>;
+
+  const fmt = (d: string) =>
+    new Date(d).toLocaleDateString("it-IT", { weekday: "short", day: "2-digit", month: "short" });
+
+  const CITY_FLAG: Record<string, string> = {
+    milano: "🍕", roma: "🏛️", napoli: "🌋", torino: "⛰️", bologna: "🏰", firenze: "🎨",
+  };
+
+  return (
+    <>
+      <section style={S.grid}>
+        <KPI
+          label="Email inviate (totale)"
+          value={String(data.totals.inviate)}
+          hint={`su ${data.totals.poolTotale} contatti · ${data.totals.coperturaPct}% raggiunti`}
+        />
+        <KPI
+          label="Oggi"
+          value={`${data.today.quotaUsata}/${data.today.quotaLimite}`}
+          hint={data.today.invio ? `✅ ${data.today.invio.label}` : "Nessun invio schedulato"}
+        />
+        <KPI
+          label="Prossimo invio"
+          value={data.next.prossimo ? fmt(data.next.prossimo.date) : "—"}
+          hint={data.next.prossimo ? `${data.next.prossimo.contacts} contatti · ${data.next.prossimo.label.split(" — ")[0]}` : "Campagna completa"}
+        />
+        <KPI
+          label="Da inviare ancora"
+          value={String(data.next.inviiRimanenti)}
+          hint={`Pool rimanente: ${data.totals.poolRimanente} contatti`}
+        />
+      </section>
+
+      {/* Hero progress bar */}
+      <section style={S.card}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, fontSize: 13 }}>
+          <strong>📊 Copertura complessiva</strong>
+          <span style={{ color: "var(--muted)" }}>
+            {data.totals.inviate.toLocaleString("it-IT")} / {data.totals.poolTotale.toLocaleString("it-IT")}
+          </span>
+        </div>
+        <ProgressBar pct={data.totals.coperturaPct} />
+        <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 8 }}>
+          {data.totals.errori > 0 ? `⚠️ ${data.totals.errori} errori di invio registrati` : "✅ Nessun errore di invio"}
+        </div>
+      </section>
+
+      {/* Funnel Milano */}
+      <section style={S.card}>
+        <h2 style={S.cardTitle}>🍕 Campagna Milano — Funnel rating-based (140 contatti)</h2>
+        {data.milano.steps.map((st) => (
+          <div key={st.id} style={{ marginBottom: 14 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13, marginBottom: 4 }}>
+              <span>{st.label}</span>
+              <span style={{ color: "var(--muted)" }}>{st.inviate} / {st.pool} · {st.pct}%</span>
+            </div>
+            <ProgressBar pct={st.pct} />
+          </div>
+        ))}
+      </section>
+
+      {/* OSM per città */}
+      <section style={S.card}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12 }}>
+          <h2 style={{ ...S.cardTitle, marginBottom: 0 }}>🌍 Campagna OSM — 6 città italiane</h2>
+          <span style={{ fontSize: 12, color: "var(--muted)" }}>
+            {data.osm.batchesDone} batch completati · {data.osm.inviate}/{data.osm.poolTotale} totale
+          </span>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12 }}>
+          {data.osm.byCity.map((c) => (
+            <div key={c.citta} style={{ padding: 12, background: "var(--surface2)", borderRadius: 8 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, fontSize: 13 }}>
+                <strong>{CITY_FLAG[c.citta] ?? "📍"} {c.citta.charAt(0).toUpperCase() + c.citta.slice(1)}</strong>
+                <span style={{ color: "var(--muted)" }}>{c.inviate} / {c.pool}</span>
+              </div>
+              <ProgressBar pct={c.pct} />
+              <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 6 }}>
+                {c.rimanenti} ancora da contattare · {c.pct}%
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Reminder/calendar sotto */}
+      <CampaignReminder />
+    </>
+  );
+}
+
+function ProgressBar({ pct }: { pct: number }) {
+  const clamped = Math.max(0, Math.min(100, pct));
+  const color = clamped >= 80 ? "#10b981" : clamped >= 40 ? "#0ea5e9" : clamped >= 10 ? "#f59e0b" : "#64748b";
+  return (
+    <div style={{ background: "var(--bg)", borderRadius: 999, height: 8, overflow: "hidden" }}>
+      <div style={{ width: `${clamped}%`, height: "100%", background: color, transition: "width 0.3s" }} />
+    </div>
   );
 }
 
