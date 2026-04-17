@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseBrowser } from "@/lib/supabase-browser";
+import { isAdminEmail } from "@/lib/admin";
 
 type Mode = "login" | "register" | "magic";
 
@@ -56,8 +57,9 @@ export default function AuthPage() {
       router.push(biz ? "/dashboard" : "/onboarding");
       return;
     } else {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      const { data: signInData, error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) { setError(error.message); setLoading(false); return; }
+      if (isAdminEmail(signInData.user?.email)) { router.push("/admin"); return; }
       router.push("/dashboard");
     }
   }

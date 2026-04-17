@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseBrowser } from "@/lib/supabase-browser";
+import { isAdminEmail } from "@/lib/admin";
 
 // Pagina di callback dopo Google OAuth e Magic Link.
-// Controlla se l'utente ha già completato l'onboarding:
-// → sì: dashboard | → no: onboarding
+// Admin → /admin | ha business → /dashboard | nessun business → /onboarding
 export default function AuthCallbackPage() {
   const router = useRouter();
   const supabase = getSupabaseBrowser();
@@ -17,6 +17,13 @@ export default function AuthCallbackPage() {
         router.push("/auth");
         return;
       }
+
+      // Admin va direttamente al pannello admin
+      if (isAdminEmail(data.user.email)) {
+        router.replace("/admin");
+        return;
+      }
+
       const { data: biz } = await supabase
         .from("businesses")
         .select("id")
