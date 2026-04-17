@@ -150,7 +150,7 @@ export default function ProactiveChat() {
             style={{
               width: 52, height: 52, borderRadius: "50%", background: "#0EA5E9",
               border: "none", cursor: "pointer", fontSize: 24,
-              boxShadow: "0 4px 16px rgba(14,165,233,0.4)",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
               flexShrink: 0,
             }}
           >
@@ -166,7 +166,7 @@ export default function ProactiveChat() {
           style={{
             width: 52, height: 52, borderRadius: "50%", background: "#0EA5E9",
             border: "none", cursor: "pointer", fontSize: 24,
-            boxShadow: "0 4px 16px rgba(14,165,233,0.4)",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
           }}
         >
           💬
