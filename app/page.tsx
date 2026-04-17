@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import ProactiveChat from "@/components/ProactiveChat";
 
 export const metadata: Metadata = {
   title: "RistoAgent — Agente AI per prenotazioni ristorante su Telegram",
@@ -388,8 +387,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <ProactiveChat />
 
       <hr className="divider" />
 

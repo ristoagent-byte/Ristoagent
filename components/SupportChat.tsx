@@ -16,6 +16,7 @@ type Msg = {
 export default function SupportChat() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [callout, setCallout] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: "assistant",
@@ -39,12 +40,12 @@ export default function SupportChat() {
     });
   }, []);
 
-  // Auto-open after 5 seconds, once per session
+  // Mostra callout dopo 5s, una volta per sessione
   useEffect(() => {
     if (typeof sessionStorage === "undefined") return;
     if (sessionStorage.getItem("chatAutoOpened")) return;
     const t = setTimeout(() => {
-      setOpen(true);
+      setCallout(true);
       sessionStorage.setItem("chatAutoOpened", "1");
     }, 5000);
     return () => clearTimeout(t);
@@ -57,6 +58,54 @@ export default function SupportChat() {
 
   // Hide on dashboard — logged-in users have support via email directly
   if (pathname?.startsWith("/dashboard")) return null;
+
+  async function openWithQuestion() {
+    setCallout(false);
+    setOpen(true);
+    // Simula la domanda dell'utente sulla procedura di iscrizione
+    const question = "Potresti spiegarmi la procedura di iscrizione passo per passo?";
+    setInput(question);
+    setTimeout(() => {
+      setInput("");
+      const userMsg: Msg = { role: "user", content: question };
+      setMessages((prev) => [...prev, userMsg]);
+      setLoading(true);
+
+      const history = [{ role: "assistant" as const, content: messages[0].content }];
+      fetch("/api/chat/support", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: question, history }),
+      }).then(async (res) => {
+        if (!res.body) return;
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let fullText = "";
+        setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          for (const line of decoder.decode(value).split("\n")) {
+            if (!line.startsWith("data: ")) continue;
+            const data = line.slice(6);
+            if (data === "[DONE]") break;
+            try {
+              const parsed = JSON.parse(data);
+              if (parsed.delta) {
+                fullText += parsed.delta;
+                setMessages((prev) => {
+                  const updated = [...prev];
+                  updated[updated.length - 1] = { role: "assistant", content: fullText };
+                  return updated;
+                });
+              }
+            } catch { /* ignore */ }
+          }
+        }
+        setLoading(false);
+      }).catch(() => setLoading(false));
+    }, 100);
+  }
 
   async function sendMessage() {
     const text = input.trim();
@@ -199,9 +248,34 @@ export default function SupportChat() {
 
   return (
     <>
+      {/* Callout proattivo */}
+      {callout && !open && (
+        <div style={{
+          position: "fixed", bottom: 112, right: 28, zIndex: 9999,
+          display: "flex", alignItems: "flex-end", gap: 10,
+          animation: "slideUp 0.3s ease",
+        }}>
+          <div
+            onClick={openWithQuestion}
+            style={{
+              background: "#0f1610", border: "1px solid #1a3020",
+              borderRadius: "12px 12px 4px 12px", padding: "10px 14px",
+              color: "#e8f0e9", fontSize: 13, lineHeight: 1.5, maxWidth: 220,
+              cursor: "pointer", boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+            }}
+          >
+            Ti interessa sapere come attivare il tuo bot <strong>gratuitamente</strong>, passo dopo passo? 👇
+            <button onClick={(e) => { e.stopPropagation(); setCallout(false); }} style={{
+              float: "right", background: "transparent", border: "none",
+              color: "#5a6a62", fontSize: 14, cursor: "pointer", marginLeft: 6, lineHeight: 1,
+            }}>×</button>
+          </div>
+        </div>
+      )}
+
       {/* Bubble */}
       <button
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => { setCallout(false); setOpen((o) => !o); }}
         style={s.bubble}
         aria-label="Apri chat supporto"
       >
