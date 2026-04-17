@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseBrowser } from "@/lib/supabase-browser";
 import { isAdminEmail } from "@/lib/admin";
+import { getCampaignStatus, CAMPAIGN_SCHEDULE } from "@/lib/campaign-schedule";
 
 type Customer = {
   id: string;
@@ -165,6 +166,8 @@ export default function AdminPanel() {
 
       {tab === "overview" && (
         <>
+          <CampaignReminder />
+
           <section style={S.grid}>
             <KPI label="MRR" value={fmtEur(stats.stripe.mrrEur)} hint={`${stats.stripe.activeSubs} abbonamenti attivi`} />
             <KPI label="Incasso 30gg" value={fmtEur(stats.stripe.revenue30dEur)} hint="Fatture pagate" />
@@ -318,6 +321,83 @@ function KPI({ label, value, hint }: { label: string; value: string; hint?: stri
       <div style={S.kpiValue}>{value}</div>
       {hint && <div style={S.kpiHint}>{hint}</div>}
     </div>
+  );
+}
+
+function CampaignReminder() {
+  const { nextStep, todayStep, overdue } = getCampaignStatus();
+  const todayStr = new Date().toISOString().slice(0, 10);
+
+  const fmt = (d: string) =>
+    new Date(d).toLocaleDateString("it-IT", { weekday: "short", day: "2-digit", month: "short" });
+
+  return (
+    <section style={{ ...S.card, borderColor: todayStep ? "var(--green)" : "var(--border)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+        <h2 style={S.cardTitle}>📧 Campagna Email — Promemoria invii</h2>
+        {todayStep && (
+          <span style={{ ...S.pill, background: "rgba(14,165,233,0.2)", color: "var(--green)", fontWeight: 600 }}>
+            OGGI → invia!
+          </span>
+        )}
+      </div>
+
+      {todayStep && (
+        <div style={{ background: "var(--surface2)", padding: 12, borderRadius: 8, marginBottom: 12, borderLeft: "3px solid var(--green)" }}>
+          <div style={{ fontSize: 13, color: "var(--muted)", marginBottom: 4 }}>Invio di oggi</div>
+          <div style={{ fontWeight: 500, marginBottom: 6 }}>{todayStep.label}</div>
+          <code style={{ background: "var(--bg)", padding: "6px 10px", borderRadius: 4, fontSize: 12, display: "inline-block" }}>
+            cd marketing && {todayStep.command}
+          </code>
+        </div>
+      )}
+
+      {!todayStep && nextStep && (
+        <div style={{ marginBottom: 12, fontSize: 14 }}>
+          Prossimo invio: <strong>{fmt(nextStep.date)}</strong> — {nextStep.label} ({nextStep.contacts} contatti)
+        </div>
+      )}
+
+      {overdue.length > 0 && !todayStep && (
+        <div style={{ color: "#f97316", fontSize: 13, marginBottom: 12 }}>
+          ⚠️ {overdue.length} invio/i in ritardo — apri il calendario sotto
+        </div>
+      )}
+
+      <div style={{ overflowX: "auto" }}>
+        <table style={S.table}>
+          <thead>
+            <tr>
+              <th style={S.th}>Data</th>
+              <th style={S.th}>Invio</th>
+              <th style={S.th}>Contatti</th>
+              <th style={S.th}>Stato</th>
+            </tr>
+          </thead>
+          <tbody>
+            {CAMPAIGN_SCHEDULE.map((s) => {
+              const isPast = s.date < todayStr;
+              const isToday = s.date === todayStr;
+              let status: { label: string; color: string };
+              if (s.done) status = { label: "✅ Inviato", color: "rgba(14,165,233,0.15)" };
+              else if (isToday) status = { label: "📤 Oggi", color: "rgba(14,165,233,0.25)" };
+              else if (isPast) status = { label: "⚠️ In ritardo", color: "rgba(249,115,22,0.15)" };
+              else status = { label: "⏳ In attesa", color: "rgba(122,155,126,0.15)" };
+              return (
+                <tr key={s.id} style={S.tr}>
+                  <td style={S.td}>{fmt(s.date)}</td>
+                  <td style={S.td}>{s.label}</td>
+                  <td style={S.td}>{s.contacts}</td>
+                  <td style={S.td}>
+                    <span style={{ ...S.pill, background: status.color }}>{status.label}</span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 }
 
