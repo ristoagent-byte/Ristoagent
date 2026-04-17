@@ -698,16 +698,39 @@ export default function Dashboard() {
                   Scarica e usa su volantini, social, menu, vetrina — i clienti lo scansionano
                   e aprono direttamente il bot Telegram.
                 </p>
-                <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
                   <img src={qrDataUrl} alt="QR Code"
                     style={{ width: 120, height: 120, borderRadius: 8, background: "#fff", padding: 4 }} />
-                  <button onClick={downloadQR} style={{
-                    padding: "0.75rem 1.5rem", background: "#0EA5E9", color: "#fff",
-                    border: "none", borderRadius: "999px", fontSize: "0.9rem",
-                    fontWeight: 600, fontFamily: "inherit", cursor: "pointer",
-                  }}>
-                    ⬇ Scarica PNG
-                  </button>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                    <button onClick={downloadQR} style={{
+                      padding: "0.75rem 1.5rem", background: "#0EA5E9", color: "#fff",
+                      border: "none", borderRadius: "999px", fontSize: "0.9rem",
+                      fontWeight: 600, fontFamily: "inherit", cursor: "pointer",
+                    }}>
+                      ⬇ Scarica PNG
+                    </button>
+                    {business?.telegram_bot_username && (
+                      <div style={{ background: "#0d1a10", border: "1px solid #1a2620", borderRadius: 10, padding: "10px 14px" }}>
+                        <div style={{ fontSize: 11, color: "#5a6a62", marginBottom: 4 }}>Oppure cerca su Telegram</div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                          <span style={{ fontSize: 16, fontWeight: 700, color: "#e8f0e9", letterSpacing: 0.3 }}>
+                            @{business.telegram_bot_username}
+                          </span>
+                          <button
+                            onClick={() => navigator.clipboard.writeText(`@${business!.telegram_bot_username}`)}
+                            style={{ background: "transparent", border: "1px solid #1a2620", borderRadius: 6,
+                              color: "#5a6a62", fontSize: 11, padding: "2px 8px", cursor: "pointer", fontFamily: "inherit" }}
+                          >
+                            copia
+                          </button>
+                        </div>
+                        <a href={`https://t.me/${business.telegram_bot_username}`} target="_blank" rel="noreferrer"
+                          style={{ fontSize: 11, color: "#0EA5E9", textDecoration: "none", marginTop: 4, display: "block" }}>
+                          t.me/{business.telegram_bot_username} ↗
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
