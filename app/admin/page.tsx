@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseBrowser } from "@/lib/supabase-browser";
+import { isAdminEmail } from "@/lib/admin";
 
 type Customer = {
   id: string;
@@ -66,6 +67,10 @@ export default function AdminPanel() {
       const { data: sess } = await supabase.auth.getSession();
       if (!sess.session) {
         router.push("/auth");
+        return;
+      }
+      if (!isAdminEmail(sess.session.user.email)) {
+        router.replace("/dashboard");
         return;
       }
       try {

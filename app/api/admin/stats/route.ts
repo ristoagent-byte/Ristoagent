@@ -1,14 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase-server";
 import { stripe } from "@/lib/stripe";
+import { isAdminEmail } from "@/lib/admin";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS ?? "ristoagent@gmail.com")
-  .split(",")
-  .map((e) => e.trim().toLowerCase())
-  .filter(Boolean);
 
 export async function GET(req: NextRequest) {
   const supabase = createServerClient();
@@ -20,12 +16,12 @@ export async function GET(req: NextRequest) {
   }
 
   const { data: userData, error: userErr } = await supabase.auth.getUser(token);
-  if (userErr || !userData.user?.email) {
+  const email = userData?.user?.email ?? null;
+  if (userErr || !email) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const email = userData.user.email.toLowerCase();
-  if (!ADMIN_EMAILS.includes(email)) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  if (!isAdminEmail(email)) {
+    return NextResponse.json({ error: "Forbidden", email }, { status: 403 });
   }
 
   const now = new Date();
