@@ -14,6 +14,7 @@ export default function AuthPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [magicSent, setMagicSent] = useState(false);
+  const [confirmSent, setConfirmSent] = useState(false);
 
   const supabase = getSupabaseBrowser();
 
@@ -34,9 +35,20 @@ export default function AuthPage() {
     }
 
     if (mode === "register") {
-      const { error } = await supabase.auth.signUp({ email, password });
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
+      });
       if (error) { setError(error.message); setLoading(false); return; }
+      setLoading(false);
+      // Se Supabase richiede conferma email, session è null → mostriamo messaggio
+      if (!data.session) {
+        setConfirmSent(true);
+        return;
+      }
       router.push("/onboarding");
+      return;
     } else {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) { setError(error.message); setLoading(false); return; }
@@ -81,7 +93,7 @@ export default function AuthPage() {
         <div style={{ display: "flex", marginBottom: "2rem", background: "#131a14",
           borderRadius: "0.8rem", padding: "4px", gap: "2px" }}>
           {tabs.map((t) => (
-            <button key={t.id} onClick={() => { setMode(t.id); setError(""); setMagicSent(false); }} style={{
+            <button key={t.id} onClick={() => { setMode(t.id); setError(""); setMagicSent(false); setConfirmSent(false); }} style={{
               flex: 1, padding: "0.6rem 0.3rem", borderRadius: "0.6rem", border: "none",
               cursor: "pointer", fontFamily: "inherit", fontSize: "0.82rem", fontWeight: 500,
               transition: "all 0.2s",
@@ -93,8 +105,32 @@ export default function AuthPage() {
           ))}
         </div>
 
-        {/* Magic link sent confirmation */}
-        {magicSent ? (
+        {/* Conferma registrazione inviata */}
+        {confirmSent ? (
+          <div style={{ textAlign: "center", padding: "1rem 0" }}>
+            <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>📬</div>
+            <h2 style={{ fontSize: "1.1rem", fontWeight: 600, marginBottom: "0.5rem" }}>
+              Controlla la tua email
+            </h2>
+            <p style={{ color: "#7a9b7e", fontSize: "0.88rem", lineHeight: 1.6 }}>
+              Abbiamo inviato un&apos;email di conferma a<br />
+              <strong style={{ color: "#e8f0e9" }}>{email}</strong>.<br /><br />
+              Apri il messaggio da <strong style={{ color: "#e8f0e9" }}>RistoAgent</strong> e clicca
+              il link <strong style={{ color: "#0EA5E9" }}>&ldquo;Conferma la tua email&rdquo;</strong> per attivare
+              l&apos;account.<br /><br />
+              <span style={{ fontSize: "0.8rem", opacity: 0.8 }}>
+                Non vedi nulla? Controlla la cartella spam o posta indesiderata.
+              </span>
+            </p>
+            <button
+              onClick={() => { setConfirmSent(false); setMode("login"); setEmail(""); setPassword(""); }}
+              style={{ marginTop: "1.5rem", background: "transparent", border: "none",
+                color: "#0EA5E9", cursor: "pointer", fontSize: "0.85rem", fontFamily: "inherit" }}
+            >
+              ← Torna all&apos;accesso
+            </button>
+          </div>
+        ) : magicSent ? (
           <div style={{ textAlign: "center", padding: "1rem 0" }}>
             <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>📬</div>
             <h2 style={{ fontSize: "1.1rem", fontWeight: 600, marginBottom: "0.5rem" }}>
@@ -103,8 +139,12 @@ export default function AuthPage() {
             <p style={{ color: "#7a9b7e", fontSize: "0.88rem", lineHeight: 1.6 }}>
               Abbiamo inviato un link di accesso a<br />
               <strong style={{ color: "#e8f0e9" }}>{email}</strong>.<br /><br />
-              Clicca il link nell&apos;email per accedere.<br />
-              Il link scade dopo 1 ora.
+              Apri il messaggio da <strong style={{ color: "#e8f0e9" }}>RistoAgent</strong> e clicca
+              il link <strong style={{ color: "#0EA5E9" }}>&ldquo;Accedi a RistoAgent&rdquo;</strong>.<br />
+              Il link scade dopo 1 ora.<br /><br />
+              <span style={{ fontSize: "0.8rem", opacity: 0.8 }}>
+                Non vedi nulla? Controlla la cartella spam.
+              </span>
             </p>
             <button
               onClick={() => { setMagicSent(false); setEmail(""); }}

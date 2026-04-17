@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Conferma la tua email · RistoAgent</title>
+</head>
+<body style="margin:0; padding:0; background:#f4f6f5; font-family:'Segoe UI', Roboto, Arial, sans-serif; color:#2c3e33;">
+  <table width="100%" cellspacing="0" cellpadding="0" style="background:#f4f6f5; padding:32px 16px;">
+    <tr><td align="center">
+      <table width="100%" cellspacing="0" cellpadding="0" style="max-width:560px; background:#ffffff; border-radius:14px; overflow:hidden; box-shadow:0 8px 24px rgba(20,40,25,0.08);">
+        <tr><td style="background:#0EA5E9; padding:28px 32px; color:#fff;">
+          <div style="font-size:24px; font-weight:700; letter-spacing:0.3px;">RistoAgent</div>
+          <div style="font-size:13px; opacity:0.9; margin-top:2px;">Assistente AI per ristoranti</div>
+        </td></tr>
+        <tr><td style="padding:36px 32px 8px;">
+          <h1 style="font-size:22px; margin:0 0 16px; color:#1a2b20;">Conferma la tua email</h1>
+          <p style="font-size:15px; line-height:1.6; color:#4a5a50; margin:0 0 24px;">
+            Ciao, grazie per esserti registrato su <strong>RistoAgent</strong>.<br>
+            Per attivare il tuo account e iniziare i 15 giorni di prova gratuita, clicca sul pulsante qui sotto:
+          </p>
+          <p style="text-align:center; margin:28px 0;">
+            <a href="{{ .ConfirmationURL }}"
+               style="display:inline-block; background:#0EA5E9; color:#ffffff; text-decoration:none;
+                      padding:14px 32px; border-radius:999px; font-weight:600; font-size:15px;">
+              Conferma la tua email
+            </a>
+          </p>
+          <p style="font-size:13px; color:#7a8b82; line-height:1.6; margin:20px 0 0;">
+            Se il pulsante non funziona, copia e incolla questo link nel browser:<br>
+            <a href="{{ .ConfirmationURL }}" style="color:#0EA5E9; word-break:break-all;">{{ .ConfirmationURL }}</a>
+          </p>
+        </td></tr>
+        <tr><td style="padding:16px 32px 32px;">
+          <hr style="border:none; border-top:1px solid #e6ece8; margin:16px 0;">
+          <p style="font-size:12px; color:#8a998f; line-height:1.6; margin:0;">
+            Se non hai creato nessun account su RistoAgent, ignora pure questa email.<br>
+            Hai domande? Rispondi pure qui o scrivi a
+            <a href="mailto:info@ristoagent.com" style="color:#0EA5E9;">info@ristoagent.com</a>
+          </p>
+        </td></tr>
+      </table>
+      <p style="font-size:11px; color:#95a098; margin-top:20px;">
+        RistoAgent · <a href="https://ristoagent.com" style="color:#95a098;">ristoagent.com</a>
+      </p>
+    </td></tr>
+  </table>
+</body>
+</html>
