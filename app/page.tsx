@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+const ProactiveChat = dynamic(() => import("@/components/ProactiveChat"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "RistoAgent — Agente AI per prenotazioni ristorante su Telegram",
@@ -109,10 +111,13 @@ export default function Home() {
         </p>
 
         <div className="cta-group">
-          <a href="/auth" className="btn-primary">Inizia ora →</a>
+          <a href="/auth" className="btn-primary">Attiva gratis il tuo assistente →</a>
           <a href="#come-funziona" className="btn-ghost">Come funziona</a>
         </div>
-        <p className="hero-note">Nessuna carta di credito · Setup in 10 minuti</p>
+        <p className="hero-note">
+          Ti servono solo 10 minuti — avrai un assistente gratis per 15 giorni,<br />
+          poi decidi se continuare o fermarti. Nessuna carta di credito richiesta.
+        </p>
 
         {/* Chat preview */}
         <div className="chat-window">
@@ -384,6 +389,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProactiveChat />
 
       <hr className="divider" />
 
