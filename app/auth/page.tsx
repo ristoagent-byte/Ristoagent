@@ -47,7 +47,13 @@ export default function AuthPage() {
         setConfirmSent(true);
         return;
       }
-      router.push("/onboarding");
+      // Sessione attiva: controlla se ha già un business prima di mandare in onboarding
+      const { data: biz } = await supabase
+        .from("businesses")
+        .select("id")
+        .eq("user_id", data.session.user.id)
+        .maybeSingle();
+      router.push(biz ? "/dashboard" : "/onboarding");
       return;
     } else {
       const { error } = await supabase.auth.signInWithPassword({ email, password });

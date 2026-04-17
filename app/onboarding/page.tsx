@@ -60,6 +60,11 @@ function OnboardingInner() {
 
       if (biz) {
         const b = biz as Record<string, string>;
+        // Onboarding già completato (bot attivo) → vai direttamente alla dashboard
+        if (b.telegram_token && b.name && searchParams.get("step") === null) {
+          router.replace("/dashboard");
+          return;
+        }
         setBusinessId(b.id);
         const rawServices: string = b.services ?? "";
         const splitMarker = "\n\nINFORMAZIONI PRATICHE:\n";
