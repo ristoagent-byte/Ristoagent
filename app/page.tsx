@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-const ProactiveChat = dynamic(() => import("@/components/ProactiveChat"), { ssr: false });
+import ProactiveChat from "@/components/ProactiveChat";
 
 export const metadata: Metadata = {
   title: "RistoAgent — Agente AI per prenotazioni ristorante su Telegram",
