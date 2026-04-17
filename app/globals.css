@@ -93,6 +93,21 @@ body {
   transform: translateY(-1px);
 }
 
+.nav-login {
+  color: var(--text);
+  font-weight: 400;
+  font-size: 0.85rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-login:hover {
+  color: var(--green);
+  background: rgba(14, 165, 233, 0.08);
+}
+
 /* ─── HERO ─── */
 .hero {
   min-height: 100vh;

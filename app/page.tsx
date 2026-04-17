@@ -81,7 +81,10 @@ export default function Home() {
         <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <img src="/logo.png" alt="RistoAgent" style={{ height: 40, width: "auto" }} />
         </a>
-        <a href="/auth" className="nav-cta">Prova gratis</a>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <a href="/auth" className="nav-login">Accedi</a>
+          <a href="/auth" className="nav-cta">Prova gratis</a>
+        </div>
       </nav>
 
       {/* HERO */}
