@@ -24,9 +24,19 @@ import re
 import csv
 import time
 import sys
+import io
 
-OVERPASS_URL = "https://overpass-api.de/api/interpreter"
-TIMEOUT_QUERY = 90
+# Force UTF-8 output on Windows console
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+
+OVERPASS_URLS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter",
+]
+TIMEOUT_QUERY = 180
 TIMEOUT_WEB = 8
 
 CITTA = ["milano", "roma", "napoli", "torino", "bologna", "firenze"]
@@ -41,38 +51,71 @@ HEADERS = {
 }
 
 
-def overpass_query(citta: str) -> str:
-    """Restaurant, cafe, pizzeria, bar dentro i confini del comune"""
+def overpass_query_single(citta: str, amenity_filter: str) -> str:
+    """Query per un singolo tipo di locale (più leggera)."""
     citta_cap = citta.capitalize()
     return f"""
 [out:json][timeout:{TIMEOUT_QUERY}];
 area["name"="{citta_cap}"]["admin_level"~"6|8"]->.a;
 (
-  nwr["amenity"="restaurant"](area.a);
-  nwr["amenity"="cafe"](area.a);
-  nwr["amenity"="bar"](area.a);
-  nwr["cuisine"="pizza"](area.a);
+  {amenity_filter}
 );
 out center tags;
 """
 
 
-def fetch_from_osm(citta: str) -> list:
-    print(f"\n🌍 Interrogo OpenStreetMap per {citta.upper()}...")
-    q = overpass_query(citta)
-    try:
-        r = requests.post(OVERPASS_URL, data={"data": q}, timeout=TIMEOUT_QUERY + 10)
-        r.raise_for_status()
-    except Exception as e:
-        print(f"❌ Errore Overpass: {e}")
-        return []
+def overpass_post(query: str) -> dict:
+    """Prova più endpoint Overpass in sequenza finché uno risponde."""
+    last_err = None
+    for url in OVERPASS_URLS:
+        try:
+            print(f"   → {url.split('//')[1].split('/')[0]}")
+            r = requests.post(url, data={"data": query}, timeout=TIMEOUT_QUERY + 10)
+            r.raise_for_status()
+            return r.json()
+        except Exception as e:
+            last_err = e
+            print(f"   ✗ fallito: {e}")
+            time.sleep(2)
+    raise RuntimeError(f"Tutti gli endpoint Overpass hanno fallito: {last_err}")
 
-    data = r.json()
-    elements = data.get("elements", [])
-    print(f"   ✅ {len(elements)} locali trovati")
+
+def fetch_from_osm(citta: str) -> list:
+    print(f"\n🌍 Interrogo OpenStreetMap per {citta.upper()} (4 query separate)...")
+    filters = [
+        ('ristoranti',  'nwr["amenity"="restaurant"](area.a);'),
+        ('pizzerie',    'nwr["cuisine"~"pizza"](area.a);'),
+        ('bar',         'nwr["amenity"="bar"](area.a);'),
+        ('caffetterie', 'nwr["amenity"="cafe"](area.a);'),
+    ]
+
+    all_elements = []
+    seen_ids = set()
+
+    for label, flt in filters:
+        print(f"\n🔍 {label}...")
+        q = overpass_query_single(citta, flt)
+        try:
+            data = overpass_post(q)
+        except Exception as e:
+            print(f"❌ {label} falliti: {e}")
+            continue
+
+        elements = data.get("elements", [])
+        new = 0
+        for el in elements:
+            key = (el.get("type"), el.get("id"))
+            if key not in seen_ids:
+                seen_ids.add(key)
+                all_elements.append(el)
+                new += 1
+        print(f"   ✅ {len(elements)} trovati ({new} nuovi)")
+        time.sleep(2)
+
+    print(f"\n📊 Totale unico: {len(all_elements)} locali")
 
     results = []
-    for el in elements:
+    for el in all_elements:
         tags = el.get("tags", {})
         nome = tags.get("name")
         if not nome:
