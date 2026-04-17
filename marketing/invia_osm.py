@@ -192,6 +192,10 @@ def main():
 
     print(f"\n=== TOTALE sessione: {totale} email ===")
 
+    if totale > 0:
+        from git_autopush import autopush
+        autopush("marketing/invii_osm_log.json", totale, "OSM")
+
 
 if __name__ == "__main__":
     main()
