@@ -38,6 +38,6 @@ def autopush(log_relpath: str, count: int, tag: str) -> None:
             print(f"  (autopush push fallito: {r.stderr.strip()})")
             return
 
-        print(f"  ✓ autopush OK — dashboard si aggiornerà dopo il deploy Vercel")
+        print(f"  (autopush OK — dashboard si aggiornerà dopo il deploy Vercel)")
     except Exception as e:
         print(f"  (autopush errore: {e})")
