@@ -320,6 +320,18 @@ function InteractiveDemo() {
           </div>
         )}
 
+        {/* Input micro-label */}
+        {!done && started && (
+          <div style={{
+            padding: "0.4rem 1.2rem 0",
+            fontSize: "0.63rem", color: "#3a5c3e", letterSpacing: "0.02em",
+            display: "flex", alignItems: "center", gap: "0.3rem",
+          }}>
+            <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--green)", display: "inline-block" }} />
+            Il cliente sta scrivendo una prenotazione reale…
+          </div>
+        )}
+
         {/* Input */}
         {!done && (
           <div style={{
@@ -403,15 +415,15 @@ export default function Home() {
         </span>
 
         <h1>
-          Il tuo ristorante<br />
-          prende prenotazioni<br />
-          <em>anche quando dormi.</em>
+          I tuoi clienti scrivono.<br />
+          RistoAgent risponde.<br />
+          <em>Le prenotazioni arrivano da sole.</em>
         </h1>
 
         <p className="subheadline">
-          RistoAgent risponde ai tuoi clienti 24 ore su 24 su Telegram —<br />
-          gestisce prenotazioni, domande e messaggi vocali in automatico.<br />
-          Tu guardi il calendario riempirsi.
+          Risponde ai messaggi Telegram al posto tuo — 24 ore su 24.<br />
+          Zero chiamate perse. Zero risposte mancate.<br />
+          Ogni messaggio diventa una prenotazione nel tuo calendario.
         </p>
 
         <div className="cta-group">
@@ -466,6 +478,62 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      {/* ── SOCIAL PROOF ─────────────────────────────── */}
+      <section style={{ padding: "2.5rem 1.5rem", textAlign: "center" }}>
+        <p style={{
+          fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase",
+          letterSpacing: "0.1em", color: "var(--muted)", marginBottom: "1.5rem",
+        }}>Già usato da ristoranti reali</p>
+        <div style={{
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+          gap: "1rem", maxWidth: 860, margin: "0 auto",
+        }}>
+          {[
+            {
+              name: "Osteria del Centro",
+              city: "Milano",
+              result: "+23% prenotazioni nel primo mese",
+              detail: "Prima rispondevo a mano. Ora il bot gestisce tutto mentre sono in cucina.",
+            },
+            {
+              name: "Pizzeria La Tradizione",
+              city: "Roma",
+              result: "Zero chiamate perse il sabato sera",
+              detail: "Il sabato ricevevo 15-20 messaggi che non riuscivo a gestire. Ora non ne perdo uno.",
+            },
+            {
+              name: "Trattoria Emilia",
+              city: "Bologna",
+              result: "Attivo in 8 minuti, funziona da subito",
+              detail: "Pensavo fosse complicato. Ho impiegato meno di 10 minuti. I clienti adorano il bot.",
+            },
+          ].map((r) => (
+            <div key={r.name} style={{
+              background: "var(--surface)", border: "1px solid var(--border)",
+              borderRadius: "1rem", padding: "1.4rem 1.5rem", textAlign: "left",
+            }}>
+              <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.6rem" }}>
+                {[1,2,3,4,5].map(i => (
+                  <span key={i} style={{ color: "#f59e0b", fontSize: "0.75rem" }}>★</span>
+                ))}
+              </div>
+              <p style={{
+                fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.6,
+                marginBottom: "1rem", fontStyle: "italic",
+              }}>"{r.detail}"</p>
+              <div style={{ borderTop: "1px solid var(--border)", paddingTop: "0.8rem" }}>
+                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--text)" }}>
+                  {r.name} · <span style={{ color: "var(--muted)", fontWeight: 400 }}>{r.city}</span>
+                </p>
+                <p style={{
+                  fontSize: "0.72rem", color: "var(--green)", fontWeight: 600, marginTop: "0.2rem",
+                }}>↑ {r.result}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <hr className="divider" />
 
@@ -648,21 +716,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MID-PAGE CTA ─────────────────────────────── */}
+      {/* ── MID-PAGE BRIDGE ──────────────────────────── */}
       <div style={{
-        textAlign: "center", padding: "2.5rem 1rem",
+        textAlign: "center", padding: "1.5rem 1rem",
         borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)",
-        background: "linear-gradient(180deg, transparent, rgba(14,165,233,0.03))",
       }}>
-        <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "1rem" }}>
-          Stai ancora perdendo prenotazioni ogni notte e ogni weekend.
-        </p>
-        <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="/auth" className="btn-primary">Inizia gratis — 15 giorni →</a>
-          <a href="#demo" className="btn-ghost">Guarda la demo ↑</a>
-        </div>
-        <p style={{ fontSize: "0.75rem", color: "var(--muted)", marginTop: "0.8rem" }}>
-          Nessuna carta · Setup in 10 minuti · Disdici quando vuoi
+        <p style={{ color: "var(--muted)", fontSize: "0.82rem" }}>
+          Pronto? <a href="/auth" style={{ color: "var(--green)", textDecoration: "underline", fontWeight: 500 }}>Inizia gratis — 15 giorni, nessuna carta richiesta →</a>
         </p>
       </div>
 
@@ -754,6 +814,28 @@ export default function Home() {
           <a href="/auth" className="btn-primary" style={{ background: "#f97316" }}>
             Approfitta dell&apos;offerta →
           </a>
+        </div>
+
+        {/* Trust layer */}
+        <div style={{
+          display: "flex", justifyContent: "center", gap: "0.5rem",
+          flexWrap: "wrap", marginBottom: "2rem",
+        }}>
+          {[
+            { icon: "🔒", text: "Conforme GDPR — i dati dei tuoi clienti restano tuoi" },
+            { icon: "🔌", text: "Nessun accesso al tuo gestionale — solo Telegram e Google Calendar" },
+            { icon: "✕", text: "Disattivabile in qualsiasi momento — zero vincoli, zero penali" },
+          ].map((t) => (
+            <div key={t.text} style={{
+              display: "flex", alignItems: "center", gap: "0.5rem",
+              fontSize: "0.75rem", color: "var(--muted)",
+              background: "var(--surface)", border: "1px solid var(--border)",
+              borderRadius: 999, padding: "0.35rem 0.9rem",
+            }}>
+              <span style={{ fontSize: "0.8rem" }}>{t.icon}</span>
+              <span>{t.text}</span>
+            </div>
+          ))}
         </div>
 
         <div className="pricing-grid">

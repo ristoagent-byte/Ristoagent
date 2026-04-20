@@ -286,9 +286,10 @@ export default function SupportChat() {
         <button
           onClick={() => { setCallout(false); setOpen((o) => !o); }}
           style={{ ...s.bubble, position: "relative", bottom: "auto", right: "auto", zIndex: "auto" }}
-          aria-label="Apri chat supporto RistoAgent"
+          aria-label="Supporto RistoAgent — Hai domande sul prodotto? Scrivici qui (non è il bot del ristorante)"
+          title="Supporto RistoAgent — Hai domande sul prodotto? Scrivici qui (non è il bot del ristorante)"
         >
-          {open ? "✕" : "💬"}
+          {open ? "✕" : "🤖"}
         </button>
       </div>
 
