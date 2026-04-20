@@ -281,10 +281,10 @@ function InteractiveDemo() {
                 borderRadius: "0.8rem", padding: "1rem 1.2rem", marginBottom: "0.6rem",
               }}>
                 <p style={{ fontSize: "0.8rem", color: "#4ade80", fontWeight: 600, marginBottom: "0.3rem" }}>
-                  ✅ Questo è quello che ricevono i tuoi clienti
+                  ✅ Questa prenotazione vale circa €120 per il tuo ristorante
                 </p>
-                <p style={{ fontSize: "0.75rem", color: "var(--muted)", marginBottom: "0.8rem", lineHeight: 1.5 }}>
-                  Il tuo bot reale fa esattamente questo — ma con le tue informazioni e il tuo calendario.
+                <p style={{ fontSize: "0.72rem", color: "var(--muted)", marginBottom: "0.8rem", lineHeight: 1.5 }}>
+                  3 persone × €40 media a copertura. Il tuo bot la gestisce in automatico — anche a mezzanotte.
                 </p>
                 <a href="/auth" className="btn-primary" style={{
                   display: "block", textAlign: "center", border: "none",
@@ -485,6 +485,41 @@ export default function Home() {
           fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase",
           letterSpacing: "0.1em", color: "var(--muted)", marginBottom: "1.5rem",
         }}>Già usato da ristoranti reali</p>
+
+        {/* Real Telegram screenshot proof */}
+        <div style={{
+          maxWidth: 860, margin: "0 auto 1.5rem", textAlign: "left",
+          background: "var(--surface)", border: "1px solid var(--border)",
+          borderRadius: "1.2rem", overflow: "hidden",
+        }}>
+          <div style={{
+            padding: "0.7rem 1.2rem", borderBottom: "1px solid var(--border)",
+            display: "flex", alignItems: "center", gap: "0.6rem",
+          }}>
+            <span style={{
+              fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase",
+              letterSpacing: "0.08em", color: "#4ade80",
+              background: "rgba(74,222,128,0.1)", padding: "0.2rem 0.7rem",
+              borderRadius: 999,
+            }}>Conversazione reale — Telegram</span>
+            <span style={{ fontSize: "0.72rem", color: "var(--muted)" }}>
+              Un cliente reale che prenota tramite RistoAgent
+            </span>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", padding: "1.5rem" }}>
+            <img
+              src="/telegram_proof.png"
+              alt="Conversazione reale Telegram — cliente che prenota con RistoAgent"
+              style={{
+                maxWidth: "100%", maxHeight: 420, borderRadius: "0.8rem",
+                border: "1px solid var(--border)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Supporting testimonial cards */}
         <div style={{
           display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
           gap: "1rem", maxWidth: 860, margin: "0 auto",
@@ -521,7 +556,7 @@ export default function Home() {
               <p style={{
                 fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.6,
                 marginBottom: "1rem", fontStyle: "italic",
-              }}>"{r.detail}"</p>
+              }}>&ldquo;{r.detail}&rdquo;</p>
               <div style={{ borderTop: "1px solid var(--border)", paddingTop: "0.8rem" }}>
                 <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--text)" }}>
                   {r.name} · <span style={{ color: "var(--muted)", fontWeight: 400 }}>{r.city}</span>
@@ -653,6 +688,23 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── UNIQUE MECHANISM ─────────────────────────── */}
+      <div style={{
+        textAlign: "center", padding: "2rem 1.5rem",
+        background: "linear-gradient(135deg, #080f09, #0a1209)",
+        borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)",
+      }}>
+        <p style={{
+          maxWidth: 680, margin: "0 auto",
+          fontSize: "1.15rem", lineHeight: 1.7, color: "var(--text)",
+          fontFamily: "'Playfair Display', serif", fontStyle: "italic",
+        }}>
+          &ldquo;RistoAgent non <em style={{ fontStyle: "normal", color: "var(--green)" }}>risponde</em> ai clienti.
+          {" "}<em style={{ fontStyle: "normal", color: "var(--green)" }}>Li guida</em> alla prenotazione —
+          e la salva nel tuo calendario senza che tu muova un dito.&rdquo;
+        </p>
+      </div>
 
       <hr className="divider" />
 
