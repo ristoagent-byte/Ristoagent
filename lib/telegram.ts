@@ -17,6 +17,37 @@ export async function sendMessage(
   });
 }
 
+export async function sendMessageWithKeyboard(
+  botToken: string,
+  chatId: number | string,
+  text: string,
+  keyboard: { inline_keyboard: { text: string; callback_data: string }[][] }
+): Promise<void> {
+  const url = `${TELEGRAM_API}${botToken}/sendMessage`;
+  await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text,
+      parse_mode: "HTML",
+      reply_markup: keyboard,
+    }),
+  });
+}
+
+export async function answerCallbackQuery(
+  botToken: string,
+  callbackQueryId: string
+): Promise<void> {
+  const url = `${TELEGRAM_API}${botToken}/answerCallbackQuery`;
+  await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ callback_query_id: callbackQueryId }),
+  });
+}
+
 export async function setWebhook(
   botToken: string,
   webhookUrl: string,
@@ -29,7 +60,7 @@ export async function setWebhook(
     body: JSON.stringify({
       url: webhookUrl,
       secret_token: secret,
-      allowed_updates: ["message"],
+      allowed_updates: ["message", "callback_query"],
     }),
   });
   return res.json();

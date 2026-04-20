@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifyWebhookSecret, sendMessage } from "@/lib/telegram";
+import { verifyWebhookSecret, sendMessage, sendMessageWithKeyboard, answerCallbackQuery } from "@/lib/telegram";
 import { createServerClient } from "@/lib/supabase-server";
 import { chat, detectLanguage } from "@/lib/claude";
 import { checkAvailability, createCalendarEvent } from "@/lib/google-calendar";
@@ -15,6 +15,44 @@ export async function POST(request: NextRequest) {
   }
 
   const update: TelegramUpdate = await request.json();
+
+  // Gestione consenso marketing (callback_query dai bottoni Sì/No)
+  if (update.callback_query) {
+    const cb = update.callback_query;
+    const chatId = cb.message?.chat.id;
+    const data = cb.data;
+
+    if (chatId && (data === "mkt_yes" || data === "mkt_no")) {
+      const supabase = createServerClient();
+      const consent = data === "mkt_yes";
+
+      const { data: conv } = await supabase
+        .from("conversations")
+        .select("*, businesses(*)")
+        .eq("telegram_chat_id", chatId.toString())
+        .single();
+
+      if (conv) {
+        await supabase
+          .from("conversations")
+          .update({ marketing_consent: consent })
+          .eq("id", conv.id);
+
+        const biz = conv.businesses as Business;
+        const reply = consent
+          ? "Perfetto! Ti invieremo offerte e promozioni esclusive. Puoi scrivere /stop in qualsiasi momento per annullare. 🎉"
+          : "Nessun problema! Non riceverai comunicazioni promozionali. Siamo sempre qui per aiutarti. 😊";
+
+        if (biz?.telegram_bot_token) {
+          await sendMessage(biz.telegram_bot_token, chatId, reply);
+        }
+        await answerCallbackQuery(biz?.telegram_bot_token ?? "", cb.id);
+      }
+    }
+
+    return NextResponse.json({ ok: true });
+  }
+
   const message = update.message;
 
   if (!message?.chat) {
@@ -252,6 +290,27 @@ export async function POST(request: NextRequest) {
       text: reply,
       sender: "ai",
     });
+  }
+
+  // Alla prima interazione chiedi consenso marketing (solo se non ancora chiesto)
+  const { data: conv } = await supabase
+    .from("conversations")
+    .select("marketing_consent")
+    .eq("id", conversationId)
+    .single();
+
+  if (conv && conv.marketing_consent === null && business.telegram_bot_token) {
+    await sendMessageWithKeyboard(
+      business.telegram_bot_token,
+      chatId,
+      "📣 Vuoi ricevere offerte e promozioni esclusive da noi direttamente su Telegram?",
+      {
+        inline_keyboard: [[
+          { text: "✅ Sì, voglio le offerte", callback_data: "mkt_yes" },
+          { text: "❌ No grazie", callback_data: "mkt_no" },
+        ]],
+      }
+    );
   }
 
   return NextResponse.json({ ok: true });

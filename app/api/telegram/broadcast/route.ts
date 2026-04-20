@@ -24,7 +24,8 @@ export async function POST(req: NextRequest) {
   const { data: conversations } = await supabase
     .from("conversations")
     .select("telegram_chat_id")
-    .eq("business_id", biz.id);
+    .eq("business_id", biz.id)
+    .eq("marketing_consent", true);
 
   if (!conversations?.length) {
     return NextResponse.json({ sent: 0 });

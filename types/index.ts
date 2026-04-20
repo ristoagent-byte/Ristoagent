@@ -96,4 +96,17 @@ export interface TelegramUpdate {
     };
     date: number;
   };
+  callback_query?: {
+    id: string;
+    from: {
+      id: number;
+      first_name: string;
+      last_name?: string;
+      username?: string;
+    };
+    message?: {
+      chat: { id: number };
+    };
+    data: string;
+  };
 }
