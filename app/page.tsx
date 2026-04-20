@@ -183,15 +183,21 @@ function InteractiveDemo() {
           background: "var(--surface2)", border: "1px solid var(--border)",
           borderRadius: "1.4rem", padding: "3rem 2rem", maxWidth: 420, margin: "0 auto",
         }}>
-          <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>💬</div>
+          <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🍽️</div>
+          <span style={{
+            display: "inline-block", fontSize: "0.68rem", fontWeight: 700,
+            textTransform: "uppercase", letterSpacing: "0.08em",
+            color: "var(--green)", background: "rgba(14,165,233,0.1)",
+            padding: "0.2rem 0.7rem", borderRadius: 999, marginBottom: "0.8rem",
+          }}>Simulazione prenotazione cliente</span>
           <h3 style={{ fontSize: "1.1rem", fontWeight: 600, marginBottom: "0.5rem" }}>
-            Prova il bot adesso
+            Come prenota un tavolo il tuo cliente
           </h3>
           <p style={{ color: "var(--muted)", fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "1.5rem" }}>
-            Simula una prenotazione reale — esattamente quello che farebbe un tuo cliente.
+            Scrivi come se fossi un cliente che vuole prenotare — il bot gestisce tutto in automatico.
           </p>
           <button onClick={start} className="btn-primary" style={{ width: "100%", border: "none", cursor: "pointer" }}>
-            Inizia la simulazione →
+            Prenota come farebbe il mio cliente →
           </button>
         </div>
       </div>
@@ -257,10 +263,29 @@ function InteractiveDemo() {
             </div>
           )}
           {done && (
-            <div style={{ textAlign: "center", marginTop: "0.8rem" }}>
+            <div style={{ textAlign: "center", marginTop: "1rem", padding: "0 0.5rem" }}>
+              <div style={{
+                background: "linear-gradient(135deg, #0f1a10, #0a120a)",
+                border: "1px solid rgba(34,197,94,0.3)",
+                borderRadius: "0.8rem", padding: "1rem 1.2rem", marginBottom: "0.6rem",
+              }}>
+                <p style={{ fontSize: "0.8rem", color: "#4ade80", fontWeight: 600, marginBottom: "0.3rem" }}>
+                  ✅ Questo è quello che ricevono i tuoi clienti
+                </p>
+                <p style={{ fontSize: "0.75rem", color: "var(--muted)", marginBottom: "0.8rem", lineHeight: 1.5 }}>
+                  Il tuo bot reale fa esattamente questo — ma con le tue informazioni e il tuo calendario.
+                </p>
+                <a href="/auth" className="btn-primary" style={{
+                  display: "block", textAlign: "center", border: "none",
+                  fontSize: "0.85rem", padding: "0.6rem 1rem", borderRadius: "0.6rem",
+                  textDecoration: "none",
+                }}>
+                  Attiva per il mio ristorante →
+                </a>
+              </div>
               <button onClick={start} style={{
                 background: "transparent", border: "1px solid var(--border)",
-                color: "var(--muted)", fontSize: "0.75rem", padding: "0.4rem 1rem",
+                color: "var(--muted)", fontSize: "0.72rem", padding: "0.35rem 0.9rem",
                 borderRadius: 999, cursor: "pointer",
               }}>Ricomincia ↺</button>
             </div>
@@ -351,7 +376,7 @@ export default function Home() {
 
         <div className="cta-group">
           <a href="/auth" className="btn-primary">Attiva gratis per 15 giorni →</a>
-          <a href="#demo" className="btn-ghost">Prova il bot ↓</a>
+          <a href="#demo" className="btn-ghost">Vedi la demo ↓</a>
         </div>
         <p className="hero-note">
           Nessuna carta di credito · Nessun contratto · Setup in 10 minuti
@@ -390,9 +415,9 @@ export default function Home() {
       {/* ── STATS BAR ────────────────────────────────── */}
       <div className="stats-bar">
         {[
-          { value: "+ prenotazioni", label: "24 ore su 24" },
+          { value: "24h su 24", label: "Prende prenotazioni" },
           { value: "10 minuti", label: "Setup completo" },
-          { value: "Nessuna app", label: "Per i tuoi clienti" },
+          { value: "Nessuna app", label: "I clienti già ce l'hanno" },
           { value: "15 giorni", label: "Prova gratuita" },
         ].map((s) => (
           <div key={s.label} className="stat-item">
@@ -476,17 +501,32 @@ export default function Home() {
 
       {/* ── DEMO INTERATTIVA ─────────────────────────── */}
       <section className="section" id="demo">
-        <p className="section-label">Prova dal vivo</p>
+        <p className="section-label">Demo live — Esperienza cliente</p>
         <h2>
-          Non ti fidiamo delle parole.<br />
+          Non ti chiediamo di crederci sulla parola.<br />
           <em style={{ fontStyle: "italic", color: "var(--green)" }}>Provalo adesso.</em>
         </h2>
-        <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem" }}>
-          Simula una prenotazione reale — esattamente quello che farebbe un tuo cliente.
+        <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "2rem", fontSize: "1.05rem" }}>
+          Fai la parte del cliente per 2 minuti — scrivi come se volessi prenotare un tavolo.
         </p>
+        {/* Role clarity banner */}
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem",
+          background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.25)",
+          borderRadius: "0.6rem", padding: "0.6rem 1.2rem",
+          marginBottom: "2rem", maxWidth: 480, margin: "0 auto 2rem",
+          fontSize: "0.82rem", color: "#f97316",
+        }}>
+          <span>👤</span>
+          <span><strong>Tu sei il cliente.</strong> Il bot risponde come farebbe nel tuo ristorante.</span>
+        </div>
         <InteractiveDemo />
         <p style={{ textAlign: "center", marginTop: "1.5rem", fontSize: "0.82rem", color: "var(--muted)" }}>
-          Il tuo bot reale risponde con le informazioni del tuo locale, i tuoi orari e il tuo Google Calendar.
+          Il tuo bot reale risponde con i tuoi orari, il tuo menù e il tuo Google Calendar.
+          <br />
+          <span style={{ fontSize: "0.78rem", color: "#3a5c3e" }}>
+            Hai domande su RistoAgent? Chiedile al 💬 assistente in basso a destra.
+          </span>
         </p>
       </section>
 
@@ -518,6 +558,24 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── MID-PAGE CTA ─────────────────────────────── */}
+      <div style={{
+        textAlign: "center", padding: "2.5rem 1rem",
+        borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)",
+        background: "linear-gradient(180deg, transparent, rgba(14,165,233,0.03))",
+      }}>
+        <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "1rem" }}>
+          Stai ancora perdendo prenotazioni ogni notte e ogni weekend.
+        </p>
+        <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <a href="/auth" className="btn-primary">Inizia gratis — 15 giorni →</a>
+          <a href="#demo" className="btn-ghost">Guarda la demo ↑</a>
+        </div>
+        <p style={{ fontSize: "0.75rem", color: "var(--muted)", marginTop: "0.8rem" }}>
+          Nessuna carta · Setup in 10 minuti · Disdici quando vuoi
+        </p>
+      </div>
 
       <hr className="divider" />
 
@@ -694,15 +752,15 @@ export default function Home() {
         <div className="final-cta-glow" aria-hidden />
         <p className="section-label" style={{ textAlign: "center" }}>Inizia oggi</p>
         <h2 style={{ textAlign: "center", maxWidth: 680, margin: "0 auto" }}>
-          Non perdere più una prenotazione,<br />
-          <em style={{ fontStyle: "italic", color: "var(--green)" }}>neanche di notte.</em>
+          Questa notte qualcuno scriverà<br />al tuo ristorante per prenotare.<br />
+          <em style={{ fontStyle: "italic", color: "var(--green)" }}>Qualcuno risponderà per te?</em>
         </h2>
         <p style={{
           textAlign: "center", color: "var(--muted)",
           fontSize: "1.05rem", maxWidth: 520, margin: "1.2rem auto 2.5rem",
         }}>
-          15 giorni gratis. Setup in 10 minuti. Nessuna carta richiesta.
-          Smetti di perdere clienti oggi stesso.
+          15 giorni gratis. Setup in 10 minuti. Nessuna carta richiesta.<br />
+          Il tuo assistente è attivo entro oggi.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
           <a href="/auth" className="btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2.5rem" }}>

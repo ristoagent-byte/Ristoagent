@@ -274,13 +274,23 @@ export default function SupportChat() {
       )}
 
       {/* Bubble */}
-      <button
-        onClick={() => { setCallout(false); setOpen((o) => !o); }}
-        style={s.bubble}
-        aria-label="Apri chat supporto"
-      >
-        {open ? "✕" : "💬"}
-      </button>
+      <div style={{ position: "fixed", bottom: 28, right: 28, zIndex: 9999, display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
+        {!open && (
+          <span style={{
+            fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.06em",
+            textTransform: "uppercase", color: "#4ade80",
+            background: "rgba(10,18,9,0.85)", border: "1px solid #1a3020",
+            padding: "2px 7px", borderRadius: 999, whiteSpace: "nowrap",
+          }}>Supporto</span>
+        )}
+        <button
+          onClick={() => { setCallout(false); setOpen((o) => !o); }}
+          style={{ ...s.bubble, position: "relative", bottom: "auto", right: "auto", zIndex: "auto" }}
+          aria-label="Apri chat supporto RistoAgent"
+        >
+          {open ? "✕" : "💬"}
+        </button>
+      </div>
 
       {/* Chat window */}
       {open && (
