@@ -365,7 +365,7 @@ function InteractiveDemo() {
 export default function Home() {
   const [showSticky, setShowSticky] = useState(false);
   useEffect(() => {
-    const onScroll = () => setShowSticky(window.scrollY > 700);
+    const onScroll = () => setShowSticky(window.scrollY > 600);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -415,20 +415,19 @@ export default function Home() {
         </span>
 
         <h1>
-          I tuoi clienti scrivono.<br />
-          RistoAgent risponde.<br />
-          <em>Le prenotazioni arrivano da sole.</em>
+          I clienti scrivono.<br />
+          <em>I tavoli si riempiono.</em>
         </h1>
 
         <p className="subheadline">
-          Risponde ai messaggi Telegram al posto tuo — 24 ore su 24.<br />
-          Zero chiamate perse. Zero risposte mancate.<br />
-          Ogni messaggio diventa una prenotazione nel tuo calendario.
+          Prenotazioni automatiche per il tuo ristorante — 24 ore su 24.<br />
+          Zero tavoli vuoti per mancate risposte.<br />
+          Zero chiamate interrotte durante il servizio.
         </p>
 
         <div className="cta-group">
           <a href="/auth" className="btn-primary">Attiva gratis per 15 giorni →</a>
-          <a href="#demo" className="btn-ghost">Vedi la demo ↓</a>
+          <a href="#demo" className="btn-ghost">Vedi come funziona ↓</a>
         </div>
         <p className="hero-note">
           Nessuna carta di credito · Nessun contratto · Setup in 10 minuti
@@ -479,14 +478,66 @@ export default function Home() {
         ))}
       </div>
 
-      {/* ── SOCIAL PROOF ─────────────────────────────── */}
+      <hr className="divider" />
+
+      {/* ── PROBLEMA ─────────────────────────────────── */}
+      <section className="section" id="problema">
+        <p className="section-label">Il problema</p>
+        <h2>
+          Ogni tavolo non prenotato<br />
+          <em style={{ fontStyle: "italic", color: "var(--green)" }}>è un coperto perso per sempre.</em>
+        </h2>
+        <div className="benefits-grid" style={{ marginTop: "2.5rem" }}>
+          {[
+            {
+              icon: "📵",
+              title: "Durante il servizio i tavoli restano vuoti",
+              body: "Sei in sala, in cucina, impegnato. Un cliente vuole prenotare, non ottiene risposta — e prenota altrove. Quel tavolo era tuo.",
+            },
+            {
+              icon: "🌙",
+              title: "Di sera e nel weekend perdi le prenotazioni migliori",
+              body: "Le prenotazioni più redditizie arrivano fuori orario. Sabato sera, domenica mattina, a mezzanotte. Il tuo locale è chiuso. Il sistema no.",
+            },
+            {
+              icon: "🔁",
+              title: "Perdi tempo invece di fare ospitalità",
+              body: "\"Siete aperti domenica?\" \"C'è il parcheggio?\" \"Accettate cani?\" — le stesse domande ogni giorno sottraggono tempo ai tuoi clienti veri.",
+            },
+          ].map((b) => (
+            <div key={b.title} className="benefit-card">
+              <div className="benefit-icon">{b.icon}</div>
+              <h3>{b.title}</h3>
+              <p>{b.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ── DEMO ─────────────────────────────────────── */}
+      <section className="section" id="demo">
+        <p className="section-label">Vedi come funziona</p>
+        <p style={{ color: "var(--muted)", marginBottom: "2.5rem", fontSize: "1rem" }}>
+          Prenota un tavolo — esattamente come farebbe un tuo cliente.
+        </p>
+        <InteractiveDemo />
+        <p style={{ textAlign: "center", marginTop: "1.2rem", fontSize: "0.78rem", color: "#3a5c3e" }}>
+          Hai domande su RistoAgent? L&apos;assistente 🤖 in basso a destra risponde subito.
+        </p>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ── PROVA REALE ──────────────────────────────── */}
       <section style={{ padding: "2.5rem 1.5rem", textAlign: "center" }}>
         <p style={{
           fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase",
           letterSpacing: "0.1em", color: "var(--muted)", marginBottom: "1.5rem",
         }}>Già usato da ristoranti reali</p>
 
-        {/* Real Telegram screenshot proof */}
+        {/* Real screenshot */}
         <div style={{
           maxWidth: 860, margin: "0 auto 1.5rem", textAlign: "left",
           background: "var(--surface)", border: "1px solid var(--border)",
@@ -499,71 +550,49 @@ export default function Home() {
             <span style={{
               fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase",
               letterSpacing: "0.08em", color: "#4ade80",
-              background: "rgba(74,222,128,0.1)", padding: "0.2rem 0.7rem",
-              borderRadius: 999,
-            }}>Conversazione reale — Telegram</span>
+              background: "rgba(74,222,128,0.1)", padding: "0.2rem 0.7rem", borderRadius: 999,
+            }}>Prenotazione reale — Telegram</span>
             <span style={{ fontSize: "0.72rem", color: "var(--muted)" }}>
-              Un cliente reale che prenota tramite RistoAgent
+              Un cliente che prenota tramite RistoAgent
             </span>
           </div>
           <div style={{ display: "flex", justifyContent: "center", padding: "1.5rem" }}>
             <img
               src="/telegram_proof.png"
-              alt="Conversazione reale Telegram — cliente che prenota con RistoAgent"
+              alt="Prenotazione reale via Telegram con RistoAgent"
               style={{
                 maxWidth: "100%", maxHeight: 420, borderRadius: "0.8rem",
-                border: "1px solid var(--border)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+                border: "1px solid var(--border)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
               }}
             />
           </div>
         </div>
 
-        {/* Supporting testimonial cards */}
+        {/* Testimonials */}
         <div style={{
           display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
           gap: "1rem", maxWidth: 860, margin: "0 auto",
         }}>
           {[
-            {
-              name: "Osteria del Centro",
-              city: "Milano",
-              result: "+23% prenotazioni nel primo mese",
-              detail: "Prima rispondevo a mano. Ora il bot gestisce tutto mentre sono in cucina.",
-            },
-            {
-              name: "Pizzeria La Tradizione",
-              city: "Roma",
-              result: "Zero chiamate perse il sabato sera",
-              detail: "Il sabato ricevevo 15-20 messaggi che non riuscivo a gestire. Ora non ne perdo uno.",
-            },
-            {
-              name: "Trattoria Emilia",
-              city: "Bologna",
-              result: "Attivo in 8 minuti, funziona da subito",
-              detail: "Pensavo fosse complicato. Ho impiegato meno di 10 minuti. I clienti adorano il bot.",
-            },
+            { name: "Osteria del Centro", city: "Milano", result: "+23% prenotazioni nel primo mese", detail: "Prima rispondevo a mano. Ora il sistema gestisce tutto mentre sono in cucina." },
+            { name: "Pizzeria La Tradizione", city: "Roma", result: "Zero tavoli persi il sabato sera", detail: "Il sabato ricevevo 15-20 richieste che non riuscivo a gestire. Ora non ne perdo una." },
+            { name: "Trattoria Emilia", city: "Bologna", result: "Attivo in 8 minuti, funziona subito", detail: "Pensavo fosse complicato. Ho impiegato meno di 10 minuti. I clienti adorano prenotare così." },
           ].map((r) => (
             <div key={r.name} style={{
               background: "var(--surface)", border: "1px solid var(--border)",
               borderRadius: "1rem", padding: "1.4rem 1.5rem", textAlign: "left",
             }}>
               <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.6rem" }}>
-                {[1,2,3,4,5].map(i => (
-                  <span key={i} style={{ color: "#f59e0b", fontSize: "0.75rem" }}>★</span>
-                ))}
+                {[1,2,3,4,5].map(i => <span key={i} style={{ color: "#f59e0b", fontSize: "0.75rem" }}>★</span>)}
               </div>
-              <p style={{
-                fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.6,
-                marginBottom: "1rem", fontStyle: "italic",
-              }}>&ldquo;{r.detail}&rdquo;</p>
+              <p style={{ fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.6, marginBottom: "1rem", fontStyle: "italic" }}>
+                &ldquo;{r.detail}&rdquo;
+              </p>
               <div style={{ borderTop: "1px solid var(--border)", paddingTop: "0.8rem" }}>
                 <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--text)" }}>
                   {r.name} · <span style={{ color: "var(--muted)", fontWeight: 400 }}>{r.city}</span>
                 </p>
-                <p style={{
-                  fontSize: "0.72rem", color: "var(--green)", fontWeight: 600, marginTop: "0.2rem",
-                }}>↑ {r.result}</p>
+                <p style={{ fontSize: "0.72rem", color: "var(--green)", fontWeight: 600, marginTop: "0.2rem" }}>↑ {r.result}</p>
               </div>
             </div>
           ))}
@@ -572,102 +601,16 @@ export default function Home() {
 
       <hr className="divider" />
 
-      {/* ── PROBLEM ──────────────────────────────────── */}
-      <section className="section" id="problema">
-        <p className="section-label">Il problema</p>
-        <h2>
-          Ogni giorno perdi clienti<br />
-          <em style={{ fontStyle: "italic", color: "var(--green)" }}>perché non rispondi in tempo.</em>
-        </h2>
-        <div className="benefits-grid" style={{ marginTop: "2.5rem" }}>
-          {[
-            {
-              icon: "📵",
-              title: "Durante il servizio non puoi rispondere",
-              body: "Sei in sala, in cucina, al telefono. Il cliente scrive su Telegram e aspetta. Se non risponde entro qualche minuto, chiama il posto accanto.",
-            },
-            {
-              icon: "🌙",
-              title: "Di sera e nel weekend perdi richieste",
-              body: "La maggior parte delle prenotazioni arriva fuori orario. Sabato sera, domenica mattina, a mezzanotte dopo una cena. Tu non sei lì.",
-            },
-            {
-              icon: "🔁",
-              title: "Perdi tempo a rispondere sempre alle stesse cose",
-              body: "\"Siete aperti domenica?\" \"C'è il parcheggio?\" \"Accettate cani?\" — le stesse domande ogni giorno, per anni.",
-            },
-          ].map((b) => (
-            <div key={b.title} className="benefit-card">
-              <div className="benefit-icon">{b.icon}</div>
-              <h3>{b.title}</h3>
-              <p>{b.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── LOSS FRAMING ─────────────────────────────── */}
-      <section style={{ padding: "3rem 1.5rem", textAlign: "center" }}>
-        <div style={{
-          maxWidth: 760, margin: "0 auto",
-          background: "linear-gradient(135deg, #160808, #0f0a0a)",
-          border: "1px solid rgba(239,68,68,0.2)", borderRadius: "1.4rem", padding: "2.5rem 2rem",
-        }}>
-          <p style={{
-            fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase",
-            letterSpacing: "0.1em", color: "#f87171", marginBottom: "0.8rem",
-          }}>Il costo del silenzio</p>
-          <h2 style={{ fontSize: "1.6rem", marginBottom: "1.5rem", lineHeight: 1.3 }}>
-            Ogni risposta mancata<br />
-            <em style={{ color: "#f87171", fontStyle: "italic" }}>è una prenotazione persa.</em>
-          </h2>
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-            gap: "1px", background: "rgba(239,68,68,0.1)", borderRadius: "1rem", overflow: "hidden",
-            marginBottom: "1.5rem",
-          }}>
-            {[
-              { n: "€40", label: "Spesa media per copertura" },
-              { n: "×3", label: "Messaggi persi ogni giorno" },
-              { n: "×30", label: "Giorni al mese" },
-            ].map((item, i) => (
-              <div key={i} style={{ background: "#160808", padding: "1.4rem 1rem" }}>
-                <p style={{ fontSize: "2rem", fontWeight: 700, color: "#f87171", lineHeight: 1 }}>{item.n}</p>
-                <p style={{ fontSize: "0.78rem", color: "#9a7070", marginTop: "0.3rem" }}>{item.label}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{
-            background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)",
-            borderRadius: "0.8rem", padding: "1rem 1.5rem", marginBottom: "1.5rem",
-          }}>
-            <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fca5a5" }}>
-              = <strong style={{ fontSize: "1.6rem", color: "#f87171" }}>€3.600</strong>{" "}
-              <span style={{ fontWeight: 400, color: "#9a7070" }}>di mancate entrate ogni mese</span>
-            </p>
-          </div>
-          <a href="/auth" className="btn-primary" style={{
-            display: "inline-block", background: "#dc2626",
-            fontSize: "0.9rem", padding: "0.75rem 2rem",
-          }}>
-            Smetti di perderli — attiva gratis →
-          </a>
-        </div>
-      </section>
-
-      <hr className="divider" />
-
-      {/* ── HOW IT WORKS ─────────────────────────────── */}
+      {/* ── COME FUNZIONA ────────────────────────────── */}
       <section className="section" id="come-funziona">
         <p className="section-label">Come funziona</p>
         <h2>
           3 passi.<br />
-          Zero telefonate.
+          I tavoli si riempiono da soli.
         </h2>
         <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem" }}>
-          Il tuo assistente impara tutto del tuo locale e risponde ai clienti come faresti tu.
+          Impara tutto del tuo locale e guida ogni cliente alla prenotazione — senza che tu intervenga.
         </p>
-
         <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem", maxWidth: 620, margin: "0 auto" }}>
           {steps.map((s) => (
             <div key={s.n} style={{
@@ -689,74 +632,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── UNIQUE MECHANISM ─────────────────────────── */}
-      <div style={{
-        textAlign: "center", padding: "2rem 1.5rem",
-        background: "linear-gradient(135deg, #080f09, #0a1209)",
-        borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)",
-      }}>
-        <p style={{
-          maxWidth: 680, margin: "0 auto",
-          fontSize: "1.15rem", lineHeight: 1.7, color: "var(--text)",
-          fontFamily: "'Playfair Display', serif", fontStyle: "italic",
-        }}>
-          &ldquo;RistoAgent non <em style={{ fontStyle: "normal", color: "var(--green)" }}>risponde</em> ai clienti.
-          {" "}<em style={{ fontStyle: "normal", color: "var(--green)" }}>Li guida</em> alla prenotazione —
-          e la salva nel tuo calendario senza che tu muova un dito.&rdquo;
-        </p>
-      </div>
-
       <hr className="divider" />
 
-      {/* ── DEMO INTERATTIVA ─────────────────────────── */}
-      <section className="section" id="demo">
-        <p className="section-label">Demo live — Esperienza cliente</p>
-        <h2>
-          Non ti chiediamo di crederci sulla parola.<br />
-          <em style={{ fontStyle: "italic", color: "var(--green)" }}>Provalo adesso.</em>
-        </h2>
-        <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "2rem", fontSize: "1.05rem" }}>
-          Fai la parte del cliente per 2 minuti — scrivi come se volessi prenotare un tavolo.
-        </p>
-        {/* Role clarity banner */}
-        <div style={{
-          display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem",
-          background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.25)",
-          borderRadius: "0.6rem", padding: "0.6rem 1.2rem",
-          marginBottom: "2rem", maxWidth: 480, margin: "0 auto 2rem",
-          fontSize: "0.82rem", color: "#f97316",
-        }}>
-          <span>👤</span>
-          <span><strong>Tu sei il cliente.</strong> Il bot risponde come farebbe nel tuo ristorante.</span>
-        </div>
-        <InteractiveDemo />
-        <p style={{ textAlign: "center", marginTop: "1.5rem", fontSize: "0.82rem", color: "var(--muted)" }}>
-          Il tuo bot reale risponde con i tuoi orari, il tuo menù e il tuo Google Calendar.
-          <br />
-          <span style={{ fontSize: "0.78rem", color: "#3a5c3e" }}>
-            Hai domande su RistoAgent? Chiedile al 💬 assistente in basso a destra.
-          </span>
-        </p>
-      </section>
-
-      <hr className="divider" />
-
-      {/* ── BENEFITS ─────────────────────────────────── */}
+      {/* ── BENEFICI ─────────────────────────────────── */}
       <section className="section" id="vantaggi">
         <p className="section-label">Perché funziona</p>
         <h2>
-          Non è un chatbot.<br />
-          È il tuo miglior dipendente.
+          Non un&apos;app. Non una segreteria.<br />
+          <em style={{ fontStyle: "italic", color: "var(--green)" }}>Un sistema che riempie i tavoli.</em>
         </h2>
         <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem" }}>
-          Disponibile sempre, non sbaglia mai e non chiede mai un giorno libero.
+          Disponibile 24h, non sbaglia mai, non chiede mai un giorno libero.
         </p>
         <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "1.2rem",
-          maxWidth: 960,
-          margin: "0 auto",
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "1.2rem", maxWidth: 960, margin: "0 auto",
         }}>
           {benefits.map((b) => (
             <div key={b.title} className="benefit-card-v2">
@@ -768,15 +658,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MID-PAGE BRIDGE ──────────────────────────── */}
-      <div style={{
-        textAlign: "center", padding: "1.5rem 1rem",
-        borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)",
-      }}>
-        <p style={{ color: "var(--muted)", fontSize: "0.82rem" }}>
-          Pronto? <a href="/auth" style={{ color: "var(--green)", textDecoration: "underline", fontWeight: 500 }}>Inizia gratis — 15 giorni, nessuna carta richiesta →</a>
-        </p>
-      </div>
+      {/* ── RISULTATO ────────────────────────────────── */}
+      <section style={{ padding: "3rem 1.5rem", textAlign: "center" }}>
+        <div style={{
+          maxWidth: 760, margin: "0 auto",
+          background: "linear-gradient(135deg, #160808, #0f0a0a)",
+          border: "1px solid rgba(239,68,68,0.2)", borderRadius: "1.4rem", padding: "2.5rem 2rem",
+        }}>
+          <p style={{ fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#f87171", marginBottom: "0.8rem" }}>
+            Il costo dei tavoli vuoti
+          </p>
+          <h2 style={{ fontSize: "1.6rem", marginBottom: "1.5rem", lineHeight: 1.3 }}>
+            Ogni prenotazione mancata<br />
+            <em style={{ color: "#f87171", fontStyle: "italic" }}>è un coperto regalato alla concorrenza.</em>
+          </h2>
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "1px", background: "rgba(239,68,68,0.1)", borderRadius: "1rem", overflow: "hidden", marginBottom: "1.5rem",
+          }}>
+            {[
+              { n: "€40", label: "Spesa media per copertura" },
+              { n: "×3", label: "Prenotazioni perse ogni giorno" },
+              { n: "×30", label: "Giorni al mese" },
+            ].map((item, i) => (
+              <div key={i} style={{ background: "#160808", padding: "1.4rem 1rem" }}>
+                <p style={{ fontSize: "2rem", fontWeight: 700, color: "#f87171", lineHeight: 1 }}>{item.n}</p>
+                <p style={{ fontSize: "0.78rem", color: "#9a7070", marginTop: "0.3rem" }}>{item.label}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{
+            background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)",
+            borderRadius: "0.8rem", padding: "1rem 1.5rem", marginBottom: "1.5rem",
+          }}>
+            <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fca5a5" }}>
+              = <strong style={{ fontSize: "1.6rem", color: "#f87171" }}>€3.600</strong>{" "}
+              <span style={{ fontWeight: 400, color: "#9a7070" }}>di coperti persi ogni mese</span>
+            </p>
+          </div>
+          <a href="/auth" className="btn-primary" style={{ display: "inline-block", background: "#dc2626", fontSize: "0.9rem", padding: "0.75rem 2rem" }}>
+            Smetti di perderli — attiva gratis →
+          </a>
+        </div>
+      </section>
 
       <hr className="divider" />
 
@@ -802,11 +726,8 @@ export default function Home() {
                 }} />
               ))}
             </div>
-            <p style={{ fontSize: "0.7rem", color: "#64748b", fontFamily: "monospace" }}>
-              t.me/tuoristorante_bot
-            </p>
+            <p style={{ fontSize: "0.7rem", color: "#64748b", fontFamily: "monospace" }}>t.me/tuoristorante_bot</p>
           </div>
-
           <div style={{ flex: 1, minWidth: 260 }}>
             <p className="section-label">Un QR code che vale oro</p>
             <h2 style={{ marginBottom: "1rem" }}>
@@ -814,17 +735,10 @@ export default function Home() {
               <span style={{ color: "var(--green)", fontStyle: "italic" }}>Senza scaricare nulla.</span>
             </h2>
             <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              Mettilo sul menu, ai tavoli, sulla vetrina o sui social.
-              I clienti aprono la fotocamera, inquadrano e atterrano
-              direttamente nella chat con il tuo assistente. Zero attriti.
+              Mettilo sul menu, ai tavoli, sulla vetrina o sui social. I clienti aprono la fotocamera, inquadrano e prenotano in 30 secondi. Zero attriti.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              {[
-                "Sul menu, ai tavoli e alla cassa",
-                "Sui volantini e nelle campagne social",
-                "Scaricabile in alta risoluzione dalla dashboard",
-                "Funziona con qualsiasi fotocamera",
-              ].map((f) => (
+              {["Sul menu, ai tavoli e alla cassa", "Sui volantini e nelle campagne social", "Scaricabile in alta risoluzione dalla dashboard", "Funziona con qualsiasi fotocamera"].map((f) => (
                 <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
                   <span style={{ color: "var(--green)", fontSize: "0.8rem", fontWeight: 700 }}>✓</span>
                   <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{f}</span>
@@ -844,15 +758,12 @@ export default function Home() {
         <p className="pricing-sub" style={{ marginTop: "0.75rem" }}>
           15 giorni gratis, poi scegli il piano. Nessuna carta richiesta per iniziare.
         </p>
-
-        {/* Founding Members */}
         <div style={{
           background: "linear-gradient(135deg, #1a0f00, #0f0a00)",
           border: "1px solid #f97316", borderRadius: "1rem",
           padding: "1.5rem 2rem", marginBottom: "2rem", textAlign: "center",
         }}>
-          <p style={{ color: "#f97316", fontWeight: 700, fontSize: "0.75rem",
-            textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
+          <p style={{ color: "#f97316", fontWeight: 700, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.4rem" }}>
             🔥 Offerta Founding Members — Solo 20 posti
           </p>
           <p style={{ color: "#fde68a", fontSize: "1.1rem", fontWeight: 600, marginBottom: "0.3rem" }}>
@@ -867,16 +778,11 @@ export default function Home() {
             Approfitta dell&apos;offerta →
           </a>
         </div>
-
-        {/* Trust layer */}
-        <div style={{
-          display: "flex", justifyContent: "center", gap: "0.5rem",
-          flexWrap: "wrap", marginBottom: "2rem",
-        }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "2rem" }}>
           {[
-            { icon: "🔒", text: "Conforme GDPR — i dati dei tuoi clienti restano tuoi" },
-            { icon: "🔌", text: "Nessun accesso al tuo gestionale — solo Telegram e Google Calendar" },
-            { icon: "✕", text: "Disattivabile in qualsiasi momento — zero vincoli, zero penali" },
+            { icon: "🔒", text: "Conforme GDPR — i dati restano tuoi" },
+            { icon: "🔌", text: "Nessun accesso al tuo gestionale" },
+            { icon: "✕", text: "Disattivabile in qualsiasi momento" },
           ].map((t) => (
             <div key={t.text} style={{
               display: "flex", alignItems: "center", gap: "0.5rem",
@@ -889,7 +795,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
         <div className="pricing-grid">
           {plans.map((plan) => (
             <div key={plan.name} className={`plan ${plan.featured ? "plan-featured" : ""}`}>
@@ -897,19 +802,14 @@ export default function Home() {
               <p className="plan-name">{plan.name}</p>
               <p className="plan-price">
                 {plan.foundingPrice ? (
-                  <>
-                    <sup>€</sup>{plan.foundingPrice}<small>/mese</small>
-                    <span className="plan-old-price">€{plan.price}</span>
-                  </>
+                  <><sup>€</sup>{plan.foundingPrice}<small>/mese</small><span className="plan-old-price">€{plan.price}</span></>
                 ) : (
                   <><sup>€</sup>{plan.price}<small>/mese</small></>
                 )}
               </p>
               <p className="plan-billing-note">{plan.billingNote}</p>
               <p className="plan-desc">{plan.desc}</p>
-              <ul className="plan-features">
-                {plan.features.map((f) => <li key={f}>{f}</li>)}
-              </ul>
+              <ul className="plan-features">{plan.features.map((f) => <li key={f}>{f}</li>)}</ul>
               <a href="/auth" className={plan.featured ? "btn-primary" : "btn-ghost"}>{plan.cta}</a>
             </div>
           ))}
@@ -921,21 +821,20 @@ export default function Home() {
       {/* ── ROADMAP ──────────────────────────────────── */}
       <section className="section" id="roadmap">
         <p className="section-label">Visione futura</p>
-        <h2>Oggi gestisce i clienti.<br />Domani gestisce il tuo business.</h2>
+        <h2>Oggi riempie i tavoli.<br />Domani gestisce il tuo business.</h2>
         <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem", textAlign: "center" }}>
           Chi entra ora come Founding Member avrà accesso prioritario a tutte le nuove funzionalità.
         </p>
-
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.2rem", maxWidth: 900, margin: "0 auto" }}>
           {[
-            { icon: "🛒", label: "In arrivo", title: "Ordinazioni dirette", body: "I clienti potranno ordinare direttamente via Telegram con il tuo menù digitale integrato." },
+            { icon: "🛒", label: "In arrivo", title: "Ordinazioni dirette", body: "I clienti ordinano via Telegram con il tuo menù digitale integrato." },
             { icon: "🎯", label: "In arrivo", title: "Promozioni mirate", body: "Invia offerte personalizzate: sconti sul compleanno, happy hour, promozioni last-minute." },
-            { icon: "🎟️", label: "In arrivo", title: "Buoni sconto", body: "Crea e distribuisci coupon digitali via Telegram. Il cliente li usa alla cassa, tu monitori i riscatti." },
-            { icon: "📊", label: "In arrivo", title: "Analisi fatturato", body: "Dashboard con andamento vendite, piatti più ordinati e fasce orarie più redditizie." },
-            { icon: "📦", label: "In arrivo", title: "Gestione magazzino", body: "L'agente ti avvisa quando un ingrediente sta per finire e ti suggerisce gli acquisti." },
-            { icon: "🧠", label: "In arrivo", title: "Strategia marketing AI", body: "L'agente analizza i tuoi dati e genera un piano d'azione concreto per far crescere il locale." },
-            { icon: "🌐", label: "In arrivo", title: "Widget per il sito web", body: "Aggiungi il chatbot al tuo sito con un copia-incolla. I clienti chattano senza aprire Telegram." },
-            { icon: "🎙️", label: "Disponibile ora", title: "Messaggi vocali", body: "L'agente capisce e risponde anche ai messaggi vocali. Il cliente parla, l'agente prenota." },
+            { icon: "🎟️", label: "In arrivo", title: "Buoni sconto", body: "Crea e distribuisci coupon digitali. Il cliente li usa alla cassa, tu monitori i riscatti." },
+            { icon: "📊", label: "In arrivo", title: "Analisi fatturato", body: "Dashboard con andamento prenotazioni, coperti medi e fasce orarie più redditizie." },
+            { icon: "📦", label: "In arrivo", title: "Gestione magazzino", body: "Ti avvisa quando un ingrediente sta per finire e suggerisce gli acquisti." },
+            { icon: "🧠", label: "In arrivo", title: "Strategia di crescita", body: "Analizza i tuoi dati e genera un piano d'azione per aumentare i coperti." },
+            { icon: "🌐", label: "In arrivo", title: "Widget per il sito web", body: "Aggiungi il sistema al tuo sito con un copia-incolla. I clienti prenotano senza aprire Telegram." },
+            { icon: "🎙️", label: "Disponibile ora", title: "Messaggi vocali", body: "Capisce e risponde anche ai vocali. Il cliente parla, il sistema prenota." },
           ].map((item) => {
             const isLive = item.label === "Disponibile ora";
             return (
@@ -946,8 +845,7 @@ export default function Home() {
                 <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
                   <span style={{ fontSize: "1.4rem" }}>{item.icon}</span>
                   <span style={{
-                    fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase",
-                    letterSpacing: "0.08em",
+                    fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em",
                     color: isLive ? "#f97316" : "var(--green)",
                     background: isLive ? "rgba(249,115,22,0.1)" : "rgba(14,165,233,0.1)",
                     padding: "0.2rem 0.6rem", borderRadius: 999,
@@ -959,7 +857,6 @@ export default function Home() {
             );
           })}
         </div>
-
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a href="/auth" className="btn-primary">Entra ora →</a>
@@ -975,19 +872,16 @@ export default function Home() {
         <div className="final-cta-glow" aria-hidden />
         <p className="section-label" style={{ textAlign: "center" }}>Inizia oggi</p>
         <h2 style={{ textAlign: "center", maxWidth: 680, margin: "0 auto" }}>
-          Questa notte qualcuno scriverà<br />al tuo ristorante per prenotare.<br />
-          <em style={{ fontStyle: "italic", color: "var(--green)" }}>Qualcuno risponderà per te?</em>
+          Questa notte qualcuno vorrà prenotare<br />nel tuo ristorante.<br />
+          <em style={{ fontStyle: "italic", color: "var(--green)" }}>Il tavolo si riempie da solo?</em>
         </h2>
-        <p style={{
-          textAlign: "center", color: "var(--muted)",
-          fontSize: "1.05rem", maxWidth: 520, margin: "1.2rem auto 2.5rem",
-        }}>
+        <p style={{ textAlign: "center", color: "var(--muted)", fontSize: "1.05rem", maxWidth: 520, margin: "1.2rem auto 2.5rem" }}>
           15 giorni gratis. Setup in 10 minuti. Nessuna carta richiesta.<br />
-          Il tuo assistente è attivo entro oggi.
+          Il sistema è attivo entro oggi.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
           <a href="/auth" className="btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2.5rem" }}>
-            Attiva gratis il tuo assistente →
+            Attiva il mio sistema prenotazioni →
           </a>
         </div>
         <p style={{ textAlign: "center", marginTop: "1rem", fontSize: "0.8rem", color: "var(--muted)" }}>
