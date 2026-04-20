@@ -250,6 +250,17 @@ function InteractiveDemo() {
               }}>{m.text}</div>
             </div>
           ))}
+          {/* Loss trigger: shows after 2nd user message */}
+          {messages.filter(m => m.from === "user").length >= 2 && !done && (
+            <div style={{
+              textAlign: "center", margin: "0.4rem 0 0.6rem",
+              fontSize: "0.7rem", color: "#f87171",
+              background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.15)",
+              borderRadius: "0.5rem", padding: "0.4rem 0.8rem",
+            }}>
+              🔴 Senza RistoAgent, questa prenotazione sarebbe andata persa.
+            </div>
+          )}
           {typing && (
             <div style={{ display: "flex", gap: 4, padding: "0.6rem 0.9rem",
               background: "#1c2b1e", borderRadius: "1rem 1rem 1rem 0.2rem",
@@ -280,7 +291,7 @@ function InteractiveDemo() {
                   fontSize: "0.85rem", padding: "0.6rem 1rem", borderRadius: "0.6rem",
                   textDecoration: "none",
                 }}>
-                  Attiva per il mio ristorante →
+                  Voglio che questo risponda ai miei clienti →
                 </a>
               </div>
               <button onClick={start} style={{
@@ -340,8 +351,37 @@ function InteractiveDemo() {
 }
 
 export default function Home() {
+  const [showSticky, setShowSticky] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowSticky(window.scrollY > 700);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
+      {/* ── STICKY PILL CTA ──────────────────────────── */}
+      {showSticky && (
+        <div style={{
+          position: "fixed", bottom: 130, left: "50%", transform: "translateX(-50%)",
+          zIndex: 9996, display: "flex", alignItems: "center", gap: "0.75rem",
+          background: "rgba(8,12,9,0.97)", backdropFilter: "blur(20px)",
+          border: "1px solid rgba(14,165,233,0.3)",
+          borderRadius: "9999px", padding: "0.5rem 0.7rem 0.5rem 1.2rem",
+          boxShadow: "0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(14,165,233,0.08)",
+          whiteSpace: "nowrap", animation: "slideUp 0.25s ease",
+        }}>
+          <span style={{ fontSize: "0.76rem", color: "var(--muted)" }}>
+            🔴 <strong style={{ color: "var(--text)" }}>Stai perdendo prenotazioni adesso</strong>
+          </span>
+          <a href="/auth" className="btn-primary" style={{
+            fontSize: "0.78rem", padding: "0.4rem 1rem", borderRadius: "9999px",
+          }}>
+            Attiva gratis →
+          </a>
+        </div>
+      )}
+
       {/* NAV */}
       <nav className="nav">
         <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
@@ -460,6 +500,55 @@ export default function Home() {
               <p>{b.body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── LOSS FRAMING ─────────────────────────────── */}
+      <section style={{ padding: "3rem 1.5rem", textAlign: "center" }}>
+        <div style={{
+          maxWidth: 760, margin: "0 auto",
+          background: "linear-gradient(135deg, #160808, #0f0a0a)",
+          border: "1px solid rgba(239,68,68,0.2)", borderRadius: "1.4rem", padding: "2.5rem 2rem",
+        }}>
+          <p style={{
+            fontSize: "0.7rem", fontWeight: 700, textTransform: "uppercase",
+            letterSpacing: "0.1em", color: "#f87171", marginBottom: "0.8rem",
+          }}>Il costo del silenzio</p>
+          <h2 style={{ fontSize: "1.6rem", marginBottom: "1.5rem", lineHeight: 1.3 }}>
+            Ogni risposta mancata<br />
+            <em style={{ color: "#f87171", fontStyle: "italic" }}>è una prenotazione persa.</em>
+          </h2>
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "1px", background: "rgba(239,68,68,0.1)", borderRadius: "1rem", overflow: "hidden",
+            marginBottom: "1.5rem",
+          }}>
+            {[
+              { n: "€40", label: "Spesa media per copertura" },
+              { n: "×3", label: "Messaggi persi ogni giorno" },
+              { n: "×30", label: "Giorni al mese" },
+            ].map((item, i) => (
+              <div key={i} style={{ background: "#160808", padding: "1.4rem 1rem" }}>
+                <p style={{ fontSize: "2rem", fontWeight: 700, color: "#f87171", lineHeight: 1 }}>{item.n}</p>
+                <p style={{ fontSize: "0.78rem", color: "#9a7070", marginTop: "0.3rem" }}>{item.label}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{
+            background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)",
+            borderRadius: "0.8rem", padding: "1rem 1.5rem", marginBottom: "1.5rem",
+          }}>
+            <p style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fca5a5" }}>
+              = <strong style={{ fontSize: "1.6rem", color: "#f87171" }}>€3.600</strong>{" "}
+              <span style={{ fontWeight: 400, color: "#9a7070" }}>di mancate entrate ogni mese</span>
+            </p>
+          </div>
+          <a href="/auth" className="btn-primary" style={{
+            display: "inline-block", background: "#dc2626",
+            fontSize: "0.9rem", padding: "0.75rem 2rem",
+          }}>
+            Smetti di perderli — attiva gratis →
+          </a>
         </div>
       </section>
 
