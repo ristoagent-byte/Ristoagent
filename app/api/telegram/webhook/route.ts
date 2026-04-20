@@ -40,8 +40,8 @@ export async function POST(request: NextRequest) {
 
         const biz = conv.businesses as Business;
         const reply = consent
-          ? "Perfetto! Ti invieremo offerte e promozioni esclusive. Puoi scrivere /stop in qualsiasi momento per annullare. 🎉"
-          : "Nessun problema! Non riceverai comunicazioni promozionali. Siamo sempre qui per aiutarti. 😊";
+          ? "Perfetto, benvenuto nella lista! 🎉 Sarai il primo a sapere di sconti, eventi e novità. Puoi scrivere /stop quando vuoi per uscire."
+          : "Nessun problema, rispettiamo la tua scelta 😊 Siamo sempre qui se hai bisogno.";
 
         if (biz?.telegram_bot_token) {
           await sendMessage(biz.telegram_bot_token, chatId, reply);
@@ -303,7 +303,7 @@ export async function POST(request: NextRequest) {
     await sendMessageWithKeyboard(
       business.telegram_bot_token,
       chatId,
-      "📣 Vuoi ricevere offerte e promozioni esclusive da noi direttamente su Telegram?",
+      "🎁 Prima di salutarti — se vuoi, puoi unirti alla nostra lista riservata su Telegram.\n\nChi è iscritto riceve in anteprima: sconti esclusivi, menù speciali e inviti agli eventi che organizziamo. Niente spam, solo cose che vale davvero la pena sapere 😊",
       {
         inline_keyboard: [[
           { text: "✅ Sì, voglio le offerte", callback_data: "mkt_yes" },
