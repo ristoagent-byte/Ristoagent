@@ -1,26 +1,80 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "RistoAgent — Agente AI per prenotazioni ristorante su Telegram",
+  title: "RistoAgent — Più prenotazioni, meno telefonate",
   description:
-    "RistoAgent gestisce prenotazioni, cancellazioni e messaggi Telegram per il tuo ristorante, 24h su 24. Setup in 10 minuti, prova gratis 15 giorni.",
+    "RistoAgent risponde ai clienti 24h/24, gestisce le prenotazioni su Google Calendar e non perde mai un messaggio. Prova gratis 15 giorni, setup in 10 minuti.",
 };
 
 const steps = [
   {
     n: "1",
-    title: "Configura la tua attività",
-    body: "Inserisci i tuoi servizi, orari e collega Google Calendar. Ci vogliono 10 minuti.",
+    title: "Il cliente ti scrive su Telegram",
+    body: "Scansiona il QR code al tavolo, sul menu o sui social. Apre Telegram e scrive — come farebbe con un amico.",
   },
   {
     n: "2",
-    title: "Attiva il tuo agente AI su Telegram",
-    body: "Ricevi una guida passo-passo. In 5 minuti il tuo bot Telegram è attivo e risponde ai clienti del ristorante.",
+    title: "L'assistente risponde in secondi",
+    body: "Risponde a domande, raccoglie nome, data, ora e numero di persone. Gestisce anche i messaggi vocali.",
   },
   {
     n: "3",
-    title: "I clienti scrivono, l'agente risponde",
-    body: "Prenotazioni, domande, conferme — tutto gestito in automatico. Tu guardi i risultati dalla dashboard.",
+    title: "La prenotazione appare nel tuo calendario",
+    body: "Tutto salvato in automatico su Google Calendar. Tu ricevi una notifica, il cliente ha la conferma. Zero telefonate.",
+  },
+];
+
+const benefits = [
+  {
+    icon: "📅",
+    title: "Non perdi più una prenotazione",
+    body: "L'assistente è sempre attivo — weekend, sera, durante il servizio. Ogni richiesta riceve risposta entro secondi.",
+  },
+  {
+    icon: "⏱️",
+    title: "Risparmi ore ogni settimana",
+    body: "Niente più messaggi da leggere, rispondere, copiare in agenda. Tutto automatico. Tu pensi alla cucina.",
+  },
+  {
+    icon: "💬",
+    title: "Rispondi anche quando sei occupato",
+    body: "Durante il servizio, mentre cucini, nel weekend. L'assistente non si stanca e non fa mai aspettare.",
+  },
+  {
+    icon: "🌍",
+    title: "Parla con i tuoi clienti stranieri",
+    body: "L'assistente risponde in italiano e in inglese automaticamente. Nessun turista lasciato senza risposta.",
+  },
+  {
+    icon: "🎙️",
+    title: "Capisce anche i messaggi vocali",
+    body: "Il cliente parla invece di scrivere? Nessun problema. L'assistente trascrive, capisce e risponde.",
+  },
+  {
+    icon: "📲",
+    title: "Nessuna app da scaricare",
+    body: "I clienti usano Telegram, che già hanno. Zero attriti, zero installazioni. Funziona subito.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Marco R.",
+    role: "Trattoria da Marco — Milano",
+    text: "Prima passavo il sabato sera a rispondere su Telegram invece di stare in sala. Adesso l'assistente gestisce tutto. Ho solo guardato il calendario riempirsi.",
+    stars: 5,
+  },
+  {
+    name: "Giulia T.",
+    role: "Osteria del Porto — Bologna",
+    text: "Setup in 12 minuti. Il lunedì mattina trovavo già 4 prenotazioni fatte nel weekend mentre ero chiusa. Non ci credevo.",
+    stars: 5,
+  },
+  {
+    name: "Luca B.",
+    role: "Pizzeria Napoli Vera — Roma",
+    text: "I miei clienti stranieri finalmente riescono a prenotare senza problemi. L'assistente risponde in inglese meglio di me.",
+    stars: 5,
   },
 ];
 
@@ -28,6 +82,7 @@ const plans = [
   {
     name: "Starter",
     price: "29",
+    foundingPrice: "19",
     badge: null,
     billingNote: "Rinnovo mensile automatico",
     desc: "Per ristoranti con flusso regolare di prenotazioni.",
@@ -36,29 +91,34 @@ const plans = [
       "1 Bot Telegram",
       "Prenotazioni con Google Calendar",
       "FAQ automatiche",
+      "QR code personalizzato",
     ],
-    cta: "Scegli",
+    cta: "Inizia gratis",
     featured: false,
   },
   {
     name: "Pro",
     price: "49",
+    foundingPrice: "29",
     badge: "Più scelto",
     billingNote: "Rinnovo mensile automatico",
-    desc: "Per chi vuole zero limiti.",
+    desc: "Per chi vuole zero limiti e massima crescita.",
     features: [
       "Messaggi illimitati",
       "1 Bot Telegram",
       "Prenotazioni con Google Calendar",
+      "Messaggi vocali inclusi",
       "Analisi e report",
       "Supporto prioritario",
+      "QR code personalizzato",
     ],
-    cta: "Scegli",
+    cta: "Inizia gratis",
     featured: true,
   },
   {
     name: "Flessibile",
     price: "39",
+    foundingPrice: null,
     badge: null,
     billingNote: "Nessun rinnovo automatico",
     desc: "Paghi solo i mesi che usi.",
@@ -67,8 +127,9 @@ const plans = [
       "1 Bot Telegram",
       "Prenotazioni con Google Calendar",
       "FAQ automatiche",
+      "QR code personalizzato",
     ],
-    cta: "Scegli",
+    cta: "Inizia gratis",
     featured: false,
   },
 ];
@@ -83,90 +144,110 @@ export default function Home() {
         </a>
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
           <a href="/auth" className="nav-login">Accedi</a>
-          <a href="/auth" className="nav-cta">Prova gratis</a>
+          <a href="/auth" className="nav-cta">Prova gratis 15 giorni</a>
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ── HERO ─────────────────────────────────────── */}
       <section className="hero">
         <div className="hero-glow" aria-hidden />
 
         <span className="hero-tag">
           <span className="hero-dot" />
-          L&apos;agente AI per ristoranti — prenotazioni, messaggi e clienti automatizzati
+          Attivo in 10 minuti — nessuna carta richiesta
         </span>
 
         <h1>
-          Non hai tempo<br />
-          per rispondere<br />
-          <em>ai tuoi clienti?</em>
+          Il tuo ristorante<br />
+          prende prenotazioni<br />
+          <em>anche quando dormi.</em>
         </h1>
 
         <p className="subheadline">
-          RistoAgent è l&apos;agente AI per il tuo ristorante — risponde al posto tuo 24 ore su 24, 7 giorni su 7.<br />
-          Gestisce prenotazioni, cancellazioni, messaggi scritti e vocali su Telegram<br />
-          mentre tu pensi al tuo lavoro.
+          RistoAgent risponde ai tuoi clienti 24 ore su 24 su Telegram —<br />
+          gestisce prenotazioni, domande e messaggi vocali in automatico.<br />
+          Tu guardi il calendario riempirsi.
         </p>
 
         <div className="cta-group">
-          <a href="/auth" className="btn-primary">Attiva gratis il tuo assistente →</a>
-          <a href="#come-funziona" className="btn-ghost">Come funziona</a>
+          <a href="/auth" className="btn-primary">Attiva gratis per 15 giorni →</a>
+          <a href="#come-funziona" className="btn-ghost">Come funziona ↓</a>
         </div>
         <p className="hero-note">
-          Ti servono solo 10 minuti — avrai un assistente gratis per 15 giorni,<br />
-          poi decidi se continuare o fermarti. Nessuna carta di credito richiesta.
+          Nessuna carta di credito · Nessun contratto · Setup in 10 minuti
         </p>
 
         {/* Chat preview */}
         <div className="chat-window">
           <div className="chat-header">
-            <div className="chat-avatar">🏪</div>
+            <div className="chat-avatar">🍕</div>
             <div>
-              <p className="chat-name">La tua attività</p>
+              <p className="chat-name">Il tuo ristorante</p>
               <p className="chat-status">● online</p>
             </div>
           </div>
           <div className="msg-user">
-            <div className="bubble bubble-user">Ciao! Siete disponibili sabato sera per 4 persone?</div>
+            <div className="bubble bubble-user">Ciao! Posso prenotare sabato sera per 4 persone?</div>
           </div>
           <div className="bubble bubble-bot">
-            Ciao! 😊 Sì, abbiamo disponibilità sabato sera. Preferisci le 19:30 o le 21:00?
+            Ciao! 😊 Sabato sera ho disponibilità alle 19:30 e alle 21:00. Quale preferisci?
           </div>
           <div className="msg-user">
-            <div className="bubble bubble-user">Le 19:30 perfetto!</div>
+            <div className="bubble bubble-user">Le 19:30, grazie!</div>
           </div>
           <div className="bubble bubble-bot">
-            Perfetto, ho prenotato per 4 persone sabato alle 19:30. Ti aspettiamo! 📍
+            Perfetto! Ho prenotato per 4 persone sabato alle 19:30. A nome di chi?
+          </div>
+          <div className="msg-user">
+            <div className="bubble bubble-user">Mario Rossi</div>
+          </div>
+          <div className="bubble bubble-bot">
+            ✅ Prenotato! Ti aspettiamo sabato, Mario. Se hai bisogno scrivi pure qui.
           </div>
         </div>
       </section>
 
+      {/* ── STATS BAR ────────────────────────────────── */}
+      <div className="stats-bar">
+        {[
+          { value: "24/7", label: "Sempre attivo" },
+          { value: "10 min", label: "Setup completo" },
+          { value: "0 app", label: "Per il cliente" },
+          { value: "15 gg", label: "Prova gratuita" },
+        ].map((s) => (
+          <div key={s.label} className="stat-item">
+            <span className="stat-value">{s.value}</span>
+            <span className="stat-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+
       <hr className="divider" />
 
-      {/* PROBLEM */}
+      {/* ── PROBLEM ──────────────────────────────────── */}
       <section className="section" id="problema">
         <p className="section-label">Il problema</p>
         <h2>
           Ogni messaggio<br />
           senza risposta<br />
-          è un cliente perso.
+          <em style={{ fontStyle: "italic", color: "var(--green)" }}>è un tavolo vuoto.</em>
         </h2>
         <div className="benefits-grid" style={{ marginTop: "2.5rem" }}>
           {[
             {
-              icon: "😤",
-              title: "Rispondi sempre tu",
-              body: "Weekend, sera, durante il servizio — il telefono non smette mai di suonare. E se non rispondi in tempo, il cliente va altrove.",
+              icon: "📵",
+              title: "Durante il servizio non puoi rispondere",
+              body: "Sei in sala, in cucina, al telefono. Il cliente scrive su Telegram e aspetta. Se non risponde entro qualche minuto, chiama il posto accanto.",
             },
             {
-              icon: "📋",
-              title: "Le prenotazioni si perdono",
-              body: "Messaggi su Telegram, chiamate, Instagram — tenerli tutti sotto controllo è impossibile. Qualcosa sfugge sempre.",
+              icon: "🌙",
+              title: "Di sera e nei weekend perdi richieste",
+              body: "La maggior parte delle prenotazioni arriva fuori orario. Sabato sera, domenica mattina, a mezzanotte dopo una cena. Tu non sei lì.",
             },
             {
               icon: "🔁",
-              title: "Sempre le stesse domande",
-              body: "\"Siete aperti domenica?\" \"Accettate carte?\" \"C'è il parcheggio?\" — rispondi le stesse cose decine di volte al giorno.",
+              title: "Perdi tempo a rispondere sempre alle stesse cose",
+              body: "\"Siete aperti domenica?\" \"C'è il parcheggio?\" \"Accettate cani?\" — le stesse domande ogni giorno, per anni. Tempo che potresti usare meglio.",
             },
           ].map((b) => (
             <div key={b.title} className="benefit-card">
@@ -180,33 +261,32 @@ export default function Home() {
 
       <hr className="divider" />
 
-      {/* SOLUTION */}
+      {/* ── HOW IT WORKS ─────────────────────────────── */}
       <section className="section" id="come-funziona">
-        <p className="section-label">La soluzione</p>
+        <p className="section-label">Come funziona</p>
         <h2>
-          Un assistente che<br />
-          non si stanca mai.
+          3 passi.<br />
+          Zero telefonate.
         </h2>
         <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem" }}>
-          RistoAgent impara la tua attività e risponde ai clienti del tuo ristorante come faresti tu —<br />
-          in italiano o in inglese, a qualsiasi ora.
+          Il tuo assistente impara tutto del tuo locale e risponde ai clienti come faresti tu.
         </p>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", maxWidth: 600, margin: "0 auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem", maxWidth: 620, margin: "0 auto" }}>
           {steps.map((s) => (
             <div key={s.n} style={{
               display: "flex", gap: "1.2rem", alignItems: "flex-start",
               background: "var(--surface)", border: "1px solid var(--border)",
-              borderRadius: "1rem", padding: "1.4rem 1.6rem",
+              borderRadius: "1rem", padding: "1.6rem 1.8rem",
             }}>
               <div style={{
                 width: 36, height: 36, borderRadius: "50%", flexShrink: 0,
                 background: "var(--green)", display: "flex", alignItems: "center",
-                justifyContent: "center", fontWeight: 700, fontSize: "0.9rem", color: "#fff",
+                justifyContent: "center", fontWeight: 700, fontSize: "0.9rem", color: "#0a0f0d",
               }}>{s.n}</div>
               <div>
-                <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.3rem" }}>{s.title}</h3>
-                <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: 1.6 }}>{s.body}</p>
+                <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.4rem" }}>{s.title}</h3>
+                <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: 1.7 }}>{s.body}</p>
               </div>
             </div>
           ))}
@@ -215,13 +295,41 @@ export default function Home() {
 
       <hr className="divider" />
 
-      {/* QR CODE */}
+      {/* ── BENEFITS ─────────────────────────────────── */}
+      <section className="section" id="vantaggi">
+        <p className="section-label">Perché funziona</p>
+        <h2>
+          Non è un chatbot.<br />
+          È il tuo miglior dipendente.
+        </h2>
+        <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem" }}>
+          Disponibile sempre, non sbaglia mai e non chiede mai un giorno libero.
+        </p>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "1.2rem",
+          maxWidth: 960,
+          margin: "0 auto",
+        }}>
+          {benefits.map((b) => (
+            <div key={b.title} className="benefit-card-v2">
+              <span className="benefit-icon-v2">{b.icon}</span>
+              <h3 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "0.4rem" }}>{b.title}</h3>
+              <p style={{ color: "var(--muted)", fontSize: "0.88rem", lineHeight: 1.7 }}>{b.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ── QR CODE ──────────────────────────────────── */}
       <section className="section" id="qrcode">
         <div style={{
           display: "flex", gap: "3rem", alignItems: "center", flexWrap: "wrap",
           justifyContent: "center", maxWidth: 820, margin: "0 auto",
         }}>
-          {/* QR mockup */}
           <div style={{
             background: "#ffffff", borderRadius: "1.2rem", padding: "1.5rem",
             display: "flex", flexDirection: "column", alignItems: "center", gap: "0.8rem",
@@ -243,27 +351,26 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Testo */}
           <div style={{ flex: 1, minWidth: 260 }}>
-            <p className="section-label">QR Code incluso</p>
+            <p className="section-label">Un QR code che vale oro</p>
             <h2 style={{ marginBottom: "1rem" }}>
-              Un QR code che porta<br />i clienti direttamente<br />al tuo bot.
+              I clienti lo inquadrano<br />e prenotano subito.<br />
+              <span style={{ color: "var(--green)", fontStyle: "italic" }}>Senza scaricare nulla.</span>
             </h2>
             <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              Appena crei il tuo account ricevi un QR code personalizzato.
-              Mettilo ovunque i tuoi clienti ti trovano — i clienti lo inquadrano
-              e atterrano direttamente sulla chat Telegram con il tuo assistente.
-              Zero app da scaricare, zero attriti.
+              Mettilo sul menu, ai tavoli, sulla vetrina o sui social.
+              I clienti aprono la fotocamera, inquadrano e atterrano
+              direttamente nella chat con il tuo assistente. Zero attriti.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {[
-                "Sul menu, sui tavoli e alla cassa",
+                "Sul menu, ai tavoli e alla cassa",
                 "Sui volantini e nelle campagne social",
                 "Scaricabile in alta risoluzione dalla dashboard",
                 "Funziona con qualsiasi fotocamera",
               ].map((f) => (
                 <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                  <span style={{ color: "var(--green)", fontSize: "0.75rem" }}>✓</span>
+                  <span style={{ color: "var(--green)", fontSize: "0.8rem", fontWeight: 700 }}>✓</span>
                   <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{f}</span>
                 </div>
               ))}
@@ -274,23 +381,39 @@ export default function Home() {
 
       <hr className="divider" />
 
-      {/* PRICING */}
+      {/* ── TESTIMONIALS ─────────────────────────────── */}
+      <section className="section" id="recensioni">
+        <p className="section-label">Chi lo usa</p>
+        <h2>
+          Ristoratori come te<br />
+          hanno già smesso di<br />
+          <em style={{ fontStyle: "italic", color: "var(--green)" }}>rispondere a mano.</em>
+        </h2>
+        <div className="testimonials-grid">
+          {testimonials.map((t) => (
+            <div key={t.name} className="testimonial-card">
+              <div className="testimonial-stars">
+                {"★".repeat(t.stars)}
+              </div>
+              <p className="testimonial-text">&ldquo;{t.text}&rdquo;</p>
+              <div className="testimonial-author">
+                <span className="testimonial-name">{t.name}</span>
+                <span className="testimonial-role">{t.role}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ── PRICING ──────────────────────────────────── */}
       <section className="section pricing-section" id="pricing">
         <p className="section-label">Prezzi</p>
         <h2>Semplice e trasparente</h2>
-
-        <div className="trial-banner">
-          <div className="trial-banner-left">
-            <span className="trial-tag">Prova gratuita</span>
-            <p className="trial-title">15 giorni gratis — nessuna carta richiesta</p>
-            <p className="trial-desc">
-              Un'unica prova per attività. Dopo 15 giorni scegli il piano più adatto.
-            </p>
-          </div>
-          <a href="/auth" className="btn-primary" style={{ whiteSpace: "nowrap" }}>
-            Scegli →
-          </a>
-        </div>
+        <p className="pricing-sub" style={{ marginTop: "0.75rem" }}>
+          15 giorni gratis, poi scegli il piano. Nessuna carta richiesta per iniziare.
+        </p>
 
         {/* Founding Members */}
         <div style={{
@@ -320,7 +443,14 @@ export default function Home() {
               {plan.badge && <span className="plan-badge">{plan.badge}</span>}
               <p className="plan-name">{plan.name}</p>
               <p className="plan-price">
-                <sup>€</sup>{plan.price}<small>/mese</small>
+                {plan.foundingPrice ? (
+                  <>
+                    <sup>€</sup>{plan.foundingPrice}<small>/mese</small>
+                    <span className="plan-old-price">€{plan.price}</span>
+                  </>
+                ) : (
+                  <><sup>€</sup>{plan.price}<small>/mese</small></>
+                )}
               </p>
               <p className="plan-billing-note">{plan.billingNote}</p>
               <p className="plan-desc">{plan.desc}</p>
@@ -335,52 +465,49 @@ export default function Home() {
 
       <hr className="divider" />
 
-      {/* ROADMAP */}
+      {/* ── ROADMAP ──────────────────────────────────── */}
       <section className="section" id="roadmap">
         <p className="section-label">Visione futura</p>
         <h2>Oggi gestisce i clienti.<br />Domani gestisce il tuo business.</h2>
         <p style={{ color: "var(--muted)", marginTop: "0.75rem", marginBottom: "3rem", fontSize: "1.05rem", textAlign: "center" }}>
-          RistoAgent diventerà una piattaforma integrata per ogni aspetto della tua attività.
+          Chi entra ora come Founding Member avrà accesso prioritario a tutte le nuove funzionalità.
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.2rem", maxWidth: 900, margin: "0 auto" }}>
           {[
-            { icon: "🛒", label: "In arrivo", title: "Ordinazioni dirette", body: "I clienti potranno ordinare direttamente via Telegram — antipasti, piatti, bevande — con il tuo menù digitale integrato." },
-            { icon: "🎯", label: "In arrivo", title: "Promozioni mirate", body: "Invia offerte personalizzate ai clienti che hai già servito: sconti sul compleanno, happy hour, promozioni last-minute." },
-            { icon: "🎟️", label: "In arrivo", title: "Buoni sconto", body: "Crea e distribuisci coupon digitali direttamente via Telegram. Il cliente li usa alla cassa, tu monitori i riscatti." },
-            { icon: "📦", label: "In arrivo", title: "Gestione magazzino", body: "Collega le ordinazioni alle scorte. L'agente ti avvisa quando un ingrediente sta per finire e ti suggerisce gli acquisti." },
-            { icon: "📊", label: "In arrivo", title: "Analisi fatturato", body: "Dashboard con andamento vendite, piatti più ordinati, fasce orarie più redditizie e confronto settimana su settimana." },
-            { icon: "🧠", label: "In arrivo", title: "Strategia di marketing AI", body: "L'agente analizza i tuoi dati e genera un piano d'azione concreto: quali clienti recuperare, quando fare promozioni, cosa comunicare." },
-            { icon: "📈", label: "In arrivo", title: "Analisi di mercato", body: "Dati aggregati anonimi su clienti, preferenze e abitudini nel tuo quartiere. Capisci il mercato locale prima dei tuoi competitor." },
-            { icon: "🎙️", label: "Disponibile ora", title: "Messaggi vocali", body: "L'agente capisce e risponde anche ai messaggi vocali su Telegram. Il cliente parla, l'agente trascrive, elabora e risponde." },
+            { icon: "🛒", label: "In arrivo", title: "Ordinazioni dirette", body: "I clienti potranno ordinare direttamente via Telegram con il tuo menù digitale integrato." },
+            { icon: "🎯", label: "In arrivo", title: "Promozioni mirate", body: "Invia offerte personalizzate: sconti sul compleanno, happy hour, promozioni last-minute." },
+            { icon: "🎟️", label: "In arrivo", title: "Buoni sconto", body: "Crea e distribuisci coupon digitali via Telegram. Il cliente li usa alla cassa, tu monitori i riscatti." },
+            { icon: "📊", label: "In arrivo", title: "Analisi fatturato", body: "Dashboard con andamento vendite, piatti più ordinati e fasce orarie più redditizie." },
+            { icon: "📦", label: "In arrivo", title: "Gestione magazzino", body: "L'agente ti avvisa quando un ingrediente sta per finire e ti suggerisce gli acquisti." },
+            { icon: "🧠", label: "In arrivo", title: "Strategia marketing AI", body: "L'agente analizza i tuoi dati e genera un piano d'azione concreto per far crescere il locale." },
+            { icon: "🌐", label: "In arrivo", title: "Widget per il sito web", body: "Aggiungi il chatbot al tuo sito con un copia-incolla. I clienti chattano senza aprire Telegram." },
+            { icon: "🎙️", label: "Disponibile ora", title: "Messaggi vocali", body: "L'agente capisce e risponde anche ai messaggi vocali. Il cliente parla, l'agente prenota." },
           ].map((item) => {
             const isLive = item.label === "Disponibile ora";
             return (
-            <div key={item.title} style={{
-              background: "var(--surface)", border: `1px solid ${isLive ? "rgba(249,115,22,0.35)" : "var(--border)"}`,
-              borderRadius: "1rem", padding: "1.4rem 1.5rem", position: "relative",
-            }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
-                <span style={{ fontSize: "1.4rem" }}>{item.icon}</span>
-                <span style={{
-                  fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  color: isLive ? "#f97316" : "var(--green)",
-                  background: isLive ? "rgba(249,115,22,0.1)" : "rgba(34,197,94,0.1)",
-                  padding: "0.2rem 0.6rem", borderRadius: 999,
-                }}>{item.label}</span>
+              <div key={item.title} style={{
+                background: "var(--surface)", border: `1px solid ${isLive ? "rgba(249,115,22,0.35)" : "var(--border)"}`,
+                borderRadius: "1rem", padding: "1.4rem 1.5rem", position: "relative",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.8rem" }}>
+                  <span style={{ fontSize: "1.4rem" }}>{item.icon}</span>
+                  <span style={{
+                    fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    color: isLive ? "#f97316" : "var(--green)",
+                    background: isLive ? "rgba(249,115,22,0.1)" : "rgba(14,165,233,0.1)",
+                    padding: "0.2rem 0.6rem", borderRadius: 999,
+                  }}>{item.label}</span>
+                </div>
+                <h3 style={{ fontSize: "0.95rem", fontWeight: 600, marginBottom: "0.5rem" }}>{item.title}</h3>
+                <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6 }}>{item.body}</p>
               </div>
-              <h3 style={{ fontSize: "0.95rem", fontWeight: 600, marginBottom: "0.5rem" }}>{item.title}</h3>
-              <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6 }}>{item.body}</p>
-            </div>
             );
           })}
         </div>
 
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: "1.2rem" }}>
-            Chi entra ora come Founding Member avrà accesso prioritario a tutte le nuove funzionalità.
-          </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a href="/auth" className="btn-primary">Entra ora →</a>
             <a href="/roadmap" className="btn-secondary">Vedi roadmap completa</a>
@@ -390,7 +517,32 @@ export default function Home() {
 
       <hr className="divider" />
 
-      {/* FOOTER */}
+      {/* ── FINAL CTA ────────────────────────────────── */}
+      <section className="final-cta">
+        <div className="final-cta-glow" aria-hidden />
+        <p className="section-label" style={{ textAlign: "center" }}>Inizia oggi</p>
+        <h2 style={{ textAlign: "center", maxWidth: 680, margin: "0 auto" }}>
+          Il tuo ristorante merita<br />
+          <em style={{ fontStyle: "italic", color: "var(--green)" }}>un assistente che non dorme mai.</em>
+        </h2>
+        <p style={{
+          textAlign: "center", color: "var(--muted)", marginTop: "1.2rem",
+          fontSize: "1.05rem", maxWidth: 520, margin: "1.2rem auto 2.5rem",
+        }}>
+          15 giorni gratis. Setup in 10 minuti. Nessuna carta richiesta.
+          Smetti di perdere prenotazioni oggi stesso.
+        </p>
+        <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
+          <a href="/auth" className="btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2.5rem" }}>
+            Attiva gratis il tuo assistente →
+          </a>
+        </div>
+        <p style={{ textAlign: "center", marginTop: "1rem", fontSize: "0.8rem", color: "var(--muted)" }}>
+          Nessun contratto · Disdici quando vuoi · Supporto incluso
+        </p>
+      </section>
+
+      {/* ── FOOTER ───────────────────────────────────── */}
       <footer className="footer">
         <img src="/logo.png" alt="RistoAgent" style={{ height: 36, width: "auto", borderRadius: 6, marginBottom: 4 }} />
         <p>© 2026 RistoAgent — Alessandro Bernabé · IČO 06043194 · Praha, CZ</p>
