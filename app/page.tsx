@@ -568,34 +568,35 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Testimonials */}
+        {/* Feature callouts */}
         <div style={{
-          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: "1rem", maxWidth: 860, margin: "0 auto",
         }}>
-          {[
-            { name: "Osteria del Centro", city: "Milano", result: "+23% prenotazioni nel primo mese", detail: "Prima rispondevo a mano. Ora il sistema gestisce tutto mentre sono in cucina." },
-            { name: "Pizzeria La Tradizione", city: "Roma", result: "Zero tavoli persi il sabato sera", detail: "Il sabato ricevevo 15-20 richieste che non riuscivo a gestire. Ora non ne perdo una." },
-            { name: "Trattoria Emilia", city: "Bologna", result: "Attivo in 8 minuti, funziona subito", detail: "Pensavo fosse complicato. Ho impiegato meno di 10 minuti. I clienti adorano prenotare così." },
-          ].map((r) => (
-            <div key={r.name} style={{
-              background: "var(--surface)", border: "1px solid var(--border)",
-              borderRadius: "1rem", padding: "1.4rem 1.5rem", textAlign: "left",
-            }}>
-              <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.6rem" }}>
-                {[1,2,3,4,5].map(i => <span key={i} style={{ color: "#f59e0b", fontSize: "0.75rem" }}>★</span>)}
-              </div>
-              <p style={{ fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.6, marginBottom: "1rem", fontStyle: "italic" }}>
-                &ldquo;{r.detail}&rdquo;
-              </p>
-              <div style={{ borderTop: "1px solid var(--border)", paddingTop: "0.8rem" }}>
-                <p style={{ fontSize: "0.8rem", fontWeight: 600, color: "var(--text)" }}>
-                  {r.name} · <span style={{ color: "var(--muted)", fontWeight: 400 }}>{r.city}</span>
-                </p>
-                <p style={{ fontSize: "0.72rem", color: "var(--green)", fontWeight: 600, marginTop: "0.2rem" }}>↑ {r.result}</p>
-              </div>
-            </div>
-          ))}
+          <div style={{
+            background: "var(--surface)", border: "1px solid var(--border)",
+            borderRadius: "1rem", padding: "1.6rem 1.8rem", textAlign: "left",
+          }}>
+            <div style={{ fontSize: "1.8rem", marginBottom: "0.8rem" }}>🎙️</div>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>
+              Prenota con la voce
+            </h3>
+            <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.7 }}>
+              I tuoi clienti possono inviare un messaggio vocale su Telegram. Il bot capisce, risponde e conferma la prenotazione — senza che il cliente digiti una sola parola.
+            </p>
+          </div>
+          <div style={{
+            background: "var(--surface)", border: "1px solid var(--border)",
+            borderRadius: "1rem", padding: "1.6rem 1.8rem", textAlign: "left",
+          }}>
+            <div style={{ fontSize: "1.8rem", marginBottom: "0.8rem" }}>⚡</div>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text)" }}>
+              Più dai, più ottieni
+            </h3>
+            <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.7 }}>
+              Il bot è tanto più efficace quante più informazioni gli fornisci: menu, orari, capacità, regole. Più conosce il tuo locale, più risponde come lo faresti tu.
+            </p>
+          </div>
         </div>
       </section>
 
