@@ -735,6 +735,16 @@ export default function Home() {
               I clienti lo inquadrano<br />e prenotano subito.<br />
               <span style={{ color: "var(--green)", fontStyle: "italic" }}>Senza scaricare nulla.</span>
             </h2>
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: "0.6rem",
+              background: "rgba(14,165,233,0.08)", border: "1px solid rgba(14,165,233,0.25)",
+              borderRadius: "0.6rem", padding: "0.6rem 1rem", marginBottom: "1.2rem",
+            }}>
+              <span style={{ fontSize: "1rem" }}>🎁</span>
+              <span style={{ fontSize: "0.82rem", color: "#7dd3fc", lineHeight: 1.5 }}>
+                <strong style={{ color: "#e0f2fe" }}>Lo ottieni durante l&apos;onboarding</strong> — al termine della configurazione il tuo QR code è pronto da scaricare e stampare.
+              </span>
+            </div>
             <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
               Mettilo sul menu, ai tavoli, sulla vetrina o sui social. I clienti aprono la fotocamera, inquadrano e prenotano in 30 secondi. Zero attriti.
             </p>
