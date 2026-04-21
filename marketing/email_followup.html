@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RistoAgent</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #f5f5f5; font-family: 'Helvetica Neue', Arial, sans-serif; }
+    .wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; }
+    .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 28px 40px; text-align: center; }
+    .header-logo { font-size: 24px; font-weight: 700; color: #ffffff; }
+    .header-logo span { color: #f97316; }
+    .body { padding: 36px 40px; }
+    .text { font-size: 15px; color: #334155; line-height: 1.75; margin-bottom: 16px; }
+    .highlight { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px 18px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .highlight p { margin: 0; font-size: 14px; color: #166534; line-height: 1.6; }
+    .steps { margin: 20px 0; }
+    .step { display: flex; align-items: flex-start; margin-bottom: 12px; }
+    .step-num { background: #f97316; color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-right: 12px; margin-top: 2px; }
+    .step-text { font-size: 14px; color: #334155; line-height: 1.5; }
+    .cta-block { text-align: center; margin: 28px 0; }
+    .cta-button { display: inline-block; background: #f97316; color: #ffffff; padding: 13px 32px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; }
+    .cta-sub { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+    .signature { margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
+    .signature p { margin: 3px 0; font-size: 14px; color: #64748b; }
+    .footer { background: #f8fafc; padding: 20px 40px; text-align: center; border-top: 1px solid #e2e8f0; }
+    .footer p { margin: 3px 0; font-size: 12px; color: #94a3b8; }
+    .footer a { color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <img src="https://www.ristoagent.com/icon.png" alt="RistoAgent" width="72" height="72"
+           style="display:block; margin:0 auto 10px; border-radius:50%;">
+      <div class="header-logo">Risto<span>Agent</span></div>
+    </div>
+    <div class="body">
+      <p class="text">Buongiorno,</p>
+      <p class="text">vi ho scritto qualche giorno fa riguardo a <strong>RistoAgent</strong> — l'agente AI per <strong>{{NOME_RISTORANTE}}</strong>. Volevo riprendere il filo con un angolo diverso.</p>
+      <p class="text">La domanda più comune che ricevo è: <em>"Quanto tempo ci vuole per attivarlo?"</em></p>
+      <p class="text"><strong>10 minuti.</strong> Letteralmente:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">Crei l'account e inserisci le info del tuo locale (orari, servizi, FAQ)</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">Colleghi il tuo bot Telegram con un token (guidiamo noi passo passo)</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">Scarichi il QR code e lo metti sul menu o al tavolo — i clienti iniziano a scrivere</div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <p>✅ <strong>15 giorni di prova gratuita</strong> — nessuna carta di credito richiesta.<br>
+        Puoi testare tutto e decidere solo dopo aver visto i risultati sul tuo locale.</p>
+      </div>
+
+      <div class="cta-block">
+        <a href="https://ristoagent.com" class="cta-button">Inizia la prova gratuita →</a>
+        <p class="cta-sub">Offerta Founding Members attiva: Starter €19/mese · Pro €29/mese</p>
+      </div>
+
+      <p class="text">Se hai domande, rispondo a questa email — oppure visita <a href="https://ristoagent.com" style="color: #f97316;">ristoagent.com</a> dove trovi un <strong>agente AI</strong> pronto a risponderti in tempo reale.</p>
+
+      <div class="signature">
+        <p><strong>Alex</strong></p>
+        <p>Fondatore, RistoAgent</p>
+        <p><a href="mailto:info@ristoagent.com" style="color: #f97316;">info@ristoagent.com</a> · <a href="https://ristoagent.com" style="color: #f97316;">ristoagent.com</a></p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>RistoAgent — Milano, Italia</p>
+      <p><a href="mailto:info@ristoagent.com?subject=Cancella%20iscrizione">Cancella iscrizione</a></p>
+    </div>
+  </div>
+</body>
+</html>

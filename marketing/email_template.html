@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RistoAgent</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #f5f5f5; font-family: 'Helvetica Neue', Arial, sans-serif; }
+    .wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; }
+    .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 32px 40px; text-align: center; }
+    .header-logo { font-size: 26px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; }
+    .header-logo span { color: #f97316; }
+    .header-tagline { color: #94a3b8; font-size: 13px; margin-top: 6px; }
+    .body { padding: 40px; }
+    .greeting { font-size: 16px; color: #1e293b; margin-bottom: 20px; line-height: 1.6; }
+    .highlight-box { background: #fff7ed; border-left: 4px solid #f97316; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .highlight-box p { margin: 0; font-size: 15px; color: #7c2d12; line-height: 1.6; }
+    .features { margin: 28px 0; }
+    .feature-item { display: flex; align-items: flex-start; margin-bottom: 14px; }
+    .feature-icon { font-size: 18px; margin-right: 12px; flex-shrink: 0; }
+    .feature-text { font-size: 15px; color: #334155; line-height: 1.5; }
+    .feature-text strong { color: #1e293b; }
+    .pricing-box { background: #1a1a2e; border-radius: 12px; padding: 28px 32px; margin: 28px 0; text-align: center; }
+    .pricing-label { color: #f97316; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .pricing-title { color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .pricing-subtitle { color: #94a3b8; font-size: 13px; margin-bottom: 20px; }
+    .pricing-plans { display: flex; gap: 16px; justify-content: center; margin-bottom: 20px; }
+    .plan { background: #16213e; border-radius: 8px; padding: 16px 24px; flex: 1; }
+    .plan-name { color: #94a3b8; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .plan-price { color: #ffffff; font-size: 28px; font-weight: 700; }
+    .plan-price span { font-size: 14px; color: #94a3b8; font-weight: 400; }
+    .plan-was { color: #64748b; font-size: 12px; text-decoration: line-through; }
+    .cta-button { display: inline-block; background: #f97316; color: #ffffff; padding: 14px 36px; border-radius: 8px; font-size: 16px; font-weight: 700; text-decoration: none; margin-top: 4px; }
+    .social-proof { background: #f8fafc; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .social-proof p { margin: 0; font-size: 14px; color: #64748b; font-style: italic; text-align: center; line-height: 1.6; }
+    .closing { font-size: 15px; color: #334155; line-height: 1.7; margin: 24px 0; }
+    .signature { margin-top: 24px; }
+    .signature p { margin: 2px 0; font-size: 14px; color: #64748b; }
+    .signature strong { color: #1e293b; font-size: 15px; }
+    .footer { background: #f8fafc; padding: 24px 40px; text-align: center; border-top: 1px solid #e2e8f0; }
+    .footer p { margin: 4px 0; font-size: 12px; color: #94a3b8; }
+    .footer a { color: #94a3b8; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <img src="https://www.ristoagent.com/icon.png" alt="RistoAgent" width="80" height="80"
+           style="display:block; margin:0 auto 10px; border-radius:50%;">
+      <div class="header-logo">Risto<span>Agent</span></div>
+      <div class="header-tagline">Il tuo assistente AI per prenotazioni e clienti</div>
+    </div>
+
+    <div class="body">
+      <div class="greeting">
+        <p>Buongiorno,</p>
+        <p>mi chiamo Alex e ho sviluppato <strong>RistoAgent</strong>, un assistente AI pensato specificamente per ristoranti come <strong>{{NOME_RISTORANTE}}</strong>.</p>
+        <p>In breve: un <strong>agente AI</strong> su Telegram che risponde ai tuoi clienti 24/7, gestisce le prenotazioni e le sincronizza automaticamente con il tuo Google Calendar. <strong>Zero formazione del personale. Zero telefonate perse.</strong></p>
+      </div>
+
+      <div class="highlight-box">
+        <p>📍 Ho trovato il vostro ristorante su Google Maps e ho visto che avete ottime recensioni. Esattamente il tipo di locale che può ottenere il massimo da uno strumento come questo.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-item">
+          <div class="feature-icon">🤖</div>
+          <div class="feature-text"><strong>Agente AI su Telegram attivo in 10 minuti</strong> — risponde ai clienti, prende prenotazioni, invia conferme automatiche.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📅</div>
+          <div class="feature-text"><strong>Sincronizzazione Google Calendar</strong> — ogni prenotazione appare direttamente nel tuo calendario, senza duplicazioni.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <div class="feature-text"><strong>Dashboard completa</strong> — vedi tutte le conversazioni, i clienti e le prenotazioni del giorno in un click.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎙️</div>
+          <div class="feature-text"><strong>Messaggi vocali</strong> — i clienti possono parlare direttamente con l'agente AI, che capisce e risponde anche ai vocali Telegram.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-text"><strong>Promozioni automatiche</strong> — l'agente AI può inviare offerte e messaggi promozionali ai tuoi clienti Telegram.</div>
+        </div>
+      </div>
+
+      <div class="pricing-box">
+        <div class="pricing-label">🔥 Offerta Founding Members — Solo 20 posti</div>
+        <div class="pricing-title">Prezzi speciali per chi entra ora</div>
+        <div class="pricing-subtitle">Bloccate per sempre, anche quando i prezzi aumenteranno</div>
+        <div class="pricing-plans">
+          <div class="plan">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">€19<span>/mese</span></div>
+            <div class="plan-was">era €29</div>
+          </div>
+          <div class="plan">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">€29<span>/mese</span></div>
+            <div class="plan-was">era €49</div>
+          </div>
+        </div>
+        <a href="https://ristoagent.com" class="cta-button">Inizia la prova gratuita →</a>
+      </div>
+
+      <div class="social-proof">
+        <p>✅ <strong>15 giorni di prova gratuita</strong>, nessuna carta di credito richiesta.<br>
+        Puoi testare tutto e decidere solo dopo aver visto i risultati.</p>
+      </div>
+
+      <div class="closing">
+        <p>Se vuoi, sono disponibile per una chiamata rapida di 15 minuti per mostrarti come funziona in concreto per un ristorante come il vostro.</p>
+        <p>Oppure visita <a href="https://ristoagent.com" style="color: #f97316;">ristoagent.com</a> — troverai un <strong>agente AI</strong> pronto a risponderti direttamente sul sito, in qualsiasi momento.</p>
+      </div>
+
+      <div class="signature">
+        <p><strong>Alex</strong></p>
+        <p>Fondatore, RistoAgent</p>
+        <p>📧 <a href="mailto:info@ristoagent.com" style="color: #f97316;">info@ristoagent.com</a></p>
+        <p>🌐 <a href="https://ristoagent.com" style="color: #f97316;">ristoagent.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>RistoAgent — Milano, Italia</p>
+      <p>Hai ricevuto questa email perché il tuo ristorante è presente su Google Maps.</p>
+      <p><a href="mailto:info@ristoagent.com?subject=Cancella%20iscrizione&body=Rimuovimi%20dalla%20lista">Cancella iscrizione</a></p>
+    </div>
+  </div>
+</body>
+</html>

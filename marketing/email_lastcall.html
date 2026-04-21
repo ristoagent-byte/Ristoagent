@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RistoAgent</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #f5f5f5; font-family: 'Helvetica Neue', Arial, sans-serif; }
+    .wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; }
+    .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 28px 40px; text-align: center; }
+    .header-logo { font-size: 24px; font-weight: 700; color: #ffffff; }
+    .header-logo span { color: #f97316; }
+    .body { padding: 36px 40px; }
+    .text { font-size: 15px; color: #334155; line-height: 1.75; margin-bottom: 16px; }
+    .urgency-box { background: #fff7ed; border: 1px solid #f97316; border-radius: 10px; padding: 20px 24px; margin: 20px 0; text-align: center; }
+    .urgency-box .label { font-size: 11px; color: #f97316; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .urgency-box .price-row { display: flex; justify-content: center; gap: 24px; margin: 12px 0; }
+    .price-item { text-align: center; }
+    .price-item .plan { font-size: 12px; color: #92400e; text-transform: uppercase; margin-bottom: 4px; }
+    .price-item .amount { font-size: 28px; font-weight: 700; color: #1e293b; }
+    .price-item .amount span { font-size: 14px; font-weight: 400; color: #94a3b8; }
+    .price-item .was { font-size: 12px; color: #cbd5e1; text-decoration: line-through; }
+    .cta-button { display: inline-block; background: #f97316; color: #ffffff; padding: 13px 32px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+    .signature { margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 20px; }
+    .signature p { margin: 3px 0; font-size: 14px; color: #64748b; }
+    .footer { background: #f8fafc; padding: 20px 40px; text-align: center; border-top: 1px solid #e2e8f0; }
+    .footer p { margin: 3px 0; font-size: 12px; color: #94a3b8; }
+    .footer a { color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <img src="https://www.ristoagent.com/icon.png" alt="RistoAgent" width="72" height="72"
+           style="display:block; margin:0 auto 10px; border-radius:50%;">
+      <div class="header-logo">Risto<span>Agent</span></div>
+    </div>
+    <div class="body">
+      <p class="text">Buongiorno,</p>
+      <p class="text">ultima email, promesso.</p>
+      <p class="text">Vi ho contattato due volte nelle scorse settimane riguardo a RistoAgent per <strong>{{NOME_RISTORANTE}}</strong>. Se non è il momento giusto, capisco perfettamente.</p>
+      <p class="text">Vi scrivo un'ultima volta solo per un motivo concreto: <strong>i posti Founding Members si stanno esaurendo.</strong></p>
+
+      <div class="urgency-box">
+        <div class="label">Offerta Founding Members — posti limitati</div>
+        <div class="price-row">
+          <div class="price-item">
+            <div class="plan">Starter</div>
+            <div class="amount">€19<span>/mese</span></div>
+            <div class="was">poi €29</div>
+          </div>
+          <div class="price-item">
+            <div class="plan">Pro</div>
+            <div class="amount">€29<span>/mese</span></div>
+            <div class="was">poi €49</div>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: #92400e; margin: 8px 0 0;">Prezzo bloccato per sempre, anche quando i piani aumenteranno.</p>
+        <a href="https://ristoagent.com" class="cta-button">Accedi all'offerta →</a>
+      </div>
+
+      <p class="text" style="font-size: 13px; color: #64748b;">15 giorni di prova gratuita inclusi — nessuna carta di credito richiesta.</p>
+
+      <div class="signature">
+        <p><strong>Alex</strong></p>
+        <p>Fondatore, RistoAgent</p>
+        <p><a href="mailto:info@ristoagent.com" style="color: #f97316;">info@ristoagent.com</a></p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>RistoAgent — Milano, Italia</p>
+      <p>Questa è l'ultima email che riceverete da noi.</p>
+      <p><a href="mailto:info@ristoagent.com?subject=Cancella%20iscrizione">Cancella iscrizione</a></p>
+    </div>
+  </div>
+</body>
+</html>
