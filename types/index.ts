@@ -26,6 +26,16 @@ export interface Business {
   trial_started_at: string | null;
   custom_info: string | null;
   created_at: string;
+  // structured onboarding fields (all optional, backward compatible)
+  city?: string;
+  tables_2?: number;
+  tables_4?: number;
+  tables_6?: number;
+  has_terrace?: boolean;
+  reservation_duration_min?: number;
+  max_delay_min?: number;
+  min_notice_hours?: number;
+  opening_hours_structured?: Record<string, { lunch?: string; dinner?: string } | null> | null;
 }
 
 export interface Conversation {

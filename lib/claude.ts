@@ -18,6 +18,14 @@ function buildSystemPrompt(business: Business, language: "it" | "en"): string {
     ? `\nAdditional business information (menu, services, details):\n${business.custom_info}`
     : "";
 
+  const capacitySection = (business.tables_2 || business.tables_4 || business.tables_6)
+    ? `\n- Restaurant capacity: ${business.tables_2 ?? 0} tables for 2, ${business.tables_4 ?? 0} tables for 4, ${business.tables_6 ?? 0} tables for 6+${business.has_terrace ? ", outdoor terrace available" : ""}`
+    : "";
+
+  const rulesSection = business.reservation_duration_min
+    ? `\n- Booking rules: average duration ${business.reservation_duration_min} min, delay tolerance ${business.max_delay_min ?? 15} min, minimum notice ${business.min_notice_hours ?? 1}h before booking`
+    : "";
+
   return `You are a virtual assistant for "${business.name}", a ${business.type} in Italy.
 
 Today's date: ${todayFormatted} (${today}). Use this to interpret relative dates like "tomorrow", "next week", etc.
@@ -26,7 +34,7 @@ ${langInstruction}
 
 Business information:
 - Services, prices and practical info: ${business.services ?? "non specificato"}
-- Opening hours and bookings: ${business.opening_hours ?? "non specificato"}${customInfoSection}
+- Opening hours and bookings: ${business.opening_hours ?? "non specificato"}${capacitySection}${rulesSection}${customInfoSection}
 
 Your responsibilities:
 - Answer questions about services, prices, and opening hours
@@ -48,7 +56,7 @@ const tools: Anthropic.Tool[] = [
       properties: {
         date: { type: "string", description: "Date in YYYY-MM-DD format" },
         time: { type: "string", description: "Time in HH:MM format (24h)" },
-        duration_minutes: { type: "number", description: "Duration in minutes (default 60)" },
+        duration_minutes: { type: "number", description: "Duration in minutes (default 90)" },
       },
       required: ["date", "time"],
     },
@@ -61,7 +69,7 @@ const tools: Anthropic.Tool[] = [
       properties: {
         date: { type: "string", description: "Date in YYYY-MM-DD format" },
         time: { type: "string", description: "Time in HH:MM format (24h)" },
-        duration_minutes: { type: "number", description: "Duration in minutes (default 60)" },
+        duration_minutes: { type: "number", description: "Duration in minutes (default 90)" },
         customer_name: { type: "string", description: "Customer full name" },
         party_size: { type: "number", description: "Number of people" },
         notes: { type: "string", description: "Optional notes" },
