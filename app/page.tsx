@@ -893,7 +893,7 @@ export default function Home() {
       {/* ── FOOTER ───────────────────────────────────── */}
       <footer className="footer">
         <img src="/logo.png" alt="RistoAgent" style={{ height: 36, width: "auto", borderRadius: 6, marginBottom: 4 }} />
-        <p>© 2026 RistoAgent — Alessandro Bernabé · IČO 06043194 · Praha, CZ</p>
+        <p>© 2026 RistoAgent</p>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
           <a href="/legal" style={{ fontSize: "0.72rem", color: "#3a5c3e", textDecoration: "none" }}>Note legali</a>
           <a href="/privacy" style={{ fontSize: "0.72rem", color: "#3a5c3e", textDecoration: "none" }}>Privacy Policy</a>
