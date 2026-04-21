@@ -125,6 +125,94 @@ export default function TermsPage() {
             <a href="mailto:info@ristoagent.com" style={{ color: "#0EA5E9" }}>info@ristoagent.com</a>
           </p>
         </Section>
+
+        <section style={{ marginBottom: "2.5rem", borderTop: "1px solid #1e2b20", paddingTop: "2.5rem", marginTop: "1rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: 600, color: "#0EA5E9",
+            textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.4rem" }}>
+            Allegato A — Accordo sul Trattamento dei Dati (DPA)
+          </h2>
+          <p style={{ ...p, fontSize: "0.8rem", marginBottom: "1.6rem" }}>
+            Ai sensi dell&apos;art. 28 del Regolamento UE 2016/679 (GDPR). Accettando i presenti Termini,
+            l&apos;Utente (in qualità di Titolare del trattamento) e RistoAgent (in qualità di Responsabile
+            del trattamento) concludono il presente Accordo.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A1. Oggetto e durata</h3>
+          <p style={p}>
+            RistoAgent tratta dati personali dei clienti finali dell&apos;Utente (nome, messaggi Telegram,
+            dati di prenotazione) esclusivamente per erogare il servizio descritto nei presenti Termini.
+            Il trattamento ha la stessa durata del contratto di servizio.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A2. Istruzioni del Titolare</h3>
+          <p style={p}>
+            RistoAgent tratta i dati esclusivamente su istruzione documentata dell&apos;Utente, salvo
+            diversi obblighi di legge. L&apos;Utente è responsabile della liceità del trattamento
+            relativamente ai propri clienti finali e dell&apos;eventuale raccolta del consenso ove richiesto.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A3. Misure di sicurezza</h3>
+          <p style={p}>
+            RistoAgent adotta misure tecniche e organizzative adeguate ai sensi dell&apos;art. 32 GDPR,
+            incluse: crittografia dei dati in transito (TLS) e a riposo, controllo degli accessi,
+            monitoraggio delle infrastrutture. Le misure sono documentate e aggiornate periodicamente.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A4. Sub-responsabili del trattamento</h3>
+          <p style={p}>
+            L&apos;Utente autorizza RistoAgent a ricorrere ai seguenti sub-responsabili, con i quali
+            RistoAgent ha stipulato accordi equivalenti al presente:
+          </p>
+          <ul style={{ paddingLeft: "1.2rem" }}>
+            {[
+              "Supabase Inc. — database e autenticazione",
+              "Vercel Inc. — hosting e infrastruttura",
+              "Anthropic PBC — elaborazione AI dei messaggi",
+              "Telegram Messenger Inc. — canale di comunicazione",
+              "Google LLC — Google Calendar (solo se collegato dall'Utente)",
+            ].map((item) => (
+              <li key={item} style={li}>{item}</li>
+            ))}
+          </ul>
+          <p style={p}>
+            RistoAgent notificherà all&apos;Utente qualsiasi modifica prevista riguardante l&apos;aggiunta
+            o la sostituzione di sub-responsabili con un preavviso di 30 giorni, dando all&apos;Utente
+            la possibilità di opporsi.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A5. Diritti degli interessati</h3>
+          <p style={p}>
+            RistoAgent assisterà l&apos;Utente, nei limiti del possibile, nell&apos;evasione delle
+            richieste di esercizio dei diritti degli interessati (accesso, rettifica, cancellazione,
+            portabilità, opposizione) entro i termini previsti dal GDPR. Le richieste vanno inoltrate
+            a{" "}<a href="mailto:privacy@ristoagent.com" style={{ color: "#0EA5E9" }}>privacy@ristoagent.com</a>.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A6. Violazioni dei dati (Data Breach)</h3>
+          <p style={p}>
+            In caso di violazione della sicurezza che comporti rischio per i diritti degli interessati,
+            RistoAgent notificherà l&apos;Utente entro 72 ore dalla scoperta, con le informazioni
+            disponibili per permettere all&apos;Utente di adempiere ai propri obblighi di notifica
+            ai sensi dell&apos;art. 33 GDPR.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A7. Cancellazione e restituzione dei dati</h3>
+          <p style={p}>
+            Al termine del contratto o su richiesta dell&apos;Utente, RistoAgent provvederà alla
+            cancellazione di tutti i dati personali trattati per conto dell&apos;Utente entro 30 giorni,
+            salvo diversi obblighi di conservazione previsti dalla legge. L&apos;Utente può richiedere
+            la cancellazione immediata tramite la funzione presente nella dashboard o scrivendo a{" "}
+            <a href="mailto:privacy@ristoagent.com" style={{ color: "#0EA5E9" }}>privacy@ristoagent.com</a>.
+          </p>
+
+          <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "#e8f0e9", marginBottom: "0.5rem" }}>A8. Audit e conformità</h3>
+          <p style={p}>
+            RistoAgent mette a disposizione dell&apos;Utente tutte le informazioni necessarie a
+            dimostrare il rispetto degli obblighi di cui all&apos;art. 28 GDPR e contribuisce alle
+            attività di audit. Le richieste di audit vanno inviate con almeno 30 giorni di preavviso
+            a{" "}<a href="mailto:privacy@ristoagent.com" style={{ color: "#0EA5E9" }}>privacy@ristoagent.com</a>.
+          </p>
+        </section>
       </div>
     </div>
   );
