@@ -344,7 +344,7 @@ export default function Dashboard() {
         justifyContent: "space-between", borderBottom: "1px solid #1e3022",
         background: "rgba(10,15,13,0.8)", backdropFilter: "blur(8px)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <img src="/logo.png" alt="RistoAgent" style={{ height: 36, width: "auto", }} />
+          <img src="/logo.png" alt="RistoAgent" style={{ height: 52, width: "auto", }} />
           {business && (
             <span style={{ fontSize: 13, color: "#8696a0" }}>— {business.name}</span>
           )}

@@ -338,7 +338,7 @@ function OnboardingInner() {
       fontFamily: "'DM Sans', 'Segoe UI', sans-serif", color: "#f0f8f2",
     }}>
       <a href="/" style={{ textDecoration: "none", marginBottom: "2.5rem" }}>
-        <img src="/logo.png" alt="RistoAgent" style={{ height: 44, width: "auto" }} />
+        <img src="/logo.png" alt="RistoAgent" style={{ height: 64, width: "auto" }} />
       </a>
 
       <div style={{

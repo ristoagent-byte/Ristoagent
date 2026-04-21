@@ -89,7 +89,7 @@ export default function AuthPage() {
       fontFamily: "'DM Sans', 'Segoe UI', sans-serif", color: "#e8f0e9",
     }}>
       <a href="/" style={{ textDecoration: "none", marginBottom: "2rem" }}>
-        <img src="/logo.png" alt="RistoAgent" style={{ height: 44, width: "auto" }} />
+        <img src="/logo.png" alt="RistoAgent" style={{ height: 64, width: "auto" }} />
       </a>
 
       <div style={{

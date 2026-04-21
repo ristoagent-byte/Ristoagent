@@ -116,7 +116,7 @@ export default function UpgradePage() {
       padding: "4rem 1.5rem" }}>
 
       <a href="/" style={{ textDecoration: "none", marginBottom: "2.5rem" }}>
-        <img src="/logo.png" alt="RistoAgent" style={{ height: 44, width: "auto" }} />
+        <img src="/logo.png" alt="RistoAgent" style={{ height: 64, width: "auto" }} />
       </a>
 
       {trialExpired && (

@@ -397,7 +397,7 @@ export default function Home() {
       {/* NAV */}
       <nav className="nav">
         <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <img src="/logo.png" alt="RistoAgent" style={{ height: 40, width: "auto" }} />
+          <img src="/logo.png" alt="RistoAgent" style={{ height: 60, width: "auto" }} />
         </a>
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
           <a href="/auth" className="nav-login">Accedi</a>
@@ -902,7 +902,7 @@ export default function Home() {
 
       {/* ── FOOTER ───────────────────────────────────── */}
       <footer className="footer">
-        <img src="/logo.png" alt="RistoAgent" style={{ height: 36, width: "auto", borderRadius: 6, marginBottom: 4 }} />
+        <img src="/logo.png" alt="RistoAgent" style={{ height: 52, width: "auto", borderRadius: 6, marginBottom: 4 }} />
         <p>© 2026 RistoAgent</p>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
           <a href="/legal" style={{ fontSize: "0.72rem", color: "#3a5c3e", textDecoration: "none" }}>Note legali</a>
