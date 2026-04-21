@@ -109,6 +109,7 @@ export async function GET(req: NextRequest) {
 
     const customers = bizList.map((b) => ({
       id: b.id,
+      user_id: b.user_id,
       name: b.name,
       type: b.type,
       email: emailByUser.get(b.user_id) ?? null,

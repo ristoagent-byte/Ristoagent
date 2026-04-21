@@ -8,6 +8,7 @@ import { getCampaignStatus, CAMPAIGN_SCHEDULE } from "@/lib/campaign-schedule";
 
 type Customer = {
   id: string;
+  user_id: string;
   name: string;
   type: string;
   email: string | null;
@@ -62,6 +63,8 @@ export default function AdminPanel() {
   const [error, setError] = useState<string | null>(null);
   const [tab, setTab] = useState<"overview" | "customers" | "invoices" | "email">("overview");
   const [customerFilter, setCustomerFilter] = useState<"all" | "paying" | "trial">("all");
+  const [deleteTarget, setDeleteTarget] = useState<Customer | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -109,6 +112,34 @@ export default function AdminPanel() {
   function fmtDate(iso: string | null) {
     if (!iso) return "—";
     return new Date(iso).toLocaleDateString("it-IT", { day: "2-digit", month: "short", year: "numeric" });
+  }
+
+  async function handleDelete(customer: Customer) {
+    setDeleting(true);
+    try {
+      const { data: sess } = await supabase.auth.getSession();
+      const res = await fetch("/api/admin/delete-user", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${sess.session?.access_token}`,
+        },
+        body: JSON.stringify({ user_id: customer.user_id }),
+      });
+      if (!res.ok) {
+        const j = await res.json();
+        alert(`Errore: ${j.error}`);
+        return;
+      }
+      setStats((prev) =>
+        prev
+          ? { ...prev, customers: prev.customers.filter((c) => c.user_id !== customer.user_id) }
+          : prev
+      );
+      setDeleteTarget(null);
+    } finally {
+      setDeleting(false);
+    }
   }
 
   if (loading) {
@@ -231,6 +262,7 @@ export default function AdminPanel() {
                   <th style={S.th}>Stato</th>
                   <th style={S.th}>Registrato</th>
                   <th style={S.th}>Trial scade</th>
+                  <th style={S.th}></th>
                 </tr>
               </thead>
               <tbody>
@@ -251,11 +283,19 @@ export default function AdminPanel() {
                     </td>
                     <td style={S.td}>{fmtDate(c.created_at)}</td>
                     <td style={S.td}>{fmtDate(c.trial_expires_at)}</td>
+                    <td style={S.td}>
+                      <button
+                        onClick={() => setDeleteTarget(c)}
+                        style={{ background: "rgba(220,38,38,0.1)", color: "#f87171", border: "1px solid rgba(220,38,38,0.3)", borderRadius: 6, padding: "4px 10px", fontSize: 12, cursor: "pointer" }}
+                      >
+                        Elimina
+                      </button>
+                    </td>
                   </tr>
                 ))}
                 {filteredCustomers.length === 0 && (
                   <tr>
-                    <td colSpan={6} style={{ ...S.td, textAlign: "center", color: "var(--muted)" }}>
+                    <td colSpan={7} style={{ ...S.td, textAlign: "center", color: "var(--muted)" }}>
                       Nessun cliente in questa categoria.
                     </td>
                   </tr>
@@ -267,6 +307,39 @@ export default function AdminPanel() {
       )}
 
       {tab === "email" && <EmailMarketingTab />}
+
+      {deleteTarget && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999 }}>
+          <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 12, padding: 28, maxWidth: 420, width: "90%", textAlign: "center" }}>
+            <div style={{ fontSize: 32, marginBottom: 12 }}>⚠️</div>
+            <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>Eliminare questo utente?</h2>
+            <p style={{ color: "var(--muted)", fontSize: 14, marginBottom: 4 }}>
+              <strong style={{ color: "var(--text)" }}>{deleteTarget.name}</strong>
+            </p>
+            <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: 20 }}>
+              {deleteTarget.email}<br />
+              Verranno eliminati tutti i dati: prenotazioni, messaggi, conversazioni e account.
+              <br /><strong style={{ color: "#f87171" }}>Operazione irreversibile.</strong>
+            </p>
+            <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
+              <button
+                onClick={() => setDeleteTarget(null)}
+                disabled={deleting}
+                style={{ ...S.btnSecondary, padding: "10px 20px" }}
+              >
+                Annulla
+              </button>
+              <button
+                onClick={() => handleDelete(deleteTarget)}
+                disabled={deleting}
+                style={{ background: "#dc2626", color: "#fff", border: "none", borderRadius: 6, padding: "10px 20px", fontSize: 14, cursor: "pointer", fontWeight: 600 }}
+              >
+                {deleting ? "Eliminazione…" : "Sì, elimina tutto"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {tab === "invoices" && (
         <section style={S.card}>
