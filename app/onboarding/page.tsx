@@ -122,7 +122,7 @@ function OnboardingInner() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [qrDataUrl, setQrDataUrl] = useState<string | null>(null);
-  const [showTablesWarn, setShowTablesWarn] = useState(false);
+  const [showWarn, setShowWarn] = useState(false);
   const [activated, setActivated] = useState(false);
 
   /* ── INIT ── */
@@ -188,6 +188,7 @@ function OnboardingInner() {
     setData(d);
     setStep(nextS);
     setError("");
+    setShowWarn(false);
     window.scrollTo(0, 0);
   }
 
@@ -504,9 +505,11 @@ function OnboardingInner() {
             <p style={{ color: "#7a9b7e", fontSize: "0.88rem", marginBottom: "0.6rem", lineHeight: 1.6 }}>
               Queste informazioni determinano la qualità delle risposte ai tuoi clienti.
             </p>
-            <div style={warn}>
-              ⚠️ Senza queste info il bot darà risposte vaghe — più dati dai, più il bot vende per te.
-            </div>
+            {showWarn && (
+              <div style={warn}>
+                ⚠️ Senza queste info il bot darà risposte vaghe — più dati dai, più il bot vende per te.
+              </div>
+            )}
 
             <label style={lbl}>Tipo di cucina</label>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.5rem" }}>
@@ -572,7 +575,7 @@ function OnboardingInner() {
             <p style={{ color: "#7a9b7e", fontSize: "0.88rem", marginBottom: "0.6rem" }}>
               Il numero di tavoli permette al bot di gestire correttamente le disponibilità.
             </p>
-            {showTablesWarn && (
+            {showWarn && (
               <div style={warn}>
                 ⚠️ Senza il numero di tavoli, il bot non sa quando il ristorante è pieno.
               </div>
@@ -593,7 +596,7 @@ function OnboardingInner() {
                       {data.tables[field]}
                     </span>
                     <button
-                      onClick={() => { setShowTablesWarn(false); setData(d => ({ ...d, tables: { ...d.tables, [field]: d.tables[field] + 1 } })); }}
+                      onClick={() => setData(d => ({ ...d, tables: { ...d.tables, [field]: d.tables[field] + 1 } }))}
                       style={{ width: 36, height: 36, borderRadius: "50%", background: "#131a14", border: "1px solid #2a3f2e", color: "#f0f8f2", fontSize: "1.2rem", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       +
                     </button>
@@ -637,9 +640,11 @@ function OnboardingInner() {
             <p style={{ color: "#7a9b7e", fontSize: "0.88rem", marginBottom: "0.6rem" }}>
               Definisci gli orari per pranzo e cena — lascia vuoti i campi per i turni non attivi.
             </p>
-            <div style={warn}>
-              ⚠️ Senza gli orari, il bot accetta prenotazioni anche quando sei chiuso.
-            </div>
+            {showWarn && (
+              <div style={warn}>
+                ⚠️ Senza gli orari, il bot accetta prenotazioni anche quando sei chiuso.
+              </div>
+            )}
 
             {DAYS.map(({ key: dayKey, label }) => {
               const h = data.hours[dayKey];
@@ -709,9 +714,11 @@ function OnboardingInner() {
             <p style={{ color: "#7a9b7e", fontSize: "0.88rem", marginBottom: "0.6rem", lineHeight: 1.6 }}>
               Ogni prenotazione viene salvata automaticamente nel tuo calendario.
             </p>
-            <div style={warn}>
-              ⚠️ Senza questo passaggio, il bot non può confermare prenotazioni.
-            </div>
+            {showWarn && (
+              <div style={warn}>
+                ⚠️ Senza questo passaggio, il bot non può confermare prenotazioni.
+              </div>
+            )}
 
             {!data.calendarConnected ? (
               <>
@@ -928,9 +935,7 @@ function OnboardingInner() {
             {step !== 6 && (
               <button
                 onClick={() => {
-                  if (step === 4 && data.tables.t2 === 0 && data.tables.t4 === 0 && data.tables.t6 === 0) {
-                    setShowTablesWarn(true);
-                  }
+                  if ([3, 4, 5].includes(step)) setShowWarn(true);
                   if (step === 2) { saveProfile(); } else { go(data, step + 1); }
                 }}
                 disabled={!canNext() || loading}
