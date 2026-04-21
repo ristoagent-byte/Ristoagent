@@ -242,7 +242,6 @@ function OnboardingInner() {
       headers: { "Content-Type": "application/json", "x-user-id": userId },
       body: JSON.stringify({
         name: data.name.trim(),
-        city: data.city.trim() || undefined,
         type: data.types.join(", ") || "Ristorante / Pizzeria",
         partita_iva: data.partitaIva.trim().toUpperCase() || undefined,
       }),
