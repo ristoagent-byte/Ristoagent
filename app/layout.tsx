@@ -9,6 +9,10 @@ export const metadata = {
   },
   description:
     "RistoAgent gestisce prenotazioni, cancellazioni e messaggi Telegram per il tuo ristorante, 24h su 24. Setup in 10 minuti, prova gratis 15 giorni.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "RistoAgent — Agente AI per prenotazioni ristorante su Telegram",
     description:
@@ -17,6 +21,20 @@ export const metadata = {
     siteName: "RistoAgent",
     locale: "it_IT",
     type: "website",
+    images: [
+      {
+        url: "https://www.ristoagent.com/icon.png",
+        width: 512,
+        height: 512,
+        alt: "RistoAgent logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "RistoAgent — Agente AI per prenotazioni ristorante su Telegram",
+    description: "Gestisce prenotazioni e messaggi Telegram per il tuo ristorante, 24h su 24.",
+    images: ["https://www.ristoagent.com/icon.png"],
   },
   robots: {
     index: true,
