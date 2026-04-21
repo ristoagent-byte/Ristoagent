@@ -122,6 +122,7 @@ function OnboardingInner() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [qrDataUrl, setQrDataUrl] = useState<string | null>(null);
+  const [showTablesWarn, setShowTablesWarn] = useState(false);
   const [activated, setActivated] = useState(false);
 
   /* ── INIT ── */
@@ -571,9 +572,11 @@ function OnboardingInner() {
             <p style={{ color: "#7a9b7e", fontSize: "0.88rem", marginBottom: "0.6rem" }}>
               Il numero di tavoli permette al bot di gestire correttamente le disponibilità.
             </p>
-            <div style={warn}>
-              ⚠️ Senza il numero di tavoli, il bot non sa quando il ristorante è pieno.
-            </div>
+            {showTablesWarn && (
+              <div style={warn}>
+                ⚠️ Senza il numero di tavoli, il bot non sa quando il ristorante è pieno.
+              </div>
+            )}
 
             {(["t2", "t4", "t6"] as const).map((field) => {
               const tableLabels = { t2: "Tavoli da 2 persone", t4: "Tavoli da 4 persone", t6: "Tavoli da 6+ persone" };
@@ -590,7 +593,7 @@ function OnboardingInner() {
                       {data.tables[field]}
                     </span>
                     <button
-                      onClick={() => setData(d => ({ ...d, tables: { ...d.tables, [field]: d.tables[field] + 1 } }))}
+                      onClick={() => { setShowTablesWarn(false); setData(d => ({ ...d, tables: { ...d.tables, [field]: d.tables[field] + 1 } })); }}
                       style={{ width: 36, height: 36, borderRadius: "50%", background: "#131a14", border: "1px solid #2a3f2e", color: "#f0f8f2", fontSize: "1.2rem", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       +
                     </button>
@@ -924,7 +927,12 @@ function OnboardingInner() {
             {/* Steps 2-5, 7: standard Continua */}
             {step !== 6 && (
               <button
-                onClick={() => step === 2 ? saveProfile() : go(data, step + 1)}
+                onClick={() => {
+                  if (step === 4 && data.tables.t2 === 0 && data.tables.t4 === 0 && data.tables.t6 === 0) {
+                    setShowTablesWarn(true);
+                  }
+                  if (step === 2) { saveProfile(); } else { go(data, step + 1); }
+                }}
                 disabled={!canNext() || loading}
                 style={{ ...btnPrimary, flex: 1, opacity: (!canNext() || loading) ? 0.35 : 1 }}>
                 {loading ? "Salvataggio..." : "Continua →"}
