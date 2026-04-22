@@ -110,7 +110,7 @@ export default function UpgradePage() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0a0f0d",
+    <div style={{ minHeight: "100vh", background: "#111a13",
       fontFamily: "'DM Sans','Segoe UI',sans-serif", color: "#e9edef",
       display: "flex", flexDirection: "column", alignItems: "center",
       padding: "4rem 1.5rem" }}>
@@ -178,7 +178,7 @@ export default function UpgradePage() {
                 }}>
                   {isCurrent && (
                     <span style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
-                      background: "#22c55e", color: "#0a0f0d", fontSize: "0.7rem", fontWeight: 700,
+                      background: "#22c55e", color: "#111a13", fontSize: "0.7rem", fontWeight: 700,
                       padding: "0.2rem 0.8rem", borderRadius: 999, textTransform: "uppercase",
                       letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
                       ✓ Piano attuale
@@ -246,11 +246,11 @@ export default function UpgradePage() {
             <div key={plan.id} style={{
               ...card,
               border: isCurrent ? "2px solid #22c55e" : plan.featured ? "1px solid #0EA5E9" : "1px solid #1a2620",
-              background: plan.featured ? "linear-gradient(145deg,#0f1e11,#0a0f0d)" : "#111a15",
+              background: plan.featured ? "linear-gradient(145deg,#1c2a1e,#172019)" : "#111a15",
             }}>
               {isCurrent && (
                 <span style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
-                  background: "#22c55e", color: "#0a0f0d", fontSize: "0.7rem", fontWeight: 700,
+                  background: "#22c55e", color: "#111a13", fontSize: "0.7rem", fontWeight: 700,
                   padding: "0.2rem 0.8rem", borderRadius: 999, textTransform: "uppercase",
                   letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
                   ✓ Piano attuale
@@ -258,7 +258,7 @@ export default function UpgradePage() {
               )}
               {!isCurrent && plan.featured && (
                 <span style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)",
-                  background: "#0EA5E9", color: "#0a0f0d", fontSize: "0.7rem", fontWeight: 600,
+                  background: "#0EA5E9", color: "#111a13", fontSize: "0.7rem", fontWeight: 600,
                   padding: "0.2rem 0.8rem", borderRadius: 999, textTransform: "uppercase",
                   letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
                   Più popolare

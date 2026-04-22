@@ -20,7 +20,7 @@ const li: React.CSSProperties = { ...p, marginBottom: "0.4rem" };
 
 export default function PrivacyPage() {
   return (
-    <div style={{ minHeight: "100vh", background: "#0a0f0d", color: "#e8f0e9",
+    <div style={{ minHeight: "100vh", background: "#111a13", color: "#e8f0e9",
       fontFamily: "'DM Sans', 'Segoe UI', sans-serif", padding: "6rem 1.5rem 4rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <a href="/" style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem",

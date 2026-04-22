@@ -319,7 +319,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at top, #0f1f2e 0%, #0a0f0d 60%)",
+    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at top, #0f1f2e 0%, #111a13 60%)",
       fontFamily: "'DM Sans','Segoe UI',sans-serif", color: "#e8f0e9", zoom: 1.4 }}>
 
       {trialDaysLeft !== null && (
@@ -332,7 +332,7 @@ export default function Dashboard() {
               ? `⚠️ La tua prova gratuita scade tra ${trialDaysLeft} giorn${trialDaysLeft === 1 ? "o" : "i"}.`
               : `✨ Prova gratuita — ${trialDaysLeft} giorni rimanenti.`}
           </p>
-          <a href="/upgrade" style={{ fontSize: 12, fontWeight: 600, color: "#0a0f0d",
+          <a href="/upgrade" style={{ fontSize: 12, fontWeight: 600, color: "#111a13",
             background: "#0EA5E9", borderRadius: 999, padding: "5px 14px",
             textDecoration: "none", whiteSpace: "nowrap" }}>
             Scegli un piano →
@@ -579,7 +579,7 @@ export default function Dashboard() {
                   onClick={handleBroadcast}
                   disabled={broadcastLoading || !broadcastMsg.trim()}
                   style={{ padding: "8px 20px", background: "#22c55e", border: "none",
-                    borderRadius: 999, color: "#0a0f0d", fontSize: 13, fontWeight: 700,
+                    borderRadius: 999, color: "#111a13", fontSize: 13, fontWeight: 700,
                     fontFamily: "inherit", cursor: broadcastLoading || !broadcastMsg.trim() ? "not-allowed" : "pointer",
                     opacity: broadcastLoading || !broadcastMsg.trim() ? 0.5 : 1 }}>
                   {broadcastLoading ? "Invio in corso..." : "📣 Invia a tutti i clienti"}

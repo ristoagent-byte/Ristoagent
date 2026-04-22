@@ -1,0 +1,1315 @@
+citta,nome,email,indirizzo,telefono,sito,amenity,cuisine
+bologna,40068 Pizza & More,info@40068pizzaemore.com,"Via Carlo Iussi 34, 40068 San Lazzaro di Savena",+39 051 2842005,https://40068pizzaemore.com/,restaurant,pizza;italian;bistro
+bologna,A Casa della Ross,info@acasadellaross.com,"Gardeletta 77, 40043 Bologna",+390516775386,http://www.acasadellaross.com,restaurant,
+bologna,A.Ris.Bar,info@arisbar.it,"Viale Giuseppe Fanin 53, 40127 Bologna",+39 051 6330902,https://www.arisbar.it/locali/meraville/,restaurant,coffee_shop
+bologna,Agriturismo Colombara,info@agriturismocolombara.it,"Via Emilia Levante 2866,  Bologna",+39 339 344 8493,https://www.agriturismocolombara.it,restaurant,
+bologna,Agriturismo Isola del Sasso,info@isoladelsasso.it,"Via Gamberi 50, 40037 Sasso Marconi",+39 051 6751646,http://www.isoladelsasso.it,restaurant,regional;italian
+bologna,Agriturismo Serra dei Gatti,info@agriturismoserradeigatti.it,"Via Castelnuovo 17, 40038 Vergato",+39 340 5680942; +39 349 2962084,http://www.agriturismoserradeigatti.it/,restaurant,regional
+bologna,Al Cuntadein,pieromazzeo83@gmail.com,"Via Serrabella 9, 40065 Rastignano",+39 051 742886,https://www.ristorantepizzeriaalcuntadein.it/,restaurant,pizza;italian
+bologna,Alleria,info@alleriaristorante.it,"Via Emilia Levante 15/d, 40139 Bologna",+390513549068,https://alleriaristorante.it,restaurant,diner;fish;friture;italian;pasta
+bologna,Amerigo,info@amerigo1934.it,"Via Guglielmo Marconi 14-16, 40053 Valsamoggia",+39 051 6708326,https://amerigo1934.it,restaurant,regional
+bologna,Antica trattoria al Gallo,trattoriaalgallo@gmail.com,"Via della Pace 30, 40010 Sala Bolognese",+39 051828959,https://www.trattoria-algallo.it/,restaurant,italian
+bologna,Antica Trattoria del Reno,info@anticatrattoriadelreno.it,"Via del Traghetto 5/3,  Bologna",+39 376 2277824,https://www.anticatrattoriadelreno.it,restaurant,barbecue;steak_house
+bologna,Baracca e Burattini,info@baraccaburattini.it,"Via Irnerio 39a, 40126 Bologna",+39 051 0140445,http://www.baraccaburattini.it/,restaurant,
+bologna,Biancolatte,info@biancolatte.it,"Via dei Mille 4a, 40121 Bologna",+39 051246881,https://www.biancolatte.it/,bar,sandwich;breakfast;tea;coffee_shop
+bologna,Bologna Food Gallery,bolognafoodgallery@gmail.com,"Galleria 2 Agosto 1980 7-8, 40121 Bologna",+39 345 516 9983,https://bolognafoodgallery.it/,restaurant,italian
+bologna,Borgo Mameli,info@borgomameli.it,"Piazza di Porta San Felice 3, 40122 Bologna",+393701512014,https://borgomameli.it/,cafe,pizza;italian;burger
+bologna,Bravo Caffè,osteriacantinone@yahoo.it,"Via Mascarella 1, 40126 Bologna",+39 051 266112,https://www.chipslab.net/page_1/index.php,bar,
+bologna,C House Coffee Shop,chouse@caffe-poli.it,"Via Cristoforo Colombo 7, 40131 Bologna",+39 0510141087,https://www.chouseitalia.com/,cafe,sandwich;breakfast;tea;cake
+bologna,Caffè Pathé,caffepathe@goodvibes.cloud,"Piazza Re Enzo 1, 40125 Bologna",+39 051 0069296,https://www.goodvibes.cloud/caff%C3%A8path%C3%A9,cafe,
+bologna,Caffè Terzi,info@caffeterzi-bologna.com,"Via Guglielmo Oberdan 10d, 40126 Bologna",+39 051 0344819,http://www.caffeterzibologna.com,cafe,
+bologna,Camera a Sud,info@cameraasud.net,"Vicolo Luretta 1a,  Bologna",+39 051 26742,https://www.cameraasud.net/,cafe,
+bologna,Castiglione Pizza E Cucina,castiglionefood@gmail.com,"Via Castiglione 7f, 40124 Bologna",+39 051 4980910,https://www.ristorantecastiglione.it/,restaurant,pizza
+bologna,Cesarina,info@ristorantecesarina.it,"Via Santo Stefano 19/b, 40125 Bologna",+39 051 232037,https://www.ristorantecesarina.it/,restaurant,italian
+bologna,Ci.Bo',info@ciboimola.it,"Via Alcide De Gasperi 29,  Bologna",+39 333 351 6183,https://ciboimola.it,restaurant,pizza
+bologna,Ciaokebab,info@ciaokebab.it,"Via Centotrecento 24, 40126 Bologna",,https://ciaokebab.com/,restaurant,kebab
+bologna,Circolo Mazzini,info@circolomazzini.it,"Via Emilia Levante 6, 40139 Bologna",+39051309326,https://www.circolomazzini.it/,restaurant,regional;italian
+bologna,Collywood,collywood.bologna@gmail.com,Bologna,,https://collywoodbologna.it/,restaurant,
+bologna,Corte dell'Abbadessa,info@cortedellabbadessa.it,"Via Croara 7,  San Lazzaro di Savena",+393245889880,https://www.cortedellabbadessa.it/,restaurant,
+bologna,Corte d’Aibo,info@cortedaibo.it,"Via Rio Marzatore 15, 40050 Valsamoggia",+39 051 832583,https://www.cortedaibo.it/,restaurant,
+bologna,Cuppi's,info@cuppis.com,Bologna,+39 375 7088940,https://www.cuppis.it/,restaurant,burger;chicken
+bologna,Doppio Malto,info@doppiomalto.com,"Via Malsicura 1,  Bologna",+39 0542 730197,https://www.doppiomalto.com/it/ristoranti/imola/,restaurant,burger;italian;steak_house
+bologna,Doppio Malto,bologna@doppiomalto.com,"Via Stalingrado 42, 40128 Bologna",+39 051 089 0155,https://www.doppiomalto.com/it/ristoranti/bologna/,restaurant,burger;italian;steak_house
+bologna,Eataly Bologna,eatalybologna@eataly.it,"Via degli Orefici 19, 40126 Bologna",+39 051 0952820,https://www.eataly.net/eu_it/negozi/bologna,restaurant,italian
+bologna,Fattoria Corte Roeli,info@fattoriacorteroeli.it,"Via Nazionale 387, 40051 Malalbergo",+39 051 871687,https://fattoriacorteroeli.it/,restaurant,regional
+bologna,Feel Sushi,info@feelsushi.it,"Via Montanara 50,  Bologna",+39 331 892 7688,https://feelsushi.it/,restaurant,asian;sushi
+bologna,Fiskebar - Linea 22,info@fiskebarlinea22.it,"Via Papa Onorio secondo 34, 40026 Imola",+39 331 426 1425,https://fiskebarlinea22.it/,restaurant,fish
+bologna,Focillo,info@focillo.it,Bologna,+39 392 8024533,https://focillo.it/,bar,
+bologna,Foglia D'oro,fogliadoro1987@gmail.com,"Via Porrettana Nord 1a, 40043 Marzabotto",+39 051 932343,https://www.pasticceriafogliadoro.com/,bar,breakfast;coffee_shop
+bologna,Forchetta&Cuciglio,info@forchettaecuciglio.it,"Via Aristotile Fioravanti 31c, 40129 Bologna",+39 051 484 7727,http://www.forchettaecuciglio.it/,restaurant,fish;seafood
+bologna,Genki Sushi,genkisushi88@gmail.com,"Via Trattati Comunitari Europei 1957-2007 20,  Bologna",+39 051 6335096,https://www.genkisushibologna.it/,restaurant,sushi
+bologna,Gusto Chengdu,gustochengdu@gmail.com,"Via dei Giudei 6f, 40126 Bologna",+39 0510560510,https://gustochengdu.com/,restaurant,chinese
+bologna,Hao Wei,info@ristorantehaowei.it,"Via Giovanni Casoni 2,  Bologna",+39 051 357 359,https://www.ristorantehaowei.it/,restaurant,chinese
+bologna,IKO Japanese Restaurant,ikosushi.srl@gmail.com,"Via Stalingrado 71, 40121 Bologna",+39 051 631 3605,https://www.ikosushibologna.it/,restaurant,sushi
+bologna,Il Casale,ilcasalebo@gmail.com,"Via Caselle 86, 40068 San Lazzaro di Savena",+39 051 465099,https://www.ristoranteilcasalebologna.com/,restaurant,pizza;italian
+bologna,Il Graffio,info@pizzeriailgraffio.com,"Via Ferdinando Magellano 18, 40017 San Giovanni in Persiceto",+39 051 826739,https://www.pizzeriailgraffio.com/,restaurant,italian;pizza
+bologna,Il Ristorantino da Dino,info@ristorantinodadino.it,"Via Venticinque Aprile 11, 40011 Anzola dell'Emilia",+39 051732364,https://www.ristorantinodadino.it/,restaurant,italian
+bologna,La Baracca,labaraccadizola@gmail.com,"Via Risorgimento 374, 40069 Zola Predosa",+39 051756552,https://www.labaracca.info/,restaurant,italian
+bologna,La Cantina dei Sapori,info@lacantinadeisapori.it,"Via San Martino 26/2, 40050 Monte San Pietro",+39 051 6766263,https://www.lacantinadeisapori.it/,restaurant,regional
+bologna,La Prosciutteria,bologna@laprosciutteria.com,"Via Guglielmo Oberdan 19a,  Bologna",+39 051 045 3717,https://www.laprosciutteria.com/ristorante-bologna-oberdan/,bar,
+bologna,La scuderia,info@lascuderiadozza.it,"Via Venti Settembre 53, 40060 Dozza",+39 0542 678103,https://lascuderiadozza.it/,restaurant,regional;italian;pasta
+bologna,La Spiaggetta,spiaggetta@gmail.com,"Via Ca' Soprani 87B, 40032 Camugnano",+39  348 406 0543,https://www.spiaggetta.it/,restaurant,
+bologna,La Spigolatrice,info@laspigolatrice.com,"Via Altedo 1991, 40018 San Pietro in Casale",+39 051 811656,http://www.laspigolatrice.com/,restaurant,pizza;italian
+bologna,LAB,lab0542social@gmail.com,"Via Gennevilliers 4, 40026 Imola",,https://www.cacoevents.com/it/locali/lab0542.html,bar,
+bologna,Le Loverie,leloverie@libero.it,"Via Gaetano Pollastri 6, 40068 San Lazzaro di Savena",+39 342 180 5471,https://www.leloverie.com/,restaurant,
+bologna,Le Moline,booking@lemoline.it,"Via delle Moline 2f, 40126 Bologna",+39 051 316 9389,https://www.lemoline.it/,restaurant,regional;italian;coffee_shop
+bologna,Le Stanze,info@lestanzecafe.it,"Via del Borgo di San Pietro 1a, 40126 Bologna",+39051228767,http://www.lestanzecafe.it/,bar,
+bologna,Locanda Salus,info@saluspace.eu,"Via Malvezza 2/2, 40139 Bologna",+393347053430,https://saluspace.eu/locanda/,restaurant,arab
+bologna,MBL Lounge,marconilounge@bologna-airport.it,"Via del Triumvirato 84, 40132 Bologna",+39 0516479616,https://www.bologna-airport.it/it/viaggiare/servizi-e-shopping-in-aeroporto/vip-lounge-e-area-meeting/mbl-lounge-e-fast-track.aspx?idC=61768&LN=it-IT,bar,sandwich;coffee_shop
+bologna,Mezcal,info@mezcalimola.it,"Piazza Antonio Gramsci 13, 40026 Imola",+39 0542 27320,http://www.mezcalimola.it/,restaurant,mexican
+bologna,Noi,noi@cantinabentivoglio.it,"Via San Gervasio 3, 40121 Bologna",+39 051 235214,https://noi.cantinabentivoglio.it/,restaurant,regional
+bologna,Nu-Lounge,info@nu-lounge.com,"Via de' Musei 6, 40124 Bologna",+39 051222532,http://www.nu-lounge.com,bar,
+bologna,Osteria da Cesare,info@osteriadacesare.it,"Via Giuseppe Tanari 5418,  Bologna",+39 051 941202,https://www.osteriadacesare.it/ristorante-osteria-cucina-emiliana.html,restaurant,
+bologna,Osteria del Cappello,osteriadelcappello@gmail.com,"Via De' Fusari 9b, 40123 Bologna",+39 051 1998 6887,https://www.osteriadelcappello.com/,restaurant,
+bologna,Osteria del Vicolo Nuovo,info@vicolonuovo.it,"Piazza Giovanni Codronchi Argeli 6, 40026 Imola",+39 0542 32552,https://www.vicolonuovo.it/,restaurant,slow_food;regional;italian
+bologna,Osteria della Pieve,info@osteriadellapieve.it,Bologna,,https://osteriadellapieve.it/,restaurant,italian
+bologna,Osteria San Pietro,info@osteriasanpietro.it,"Via San Pietro 35, 40064 Bologna",+39 051 796003,https://www.osteriasanpietro.it/,restaurant,local;buschenschank;diner;regional;italian
+bologna,Pa' Malù,online@pamaluimola.it,"Via Emilia 358, 40026 Imola",+39 0542 188 8806,https://pamaluimola.it/,restaurant,latin_american;tacos;tapas;mexican;peruvian;colombian
+bologna,Pasticceria Simiani,info@pasticceriasimiani.it,"Via Sant'Isaia 3/2a, 40123 Bologna",+39 051 333464,https://pasticceriasimiani.it/,cafe,
+bologna,Pinterré,ristorantepinterre@gmail.com,"Via Giuseppe Mazzini 170, 40139 Bologna",+39 051 302661,https://www.pizzeriaristorantepinterre.com/,restaurant,italian;pizza
+bologna,Pizzeria Il Sellaio,ilsellaio@icloud.com,"Via San Donato 31, 40127 Bologna",+39 051 241309,https://www.pizzeriailsellaio.com/,restaurant,pizza
+bologna,Polpette e Crescentine,polpette@polpetteecrescentine.com,"Via dei Fornaciai 9/3, 40129 Bologna",+39 051 418 0424,https://www.polpetteecrescentine.com/,restaurant,
+bologna,Primo Piano,primopianoimola@gmail.com,"Via Emilia 31, 40026 Imola",+393454500135,https://loungebarprimopianoimola.eatbu.com/,restaurant,
+bologna,Principe Bologna Lievito e Cucina,lievitoecucina@outlook.it,"Via Giuseppe Mezzofanti 18, 40137 Bologna",+39 051 346322,https://www.principebologna.it/,cafe,
+bologna,Ristorante al Sole,ciak994@gmail.com,"Via Giacomo Matteotti 42, 40018 San Pietro in Casale",+39 051 810881,https://www.tripadvisor.it/Restaurant_Review-g970315-d6939682-Reviews-Ristorante_Al_Sole-San_Pietro_in_Casale_Province_of_Bologna_Emilia_Romagna.html,restaurant,chinese
+bologna,Ristorante Albergo da Fedora,info@albergosterlina.com,"Via Nazionale Nord 16, 40035 Bologna",+39 0534897141,http://www.albergosterlina.com,restaurant,italian
+bologna,Ristorante Caffetteria Krisstal 19,info@krisstal.net,"Piazza Liber Paradisus 1,  Bologna",+39 051 353692,https://krisstal.net/,restaurant,
+bologna,Ristorante Da Taiadela,info@dataiadela.it,"Via Filippo Turati 1, 40019 Sant'Agata Bolognese",+39051956680,https://www.dataiadela.it,restaurant,
+bologna,Ristorante Il Giardino,info@ristorantegiardino.net,Bologna,+39 051 801128,https://www.ristoranteilgiardinobudrio.com/,restaurant,
+bologna,Ristorante Marconi,info@ristorantemarconi.it,"Via Porrettana 291, 40037 Sasso Marconi",+39 051 846216,https://www.ristorantemarconi.it/index.html,restaurant,italian
+bologna,Ristorante Rodrigo,info@ristoranterodrigo.com,"Via della Zecca 2H, 40121 Bologna",+39 051 235 536,https://ristoranterodrigobologna.it,restaurant,
+bologna,Ristorante Senafe,ristorantesenafe@gmail.com,"Via Nicolò dall'Arca 42a, 40129 Bologna",+39 051 459 9558,https://ristorantesenafe.it/,restaurant,african
+bologna,Ristorante Singapore,info@ristorantesingapore.com,"Piazza dell'Unità 9d, 40128 Bologna",+39 051 361 825,https://www.ristorantesingapore.com/,restaurant,chinese
+bologna,Taverna San Pietro,tavernasanpietro@outlook.it,Bologna,+39 388 4043367,https://tavernasanpietro.com/,restaurant,italian
+bologna,Tenuta Poggio Pollino,info@poggiopollino.it,"Via di Monte Meldola 2t, 40026 Imola",,https://poggiopollino.it/,restaurant,regional;italian
+bologna,Trattoria Castellinaria,info@trattosteriacastellinaria.it,Bologna,+39 051 590873,http://www.trattosteriacastellinaria.it/,restaurant,
+bologna,Trattoria La Scuderia,trattoria@allascuderia.it,"Via San Pierino 48, 40013 Castel Maggiore",+39 051 713302,https://allascuderia.it/,restaurant,
+bologna,Trattoria Meloncello,meloncello@hotmail.it,"Via Saragozza 240a, 40134 Bologna",+39 051 6143947,http://www.trattoriameloncello.it,restaurant,regional
+bologna,Trattoria Piazzetta,info@lapiazzettasgp.com,"Via Betlemme 31, 40017 San Giovanni in Persiceto",+39 051 998 2416,https://www.trattoriapiazzetta.it/,restaurant,regional
+bologna,Trattoria Rivabella al Parco Verde,rivabellaparcoverde@gmail.com,"Via boschi 19, 40037 Calderino",+39 051 758150,https://www.trattoriarivabella.it/,restaurant,local;regional;italian;mediterranean
+bologna,Vâgh iń Ufézzi,info@vaghinufezzi.it,"Via de' Coltelli 9,  Bologna",+39 051 296 1446,https://www.vaghinufezzi.it/,restaurant,italian
+bologna,Yuzuya,yuzu@yuzuya.it,"Via Nicolò dall'Arca 1i, 40129 Bologna",+39 051 041 5021,https://www.yuzuya.it/,restaurant,japanese
+bologna,Ambasciata Salentina,gigliolastanelli@alice.it,Bologna,+39 051 401205,,restaurant,salentina
+bologna,Antica Trattoria - Il Ristorone,trattoria.ristorone@gmail.com,Bologna,+39 051 6052166,,restaurant,
+bologna,Bar Roma Bistrot,barroma@gmail.com,"Via Emilia 137, 40026 Imola",,,bar,
+bologna,Brio Ristorante,briobologna@hotmail.it,"Via Caduti della Via Fani 15a, 40127 Bologna",+39 051 7166953,,restaurant,
+bologna,Casa Vallona,info@casavallona.com,"Via Enrico De Nicola 10,  Monte San Pietro",+39 346 271 1243,,restaurant,italian
+bologna,Cibò,info@cibo.bo.it,"Via Porrettana 275, 40011 Casalecchio di Reno",+39 051 6130200,,bar,
+bologna,Da Brega,cris.brega@libero.it,"Via Monte La Pieve 2, 40025 Fontanelice",+39 0542 92592,,restaurant,regional
+bologna,Dandy caffè letterario,dandycaffeletterario2.0@gmail.com,"Via della Grada 4e, 40122 Bologna",+39 349 350 0495,,cafe,coffee_shop
+bologna,Grani Antichi,graniantichi2022@gmail.com,"Viale Francesco Domenico Guerrazzi 21b,  Bologna",+39 0542 24223,,restaurant,pizza;fries;friture
+bologna,Ippocampus Rist,ristoranteippocampus@gmail.com,Bologna,+39 051 946831,,restaurant,italian;mushroom;truffle
+bologna,Irnerio 10,irnerio10@grupposalutepiu.it,"Via Irnerio 10d, 40126 Bologna",+39 331 808 9715,,restaurant,regional;italian
+bologna,NoveCinqueSeiNove,novecinqueseinove@gmail.com,"Via Massimo Villa 24c, 40026 Imola",+39 324 0933862,,restaurant,piadina;pasta;regional
+bologna,Osteria dei Sani,osteria.dei.sani.le.cere@alice.it,"Via Porrettana 324, 40037 Sasso Marconi",+39 051 6751866,,restaurant,regional
+bologna,Osteria delle Donzelle,osteriadelledonzelle@gmail.com,"Via delle Donzelle 4/3, 40126 Bologna",+39 051 264525,,restaurant,regional
+bologna,Pastis,pastis.belvedere@gmail.com,"Via Belvedere 7, 40121 Bologna",+39 051 230650,,bar,
+bologna,Pizza a Casa di Farouk,pizzaacasasnc@gmail.com,"Via Selice 107, 40026 Imola",+39 0542 33310,,restaurant,pizza;kebab
+bologna,Saragozza157,saragozza157@hotmail.com,"Via Saragozza 157a,  Bologna",+39 051 6142092,,cafe,
+bologna,Snoopy,giuseppesnoopy74@gmail.com,"Via Ferrarese 113d, 40128 Bologna",+39 3487096651,,restaurant,
+bologna,UNO Caffé Olistico,unocaffeolistico@gmail.com,"Via Guglielmo Oberdan 27, 40126 Bologna",+39 051 039 4378,,restaurant,regional;italian
+bologna,Vecchia Osteria di Ponzano,luisabartolini27@outlook.it,"4818, 40053 Bologna",+39 340 0039166,,restaurant,italian
+bologna,Vittoria Pasticceria Modicana,info@pasticceriavittoria.com,"Strada Maggiore 32,  Bologna",+39 339 794 9106,,cafe,
+firenze,#RAW,rawveganfirenze@gmail.com,"Via Sant'Agostino 11r, 50125 Firenze",+39 055 7091328,https://rawveganfirenze.com,restaurant,pizza;burger;smoothie
+firenze,A Crudo,info@acrudo.it,"Via Mazzetta 5r,  Firenze",+390552657483,https://www.acrudo.it/home,restaurant,italian;regional
+firenze,Agriturimo La Burra Di Vinci,info@allaburra.com,"Via Orbignanese 15, 50059 Vinci",+39 0571 909042,https://www.allaburra.com,restaurant,
+firenze,Agriturismo Al Volo del Nibbio,bettina@agrivonibbio.it,Firenze,,https://www.agrivonibbio.it/,restaurant,
+firenze,Alimentari Uffizi,alimentariuffizi@gmail.com,"Via Lambertesca 10r, 50100 Firenze",+39055281089,http://facebook.com/alimentari.uffizi,cafe,italian;mediterranean
+firenze,Amici di Ponte Vecchio Da Stefano,stefano.masini@live.it,"Via dei Bardi 52r, 50125 Firenze",+39 055285301,https://www.amicidipontevecchio.it,restaurant,italian_pizza;mediterranean
+firenze,Antico Bar Ginori,ristorante.pizzeria.ginori@gmail.com,"Via dei Ginori 11r, 50123 Firenze",,https://www.ristoranteginori.com,restaurant,regional
+firenze,Ararat,firenze@araratrestaurant.it,Firenze,+39 3755721739,https://www.araratrestaurant.it/,restaurant,asian;armenian
+firenze,Bar carletti,irina.consuma@yahoo.it,"Via Casentinese 331, 50060 Firenze",+39 346 7916151,http://affitticonsuma.it,bar,pasta;sandwich;italian;breakfast;italian_pizza
+firenze,Bio & Brado,fattoriadicolline@gmail.com,"Via Colline 2/2, 50023 Impruneta",+39 342 192 3194,https://bio-brado.business.site/?utm_source=gmb&utm_medium=referral%20https://bioebrado.superbexperience.com/,restaurant,
+firenze,Bistrot al 5,info@bistrotal5.com,Firenze,+39 055 59250,https://bistrotal5.com,restaurant,italian;local
+firenze,Borderline,borderlinefirenze@gmail.com,"Corso Italia 35, 50123 Firenze",+39 055 288771,https://ristoranteborderline.it/firenze,restaurant,regional
+firenze,Borgo Antico,prenotazioni@borgoanticofirenze.com,"Piazza di Santo Spirito 6 R, 50125 Firenze",+39 055 210437,https://www.borgoanticofirenze.com/,restaurant,italian
+firenze,Borgovino,info@borgovino.com,"Via Borgo San Lorenzo ,  Firenze",+39 0552398557,http://www.vorgovino.com,restaurant,
+firenze,Buca Niccolini,info@bucaniccolini.it,"Via Ricasoli 5 R,  Firenze",+39 055 292124,https://www.bucaniccolini.it/,restaurant,italian;pizza
+firenze,Caffè Centofiori,caffe100fiori@gmail.com,"Viale Cento Fiori 39, 50056 Montelupo Fiorentino",+39 055 1170 0485; +39 347 951 8483,https://www.pasticceriacentofiori.it/,bar,breakfast;cake;coffee_shop
+firenze,Caffè Gilli,welcome@caffegilli.com,"Via Roma 1r, 50123 Firenze",+39 055 213896,https://www.caffegilli.com/,cafe,coffee_shop;dessert
+firenze,Carnam Ciccia Club,info@carnam.it,"Via Pier Paolo Pasolini 30,  Campi Bisenzio",+39 378 305 3350,https://www.carnam.it/,restaurant,regional
+firenze,Chalet Raticosa,chaleteloise@gmail.com,"Via Pietramala Scala 2230, 50033 Firenze",+39 055 810 1342,https://facebook.com/chaletraticosa/,restaurant,coffee_shop;ice_cream;sandwich
+firenze,da Que' Ganzi,info@daqueiganzi.it,"Via Ghibellina 70r, 50122 Firenze",+39 055 2260010,https://www.daqueiganzi.it/,restaurant,regional
+firenze,Dim Sum Restaurant,info@dimsumrestaurant.it,"Via Antonio Magliabechi 9 R, 50122 Firenze",+39 055 284331,https://www.dimsumrestaurant.it/,restaurant,noodle
+firenze,Dispensa verace,dispensaverace@gmail.com,"Via Enrico Forlanini 1/13, 50127 Firenze",+390552694677,https://dispensaverace.com,restaurant,italian;italian_pizza;pasta;pizza;regional
+firenze,Eataly,eatalyfirenze@eataly.it,Firenze,+39 055 0153601,https://www.eataly.net/it_it/negozi/firenze,restaurant,
+firenze,Edy più,info@edypiu.it,"Via Calcinaia 94, 50055 Lastra a Signa",+39 055 872 4562,https://edypiu.it/,restaurant,italian;regional
+firenze,Enoteca Ristorante Fuoripiazza,info@fuoripiazza.it,"Via 1 Maggio 2, 50022 Greve in Chianti",+39 055 8546313,https://www.enotecaristorantefuoripiazza.it/en/,restaurant,italian;regional
+firenze,Festa del Mugello,festadelmugello@gmail.com,"Lungarno Aldo Moro 3, 50136 Firenze",,http://festadelmugello.com,restaurant,regional;burger;chicken;ice_cream;italian;international
+firenze,Gli Ostinati Osteria,info@gliostinati.it,"Corso Giuseppe Mazzini 5,  Firenze",+39 055 9544255,http://www.gliostinati.it/,restaurant,italian
+firenze,Grazie Assai,firenze@grazieassai.com,"Via Pietro Carnesecchi 2r, 50137 Firenze",+39 055 0195799,https://grazieassai.com/,restaurant,italian
+firenze,Il Battibecco,prenotazioni@ilbattibecco.it,"Viale Vittorio Veneto 38, 50023 Impruneta",+39 339 777 6819;0552313820,https://www.ilbattibecco.it/,restaurant,italian;regional
+firenze,Jazz Bistrot,info@jazzbistrot.it,Firenze,+39 055 677391,https://www.jazzbistrot.it/,cafe,breakfast;coffee_shop;diner;tea;pizza;pastry;cake
+firenze,L'imperfetto,info@ristoranteimperfetto.it,"Piazza Serristori 16, 50063 Firenze",+39 055 2692311,https://www.ristoranteimperfetto.it/,restaurant,fish;italian;pizza
+firenze,La Bisegna,labisegna@gmail.com,"Via Gherardo Silvani 26 E/R, 50125 Firenze",+39 3762577929,https://www.labisegna.it/,restaurant,coffee_shop;regional;italian;cake;pasta;bistro;fine_dining;tapas;tea;diner
+firenze,La Carabaccia Firenze,info@trattorialacarabaccia.com,Firenze,+39 055214782,https://www.trattorialacarabaccia.com/,restaurant,
+firenze,La Carbonata,lacarbonatasrl@gmail.com,"Via Camillo Cavour 112R, 50-129 Firenze",+39 055 210095,https://www.lacarbonata.it,restaurant,italian
+firenze,La Giostra,info@ristorantelagiostra.com,"Borgo Pinti 12r, 50121 Firenze",+39 05241341,https://ristorantelagiostra.com/,restaurant,italian
+firenze,La Lombricaia,info@agriturismomontalbino.it,"Via Colle a Montalbino 10, 50025 Montespertoli",+39 0571 608089,http://www.agriturismomontalbino.it/index.php?ristorante_eng,restaurant,italian
+firenze,La Luna,info@pizzerialaluna.it,"Via Vincenzo Gioberti 93r, 50136 Firenze",+39 055 663810,https://www.pizzerialaluna.it/,restaurant,italian;pizza
+firenze,La Sosta di Pio VII,info@osterialasostadipiovii.it,"6, 50021 Barberino Val d'Elsa",+39 055 80 75 923,http://www.osterialasostadipiovii.it/,restaurant,regional;italian
+firenze,Le lune,fresco@lelunefirenze.it,"Via di San Domenico 36,  Firenze",+39055570222,https://www.lelunefirenze.it/,restaurant,
+firenze,Le Panche,chitiroberto@virgilio.it,Firenze,+39 055431922,https://pizzeria-le-panche.eatbu.com,restaurant,diner;pizza;regional
+firenze,Le Vespe Cafè,info@levespecafe.com,"Via Ghibellina 76, 59100 Firenze",+39 055 3880062,https://www.levespecafe.com/,restaurant,breakfast;brunch;italian;canadian
+firenze,Locanda Casanuova,locanda@casanuova-toscana.it,"Via San Martino Altoreggi 52,  Firenze",+39 055 9500027,www.casanuova-toscana.it,restaurant,italian;regional
+firenze,Lungarno Bistrot,info@lungarnobistrot.it,"Piazza degli Scarlatti 1/r, 50123 Firenze",+39 055 2654541,http://www.lungarnobistrot.it,restaurant,italian;seafood;mediterranean
+firenze,l’ Pizzacchiere,alfredo@pizzacchiere.com,"Via San Miniato 2/1, 50125 Firenze",+39 055 246 6332,https://www.pizzacchiere.com/,restaurant,italian_pizza
+firenze,L’angolo del caffè,barpiagge2022@gmail.com,Firenze,+390558894687,https://langolo-delcaffe.it/,cafe,breakfast;coffee_shop
+firenze,Maioli,germo43r@gmail.com,"Via dei Guicciardini 43 R,  Firenze",+39 055 214701,https://bistrotpasticceriamaioli.it/,cafe,
+firenze,Miró,miroristorantepizzeria@gmail.com,"Via San Gallo 40 R,  Firenze",+39 055 7091425,https://www.ristorantemirofirenze.com/,restaurant,italian;pizza
+firenze,Moya Asian Fusion Restaurant,moyaempolisrl@gmail.com,"Via Domenico Bartoloni 99, 50053 Empoli",351 566 6653,https://moyasushi.it/,restaurant,asian
+firenze,Nappi's,lello21176@gmail.com,"Via Tredici Martiri 238, 50013 Campi Bisenzio",+39 3737903815,https://www.nappis.it,restaurant,chicken
+firenze,Nirvana,info@nirvanaristorante.it,"via Il Prato 4/b,  Firenze",+393466381015,https://www.nirvanaristorante.it/,restaurant,italian
+firenze,Okaeri,okaerifirenze@gmail.com,"Via Ugo Novelli 52, 50013 Campi Bisenzio",+39 055 614 1672,https://www.okaerifirenze.it/,restaurant,sushi
+firenze,Osteria dei Centopoveri,info@centopoveri.it,"Via Palazzuolo 31r, 50123 Firenze",+39 055 218846,http://www.centopoveri.it,restaurant,italian
+firenze,Osteria del Cinghiale Bianco,info@cinghialebianco.com,"Borgo San Iacopo 43r, 50125 Firenze",+39 055 215706,http://cinghialebianco.com,restaurant,italian
+firenze,Osteria di Giovanni,info@osteriadigiovanni.com,"Via del Moro 22,  Firenze",+39 055 284897,https://www.osteriadigiovanni.it,restaurant,
+firenze,Osteria Il Sordo,osteriailsordo@gmail.com,"Via scipione Ammirato, 42/R ,  Firenze",055670131,https://www.osteriailsordo.com/,restaurant,toscana;mediterranean
+firenze,Osteria Manì,info@osteriamani.it,"Via Giovan Battista Foggini 7, 50142 Firenze",+39 055 712978,https://osteriamani.it/,restaurant,italian;pizza
+firenze,Osteria Pastella,info@osteriapastella.it,"Via della Scala 17r, 50123 Firenze",+39 055 2670240,https://www.osteriapastella.it/,restaurant,italian
+firenze,Osteria Pratellino,osteriapratellino@gmail.com,"Via del Pratellino 44 R, 50131 Firenze",+39 055 0203832,https://osteriapratellinofirenze.it/,restaurant,italian
+firenze,Osteria Vinicolo,osteriavinicolo@gmail.com,"Piazza Bianco Bianchi 6,  Figline Valdarno",+39 3938316534,https://www.osteriavinicolo.it/,restaurant,
+firenze,Palazzo Tempi,info@palazzotempi.it,"Via dei Bardi 37, 50125 Firenze",+39 055 246 6949,https://palazzotempi.it,restaurant,italian
+firenze,Pasticceria Andrea Di Bonaiuti Andrea,stefy.mart86@gmail.com,"Piazza Mazzini 6/7, 50061 Fiesole",+39 055 6594788,https://www.pasticceriandrea.it/,cafe,
+firenze,Pasticcieria Anna,ricordifirenze@gmail.com,"Via Santo Stefano in Pane 28 R, 50134 Firenze",+39 055 771 7559,https://www.pasticceriaannafirenze.it/,cafe,breakfast;coffee_shop;diner
+firenze,Pinseria di Quartiere,info@pinseriadiquartiere.it,"Via Ottavio Rinuccini 27d, 50144 Firenze",,https://www.pinseriadiquartiere.it/,restaurant,pizza
+firenze,Pizzeria A’ i Campo,aicampo.it@gmail.com,"Via Yuri Gagarin 3, 50050 Firenze",+39 3348204645,https://aicampo.it/,restaurant,italian_pizza;pizza
+firenze,Pizzeria Biancaneve,marcomos74@gmail.com,"Via Baldassarre Franceschini 44, 50142 Firenze",+39 055 715 005,https://www.pizzeriabiancaneve.it/isolotto,fast_food,pizza
+firenze,Pizzeria Giotto,info@pizzeriagiottofirenze.it,"Via Panzani 57 rosso, 50123 Firenze",+39 055212287,https://www.pizzeriagiottofirenze.it,restaurant,italian_pizza
+firenze,Pizzeria Primavera,zeni1990@icloud.com,"Via Ventiquattro Maggio 11, 50055 Lastra a Signa",+39 055 872 0024,https://pizzeria-primavera.business.site/,fast_food,pizza
+firenze,Ristorante Accademia,info@ristoranteaccademia.it,Firenze,+39 055 217343,http://www.ristoranteaccademia.it,restaurant,italian
+firenze,Ristorante Bistrot Lo Zero,rossoramefirenze@gmail.com,"Via Taddeino Taddeini 70, 50025 Montespertoli",+393290241553,http://info.ristorantebistrotlozero.it/,restaurant,
+firenze,Ristorante Cortefreda,max@borgodicortefreda.com,"Via Roma 191, 50028 Tavarnelle Val di Pesa",+39 055 8073333,http://www.ristorantecortefreda.com,restaurant,
+firenze,Ristorante Giapponese Tokyo,tokyo.empoli@hotmail.com,"Via Giambattista Vico 47, 50053 Empoli",334 1753853,https://www.ristorantegiapponesetokyoempoli.it,restaurant,asian
+firenze,Ristorante Il Camino,mircofanfi@gmail.com,"Viale Baccarini 38,  Firenze",+39 055 8045069,https://www.ristoranteilcamino.net/,restaurant,
+firenze,Ristorante Il Portico,ristilportico@gmail.com,"Via Enzo Cherzani 12, 50041 Calenzano",+39 055 883 9778;+39 338 523 6551,https://www.ristilportico.it/,restaurant,
+firenze,Ristoro di Lamole,info@ristorodilamole.it,"Località Lamole 6, 50022 Greve in Chianti",+39 055 8547050,http://www.ristorodilamole.it,restaurant,italian
+firenze,Rivoire,rivoire.firenze@rivoire.it,"Piazza della Signoria 5r,  Firenze",+39 055 214412,https://www.rivoire.it/,cafe,
+firenze,Rosmarino,info@rosmarinobistrot.it,"Viale Roosvelt 1, 50051 Castelfiorentino",+39 0571 629606,https://www.rosmarinobistrot.it/,restaurant,
+firenze,Sciabolino,info@sciabolino.it,"Via d'Ormicello 18,  Empoli",+39 0571 924333,https://www.sciabolino.it/,restaurant,italian
+firenze,Shake cafe,info@shakecafe.it,"Piazza Francesca Morvillo 5, 50144 Firenze",+39 055 0682661,https://www.manifatturatabacchi.com/en/maker/eat-and-drink/shake-cafe/,restaurant,breakfast;brunch
+firenze,Signorvino,firenze.pontevecchio@signorvino.it,"Via dei Bardi 46/r, 50125 Firenze",+39055286258,https://www.signorvino.com/it/negozi/firenze,restaurant,
+firenze,simBIOsi Café,contatti@simbiosi.bio,"Via dei Ginori 60r;64r, 50123 Firenze",+39 055 0640115,https://www.simbiosi.bio/,cafe,italian
+firenze,Trattoria Antico Fattore,info@anticofattore.it,"Via Lambertesca 1/3 R,  Firenze",+39 055 288975,https://www.anticofattore.it/,restaurant,
+firenze,Trattoria Da Cioffi,trattoria.dacioffi@gmail.com,"Via Val d'Orme 383, 50053 Empoli",+39 333 6160489,https://www.trattoriacioffi.com,restaurant,italian
+firenze,Trattoria da Giorgio,info@trattoriadagiorgio.it,"Via Palazzuolo 100r, 50123 Firenze",+39 055 28 43 02,https://www.trattoriadagiorgio.it/,restaurant,italian;local
+firenze,Trattoria dall Oste,trattoriaoste@hotmail.com,"Via dei Cerchi 40r, 50100 Firenze",+39 055 212048,http://www.osteriadalloste.it,restaurant,italian;steak_house
+firenze,Trattoria Diladdarno,ssabatini77@gmail.com,"Via dei Serragli 108r,  Firenze",,https://www.trattoriadiladdarno.com,restaurant,regional
+firenze,Trattoria I Fratellini,info@trattoriaifratellini.com,"Via Ghibellina 27 R,  Firenze",+39 055 2001371,https://www.trattoriaifratellini.com/,restaurant,
+firenze,Trattoria I'Raddi,info@trattoriairaddi.it,"Via d'Ardiglione 47 / R, 50125 Firenze",+39 055211072,www.trattoriairaddi.it,restaurant,regional;italian
+firenze,Trattoria la Baracchina,info@trattorialabaracchina.it,Firenze,,https://www.trattorialabaracchina.it,restaurant,regional
+firenze,Trattoria ponte vecchio,trattoriapontevecchiofirenze@gmail.com,Firenze,+39 055 292289,https://www.flofood.it/trattoria-ponte-vecchio,restaurant,
+firenze,Trattoria Zazà,info@trattoriazaza.it,"Piazza del Mercato Centrale 26, 50123 Firenze",+39 055 215411,https://www.trattoriazaza.it/,restaurant,italian;mediterranean;italian_pizza
+firenze,Tullio,info@ristorantetullio.it,"via Ontignano 46,  Fiesole",+39 055 697354,https://www.ristorantetullio.it/,restaurant,regional
+firenze,Tuttobene,info@tuttobene-bar.it,"Via San Quirico 233/a, 50013 Campi Bisenzio",+39 055 896 9529,https://www.tuttobene-bar.it/,cafe,italian;regional
+firenze,Villa Campestri,villa.campestri@villacampestri.it,"Via di Campestri 19/22, 50039 Vicchio",+39. 055 8490107,https://www.villacampestri.com/,restaurant,
+firenze,Volume,hello@volume.fi.it,"Piazza di Santo Spirito 5/r, 50125 Firenze",+390552381460,https://www.volume.fi.it,bar,
+firenze,Agriturismo Badia di Moscheta,badia.moscheta@gmail.com,"Via Moscheta 898, 50033 Firenze",+39  055 8144015,,restaurant,grill;local
+firenze,Albergo Ristorante Gualtieri,albergogualtieri@hotmail.it,"Via Santa Lucia 5, 50031 Firenze",+39 055 8423163,,restaurant,
+firenze,Amici Miei,amicimiei.rufina@gmail.com,"Via 25 Aprile 16/b, 50068 Rufina",,,restaurant,regional;pizza;italian
+firenze,B.O.r.G.O.,info@borgofirenze.com,"Borgo San Frediano 145r, 50124 Firenze",+39 055 223449,,restaurant,italian
+firenze,Bar Gelateria La Curva,cappuccinogl55@yahoo.it,"Piazza Bucciarelli 10, 50022 Panzano in Chianti",+39055290761,,bar,
+firenze,Bar sei Pucci,caffedeipucci@gmail.com,"Via dei Pucci 31 R, 50122 Firenze",+39 055 5308949,,bar,italian
+firenze,Bar Sorgane,bar.sorgane@gmail.com,"Viale Benedetto Croce 5, 50126 Firenze",+39 055 682 0444,,bar,breakfast;coffee_shop;sandwich
+firenze,Canto del Ramerino,cantodelramerino@gmail.com,"Via di San Giuseppe 18 R, 50122 Firenze",+39 055 4931561,,restaurant,italian
+firenze,Coconovo pizzeria,coconovo@virgilio.it,Firenze,+39 055 787 4748,,restaurant,pizza
+firenze,David 2,info@pizzeriadavid2.it,"Via Aretina 193 r,  Firenze",,,restaurant,italian
+firenze,Fattoria di Maiano,spaccio@contemiarifulcis.it,"Via Cave di Maiano 2,  Firenze",+39 055 59432,,restaurant,regional
+firenze,il Bacaro fiorentino,info@ilbacarofiorentino.com,"Via Palazzuolo 80 R,  Firenze",+393516925416;+390557969626,,restaurant,italian
+firenze,La Divina Pizza,divina@ladivinapizza.it,"Borgo Allegri 50r, 50122 Firenze",+39 055 2347498,,restaurant,pizza
+firenze,Mensa universitaria Caponnetto,ristorazione.fi@dsu.toscana.it,Firenze,,,fast_food,sandwich;salad;pizza;traditional
+firenze,Nuovo Ranch,info@nuovoranch.it,"Via Ponti di Millo ,  Bagno a Ripoli",,,restaurant,regional
+firenze,Osteria Al Peposo,al.peposo@libero.it,"Via Fra' Iacopo Passavanti 2 R, 4 R, 6 R, 50133 Firenze",+39 055 500 0633,,restaurant,pizza;italian;mediterranean
+firenze,Pasticceria Crociani,crocianisrl@gmail.com,"Piazza Dalmazia 37 R, 50141 Firenze",005 431572,,cafe,cafe;italian
+firenze,Pasticceria L'Incontro,pasticcerialincontrofirenze@gmail.com,"Via Domenico Maria Manni 100r,  Firenze",+39055608860,,cafe,
+firenze,Relais Fattoria Valle,info@fattoriavalle.it,"Via Case Sparse 56, 50022 Firenze",+39055852482,,restaurant,italian
+firenze,Ristorante da Sonia,frederik11@hotmail.it,"2,  Firenze",,,restaurant,regional
+firenze,Ristorante Goyo Asian&Fusion,ristorante.goyo@gmail.com,"Via Enzo Cherzani 12a, 50041 Calenzano",+39 055 614 4654,,restaurant,sushi
+firenze,Ristorante Pizzeria Campigno,ilio29villa@gmail.com,Firenze,+39 055 8042295,,restaurant,regional;pizza
+firenze,Salerosa Bistrò,salerosa@salerosa2019.com,"Borgo San Frediano 90 rosso, 50053 Firenze",,,restaurant,seafood
+firenze,Trattoria Cornelius,trattoria.cornelius@gmail.com,"Via Faenza 60/62r,  Firenze",+39 055 281122,,restaurant,italian;pizza
+milano,150UP,hello@150up.com,"Via Medardo Rosso 16, 20159 Milano",+39 02 89452576,https://150up.com/,bar,
+milano,55 Milano,info@55milano.com,"Via Piero della Francesca 55, 20154 Milano",+39 02 34936616,https://www.55milano.com/,bar,
+milano,A Piedigrotta,aldofareg@yahoo.com,"Via Cesare da Sesto 5, 20123 Milano",+390289406642,https://apiedigrotta.eatbu.com/,restaurant,italian;seafood;steak_house;pizza
+milano,Actors' Studio Cafe,actorstudiosrl@gmail.com,"Via Terraggio 11, 20123 Milano",+390236586357,https://it-it.facebook.com/actorstudiocafe/,cafe,
+milano,Al Canevone 2.0,alcanevone2.0.lainate@gmail.com,"Via Isonzo , 20045 Lainate",,https://www.alcanevone.it/,cafe,
+milano,Al Chiosco del Ghezzi,alchioscodelghezzi@gmail.com,Milano,+39 393 16 79 591,www.facebook.com/AlChioscodelGhezzi,cafe,italian
+milano,Al Desiderio,ristorantealdesiderio@gmail.com,"Viale Fulvio Testi 58, 20125 Milano",+39 02 6471173,http://www.ristorantealdesiderio.it/,restaurant,pizza;japanese;italian
+milano,Al Molo 13,info@ristorantealmolosulladda.com,"Via Alzaia 13,  Milano",+39 02 909 2013,https://ristorante-almolo13.com,restaurant,pizza;italian
+milano,Al panino 900,maxalpanino900@gmail.com,"Via Savona 2, 20144 Milano",+390287166673,https://alpanino900.it/,cafe,
+milano,Al Pizzetta,alpizzettamontenero@gmail.com,"Viale Monte Nero 73, 20129 Milano",,http://www.alpizzetta.it,fast_food,pizza
+milano,Alex Pub Ristorante Pizzeria,alexpub2014@gmail.com,"Via Pietro Mascagni 34, 20030 Senago",+39029988361,https://www.alexpub.it/,restaurant,pizza;regional;italian;burger;steak_house;dessert
+milano,Anarres,libreria@anarres.it,"Via Pietro Crespi 11, 20127 Milano",340 687 0353;0209942972,https://www.anarres.it/,bar,
+milano,Antica Osteria della Lucciola,osteria.lucciola@libero.it,"Via Monte Santo 2, 20039 Canegrate",+39 0331 402799,http://www.anticaosteriadellalucciola.com/,restaurant,pizza;italian
+milano,ARCI Villa Cortese,circoloarcivillacortese@gmail.com,"Via Emilia 18a, 20020 Villa Cortese",+39 0331 430067,http://www.arcimilano.it/circoli/circolo/villa-cortese,bar,
+milano,Art Cafe,info@artcafemilano.it,"Via Legnano 26, 20121 Milano",+39 02 36748220,http://www.artcafemilano.it/,cafe,
+milano,Art Cafe,mangia.marcello@live.it,"Via Andrea Solari 19, 20144 Milano",+393348673956,https://art-cafe-bar-milano.eatbu.com/?lang=it#,cafe,
+milano,Art Factory,artfactorymilano@hotmail.com,"Viale Andrea Doria 17, 20124 Milano",+39 02 6694578,http://www.hc-artfactory.it/,cafe,
+milano,Assaje,milano.trau@assaje.it,"Piazzale Segrino , 20159 Milano",+39 02 606456,https://www.assaje.it,restaurant,pizza
+milano,Assaje,milano.baracca@assaje.it,"Viale di Porta Vercellina 2, 20123 Milano",+390243983226,https://www.assaje.it/,restaurant,pizza
+milano,Assaje,milano.casale@assaje.it,"Via Casale 5, 20144 Milano",,https://www.assaje.it/,restaurant,pizza
+milano,Attimi Bar & Gelateria,cooperativa@isemprevivi.org,"Piazza Riccardo Wagner 2, 20145 Milano",+393292183263,https://www.cooperativaisemprevivi.it/,bar,
+milano,Bar Arca,info@arcamilano.eu,"Via Rimini 38, 20142 Milano",,https://www.arcamilano.eu/,bar,
+milano,Bar Basso,info@barbasso.com,"Via Plinio 39, 20129 Milano",+39 02 29400580,http://www.barbasso.com/,cafe,
+milano,Bar Mercurio,info@barmercurio.it,"Via Dogana 3, 20123 Milano",+39 02 8056153,http://www.barmercurio.it/,cafe,
+milano,Bar Mida,info@barmida.com,"Via Sandro Botticelli 22, 20133 Milano",+39 02 714428,http://www.barmida.com/,cafe,italian
+milano,Bar tabacchi Cenisio,tabacchicenisio@gmail.com,"Via Cenisio 40, 20154 Milano",+39023451163,https://www.facebook.com/people/Bar-Tabacchi-Cenisio/100027689996195/,cafe,
+milano,Bar Taita,taitamigliavacca75@gmail.com,"Largo Oreste Murani 2, 20133 Milano",+39 338 692 3799,https://bartaita.eatbu.com/,bar,
+milano,Barcollando,info@barcollandocafe.it,"Via Francesco Novati 6, 20123 Milano",,https://www.barcollandocafe.it/,cafe,
+milano,Beato Te,beatote@ristorantebeatote.it,"Via Sant'Anatalone 16, 20147 Milano",+39 02 84571533,https://beatotemilano.it,restaurant,italian;pizza
+milano,Bebel,info@bebel.it,"Via San Vittore 3, 20123 Milano",+39024812824,https://www.bebel.it/,restaurant,italian;pizza
+milano,Bella Napoli,info@bellanapoliristorante.it,"Via Davide Campari 62, 20099 Sesto San Giovanni",+39 02 26260975,http://www.bellanapoliristorante.it/,restaurant,pizza
+milano,Blanco,info@blancomilano.it,"Via Giovanni Battista Morgagni 2,  Milano",+39 02 29405284,http://www.blancomilano.it,cafe,
+milano,Blow Up Enoteca & Cafè Bistrot,blowuplainate@gmail.com,Milano,+39 02 93256126,https://www.blowuplainate.com/,cafe,bistro;brunch;breakfast
+milano,Bobino,contact@bobino.it,"Piazzale Stazione Genova 4, 20144 Milano",+393714085303,https://bobino.it/,bar,
+milano,Boccascena Cafè,boccascena@mtmteatro.it,"Corso Magenta 24, 20123 Milano",+393929243823,https://www.facebook.com/boccascenacafe/,cafe,
+milano,Bollicine,bollicine@ristorantebollicine.com,"Via Ventiquattro Maggio 7, 20028 San Vittore Olona",+39 0331 517005,https://ristorantebollicine.com,restaurant,pizza;italian;fish
+milano,Cafezal,info@cafezal.it,"Corso Magenta 96, 20123 Milano",+39 02 4951 9174,https://cafezal.it/,cafe,coffee_shop
+milano,Caffè degli Artisti,ristorantedapuccini@libero.it,"Via San Giovanni sul Muro 5, 20121 Milano",+39 02 8053939,http://www.ristorantedapuccini.com,restaurant,italian;italian_pizza;local
+milano,Caffè Farmacia,info@caffefarmacia.it,"Piazza San Magno 8, 20025 Legnano",+39 0331 1362149,http://www.caffefarmacia.it/,cafe,
+milano,Caffè Fernanda,info@caffefernanda.com,"Via Brera 28, 20121 Milano",,https://www.caffefernanda.com/,cafe,
+milano,Caffè Panzera,info@caffepanzera.it,Milano,+39 02 6692647,http://www.caffepanzera.it/,cafe,
+milano,Cafè Gorille,hello@cafegorille.it,"Via Gaetano De Castillia 20, 20124 Milano",+39 02 6887627,https://www.cafegorille.it/,bar,
+milano,Cagiada,info@cagiada.it,"Via Festa del Perdono 4,  Milano",,https://www.cagiada.it,restaurant,pizza;italian
+milano,Camparino in Galleria,info@camparino.it,"Galleria Vittorio Emanuele Secondo 1n02, 20121 Milano",+39 02 86464435,https://www.camparino.com/,bar,
+milano,Capperi... Che Pizza!,milano@capperichepizza.com,"Piazza Santa Maria del Suffragio 3, 20129 Milano",+39 02 87073392,https://www.capperichepizza.com/milano/,restaurant,pizza
+milano,Carico,ciao@carico.io,"Via Savona 1, 20144 Milano",,https://www.carico.io/,bar,
+milano,Carlsberg Øl,info@carlsbergol.it,"Bastioni di Porta Nuova 9,  Milano",+29 02 655 5560,https://www.carlsbergol.it,restaurant,pizza;italian
+milano,Casa Fiori Chiari,info@casafiorichiari.com,"Via Fiori Chiari 8, 20121 Milano",+390249623564,https://www.casafiorichiari.com/,restaurant,italian;pizza
+milano,Chateau Dufan,info@chateaudufan.com,"Via Paolo Sarpi 2, 20154 Milano",+39 02 34534113,https://www.chateaudufan.com/,cafe,chinese
+milano,Chocolat,boccaccionovemilano@chocolatmilano.it,"Via Giovanni Boccaccio 9n03, 20123 Milano",+39 02 48100597,https://www.chocolatmilano.it/,cafe,ice_cream
+milano,Chocolat Cafè Milano,info@chocolatcafemilano.it,"Via Sacco 5, 20146 Milano",+39 02 64082714,https://www.chocolatcafemilano.it/,cafe,
+milano,Ci Sta,castelfidardo@cistapizza.com,"Via Castelfidardo 2,  Milano",+39 02 3952 1656,https://cistapizza.com,restaurant,pizza
+milano,Cioccolatino,info@caffecioccolatino.it,"Piazza San Sebastiano 1, 20019 Vighignolo",+390285687333,https://caffecioccolatino.it/,cafe,
+milano,Circolo Fratellanza e Pace,info@circolone.it,"Via San Bernardino 12, 20025 Legnano",+39 0331 548766,https://www.circolone.it,bar,
+milano,Ciro's Pizza al Metro,info@cirospizza.it,"Viale John Fitzgerald Kennedy 30, 20024 Garbagnate Milanese",+39 388 491 9100,https://www.cirospizza.it/,restaurant,pizza
+milano,City Life,info@cityliferistorante.it,"Via Vittor Pisani 26, 20124 Milano",+39 02 66985651,https://www.cityliferistorante.it/,restaurant,pasta;salad;steak_house;pizza
+milano,Colognesi,santo.colognesi@alice.it,"Via Monte Grappa 2, 20060 Masate",,https://pasticceriacolognesi.it/,cafe,coffee_shop;breakfast;italian;pancake;savory_pancakes;sandwich
+milano,Con le mani,pizzeriaconlemani@gmail.com,"Via Giannetto Mattei 48, 20044 Arese",,https://pizzeriaconlemani.it/,fast_food,pizza;salad;italian;middle_eastern;dessert
+milano,Cookingarage Bistrot,cookingarage@gmail.com,"Via Ala 2,  Milano",+39 320 704 6927,https://cookingarage.com/,cafe,
+milano,Crazy Cat Café,crazycatcafe@gmail.com,Milano,,https://www.crazycatcafe.it/,cafe,
+milano,Crumb Snack & Cafe,crumbsnackandcafe@hotmail.com,"Via Lanzone 22, 20123 Milano",,https://www.instagram.com/crumbsnackandcafe/,cafe,
+milano,Da Zero,info@cominciadazero.com,"Via Bernardino Luini 9, 20123 Milano",+39 02 83529189,https://www.dazero.org/pizzerie,restaurant,pizza
+milano,Depot,info@depotmilano.com,"Via Valtorta 19, 20127 Milano",+39 02 28970999,https://www.depotmilano.com,bar,
+milano,Dito Divino,ditodivino@live.it,"Via Gaetano Negri 8, 20123 Milano",+39 02 89096532,https://www.ditodivino.com/,bar,
+milano,Donna Assunta 1954,donnaassunta1954@gmail.com,"Via Annibale Grasselli 4, 20137 Milano",+39 02 70002364,https://donnaassunta1954.it,restaurant,regional;pizza
+milano,DOP Pizzeria Contemporanea,lc.food.airaghi@gmail.com,"Via Don Giovanni Minzoni 1a, 20019 Milano",+39 02 4341 7398,https://dopcontemporanea.com/,restaurant,pizza
+milano,Doppio Malto,legnano@doppiomalto.com,"Via Saronnese 12, 20025 Legnano",+39 0331 173 6618,https://www.doppiomalto.com/it/ristoranti/legnano/,restaurant,burger;meat;pizza
+milano,Elegant coffee,jessicasoranno@yahoo.it,"Via Olona 11, 20123 Milano",,https://www.elegantcoffeemilano.com/,cafe,italian
+milano,Forno Antico,pizzeriafornoantico@gmail.com,"Viale Corsica 73, 20133 Milano",+39 02 70102144,https://fornoantico.eatbu.com,restaurant,pizza
+milano,Franci's Bar,francesco.lanzetta@hotmail.it,"Viale San Michele del Carso 6, 20144 Milano",+39024890512,https://www.facebook.com/FrancisbarMilano/,cafe,
+milano,Frankie's,info@frankiesmilano.it,"Corso di Porta Ticinese 89, 20123 Milano",+390291943289,https://frankiesitalia.it/,cafe,sandwich;juice;salad
+milano,Freeway Route 66,info@freewayroute66.it,"Via Vincenzo Monti 41, 20017 Rho",+390293901148,http://www.freewayroute66.it/,restaurant,pizza;italian;regional
+milano,Fresco,milanosempione@frescotrattoria.it,"Corso Sempione 41, 20145 Milano",+39 02 3311888,https://www.frescotrattoria.it/fresco-sempione-milano/,restaurant,italian_pizza;italian
+milano,Fresco & Cimmino,info@frescoecimmino.it,"Via Ugo Foscolo 4, 20121 Milano",+39 02 97374869,https://www.frescocimmino.it/,restaurant,pizza
+milano,Fòla,hello@folamilano.com,"Via Luigi Varanini 12, 20127 Milano",+39 02 49713413,https://www.folamilano.com/,cafe,
+milano,Galleria Meravigli Bistrot,info@galleriameravigli.com,"Via Meravigli 3, 20123 Milano",+39 02 39831231,https://www.galleriameravigli.com/,cafe,
+milano,Gemelli Diversi,info@ristorantegemellidiversi.it,"Via Giovanni Battista Moroni 32, 20146 Milano",+39 02 406724,http://www.ristorantegemellidiversi.it,restaurant,italian;italian_pizza
+milano,Geronìmo,info@geromino.it,"Via Giuseppe Garibaldi 9,  Dairago",+39 0331 431819,https://geromino.it,restaurant,italian;italian_pizza
+milano,Giungla park - Area Giochi & Pizzeria,info@giunglapark.it,"Via Gioacchino Rossini 35, 20093 Cologno Monzese",+39 02 9166 2666,https://www.giunglapark.com,restaurant,pizza
+milano,Glass - Kitchen & Cocktail,glasslegnano@gmail.com,"Via Cesare Correnti 75, 20025 Legnano",+39 329 2057001,http://www.glasslegnano.it,bar,
+milano,gogol&company,libreria@gogolandcompany.com,Milano,+39 02 45470449,https://www.gogolandcompany.com,cafe,
+milano,Golosissimo Me,info@golosissimome.it,"Via Cesare da Sesto 106, 20099 Sesto San Giovanni",,https://www.golosissimome.it/,cafe,
+milano,Grani & Braci,info@graniebraci.it,"Via Carlo Farini , 20154 Milano",+39 02 36637422,http://www.graniebraci.it/it/ristorante-pizzeria-steak-house-milano,restaurant,italian;pizza;steak_house
+milano,Green Bar,67greenbar@gmail.com,"Viale Martesana 67, 20055 Vimodrone",+390236638762,https://www.facebook.com/greenbar67/,cafe,
+milano,Grill in centro,grillinncentro@ab-food.it,"Piazza Giacomo Matteotti 6/7, 20030 Senago",+390299500660,https://www.grillinncentro.it/,restaurant,italian;salad;steak_house;burger;pizza;dessert
+milano,Grill Inn Garbagnate,grillinngarbagnate@ab-food.it,"Via Peloritana 35, 20024 Garbagnate Milanese",+39029955811,https://www.grillinn.it/,restaurant,grill;pizza
+milano,Grill Inn Store,grillinnstore@ab-food.it,"Via Europa 41, 20010 Pogliano Milanese",+39 02 93549638,https://www.grillinnstore.it,restaurant,italian;italian_pizza
+milano,Gusto italiano,info@gustoitalianocanegrate.it,"Via Magenta 94, 20039 Canegrate",+39 0331 405152,http://www.gustoitalianocanegrate.it,restaurant,pizza;italian
+milano,Gustolab,info@gustolab.net,"Via per Canegrate 8, 20025 Legnano",+39 0331 403796,http://gustolab.net/,bar,
+milano,Harris Bar,info@harrisbarmilano.it,"Via Andrea Solari 50, 20144 Milano",+390242290276,https://www.harrisbarmilano.it/,bar,
+milano,Hug Milano,mail@hugmilano.com,"Via Giulio e Corrado Venini 83, 20125 Milano",+39 389 8485296,https://hugmilano.com/,cafe,
+milano,Hygge,info@hyggecorner.com,"Via Giuseppe Sapeto 3, 20123 Milano",+39393511028043,https://www.hyggecorner.com/,cafe,
+milano,I due leccesi,info@idueleccesi.it,"Via Bonvesin de la Riva 3, 20129 Milano",+39 02 70120871,http://www.idueleccesi.it/,restaurant,pizza;italian
+milano,Il Bar del Centro Parco,info@ilbardelcentroparco.it,"Via San Rocco , 20090 Segrate",,https://ilbardelcentroparco.it/,bar,
+milano,Il bar Milano,info@ilbarmilano.it,Milano,+39 02 8852454,http://www.ilbarmilano.it/,bar,
+milano,Il Caffè della Terra di P.ta Romana,ilcaffedellaterradiportaromana@gmail.com,"Corso di Porta Romana 80, 20122 Milano",+39 02 83480866,https://caffeterra.com,cafe,
+milano,Il Forno di Via Commenda,pasqualediliddo58@hotmail.com,Milano,,http://www.ilfornodiviacommenda.com,cafe,
+milano,Il Magentino,magentino@magentinomilano.it,"Corso Magenta 14, 20123 Milano",+39 02 84945372,http://www.magentinomilano.it/,cafe,
+milano,Il Moro 2,info@ilmoro2.com,"Via Andrea Salaino 12, 20144 Milano",+390248007652,http://www.ilmoro2.com/,restaurant,pizza;italian;egyptian
+milano,Il nuovo GranCaffè,ilgrancaffe@hotmail.it,"Viale Luigi Einaudi 21, 20044 Arese",+39029383793,https://www.facebook.com/ilnuovograncaffe/,cafe,
+milano,Il Palio,info@ristoranteilpalio.it,"Via Barbara Melzi 96, 20025 Legnano",+39 0331 547340,https://ristoranteilpalio.it/,restaurant,italian;italian_pizza
+milano,Il Peperone,info@ilpeperone.com,"Via Novara 383, 20153 Milano",0299612212250; 3383882135,http://ilpeperone.com/,restaurant,italian;pizza
+milano,Il Piccolo Padre,adel.saad@hotmail.it,"Via Principe Eugenio 2, 20154 Milano",+39023494906,https://ilpiccolopadremilano.com/,restaurant,pizza;italian
+milano,Il Tavolino,info@altavolino.it,"Via Gustavo Fara 23, 20124 Milano",+39 02 6703520,http://www.altavolino.it/,restaurant,pizza;regional
+milano,Jacarè,info@jacarebar.it,"Via Sempione 36, 20028 San Vittore Olona",+39 0331 518954,http://www.jacarebar.it,bar,
+milano,Jazz Cafè,info@jazzcafe.it,"Corso Sempione 8, 20154 Milano",+39 02 33604039,https://www.jazzcafe.it/,bar,
+milano,L'altra Botte,info@ristorantealtrabotte.com,"Via Mauro Venegoni 84, 20025 Legnano",+39 0331 592217,http://www.ristorantealtrabotte.com/,restaurant,pizza;seafood;meat
+milano,L'altra taverna,info.lataverna@gmail.com,"Via Francesco Anzani 3,  Milano",+39 02 91270232,https://laltrataverna.com,restaurant,pizza
+milano,L'Angolo,info@ristorantelangolo.it,"Via dei Mille 28, 20056 Trezzo sull'Adda",+39 02 8494 2206,https://www.ristorantelangolo.it/,restaurant,italian;pizza
+milano,L'arte della pizza,dichianonicola6@gmail.com,"Piazza Chiesa 16, 20017 Rho",,https://larte-della-pizza-rho.metro.bar/,fast_food,pizza
+milano,La battagliera,labattagliera1@gmail.com,"Via Palmanova , 20132 Milano",+39 339 8831604,http://www.labattagliera.it/,cafe,
+milano,La Conca social bar,info@laconca.eu,"Via Galeazzo Alessi 1, 20123 Milano",,https://www.laconca.eu/,cafe,
+milano,La Corte di Montenapoleone,info@ilsalumaiodimontenapoleone.it,"Via Santo Spirito 10, 20121 Milano",+39 02 76001123;+39 02 784650,https://www.ilsalumaiodimontenapoleone.it/caf%C3%A9-bistrot-gallery,cafe,
+milano,La farcita,info@lafarcita.com,"Viale Abruzzi 25, 20131 Milano",+39 02 36746810,https://lafarcita.com,restaurant,pizza
+milano,La pidaseparsot,info@lapidaseparsot.it,Milano,+39 342 3880889,www.lapidaseparsot.it,cafe,
+milano,La Rocchetta Caffe Bistrot​,info@larocchettacaffe.it,"Via Giosuè Carducci 2, 20123 Milano",+390278623287,https://www.larocchettacaffe.it/,cafe,
+milano,La Siciliana dal 1956,info@lasicilianadal1956.it,"Via Teodosio 85,  Milano",+39 02 3966 4047,https://www.lasicilianadal1956.it/,cafe,
+milano,La Tradizionale,info@latradizionale.com,"Via Bergognone Da Fossano 16, 20144 Milano",+390242292026,https://www.latradizionale.com/,restaurant,pizza;italian
+milano,Labriola,cooperativa.labriola@gmail.com,Milano,+39 02 3538519,http://cooperativalabriola.wix.com/briola-new#!chi-siamo,bar,
+milano,LeccoMilano,info@leccomilano.it,"Via Lecco 5,  Milano",+39 02 91639877,https://www.leccomilano.it,bar,
+milano,Les amis,info@lesamisbistrot.it,"Via Andrea Solari 30, 20144 Milano",+390209958492;+393492609661,https://www.lesamisinsolari.it/,cafe,
+milano,Lucia,info@pizzerialuciadal1987.it,"Via Giacomo Matteotti 9, 20067 Paullo",+39 02 9064224,https://pizzerialuciadal1987.it/,restaurant,pizza
+milano,Marco's,info@marco-s.it,"Via San Vittore 6, 20123 Milano",,https://marco-s.it/,bar,
+milano,Maria Bonita churrascaria,info@mariabonitachurrascaria.it,"Piazza Roma 9, 20016 Pero",,https://mariabonitachurrascaria.it/,restaurant,brazilian;burger;pizza
+milano,Marilyn's,info@marilyns.it,"Via Alessandro Manzoni 15, 20039 Canegrate",+39 0331 402115,http://www.marilyns.it,bar,
+milano,Mealthie,mealthiesrl@gmail.com,"Via Gian Battista Vico 38, 20123 Milano",,https://www.mealthie.it/,cafe,
+milano,Memà,info@memamilano.it,"Largo Fra Paolo Bellintani 2, 20124 Milano",+39 02 92869193,https://www.memamilano.it,cafe,sicilian
+milano,Milano Cafè,milano@milanocafe.it,"Via Giulio Cesare Procaccini 37, 20154 Milano",+39 02 33 14 667,https://www.milanocafe.it,bar,
+milano,Millelire,rocco_79_rs@libero.it,"Via Milano 58, 20025 Legnano",+39 0331 599770,https://pizzeria-millelire.eatbu.com/,restaurant,pizza
+milano,Milly dolci e salati,ciao@millydolciesalati.it,"Via dei Gelsi 7, 20015 Parabiago",,https://millydolciesalati.it,,pastry;snack;sandwich;pasta;pizza
+milano,Mogamo,info@mogamo.it,"Viale Andrea Doria 12, 20124 Milano",+39 02 36528389,http://www.mogamo.it/,cafe,
+milano,Momenteeria,info@momenteeria.it,"Via Giosuè Carducci 38, 20123 Milano",+39 02 365321185,https://www.momenteeria.it/,cafe,teahouse;tea;cookies;italian
+milano,Morello,morello.dolcesalato@libero.it,"Corso Magenta 36, 20025 Legnano",+39 0331 547342,https://www.morellolegnano.it/morello-corso-magenta-legnano/,cafe,
+milano,Morgante cocktail & soul,info@morgantecocktail.com,"Vicolo Lavandai 2a, 20144 Milano",+390235940879,https://www.morgantecocktail.com/,bar,
+milano,Morna,mornamilano@gmail.com,"Via Tortona 30/A, 20144 Milano",+393455895057,https://www.facebook.com/people/Morna/100032074466214/,bar,
+milano,Mosso,posta@mosso.org,"Via Angelo Mosso 3, 20127 Milano",,https://www.facebook.com/mossomilano,restaurant,pizza;aperitivo
+milano,New Friday,newfriday@live.it,"Viale Monza 142, 20127 Milano",+39 02 2551623,https://www.newfriday.it,restaurant,pizza;italian
+milano,Nicol,info@nicol.it,"Corso Italia 14, 20122 Milano",+39 02 804949,http://www.nicol.it/,bar,
+milano,Nuova Cosmo S.r.l.,info@nuovacosmo.it,"Via Giuseppe Di Vittorio 2l,  Milano",+39 02 95314298,https://www.nuovacosmo.it/,cafe,
+milano,O' Peperino e Milano,info@peperinomilano.it,"Viale Francesco Crispi , 20121 Milano",+39 02 63793078,http://www.peperinomilano.it,restaurant,pizza;italian;regional
+milano,Obicà Mozzarella Bar - Cusani,cusani@obica.com,"Via Cusani 1, 20121 Milano",,https://www.obica.com/restaurants/milan-cusani,restaurant,italian;italian_pizza
+milano,Odissea Sesto,info@odisseasesto.it,"Via Cesare da Sesto 90,  Milano",+39 02 2626 2151,https://www.odisseasesto.it/,restaurant,pizza
+milano,Organic,info@organicpizzaandfood.com,"Via Morigi 8, 20123 Milano",+39 02 36632794,https://organicpizzaandfood.com/,restaurant,pizza
+milano,oTTo,posta@sarpiotto.com,"Via Paolo Sarpi 10, 20154 Milano",+39 02 83417249,http://www.sarpiotto.com/,cafe,
+milano,Pandaneus,mail@pandenus.it,"Largo La Foppa 5, 20121 Milano",+39 02 65560824,https://www.pandenus.it/it/store/pandenus-largo-la-foppa-5/,cafe,
+milano,Panta Rei,mari@pantareiclub.com,"Via Cusago 201,  Milano",+39 02 39413241,https://www.pantareiclub.com/milano/,restaurant,pizza;seafood
+milano,Pasticceria Bastianello,info@bastianello.com,"Via Borgogna 5, 20122 Milano",+39 02 76317065,https://www.bastianello.com/,cafe,
+milano,Pasticceria Torti,zenith@pasticceriatorti.eu,"Via Cesare da Sesto 72, 20099 Sesto San Giovanni",+39 02 22470683,http://www.pasticceriatorti.eu/,cafe,
+milano,Pavé,hello@pavemilano.com,"Via Felice Casati 27, 20124 Milano",+39 02 94392259,https://www.pavemilano.com/,cafe,
+milano,Petazzi 7,barpetazzi7@gmail.com,"Piazza Luigi Petazzi 7,  Milano",+39 392 487 4167,https://petazzi-7.eatbu.com/,bar,
+milano,Pils Pub,info@pilspub.com,"Via Agostino Bertani 2, 20154 Milano",+39 02 34592858,https://www.pilspub.com/,bar,
+milano,Pizza e Mozzarella,info@pizzaemozzarella.it,"Via Vincenzo Monti 15, 20123 Milano",+390236706079,https://www.pizzaemozzarella.it/pages/sede-milano-cadorna,restaurant,friture;italian;regional;pizza;dessert
+milano,PizzAut,prenotazioni@pizzaut.it,"Via Don Ambrogio Verderio 1, 20051 Cassina de' Pecchi",+39 02 5030 9156,https://www.pizzaut.it/,restaurant,pizza
+milano,Pizzeria Al Vesuvio,info@ristorantealvesuvio.com,"Via Giovanni Boccaccio 237, 20099 Sesto San Giovanni",+39 02 2483460,https://ristorantealvesuvio.com,restaurant,fish;pizza
+milano,Pizzeria Anacapri,pizzeria@anacapri.mi.it,"Via Ginestra 2, 20095 Cusano Milanino",+39 02 6194650,http://www.anacapri.mi.it/index_file/Page387.htm,restaurant,pizza
+milano,Pizzeria Belvedere,pizzeriabelvederesnc@libero.it,"Via Vittorio Veneto 19, 20024 Garbagnate Milanese",+390291921410,https://www.pizzeria-belvedere.it/,restaurant,pizza
+milano,Pizzeria Da Fra',criscifrancesco1983@gmail.com,"Via Giorgio Enrico Falck 5,  Milano",+39 02 4964 9012; +39 338 435 9415,https://pizzeriadafrasesto.eatbu.com/,restaurant,pizza
+milano,Pizzeria Da Gino,info@pizzeriadagino.it,"Corso Vercelli 9, 20144 Milano",+390248004130,https://www.pizzeriadagino.it/,fast_food,pizza
+milano,Pizzeria Daisy,info@ristorantedaisy.it,"Via Colli di Sant'Erasmo 23, 20025 Legnano",+39 0331 442442,http://www.ristorantedaisy.it/,restaurant,pizza
+milano,Pizzeria dell'Oca,loca97.novatemilanese@gmail.com,Milano,+39 02 35 45 596,https://pizzeriadelloca.eatbu.com,restaurant,pizza
+milano,Pizzeria Ranch Roberta,ristoranch@yahoo.it,"Via Masaccio 18, 20149 Milano",+39 02 462306,https://www.ristoranteranchroberta.com/,restaurant,fish;italian;pizza
+milano,Pizzeria Sant'Ambrogio,info@pizzeriasantambrogio.it,"Via Ausonio 7, 20123 Milano",+390239811974;,http://www.pizzeriasantambrogio.it/,fast_food,pizza;kebab
+milano,Pollicino,cologno@ristopollicino.it,"Viale Piemonte 64,  Cologno Monzese",,https://www.ristopollicino.it/,restaurant,friture;italian;pizza;barbecue
+milano,Pucatè - Bubble Tea,wsitninticeh@hotmail.com,"Via Felice Casati 23,  Milano",+39 345 507 3339,https://www.facebook.com/pucatemilano/,cafe,coffee_shop;tea
+milano,Puccia's Brothers,info@pucciasbrothers.it,"Piazza Virgilio 3, 20123 Milano",+39 02 66666361,https://www.pucciasbrothers.it,cafe,puccia
+milano,Pupiricchiello,pupirichiello@gmail.com,"Piazzale Giovanni delle Bande Nere 9, 20146 Milano",+39024075770,http://pupirichiello.it/,restaurant,pizza
+milano,Quanto Basta,info@quantobastacologno.it,"Piazza San Matteo 24, 20093 Cologno Monzese",+39 02 2219 9747; +39 351 651 1610,https://www.quantobastacologno.it/,cafe,coffee_shop;italian
+milano,Quartieri Spagnoli Milano,info@primogustomilano.it,"Via Cenisio 19, 20154 Milano",+390233614582,http://www.primogustomilano.it/,restaurant,pizza;italian
+milano,Queen's Bar Tabacchi,queens.bar2013@gmail.com,"Via Giosuè Carducci 36, 20123 Milano",+390289013944,https://www.queensbartabacchi.com/,cafe,
+milano,Radetzky Café,radetzkycafe@libero.it,"Largo La Foppa 5, 20121 Milano",+39 02 6572645,https://www.radetzky.it/,bar,
+milano,Ral8022,info@ralmilano.it,"Via Corsico 3, 20144 Milano",,https://www.ralmilano.it/ral-cocktail-bar/,bar,
+milano,Regina Catarì,comunicazioni@reginacatari.it,"Via Edmondo De Amicis 48, 20092 Cinisello Balsamo",,https://reginacatari.it/,restaurant,pizza;steak_house;pasta
+milano,Reginè,pizzeriaregine@gmail.com,"Via Custoza 31, 20037 Paderno Dugnano",+39 02 49442902,https://pizzeriaregine.it,restaurant,pizza
+milano,Relax Time,gelateriarelaxtime@gmail.com,"Via Tagliamento 16, 20039 Canegrate",+39 0331 555622,http://relaxtimecanegrate.com,cafe,
+milano,Ristorante Giallo Milano,info@ristorantegiallomilano.com,"Via Giuseppe Ripamonti 606, 20141 Milano",+39 02 57607126,https://www.ristorantegiallomilano.com/,restaurant,italian;pizza
+milano,Ristorante pizzeria Girasole,pizzeriagirasole@pizzeriaalgirasole.it,"Viale Carlo Forlanini 11, 20024 Garbagnate Milanese",+390299022141,https://www.pizzeriaalgirasole.it/,restaurant,pizza;italian;regional;salad
+milano,Ristorante Pizzeria La Caletta,portodimario@hotmail.it,"Via Giovanni Battista Sammartini 69, 20125 Milano",+39 02 6693159,http://www.lacalettadimilano.com/,restaurant,pizza
+milano,Ristorante Pizzeria Mareblu,mareblu24@hotmail.it,"Via Dante Alighieri 24, 20025 Legnano",+39 0331 546286,http://www.ristorantepizzeriamareblu.com/,restaurant,pizza;seafood
+milano,Ristorante pizzeria San Carlo,ristorantepizzeriasancarlo@gmail.com,"Via Andrea Solari 40, 20144 Milano",+3902474569,https://it-it.facebook.com/Ristorante.San.Carlo.Milano/,restaurant,italian;pizza;regional
+milano,Royal Cafè,cremacioccolato.ossona@gmail.com,"Via Madre Teresa di Calcutta 2c, 20010 Ossona",+390249448488,https://www.cremacioccolatoossona.it,cafe,coffee_shop;italian;sandwich;ice_cream
+milano,Sant'Ambrogio,rayedashraf@gmail.com,"Via Vincenzo Foppa 8, 20144 Milano",+39 02 36563630,http://www.ristorantesantambrogio.com/,restaurant,pizza;grill
+milano,Sant'Ambrogio Cafè,info@barsantambrogio.it,"Via Terraggio 25, 20123 Milano",+390272010424,http://www.barsantambrogio.it/,cafe,italian
+milano,Santa Lucia,info@pizzeriasantalucia.it,"Viale Monza 185, 20126 Milano",+39 02 97378655,http://www.pizzeriasantalucia.eu,restaurant,pizza
+milano,Seitaly,seitaly.bistro@gmail.com,"Corso Italia 6, 20122 Milano",+39 02 72095365,https://www.seitaly.it/,cafe,breakfast;italian_pizza
+milano,Shot Cafe,shot@shotcafe.it,"Via Giovanni Battista Pirelli 19, 20124 Milano",+39 02 6700206,http://www.shotcafe.it/,cafe,
+milano,Sisu,info@sisumilano.it,"Via Gaudenzio Ferrari 1bn02, 20123 Milano",+390238293912,https://sisumilano.it/,cafe,
+milano,Smartkook,info@smartkook.it,"Via Flavio Baracchini 7, 20121 Milano",+39 02 36684727,https://www.smartkook.it/,cafe,
+milano,So Natural,info@itsonatural.it,"Piazza Sant'Agostino 16, 20123 Milano",+39 02 39401034,https://www.itsonatural.it/,cafe,
+milano,Spiga D'Oro,info@spiga-doro.it,"Via Monte San Gabriele , 20127 Milano",+39 02 87199385,https://www.spiga-doro.it/,cafe,
+milano,Spontini,ducadaosta@pizzeriaspontini.com,"Piazza Duca d'Aosta 8, 20124 Milano",+ 39 02 25061303,https://spontinimilano.com/pizzerie/MILANO-DUCA-D-AOSTA/,fast_food,pizza
+milano,Spontini,tortona@spontinimilano.com,"Via Tortona 26, 20144 Milano",+39 02 8126 5990,https://spontinimilano.com/pizzerie/MILANO-TORTONA,fast_food,pizza;italian
+milano,Spritz,info.spritznavigli@gmail.com,"Ripa di Porta Ticinese 9, 20143 Milano",+390283390192,https://www.leggimenu.it/menu/spritznaviglimilano,bar,
+milano,Steven Hill Coffe,info@improntabirraia.it,"Via Amatore Sciesa 1, 20135 Milano",+39 02 3668 4747,https://www.improntabirraia.com/,bar,
+milano,Sui Generis,info@suigeneris.bar,"Via Panfilo Castaldi 31, 20124 Milano",+39 02 49767551,https://suigeneris.bar/,bar,
+milano,Tegamino’s,info@tegaminos.com,"Viale Bligny 5, 20136 Milano",+390298043701,https://tegaminos.com/#dove-trovarci,restaurant,pizza
+milano,Terrazza Martini,terrazzamartini.milano@bacardi.com,"Piazza Armando Diaz 7, 20123 Milano",,https://www.martini.com/terrazza-martini/,bar,
+milano,The Growler Milano,thegrowlermilano@gmail.com,"Via del Caravaggio 12, 20144 Milano",+390283555783,https://thegrowlermilano.eatbu.com/,cafe,
+milano,The Kitchen Beer Restaurant,info@thekitchen.it,"Via Trento 1, 20010 Casorezzo",+39 02 90296186,https://www.thekitchenworld.it,restaurant,pizza;coffee_shop;regional;burger;italian;chicken;steak_house;fish_and_chips;pasta;mediterranean
+milano,Tipografia Alimentare,info@tipografiaalimentare.it,"Via Dolomiti 1, 20127 Milano",+39 02 83537868,https://tipografiaalimentare.it/,cafe,regional
+milano,Tom the ordinary market,info@theordinarymarket.com,"Via della Chiusa 1, 20123 Milano",,https://theordinarymarket.com/,bar,
+milano,Tourlé,parabiago@tourle.it,"Via Sempione 50, 20015 San Lorenzo",+39 329 2430030,http://www.tourle.it/parabiago/,restaurant,italian;italian_pizza
+milano,Tramonti,quadrifoglio@arubapec.it,"Via Luigi Cadorna 31, 20025 Legnano",+39 0331 540279,http://www.ristorantepizzeriatramonti.it/,restaurant,chinese;italian;pizza
+milano,Un mondo di sapori,info@unmondodisapori.it,"Via Giacomo Zanella 59, 20133 Milano",+39 02 70102138,http://unmondodisapori.it,restaurant,italian;pizza;seafood
+milano,Una cosa,info@unacosabistrot.it,"Via Scaldasole 7, 20123 Milano",,https://www.unacosabistrot.it/,cafe,
+milano,Unic Bikers Bar,info@unicbar.com,"Via della Filanda 4, 20010 Vanzago",+39 339 1700273,https://www.unicbar.com/,cafe,italian;burger;sandwich;american;steak_house
+milano,Un’altra Pasta,info@unaltrapasta.it,"Via Bergamini 5, 20122 Milano",+390258321359,https://www.unaltrapasta.it/,fast_food,pizza;pinsa
+milano,Van Bol & Feste,info@vanbolandfeste.com,"Foro Buonaparte 71, 20121 Milano",+39 02 89093182,https://www.vanbolandfeste.it/,cafe,
+milano,Vapore 1928,info@vapore1928.com,"Via Messina 26, 20154 Milano",+39 02 33100772,https://www.vapore1928.com/,cafe,
+milano,Vista Darsena,info@vistadarsena.it,"Viale Gabriele d'Annunzio , 20123 Milano",,https://www.vistadarsena.it/,bar,
+milano,Voglia di Pizza,domenicoda687@gmail.com,"Corso Magenta 147, 20025 Legnano",+39 3290163084,https://voglia-di-pizza-legnano.eatbu.com/?lang=en,restaurant,pizza
+milano,Wave Cocktail Bar,info@wavecocktailbar.it,"Via Edmondo De Amicis 28, 20123 Milano",+393803714058,http://www.wavecocktailbar.it/,bar,
+milano,Ai tre ponti,pizzeriatreponti@yahoo.it,"Viale Corsica 95, 20133 Milano",+39 02 70100887,,restaurant,italian_pizza
+milano,Al Collins,alcollins20024@gmail.com,"Via Valera 1, 20024 Garbagnate Milanese",+393516562091,,bar,
+milano,Al muretto,massimorendina@yahoo.it,"Via Zara 18, 20039 Canegrate",+39 0331 403215,,restaurant,italian;pizza
+milano,Ape Bazar,apebazar@virgilio.it,"Via Pietro Mascagni 75, 20030 Senago",,,bar,
+milano,Assaje,milano.lafoppa@assaje.it,"Largo La Foppa 1, 20121 Milano",+39 02 5812 9363,,restaurant,pizza
+milano,Bar Buscemi,buscemi_stefano@yahoo.com,"Piazza Roma 6a, 20016 Pero",,,cafe,
+milano,Bar e Direzione Oratorio,oratorio@santarita.info,Milano,+39 02 816793,,cafe,
+milano,Bar edicola Stop and Go,stopgobar@gmail.com,"Via Roma 261/263, 20033 Solaro",+39029691312,,cafe,
+milano,Bar tabacchi la darsena,pinciollone@gmail.com,"Via Vigevano 1, 20144 Milano",+39028321293,,cafe,
+milano,Bio Pizza,info@biopizzamilano.it,Milano,+39 02 86452131,,restaurant,pizza
+milano,Bottega dei Pasticci,bottegadeipasticci@gmail.com,Milano,+39 02 474 427,,cafe,
+milano,Buatta Caffetteria,infi.buattacaffetteria@gmail.com,"Via Masolino da Panicale 12, 20155 Milano",+39 388 9746 502,,cafe,coffee_shop
+milano,Buona Forchetta,buonaforchettamilano@yahoo.it,"Via Casale 5, 20144 Milano",,,restaurant,italian;pizza
+milano,Caffè Carducci,caffecarducci@alice.it,"Via San Vittore 2, 20123 Milano",+39028900440,,cafe,
+milano,Caffè La Pieve,caffe.lapieve@gmail.com,20097 San Donato Milanese,,,cafe,
+milano,Cafè del dom,mudestmarchiselli@gmail.com,"Piazza Cavour 19, 20008 Bareggio",,,cafe,
+milano,Capricci di gola,capriccidigola@yahoo.it,"Via Giacomo Matteotti 2, 20008 Bareggio",+39029028372,,cafe,pizza;ice_cream;cake;coffee_shop;drinks
+milano,Cerro Ardente dal 1972,0255194974@cerroardente.it,"Viale Monte Nero 16, 20133 Milano",+39 02 55194974,,fast_food,pizza
+milano,Cosmai Coffee Store,store@caffecosmai.com,"Viale Monza 158, 20128 Milano",+39 02 36524980,,cafe,
+milano,Daniel e il Caffè,danieleilcaffe@icloud.com,"Via Olona 5, 20123 Milano",+390249436223,,cafe,
+milano,Dosso 18,francesco.giampaolo92@gmail.com,"Via Caradosso 18, 20123 Milano",+39 02 48004400,,cafe,
+milano,Edison Cafè,edisoncafe@libero.it,"Via Thomas Alva Edison 14, 20026 Novate Milanese",+390239487328,,cafe,
+milano,Fresco,info@viadante16.com,"Via Dante 16n03, 20121 Milano",,,restaurant,pizza
+milano,Granaio,cordusio@ristorantegranaio.it,"Via Dante 2n13, 20121 Milano",+39 02 89092240,,cafe,
+milano,I Tre Gradini,itregradini@gmail.com,"Via Carlo Sormani 47, 20095 Cusano Milanino",+39 02 6196242,,restaurant,italian;pizza
+milano,il Bar Milano,ilbarmilano.legnano@gmail.com,"Via Milano 92, 20025 Legnano",,,bar,
+milano,Kairos café,kairoscafe12@gmail.com,"Via Tortona 12, 20144 Milano",+390236512487,,cafe,italian
+milano,la Piccola Champagneria,lapiccolachampagneria@gmail.com,"Via Italia 77, 20064 Gorgonzola",+393348923216,,bar,
+milano,La Terrazza Aperol,info@terrazzaaperol.it,"Via Ugo Foscolo 1, 20121 Milano",+39 02 86331959,,bar,italian
+milano,Lab Café,labcafemilano@gmail.com,"Via Luigi Scrosati 9, 20146 Milano",+39 02 4129 9114,,cafe,
+milano,Leyla Food & Drink,ncretella@outlook.it,"Via Sigieri 10, 20135 Milano",+39 328 705 3652,,bar,
+milano,Lo scudiero,ristorante.loscudiero@virgilio.it,"Via Fabio Filzi 13, 20034 San Giorgio su Legnano",+39 0331 407245,,restaurant,pizza;seafood
+milano,Lom Dopolavoro,info@lomdopolavoro.com,Milano,+39 327 069 8267,,bar,
+milano,Massaua,alhambravegancafe@gmail.com,"Via Alessandro Tadino 17, 20124 Milano",,,cafe,
+milano,Mono Bar,reddave@libero.it,"Via Lecco 6b, 20124 Milano",,,cafe,italian
+milano,Niro Meet Bar,info@niromeetbar.it,"Giardino Aristide Calderini 3, 20143 Milano",+39 02 8909 2743,,cafe,
+milano,NoLoSo,noloso.mi@gmail.com,"Via Luigi Varanini 5,  Milano",+39 331 4294088,,bar,
+milano,Pesca sportiva la vallata,info@lavallata.net,"Via Molino Nuovo 5, 20012 Milano",+39 02 974183,,bar,
+milano,Pizzeria day,pizzeriaday@gmail.com,"Piazza Quattro Novembre 4, 20060 Pozzo d'Adda",+390272194287,,fast_food,pizza
+milano,Portuga,por.tuga8690@gmail.com,"Via Lanzone 27, 20123 Milano",,,cafe,
+milano,Posto Unico,info@postounico.com,"Via Pastrengo 16,  Milano",,,bar,
+milano,Quinta Pietra,enoteca@quintapietra.it,"Via Cesare Battisti 10, 20097 San Donato Milanese",+39 0222199849,,bar,
+milano,Ristopizza La Coccinella,ristopizzalacoccinella@gmail.com,"Via Giacomo Matteotti 6, 20094 Corsico",+39 347 3056199,,restaurant,pizza;fish
+milano,Ristorante Churrascaria Pizzeria da Orlando,daorlando.ristorante@gmail.com,"Via Cornaggia 1, 20092 Cinisello Balsamo",+39 02 66049579,,restaurant,pizza;brazilian;italian
+milano,Sa pizzedda,info@sapizzedda.it,"Corso di Porta Ticinese 60, 20123 Milano",,,fast_food,pizza
+milano,Salumeria dello Sport,salumeriadellosport@gmail.com,"Piazza Napoli 30/2, 20146 Milano",+39 0289766020,,bar,
+milano,SelvaViva,selvaviva.prenotazioni@gmail.com,"Via Tre Salti ,  Turbigo",,,cafe,
+milano,Settimio caffè e bistrot,settimiocaffe@gmail.com,"Largo Settimio Severo 1, 20144 Milano",,,cafe,
+milano,Sofa Café,info@sofacafe.it,"Ripa di Porta Ticinese 7, 20143 Milano",+390236589107,,bar,
+milano,Solaro bar,oscar.mantegazza@tiscali.it,"Via Giuseppe Mazzini 31, 20033 Solaro",,,cafe,
+milano,Spontini,mazzini@pizzeriaspontini.com,"Via Dogana 3, 20123 Milano",+39 02 25061118,,restaurant,pizza
+milano,Tamarindo,tapequejm534@gmail.com,"Via Giuseppe Taccioli 20, 20161 Milano",,,cafe,salvadoran
+milano,The Kerry Blue,thekerryblue@hotmail.it,"Via Luigi Cadorna 15, 20020 Busto Garolfo",+39 0331 1773091,,bar,
+milano,ToastEat,geomcalboni93@proton.me,"Viale Milanofiori , 20057 Assago",,,bar,
+milano,Tutta 'Nata Storia,tuttanatastoria.pizzeria@gmail.com,"Via Giuseppe Meda 43, 20141 Milano",+39 02 8464137,,restaurant,pizza
+milano,Union Club,unionclub@hotmail.it,"Via Moretto Da Brescia 36, 20133 Milano",+39 02 70009543,,bar,
+milano,Why not? bistrot,alex.pinnelli@tiscali.it,"Via Adriano 94, 20128 Milano",,,cafe,
+milano,Élite cafè,tabaccheria.elitecafe@gmail.com,"Viale Lombardia 58, 20021 Bollate",,,cafe,
+napoli,7farine,info@7farine.it,"Via Panoramica 32b,  Castellammare di Stabia",+39 081 8700366,https://www.7farinemenu.com,restaurant,pizza;italian
+napoli,Bar Bossa,info@barbossa.it,"Via Piano del Principe 5, 80040 Poggiomarino",+39 0815 283138,http://www.barbossa.it,cafe,italian;coffee_shop;ice_cream
+napoli,Bella Pizza,info@bellapizzapomigliano.it,"Via Passariello 94, 80038 Pomigliano d'Arco",+39 081 199 12797,https://www.bellapizzapomigliano.it/,restaurant,pizza
+napoli,Caffè del Professore,info@ilverobardelprofessore.com,"Piazza Trieste e Trento 46, 80132 Napoli",+39 081 403041,https://ilverobardelprofessore.com/,cafe,
+napoli,Cammarota Spritz,indirizzo@email.com,"Vico Lungo Teatro Nuovo 31, 80134 Napoli",+39 320 277 5687,https://www.cammarotaspritz.com,bar,
+napoli,Casa Viscardi,casaviscardi@gmail.com,"Via Santa Brigida 57;58;59, 80132 Napoli",+39 081 5525400,http://www.marsuicafe.it,cafe,
+napoli,Cycas,info@cycas.it,"Via lidi Miliscola 13,  Bacoli",+39 081 523 1660,https://www.cycas.it/,bar,
+napoli,E' Guagliune,info@eguagliune.it,"Via Francesco Caiazzo 86, 80038 Pomigliano d'Arco",+39 081 884 2755,http://www.eguagliune.it/,restaurant,pizza;mediterranean;italian;regional
+napoli,Fattoria Terranova Agriturismo,info@fattoriaterranova.it,Napoli,+39 081 5330234,https://www.fattoriaterranova.it/,restaurant,italian;italian_pizza
+napoli,Fiorenzano,montesanto@fiorenzano.it,"Piazza Montesanto 6, 80134 Napoli",+39 081 552 0394,https://www.fiorenzano.it/,restaurant,pizza;regional
+napoli,Gran Caffè Gambrinus,info@grancaffegambrinus.com,"Via Chiaia 1/2, 80121 Napoli",+39 081 417582,https://grancaffegambrinus.com/,cafe,italian;sandwich
+napoli,"Ieri, Oggi, Domani",info@ierioggiedomani.it,"Via Nazionale 6, 80143 Napoli",+39 081 206717,https://www.ierioggiedomani.it,restaurant,pizza;italian
+napoli,L'Approdo 1980,info@approdocapri.com,"Piazza Ferraro 8, 80073 Capri",+390818378990,http://www.ApprodoCapri.com,restaurant,regional;pizza;italian
+napoli,Leone RistoBracePizza,clienti@leoneristorante.it,"Via Paolo Borsellino 188, 80025 Casandrino",+39 081 505 7103,https://www.leoneristorante.it/,restaurant,pizza;italian;regional;barbecue;mediterranean
+napoli,marSuì cafè,info@marsuicafe.it,"Via Santa Brigida 20, 80132 Napoli",+39 081 5517990,http://www.marsuicafe.it,cafe,
+napoli,Nu murzill' sapurito,numurzillsapurito@libero.it,"Vico Sergente Maggiore 47, 80132 Napoli",+39 081 402746,https://www.numurzillosapurito.it,restaurant,regional;italian;pizza
+napoli,Number One,info@pizzerianumberone.it,"Via Paolo Borsellino 60, 80025 Casandrino",+39 081 505 2219,https://www.pizzerianumberone.it/,restaurant,pizza;italian;regional
+napoli,Osteria n°5,info@osterianumerocinque.it,Napoli,+39 081 379 55 90,https://www.osterianumerocinque.it/,restaurant,pizza;regional;italian
+napoli,Pizzaioli Veraci,info@pizzaioliveraci.com,"Vico Tre Re a Toledo 1, 80132 Napoli",+39 081 0209641,http://www.pizzaioliveraci.com,restaurant,pizza
+napoli,Pizzeria 'Ntretella,info@pizzeriantretella.it,"Vico Maddalenella degli Spagnoli 19, 80132 Napoli",+39 081 427970,https://www.pizzeriantretella.it/,restaurant,pizza
+napoli,Reginè,regine.napoli@libero.it,Napoli,+39 081 5628139,https://regineosteriapizzeria.it/,restaurant,pizza
+napoli,Ristorante Vesum,5.0ristorazionesrl@gmail.com,"18, 80056 Ercolano",+39 081 7325011,https://www.vesum.it/,restaurant,pizza;italian;regional
+napoli,Taralleria Napoletana,info@tarallerianapoletana.it,"Via San Biagio dei Librai 3,  Napoli",,https://www.tarallerianapoletana.it/,cafe,italian
+napoli,Time Café,giuseppe.apicella@autogrill.net,Napoli,+39 081 200315,https://www.autogrill.com/,bar,
+napoli,We Love Puro,info@welovepuro.it,Napoli,+39 081 7523602,http://welovepuro.it,cafe,crepe;italian;coffee_shop;ice_cream
+napoli,Amabile,info@amabile.es,Napoli,+39 081 5625060,,restaurant,pizza
+napoli,Caffetteria Cuore,cuoresrls@hotmail.com,"Via Santa Brigida 48, 80133 Napoli",+39 081 552 2659,,cafe,
+napoli,Cuccuma Caffè,cuccumacaffenapoli@gmail.com,"Via San Giovanni Maggiore Pignatelli 1a, 80134 Napoli",+39 081 197 08586,,cafe,coffee_shop;cake
+napoli,Filumé,filumebistrotnapoletano@gmail.com,"Piazza del Gesù Nuovo 31;32;33,  Napoli",,,,pizza;regional
+napoli,Fratelli La Bufala,flb-mugnanoauchan@fratellilabufala.com,Napoli,+39 081 571 3233,,restaurant,pizza
+napoli,i Tre Archi 2,pinotrearchi@alice.it,Napoli,+39 081 895 8058,,restaurant,pizza;regional;chicken;pasta
+napoli,Il Farè,farepizza@hotmail.com,"Corso Domenico Cirillo 118, 80028 Grumo Nevano",+39 081 833 08 16,,restaurant,pizza;italian;regional
+napoli,Il Miracolo,ilmiracolopizzeria@gmail.com,"Via Vicaria Vecchia 32/34,  Napoli",+39 081 1894 9596,,restaurant,italian;italian_pizza;pizza;regional
+napoli,Il Rusticone,fourstarssrl@gmail.com,"Via Atellana 61, 80022 Arzano",+39 081 573 2759,,restaurant,pizza;italian;regional;chicken
+napoli,Indovino,vineriaindovino@gmail.com,"Vico Latilla 9,  Napoli",+39 331 432 4122,,bar,
+napoli,Kimiya Taste Hub,kimiyatastehub@gmail.com,"Via Carlo Alberto 65,  Napoli",+39 081 020 8740,,bar,
+napoli,Kona - Ristorante Pizzeria,konaristorante@gmail.com,"Via dell'Osservatorio 14, 80056 Ercolano",+39 081 7773968,,restaurant,pizza
+napoli,Nardones,nardones10@hotmail.it,"Via Nardone 10,  Napoli",+39 081 421467,,restaurant,regional;pizza
+napoli,Pizza Express,peppinopizzaexpress@gmail.com,"Via Cavone 27, 80063 Piano di Sorrento",+39 081 1875 3461,,restaurant,pizza
+napoli,Pizzeria Filumena Chicchinese,filumena.chicchinese@gmail.com,"Via Misericordiella 23/24, 80137 Napoli",+39 081 1857 3464,,restaurant,pizza
+napoli,Pizzeria Le Sorelle Bandiera,info@lesorellebandiera.it,"Vico Cinquesanti 33,  Napoli",+39 081 444617,,restaurant,pizza;italian;regional
+napoli,Pizzeria Pavia,pizzeriapavia1965@gmail.com,"Via Solitaria ,  Napoli",+39 081 764 5259,,fast_food,pizza
+napoli,Sapureat,sapureat@gmail.com,"Corso Vittorio Emanuele III 163, 80027 Frattamaggiore",+39 081 1966 1298,,restaurant,pizza;fried_food;mediterranean;italian
+roma,075,info@075roma.com,"Via dei Cerchi 65, 00186 Roma",+39 066875706,http://www.075roma.com/,cafe,
+roma,A casa mia,info@acasamiaristoranteroma.com,"Via Roma Libera 5/7, 00153 Roma",+39065818340,http://www.acasamiaristoranteroma.com,restaurant,regional
+roma,Accademia del Gusto 1990,info@1990accademiadelgusto.it,"Via dei Salentini 33, 00185 Roma",+39 06 4456289,https://www.1990accademiadelgusto.it,restaurant,
+roma,Achilli Enoteca al Parlamento,achillialparlamento@achilli.restaurant,"Via dei Prefetti 15,  Roma",+39 06 6873446,https://achilli.restaurant,restaurant,italian
+roma,Ad Hoc Piazza del popolo,info@ristoranteadhoc.com,"Via di Ripetta 43,  Roma",+39 06 3233040,https://www.ristoranteadhoc.com/,restaurant,italian
+roma,Agustarello a Testaccio,agustarelloatestaccio@yahoo.com,"Via Giovanni Branca 98, 00153 Roma",+39 06 574 6585,https://agustarello-a-testaccio.jimdosite.com/,restaurant,italian;regional
+roma,Al 39,info@ristoranteal39roma.com,"Via Palestro 39/a, 00185 Roma",+39 06 4441213,https://www.ristoranteal39.it/,restaurant,
+roma,Al camoscio d'Abruzzo,info@trattoria-roma.it,"Via Castelfidardo 76, 00185 Roma",+39 06 4462183,http://trattoria-roma.it/,restaurant,
+roma,Al grappolo d'oro,info@algrappolodoro.it,"Via Palestro 4, 00185 Roma",+39 06 4941441,https://www.algrappolodoro.it/,restaurant,
+roma,Al Passetto di Borgo,alpassettodiborgo@yahoo.it,"Borgo Pio 60, 00193 Roma",+39 06 68803957,http://www.alpassettodiborgo.it,restaurant,italian
+roma,al Picchio,info@ristorantealpicchio.it,"Via del Lavatore 40, 00187 Roma",+39066789926,https://www.ristorantealpicchio.it/,restaurant,italian;italian_pizza
+roma,Al vecchio mulino,info@alvecchiomulinoroma.it,"Via Antonio Pacinotti 45, 00146 Roma",+39 06 5561740,http://www.alvecchiomulinoroma.it/,restaurant,
+roma,Al Vialetto,alvialetto@libero.it,"Via dell'Acqua Bullicante 260, 00177 Roma",+39 06 24 14 394,http://www.alvialetto.it,restaurant,regional
+roma,Alice Pizza,maximo@alicepizza.it,"Via Laurentina 865, 00143 Roma",+39 06 8705678,https://www.alicepizza.it/,restaurant,pizza
+roma,All'oro,info@ristorantealloro.it,"Via del Vantaggio 14,  Roma",+39 06 97996907,https://www.ristorantealloro.it/,restaurant,italian
+roma,Alla bracioleria,info@allabracioleria.it,"Via Volturno 38/a, 00185 Roma",+39 06 491778,https://www.allabracioleria.it/,restaurant,
+roma,Alla Rampa dei Gracchi,info@allarampadeigracchi.com,"Via dei Gracchi 90, 00192 Roma",+39 06 322 1615,https://www.allarampadeigracchi.com/,restaurant,italian
+roma,Amodei,info@bottegaamodei.it,"Via Principe Amedeo 7/b, 00185 Roma",+39 06 4823138,http://www.bottegaamodei.it,restaurant,italian
+roma,Antica Trattoria Tritone,info@trattoriatritone.com,"Via dei Maroniti 1,  Roma",+39 06 6798181,http://www.trattoriatritone.com/,restaurant,italian
+roma,Antico Arco,info@anticoarco.it,"Piazzale Aurelio 7, 00152 Roma",+39 06 5815274,https://www.anticoarco.it/,restaurant,italian
+roma,Antico Forno a Testaccio,anticofornoatestaccio@yahoo.it,"Via Amerigo Vespucci 28, 00153 Roma",+39 06 5746280,https://www.anticofornotestaccio.com/,restaurant,italian;pizza;pasta
+roma,Appia Antica Caffè,info@appiaanticacaffe.it,"Via Appia Antica 175, 00179 Roma",+39 06 89879575,https://www.appiaanticacaffe.it,cafe,coffee_shop;ice_cream;italian;regional;sandwich
+roma,Ar Grottino der Traslocatore,argrottinodertraslocatore@hotmail.it,"Largo delle Sette Chiese 2, 00145 Roma",+39 06 514 1261,https://www.argrottinodertraslocatore.com/,restaurant,italian;regional
+roma,Arco di San Calisto,arcodisancalisto@gmail.com,"Via dell'Arco di San Calisto 45,  Roma",+39 331 204 5150,https://www.ristorantearcodisancalisto.it/,restaurant,
+roma,Armando al Pantheon,info@armadoalpantheon.it,"Salita de' Crescenzi 31,  Roma",+39 06 68803034,https://www.armandoalpantheon.it/,restaurant,italian
+roma,Aromaticus,info@aromaticus.it,"Via Natale Del Grande 6/7, 00153 Roma",+390688798381,https://www.aromaticus-roma.com,restaurant,
+roma,Asmara,info@ristoranteasmara.com,"Via Cernaia 36, 00185 Roma",,http://www.ristoranteasmara.com/,restaurant,african
+roma,Ba'Ghetto,baghetto57@kosherinrome.it,"Via del Portico d'Ottavia 57, 00186 Roma",+39 06 68892868,http://www.kosherinrome.it,restaurant,jewish-italian
+roma,Babette,babette@babetteristorante.it,"Via Margutta 1/d,  Roma",+39 0321 1559,www.babetteristorante.it,restaurant,italian;international;creative
+roma,Baccano,info@baccanoroma.com,"Via delle Muratte 23, 00187 Roma",+39 06 6994 1166,https://www.baccanoroma.com/,restaurant,italian
+roma,Baccio e i gradini,info@baccioeigradini.it,"Viale della Piramide Cestia 25, 00153 Roma",+39 3518823737,https://baccioeigradini.it/,restaurant,
+roma,Bacco In Trastevere,baccointrastevere.shop@gmail.com,"Piazza di San Giovanni della Malva 14,  Roma",+39 389 948 4851,https://baccointrastevere.shop/,restaurant,regional;romana;tradisionale
+roma,Bakery House,info@bakeryhouse.it,"Corso Trieste 157, 00198 Roma",+39 06 94377841,www.bakeryhouse.it,cafe,american;bagel;breakfast;cake;sandwich
+roma,Barred,info@barred.it,"Via Cesena 30, 00182 Roma",+39 06 9727 3382,https://www.barred.it/,restaurant,italian
+roma,Barrio Latino,info@ilbarriolatino.it,"Via Bernardino Alimena 10, 00173 Roma",+39 06 72631926,ilbarriolatino.it,nightclub,pizza
+roma,Beef Bazaar,eventi@beefbazaar.com,"Via Germanico 136, 00192 Roma",+39 06 69402150,https://www.beefbazaar.it/,restaurant,barbecue;burger;italian;steak_house
+roma,Binario 96,ristorantebinario96@gmail.com,"Via Nocera Umbra 96,  Roma",+39 06 78359207,https://www.ristorantebinario96.it/,restaurant,italian;pizza
+roma,Biondo Grano,info@biondograno.com,"Via Guglielmo Mengarini 11a, 00149 Roma",+39 06 39754656,https://www.biondograno.com/,restaurant,pizza
+roma,BioOsteria,bioosteria@casalepodererosa.org,Roma,+39 06 8271545,https://casalepodererosa.org/alimentazione/bioost02.html,restaurant,italian/organic
+roma,Bistro by Linda,info@bistrobylinda.it,"Via Eleonora d'Arborea 15c,  Roma",+39 06 44244889,https://www.bistrobylinda.it/,restaurant,mexican
+roma,Blu marino,info@ristoranteblumarino.it,"Via Terni 29;, 00182 Roma",,https://ristoranteblumarino.it/,restaurant,seafood
+roma,Blue Room,info@blueroomcafe.it,"Via Paolo Albera 55, 00181 Roma",,https://www.blueroomcafe.it,cafe,coffee_shop
+roma,Branca,info@wearebranca.com,"Via Merulana 36,  Roma",+39 06 8952 8967,https://www.wearebranca.com/,restaurant,coffee_shop;italian
+roma,Buddha Smile,buddhasmileroma@gmail.com,"Via di Passo Lombardo 262, 00133 Roma",+39 06 72650435,https://www.buddhasmile.it/,restaurant,indian
+roma,Buddy Veggy Restaurant Cafè,buddyitalianrestaurantcafe@gmail.com,"Corso Vittorio Emanuele Secondo 107, 00186 Roma",+3906 8772 8433,https://www.buddyroma.com/,restaurant,breakfast;burger;cake;coffee_shop;fine_dining;italian
+roma,Caffè 104,info@caffe104.it,"Viale di Villa Pamphili 31, 00152 Roma",+39065814508,https://www.caffe104.it/,cafe,breakfast;cake;coffee_shop;donut;sandwich;tea
+roma,Caffè delle Arti,info@caffedellearti.it,Roma,+39 06 32651236,https://www.caffedellearti.it/,restaurant,
+roma,Caffè Letterario,info@caffeletterarioroma.it,"Via Ostiense 95, 00154 Roma",+39 06 57302842,https://caffeletterarioroma.it,cafe,
+roma,Caffè Vergnano,design@caffevergnano.com,"Via Laurentina 865, 00143 Roma",+39 06 90236846,https://www.caffevergnano.com/,cafe,
+roma,Canonica,lacanonicatrastevere@gmail.com,"Vicolo del Piede 13A, 00153 Roma",+39065803845,https://www.lacanonicaristorante.it,restaurant,italian
+roma,Cantina e Cucina,info@cantinaecucina.it,"Via del Governo Vecchio 87, 00186 Roma",+39 06 689 2574,https://www.cantinaecucina.it/,restaurant,italian
+roma,Cantine Cavour,info@cantinecavour.it,"Via Paolo Mercuri 21, 00193 Roma",+39 06 6889 2655,http://www.cantinecavour.it/,restaurant,italian;regional
+roma,Capatoast,info@capatoast.it,"Via Laurentina 865, 00143 Roma",+39 06 87646898,https://capatoast.it/,restaurant,sandwich
+roma,Capitolo IV,info@capitoloquartopizzeria.com,"Via Giovanni Censori 13, 00133 Roma",,https://www.capitoloquartopizzeria.com/,fast_food,pizza
+roma,Casa Claudia Jazz and Garden,info@casaclaudia.it,"Via Nomentana 414, 00141 Roma",+39 06 86898839,https://www.casaclaudia.it/,restaurant,
+roma,Casa Maria,ristorantecasamaria@gmail.com,"Piazza di Santa Maria Maggiore 13/b, 00185 Roma",+39 06 4827447,https://www.ristorantecasamaria.com/,restaurant,
+roma,Casina dei Tre Laghi,casina.3laghi@libero.it,"Viale Oceania 90, 00144 Roma",+39 06 5924507,http://www.casinadeitrelaghi.com/,cafe,ice_cream
+roma,Cencio la Parolaccia,info@cenciolaparolaccia.com,"Vicolo del Cinque 3, 00153 Roma",+39 06 580 3633,https://cenciolaparolaccia.it/,restaurant,italian
+roma,Cesare,cesarrst@tin.it,"Via Crescenzio 13,  Roma",+39 06 6861227,https://www.ristorantecesare.com/,restaurant,italian
+roma,Cesarina,ristorantecesarina@libero.it,"Via Piemonte 109, 00187 Roma",,http://www.ristorantecesarinaroma.it,restaurant,
+roma,Chakra Cafè,info@chakracaferoma.com,"Piazza di Santa Rufina 13, 00152 Roma",+39 338 2917593,www.chakracaferoma.com,cafe,
+roma,Checco dello Scapicollo,info@checcoscapicollo.com,"Via dei Genieri 5, 00143 Roma",+39 06 5010251,https://checcoscapicollo.com/,restaurant,regional;italian
+roma,Chihana sushi restaurant,chihanaroma@gmail.com,"Via Marmorata 181, 00153 Roma",+39 06 4575 3440,https://chihanaroma.com/,restaurant,sushi
+roma,Chinappi,chinappi@chinappi.it,"Via Augusto Valenziani 19,  Roma",+39 06 4742456,https://www.chinappi.it/,restaurant,italian
+roma,Cicilardone a Monte Crauso,cicilardone.montecaruso@gmail.com,"Via Farini 12, 00185 Roma",+39 06 483549,https://www.cicilardone.com/,restaurant,
+roma,Ciclostazione Frattini,info@ciclostazionefrattini.it,"Via Pietro Frattini 136, 00149 Roma",+39 065503707,https://www.ciclostazionefrattini.it/,restaurant,italian
+roma,CiPASSO Bistrot,cipasso.roma@gmail.com,"Via Metastasio 21, 00186 Roma",+39 06 68892620,https://www.cipassoitalia.it/,restaurant,
+roma,Circolo Vittorio,eventi@vittorioroma.com,"Via Foscolo 30, 00185 Roma",+39 06 44207729,https://www.vittorioroma.com,restaurant,
+roma,Circè,circeromaristorante@gmail.com,"Via Nomentana 1218, 00137 Roma",+39 06 8543278,https://www.circeroma.it/,restaurant,
+roma,Ciro Purpetta,info@ciropurpetta.it,"Via Goito 13, 00185 Roma",+39 06 92597680,https://www.ciropurpetta.it/,restaurant,
+roma,Clemente Alla Maddalena,info@lamaddalenaroma.com,"Piazza della Maddalena 10, 00186 Roma",+39 06 87672469,http://www.lamaddalenaroma.com,restaurant,italian
+roma,Coinbar Roma – Barberini,info@coinbar.io,"Via Barberini 34, 00187 Roma",,https://coinbar.io/,cafe,
+roma,Coming Out,info@comingout.it,"Via di S. Giovanni in Laterano 8,  Roma",+39 06 700 9871; +39 351 955 7072,https://www.comingout.it/,restaurant,
+roma,Comparone,ilcomparone@gmail.com,"Piazza in Piscinula 42/50,  Roma",+39 065816249,http://www.comparone.it,cafe,
+roma,Crazy Pizza,rome@crazypizza.com,"Via Vittorio Veneto 167, 00187 Roma",+39 064404417,https://crazypizza.com/rome/,restaurant,pizza
+roma,Crispi 19,crispi19@hotmail.it,"Via Francesco Crispi 19,  Roma",+39 06 6785904,https://ristorantecrispi19.com/,restaurant,italian
+roma,Crudop wine bar,info@crudop.it,"Via Tuscolana 896,  Roma",+39 06 7690 9916,https://www.crudop.it/,restaurant,seafood
+roma,Cul de Sac,enoteca.culdesac@libero.it,"Piazza di Pasquino 73,  Roma",+39 06 68801094,http://www.enotecaculdesac.com,restaurant,
+roma,D'Amore,barpasticceriadamore@gmail.com,"Via dello Statuto 37/b, 00185 Roma",+39 06 44363205,https://pasticceria-damore.com,cafe,
+roma,Da Bucatino,info@dabucatino.it,"Via Luca della Robbia 84;86, 00153 Roma",+39 065746886,https://www.dabucatino.it/,restaurant,italian;italian_pizza
+roma,Da Francesco,info@dafrancesco.it,"Piazza del Fico 29, 00186 Roma",+39 06 686 4009,https://www.dafrancesco.it,restaurant,pasta
+roma,Da Nazzareno,da.nazzareno@tiscali.it,"Via Magenta 37, 00185 Roma",+39 06 4957782,http://www.danazzareno.com/,restaurant,
+roma,Da Trani,info@ristorantedatrani.it,"Via Genova 20, 00184 Roma",+39 06 4881396,http://www.ristorantedatrani.com/,restaurant,italian
+roma,Dai toscani,ristorante@daitoscani.it,"Via Forlì 41, 00161 Roma",+39 06 44231302,https://www.daitoscani.com/,restaurant,
+roma,Dal Marchigiano,info@ristorantepizzeriadalmarchigiano.it,Roma,+39 06 5050203,http://www.ristorantepizzeriadalmarchigiano.it,restaurant,
+roma,dal pallarolo 1936,info@dalpollarolo1936.it,"Via di Ripetta 4/5, 00186 Roma",+39 06 321 2754; +39 06 361 0276,https://www.dalpollarolo1936.it/,restaurant,italian;italian_pizza
+roma,Dar Poeta Al Casale,ilcasale@darpoeta.com,Roma,+39 06 789893,http://ilcasale.darpoeta.com/,restaurant,italian
+roma,Dar sor Olimpio al Drago,sorolimpioaldrago@gmail.com,Roma,+39 339 885 7574,https://sorolimpioaldrago.it/ristorante/,restaurant,
+roma,DEROMA,ciao@deromamor.com,"Via Poli 27, 00187 Roma",+390669369190,https://www.deromamor.com/,restaurant,italian;salad;pasta;grill;pizza
+roma,Dispensa Emilia,servizioclienti@dispensaemilia.it,"Via Laurentina 865, 00143 Roma",+39 06 32092869,https://www.dispensaemilia.it/it/,restaurant,
+roma,Domenico dal 1968,info@domenicodal1968.it,"Via Satrico 23/25,  Roma",+39 06 70494602,https://www.domenicodal1968.it/,restaurant,italian
+roma,Domò Sushi,domopariolisrl@gmail.com,"Via Novara 21, 00198 Roma",+39 06 4425 4635;+39 3664576219,https://www.domosushi.it/,restaurant,japanese;sushi
+roma,Don Pepe,info@ristorantedonpepe.it,"Lungomare Paolo Toscanelli 125, 00121 Roma",+39 06 5672408,https://www.donpepeostia.it/,restaurant,
+roma,Doppio Malto,maximo@doppiomalto.com,"Via Laurentina 865, 00143 Roma",+39 06 83986029,https://www.doppiomalto.com/,restaurant,
+roma,Dosaggio Zero,info@dosaggiozero.net,"Via Renato Simoni 52, 00157 Roma",+39 0694376071,https://dosaggiozero.net/,restaurant,
+roma,Eataly Roma,accoglienzaroma@eataly.it,"Piazzale XII Ottobre 1492 , 00100 Roma",+39 06 90279201,https://www.eataly.net/it_it/negozi/roma/,restaurant,italian
+roma,Eden,garbatella@edencaffe.it,"Via Ignazio Persico 78,  Roma",+39 06 51607623,http://edencaffe.it,cafe,breakfast;cake;coffee_shop
+roma,El Patio,info@elpatio.it,"Via Casilina 1108, 00169 Roma",+39 06 263181,https://www.elpatio.it/,restaurant,spanish
+roma,Elegance Café,info@elegancecafe.it,"Via Francesco Carletti 5, 00154 Roma",+39 06 5728 4458,https://www.elegancecafe.it,cafe,
+roma,Emporio Sant'Eustachio,info@emporiosanteustachio.com,"Via della Maddalena 36,  Roma",+39 06 7725 1018,https://emporiosanteustachio.com,cafe,
+roma,EnOsteria,info@enosteria.it,"Via di Capo le Case 51A,  Roma",+39 06 6786115,www.enosteria.it,restaurant,italian
+roma,Enoteca Cavour 313,cavour313@libero.it,"Via Cavour 313, 00184 Roma",+39 06 6785496,https://www.cavour313.it/,restaurant,regional
+roma,Ercoli 1928,infoprati@ercoli1928.com,"Via Montello 24, 00195 Roma",+39  06 3720243,https://ercoli1928.com/prati/,restaurant,
+roma,Etabli,info@etabli.it,"Vicolo delle Vacche 9, 00186 Roma",+39 06 97616694,http://www.etabli.it,cafe,
+roma,Fattoria Toccaferro,maximo@fattoriatoccaferro.it,"Via Laurentina 865, 00143 Roma",+39 06 87580127,https://fattoriatoccaferro.it/,restaurant,italian
+roma,Fax Factory,faxfactory.coffee@gmail.com,"Via Antonio Raimondi 87, 00176 Roma",+39 06 6930 1043,https://www.faxfactory.it/,cafe,coffee_shop;cake;pancake;dessert
+roma,Fermento,info@fermentoroma.it,"Via Cicerone 61,  Roma",+39 06 3265 1956,https://www.fermentoroma.it/,restaurant,
+roma,Fermentum,info@fermentum.it,"Via Lemonia 214, 00178 Roma",+39 06 88939709,http://www.fermentum.it/,restaurant,
+roma,Ferro e ghisa,info@ferroeghisa.com,"Circonvallazione Cornelia 11, 00165 Roma",+39 06 66032638,https://www.ferroeghisa.com/,restaurant,italian
+roma,FiloDiLatte,filodilatte@gmail.com,"Viale Furio Camillo 41, 00181 Roma",,https://filodilatteroma.it/,restaurant,
+roma,FishEnjoy,fishenjoyroma@gmail.com,"Via della Magliana 281, 00146 Roma",+39 34 5535 8821,https://www.fishenjoy.com/,restaurant,seafood;fish
+roma,Florian's cafè,florians@florianscafe.com,"Piazza dell'Indipendenza 9, 00185 Roma",+39 06 4451737,https://florianscafe.it/,cafe,
+roma,Forno Monteforte,info@fornomonteforte.com,"Via del Pellegrino 129,  Roma",+39 06 2539 9550,https://fornomonteforte.com/,cafe,pizza
+roma,Fresco,romatermini@frescotrattoria.it,00185 Roma,+39 06 4873232,https://frescotrattoria.it/location/roma-termini/,restaurant,pizza
+roma,Friabile,info@friabile.it,"Via Raoul Chiodelli 154, 00132 Roma",+39 06 2218 0158,https://www.friabile.it/,restaurant,italian;pizza;burger
+roma,Frontoni,pizzeriafrontoni.info@gmail.com,"Via Assisi 117, 00181 Roma",+39 06 78349259,https://www.anticapizzeriafrontoni.it/,restaurant,pizza
+roma,Fuso Orario,info@fuso-orario.it,"Via Ruggero Jacobbi 2, 00173 Roma",+39 06 72630500,https://www.fuso-orario.it/,restaurant,italian;steak_house;pizza
+roma,Gaetano Costa,gaetanocostarestaurant@email.it,"Via Sicilia 45,  Roma",+39 06 42016822,www.gaetanocostarestaurant.com,restaurant,italian
+roma,Gandhi 2,info@gandhiroma2.eu,"Via Genova 29, 00186 Roma",+39 06 98183177,http://www.gandhiroma2.eu/,restaurant,indian
+roma,Gavius,info@gavius.it,"Viale dell'Oceano Pacifico 153, 00144 Roma",+39 0659280803,http://www.gavius.it/,restaurant,
+roma,Ginger,info@ginger.roma.it,"Via Borgognona 43/44,  Roma",+39 06 96036390,http://www.ginger.roma.it,restaurant,italian
+roma,Giulia,info@giuliarestaurant.it,"Lungotevere dei Tebaldi 4/a, 00186 Roma",+39 06 95552086,https://www.giuliarestaurant.it/,restaurant,
+roma,Giulietta,info@giuliettavinoecucina.com,"Via Giulia 169, 00186 Roma",+39 06 45543572,https://www.giuliettavinoecucina.com/,restaurant,regional;italian
+roma,Glass Hostaria,infoglass@libero.it,"Vicolo del Cinque 58, 00153 Roma",+39 06 58335903,https://glasshostaria.it/,restaurant,italian
+roma,Good Good pizzeria,info@goodgoodpizzeria.it,"Via Latina 103,  Roma",+39 06 7800855,https://www.goodgoodpizzeria.it/,restaurant,italian
+roma,Grazie a Dio è Venerdì,info@grazieadioevenerdi.com,"Via dei Capocci 1, 00184 Roma",+39 06 488 2585,http://www.grazieadioevenerdi.com,restaurant,pizza
+roma,Hokkaido,info@ristorantehokkaido.com,"Via del Castro Pretorio 12, 00185 Roma",+39 06 45505297,https://www.ristorantehokkaido.com/,restaurant,japanese
+roma,Hokusai Ramen,hokusairamen@hotmail.com,"Via Prenestina 123, 00176 Roma",+39 391 407 9851,https://www.hokusairamen.it/,restaurant,japanese
+roma,Hostaria Cannavota,ristorantecannavota@gmail.com,"Piazza di San Giovanni in Laterano 20, 00184 Roma",+39 06 77205007,http://www.cannavota.it,restaurant,regional
+roma,Hostaria da Vincenzo,ordinidavincenzo@gmail.com,"Via Castelfidardo 4/a, 00185 Roma",+39 06 484596,https://www.hostariadavincenzo.it/,restaurant,italian;fish
+roma,HOSTERIA ROMANA al Ponticello da Crispino,info@hosteriaromana.it,Roma,+39 06 97600452,http://www.hosteriaromanaalponticello.com/,restaurant,italian
+roma,Huobi mercato orientale,huobiroma@gmail.com,"Via Antonio Pacinotti 63,  Roma",+390698796945,https://www.huobimercatoorientale.com/,restaurant,
+roma,I monticiani,imonticiani@gmail.com,"Via Panisperna 84,  Roma",+39 06 47543408,https://www.imonticiani.it/,restaurant,italian
+roma,Igio,ristoranteigio@gmail.com,"Via Roma Libera 26, 00153 Roma",+39 06 583 102 69,https://ristoranteigio.com/,restaurant,korean
+roma,Il Bersagliere,lorenzetti.fa@tiscali.it,"Via Giovanni Amendola 18, 00185 Roma",+39 06 486940,http://www.ristoranteilbersagliere.it/,restaurant,
+roma,Il Convivio Troiani,info@ilconviviotroiani.com,"Vicolo dei Soldati 31, 00186 Roma",+39 06 6869432,http://www.ilconviviotroiani.com,restaurant,italian
+roma,Il Fellini,ristoranteilfellini@gmail.com,"Via Sicilia 150,  Roma",,https://www.ilfellini.com/,restaurant,italian
+roma,Il Fiammifero Strano,sirioduesrl@gmail.com,"Via Lombardia 32, 00187 Roma",+39 06 488 0072; +39 338 821 7329,https://www.facebook.com/people/Il-Fiammifero-Strano/100054236030400/,restaurant,italian
+roma,Il gallo nero,info@ristorantegalloneroroma.it,"Via Principe Amedeo 7/h, 00185 Roma",+39 06 4740626,https://www.ristorantegalloneroroma.it/,restaurant,italian
+roma,Il Giardino dei Ciliegi,ilgiardinodeiciliegi@live.com,"Via dei Fienaroli 4, 00153 Roma",+39 06 5803423,https://www.ilgiardinodeiciliegi.net/,cafe,
+roma,Il Giardino Romano,ilgiardinoromano@tiscali.it,"Via del Portico d'Ottavia 18, 00186 Roma",+39 06 68809661,http://www.ilgiardinoromano.it/web/,restaurant,regional
+roma,Il Margutta veggy food & art,info@ilmargutta.bio,"Via Margutta 118, 00187 Roma",+39 06 32650577,https://ilmargutta.bio,restaurant,
+roma,Il mondo d’oro,info@ristorantemondodoro.it,"Via Genzano 112, 00179 Roma",+39 06 786201,https://www.ristorantemondodoro.it/,restaurant,chinese;japanese
+roma,Il Pagliaccio,info@ristoranteilpagliaccio.it,"Via dei Banchi Vecchi 129a, 00186 Roma",+39 06 68809595,https://www.ristoranteilpagliaccio.com/,restaurant,
+roma,Il pellicano,info@ristoranteilpellicano.com,"Via Padre Massaruti 140, 00125 Roma",+39 06 5213639,https://ristoranteilpellicano.com,restaurant,italian;regional;pizza
+roma,Il Quagliaro,info@ilquagliaro.it,"Largo Mola di Bari 17/19, 00171 Roma",+39 06 25210875,http://www.quagliaro.it/,restaurant,italian
+roma,Il Sanlorenzo,info@ilsanlorenzo.it,"Via dei Chiavari 4/5, 00186 Roma",+39 06 6865097,http://www.ilsanlorenzo.it,restaurant,
+roma,Il Secchio e l'Olivaro Garbatella,garbatella@ilsecchioelolivaro.it,"Via delle Sette Chiese 188,  Roma",+39 06 5120022,https://www.ilsecchioelolivaro.it/,restaurant,pizza
+roma,il Sori,info@ilsiri.it,"Via dei Volsci 51, 00185 Roma",+39 3934318681,http://il Siri.it,restaurant,
+roma,Inofficina,inofficina@gmail.com,"Via Mesula 12, 00158 Roma",+39 06 8370 7012,https://www.facebook.com/inofficinaroma/?locale2=it_IT,restaurant,burger
+roma,Ishin Ristorante,info@ishinristorante.com,"Via Vicoforte 31, 00166 Roma",+39 06 45652079,https://www.ishinristorante.com/,restaurant,asian
+roma,Jaipur,info@ristorantejaipur.it,"Via di San Francesco a Ripa 56, 00153 Roma",+39065803992,https://www.ristorantejaipur.com/,restaurant,indian
+roma,Javaroma,information@javaroma.com,"Via Venti Settembre 26/d, 00187 Roma",+39 06 89612858,https://javaroma.com/,cafe,coffee_shop
+roma,Kabab,hparpinci@gmail.com,"Via di Grottarossa 52, 00189 Roma",+390630310231,https://www.ristorantepersiano.it/,restaurant,persian
+roma,Klang Roma,artdirection@klangroma.com,"Via Stefano Colonna 9, 00176 Roma",,https://www.facebook.com/klangroma/,pub,burger;pizza;friture;panino;fried_potatoes;french_fries;jacket_potatoes;hot_dog;cake;dessert
+roma,L'altro cereale,info@laltrocereale.it,"Via Danilo Stiepovich 18, 00121 Roma",+39 06 69316779,https://www.laltrocereale.it,restaurant,pizza
+roma,L'Angolo Cottura,lapirofila@gmail.com,"Via Zenodossio 82,  Roma",+390689535732,https://langolocottura.wordpress.com/,restaurant,
+roma,L'angolo di Napoli,info@langolodinapoli.it,"Via Cesare Balbo 15, 00184 Roma",+39 06 4746866,https://www.langolodinapoli.it/,restaurant,
+roma,L'arcipelago,coldilana@vanni.it,Roma,+39 0632649012; +39 0632649013,https://www.vanni.it/larcipelago/,restaurant,friture;ice_cream;italian;pasta;fish;pizza;noodle;cake;sandwich
+roma,L'Idillio,trattorialidillio@libero.it,"Via Augusto Dulceri 29, 00176 Roma",+39 06 297089,https://www.idillio.net/,restaurant,regional
+roma,L'ingrediente segreto,info@ingredientesegreto.it,"Via dei Frassini 44, 00172 Roma",+39 06 23231127,https://www.ingredientesegreto.it/,restaurant,
+roma,L'Isola dei Sardi due,isoladeisardidue@gmail.com,"Vicolo della Garbatella 1/9, 00154 Roma",+39 06 5135044,https://www.isoladeisardidue.com/,restaurant,pizza;seafood
+roma,La Balestra,ristorantebalestra@gmail.com,"Via Simeto 2f, 00198 Roma",+39 06 8555127,https://www.ristorantelabalestra.eu,restaurant,italian
+roma,La Buca Di Ripetta,info@labucadiripetta.com,"Via di Ripetta 36, 00186 Roma",+39 06 321 93 91,https://labucadiripetta.com/,restaurant,
+roma,La bufala allegra,info@bufalaallegra.it,"Via Raoul Chiodelli 180, 00132 Roma",+39 0622185057,https://www.bufalaallegra.it/,restaurant,italian;pizza
+roma,La Cascina,info@lacascinaristorante.it,"Via delle Capannelle 223, 00178 Roma",+39 06 7222019,https://www.lacascinaristorante.it/,restaurant,
+roma,La Cornucopia Bistrot,info@lacornucopiabistrot.it,Roma,,https://www.lacornucopiabistrot.it/,restaurant,
+roma,La Costiera,info@lacostierapescevino.it,"Via Andrea Doria 34 a/b, 00195 Roma",+39 331 442 7952,https://www.lacostierapescevino.it/,restaurant,fish
+roma,La Drogheria Veg,info@ladrogheriaveg.it,"Via Umberto Giordano 68/a, 00124 Roma",+39 375 676 2141,https://www.ladrogheriaveg.it/,restaurant,breakfast;burger;cake;coffee_shop;diner;fish_and_chips;international
+roma,La Fata Ignorante,gdmgdm@hotmail.com,Roma,+39 324 7474306,https://www.lafataignorante.it,restaurant,
+roma,La gallina bianca,info@lagallinabiancaroma.it,"Via Antonio Rosmini 8, 00184 Roma",+39 06 4743777,https://lagallinabiancaroma.it/,restaurant,
+roma,La Locanda del Borgo,info@lalocandadelborgo.com,Roma,+39 06 41400352,https://www.lalocandadelborgo.com,restaurant,
+roma,La lupa,info@laluparistorante.it,"Via Marghera 37, 00185 Roma",+39 06 86928542,https://www.laluparistorante.it/,restaurant,
+roma,La Madia,info@lamadia.eu,"Via Chiana , 00199 Roma",+39 06 841 63 04,lamadia.eu,restaurant,
+roma,La Masseria,info@agriturismolamasseria.eu,"Via Crescentino 114, 00123 Tragliatella",+390630859282,https://www.agriturismolamasseria.eu/,restaurant,regional
+roma,La Matriciana,lamatriciana@gmail.com,"Piazza dei Consoli 26,28, 00175 Roma",+39 06 76900646,http://www.lamatricianaiconsoli.com/,restaurant,
+roma,La mensa di Bacco,info@mensa-di-bacco.com,"Via Principe Amedeo 75/b, 00185 Roma",+39 06 4466920,http://www.mensa-di-bacco.com/,restaurant,italian
+roma,La Mucca Bischera 2,info@lamuccabischera2.it,"Via Nomentana 1040, 00137 Roma",+39 06 82098204,https://www.lamuccabischera2.it/,restaurant,pizza;italian;steak_house
+roma,La pasta di Chiara,info@lapastadichiara.it,"Via Emiliano degli Orfini 29, 00133 Roma",+39 333 2782904,https://www.lapastadichiara.it/,restaurant,
+roma,La pecora pazza,info@lapecorapazza.it,"Via Statilia 35, 00185 Roma",+39 06 7011637,http://www.lapecorapazza.it/,restaurant,italian
+roma,La Porta del Principe,info@laportadelprincipe.it,"Via Portuense 1585, 00148 Roma",+39 06 65001249,https://www.laportadelprincipe.it/,restaurant,
+roma,La Prosciutteria Roma Trevi - Cantina dei Papi,info@cantinadeipapi.com,"Via della Panetteria 34a, 00187 Roma",+39 06 678 6990,https://www.cantinadeipapi.com/prosciutteria-cantina-dei-papi-trevi-contatti/,restaurant,italian
+roma,La Santeria,lasanteriaroma@gmail.com,"Via del Pigneto 209, 00176 Roma",+39 06 64801606,https://www.lasanteria.it/,restaurant,fish
+roma,La Scalinata de Vincenza,info@hostarialascalinata.com,"Via di Sant'Andrea delle Fratte 32, 00187 Roma",+39 06 6994 2067,http://www.hostarialascalinata.com,restaurant,italian_pizza;italian
+roma,La Tavernetta Cucina Umbra,latavernettaumbra@gmail.com,"Viale Giulio Cesare 103, 00192 Roma",+39 06 321 4647,http://www.latavernettaumbra.com,restaurant,italian
+roma,La Valle Del Sacco,info@lavalledelsacco.it,Roma,+39 06 575 9817,https://www.lavalledelsacco.it/,restaurant,
+roma,La vera Napoli,pizzerialaveranapoli@hotmail.com,"Via Muzio Scevola 47, 00181 Roma",+39 06 7857808,https://www.pizzerialaveranapoli.it/,restaurant,pizza
+roma,La Villetta,lavillettadal1940ristorante@gmail.com,"Viale della Piramide Cestia 53, 00153 Roma",+39 06 5750597,http://www.lavillettadal1940.com/,restaurant,
+roma,Latte e Fondente,info@lattefondente.com,"Via Laurentina 865, 00143 Roma",+39 06 90236887,https://www.lattefondente.com/,cafe,
+roma,Le 2 Colonne,info@leduecolonne.it,"Via Liberiana 18, 00184 Roma",+39 06 4881237,http://www.leduecolonne.it,restaurant,italian;pizza
+roma,Le Bistro,info@numbslebistro.com,"Via Mario de' Fiori 26, 00187 Roma",+39 06 6945 5989,https://www.lebistroroma.com,cafe,
+roma,Le Caveau,lecaveau.ristorante@gmail.com,"Via Conte Verde 6, 00185 Roma",+39 06 446 4744,https://ristorantelecaveau.it/,restaurant,
+roma,Le Tamerici,info@letamerici.com,"Vicolo Scavolino 79,  Roma",+39 06 69200700,https://www.letamerici.com/,restaurant,italian
+roma,Leon,leonfiletteria@gmail.com,"Via Nocera Umbra 22, 00181 Roma",+39 06 91939630,https://www.filetterialeon.com/,restaurant,steak_house
+roma,Lievito Pizzeria e Cucina,info@lievitoroma.it,Roma,+39 06 4423 8421,https://www.lievitodelivery.com/,restaurant,
+roma,Life,info@ristorantelife.it,"Via della Vite 29,  Roma",+39 06 69380948,http://www.ristorantelife.it,restaurant,italian
+roma,Luppolo e Farina,bogasrl@hotmail.it,"Viale delle Accademie 65/71, 00147 Roma",+39 06 59601762,https://www.luppoloefarina.it,restaurant,italian
+roma,Made Bakery,pizzeriarionale@gmail.com,"Via dei Coronari 30, 00186 Roma",+390666736530,https://www.tavernagape.it/pizzeria-rionale-agape/,restaurant,pizza;italian
+roma,MAF,info@mafbistrot.it,"Via di Santa Costanza 33, 00198 Roma",+39 06 86383223,http://www.mafbistrot.it,restaurant,italian
+roma,Mama! Eat,roberto1navarro@libero.it,"Via di San Cosimato 7, 00153 Roma",+39 06 5806222,www.mamaeatroma.it,restaurant,pizza
+roma,Mamaflo,info@mamaflo.com,"Lungomare Lutazio Catulo 6, 00122 Roma",,https://www.mamaflo.com/,restaurant,italian
+roma,Mangiafuoco,ristorante.mangiafuoco@3gdynamics.it,"Via Chiana 37, 00198 Roma",+39 06 8535 7255,http://www.mangiafuoco.org,restaurant,pizza;italian
+roma,Mangianapoli,info@mangianapoli.it,"Via Egerio Levio 28, 00174 Roma",+39 06 76966136,http://www.mangianapoli.it/ristorante/tuscolano,restaurant,pizza
+roma,Marco G,info@marcog.it,"Via Statilia 12,  Roma",+39 3407970937,https://www.marcog.it/,restaurant,italian
+roma,Mató Street Food,matostreetfood@gmail.com,"Via Venti Settembre 41, 00187 Roma",+39 06 4201 0120,http://www.matostreetfood.it/,restaurant,
+roma,Maybu,mayburoma@gmail.com,"Via Laurentina 865, 00143 Roma",+39 06 90210757,https://www.maybu.it/,restaurant,
+roma,Meo Pinelli,info@meopinelli.com,"Piazza di Cinecittà 59, 00174 Roma",+39 06 7108564,https://www.meopinelli.it/,restaurant,regional
+roma,Mercato centrale,info.roma@mercatocentrale.it,"Via Giovanni Giolitti 36, 00185 Roma",+39 06 46202900,https://www.mercatocentrale.it/roma/,restaurant,pizza;sandwich
+roma,Mi tierra,mitierra2021@gmail.com,"Via Calatafimi 27, 00185 Roma",+39 349 8287769,https://mitierraroma.com/,restaurant,peruvian
+roma,Millemetri di Pizza,info@1000mtdipizza.com,"Via Michele di Lando 14, 00162 Roma",+39 333 9385351;+39 06 30323616,https://www.1000mtdipizza.com/,fast_food,pizza
+roma,Mino,info@ristorantemino.it,"Via Milazzo 18, 00185 Roma",+39 06 44251 003,https://www.ristorantemino.it/,restaurant,italian;regional
+roma,Moka e padelle,mokaepadelle@gmail.com,"Via Giacomo Filippo Pisoni , 00133 Roma",+39 06 90238125,https://www.mokaepadelle.it/,restaurant,
+roma,Moma,moma_roma@libero.it,"Via di San Basilio 42, 00187 Roma",+39 06 42011798,https://www.ristorantemoma.it/,restaurant,italian
+roma,Momart,info@momartcafe.it,"Viale Ventuno Aprile 19, 00162 Roma",+39 06 86391656,https://www.momartcafe.it/,restaurant,italian;bar;italian_pizza
+roma,Mondo Arancina,info@mondoarancina.it,"Via Marcantonio Colonna 38 / 40, 00192 Roma",+39 06 97619213,https://www.mondoarancina.com/,fast_food,breakfast;donut;italian;italian_pizza;pizza;regional
+roma,Mr. Manzo,gioiafilipponi@libero.it,"Via Alberto da Giussano 82, 00176 Roma",+39 06 27858499,https://www.ristorantepigneto.it/,restaurant,pizza;steak_house;regional;grill
+roma,Mun Sushi Bar,munsushibar@gmail.com,"Via Giovanni Arcangeli 11, 00171 Roma",+39 351 996 6819,https://www.munsushibar.com/,restaurant,asian;japanese;oriental;sushi
+roma,Nativa Ristorante,info@nativaristorante.it,"Via Umberto Moricca 100, 00100 Roma",+39 06 6400 8399,https://linktr.ee/nativaristorante,restaurant,italian
+roma,Nattimo,info@nattimo.it,"Via di Tor Vergata 267, 00133 Roma",,https://www.nattimo.it,restaurant,pizza
+roma,Neapolis,neapoliscaffe@libero.it,"Via Agostino Depretis 73, 00184 Roma",+39 06 47825295,https://www.neapoliscafferoma.it,cafe,
+roma,Negresco Bocca di Leone,bucadileone2021srl@gmail.com,"Via Bocca di Leone 92, 00186 Roma",+39 06 9441 6977,https://negrescoboccadileone.it/,restaurant,
+roma,No.Au,noauroma@gmail.com,"Piazza di Montevecchio 16/a, 00186 Roma",+39 06 4565 2770,https://noauroma.wordpress.com/,cafe,pizza
+roma,Nonna Betta,scrivimi@nonnabetta.it,"Via del Portico d'Ottavia 16, 00186 Roma",+39 06 68806263,https://www.nonnabetta.it/,restaurant,jewish;italian
+roma,Nudi e Crudi,nudiecrudi.crostaceria@gmail.com,"Piazza Anco Marzio 2a3,  Roma",+39 06 8376 2158; +39 379 171 2296,https://www.nudiecrudi.com/,restaurant,italian
+roma,Officine San Giovanni,info@officinesangiovannibistrot.it,"Largo Brindisi 25, 00182 Roma",+39 06 4543 3405,https://www.officinesangiovannibistrot.it,bar,burger;breakfast;grill;coffee_shop;friture;pasta;italian;pizza;chicken
+roma,Old Wild West,ostia@oldwildwest.it,"Piazza dei Ravennati 7, 00122 Roma",+39 06 56305113,https://www.oldwildwest.it/ristoranti/old-wild-west-ostia-lido,restaurant,american
+roma,Old Wild West,bufalotta@oldwildwest.it,Roma,+39 06 87074234,https://www.oldwildwest.it/ristoranti/old-wild-west-roma-porta-di-roma,restaurant,american
+roma,Old Wild West,marketing@oldwildwest.it,"Via Laurentina 865, 00143 Roma",+39 06 90236837,https://www.oldwildwest.it/,restaurant,american
+roma,Open Baladin,openbaladinroma@gmail.com,"Via degli Specchi 6, 00186 Roma",+39 06 6838989,https://www.baladin.it/it/i-locali/open-baladin-roma,cafe,
+roma,Ops!,info@opsveg.com,"Via Bergamo 56, 00198 Roma",+39 06 841 1769,https://www.opsveg.com/,restaurant,
+roma,Ornelli,ristorantecaffe@ornelli.it,"Via Merulana 224, 00185 Roma",+39 064872788,http://www.ornelliristorantecaffe.it,restaurant,italian;steak_house
+roma,Orto di Roma,ristoranteortodiroma@virgilio.it,"Via di Grotta Perfetta 551, 00142 Roma",+39 06 5032081,https://www.ristoranteortodiroma.it/,restaurant,pizza
+roma,Orto Verde & Goloso,info@ristoranteorto.it,"Via Giuseppe Gioachino Belli 142, 00193 Roma",+390645678050,http://ristoranteorto.it,restaurant,
+roma,ortorosso,segreteria@ortorosso.com,"Via Siria 16,  Roma",+39 06 5513 6181,https://ortorosso.com/,restaurant,italian
+roma,Osteria 33,info@osteria33.it,"Via Lucio Papirio 33, 00174 Roma",+39 06 40414473,https://www.osteria33.it/,restaurant,
+roma,Osteria 44,info@osteriaquarantaquattro.com,"Via Aureliana 42/44,  Roma",+39 06 42013318,https://www.osteriaquarantaquattro.com/,restaurant,italian
+roma,Osteria all'alberone,info@osteriaallalberone.it,"Via Francesco Valesio 5, 00179 Roma",+390678348586; +393387658750,www.osteriaallalberone.it,restaurant,roman
+roma,Osteria Campo,campoosteria@gmail.com,"Via Ezio 57, 00192 Roma",+39 3381272399,https://osteriacampo.com/,restaurant,
+roma,Osteria da Luciano,fratelli.dioletta@gmail.com,"Via Giovanni Amendola 73, 00185 Roma",+39 06 4881640,https://osteriadaluciano.it/,restaurant,
+roma,Osteria dell'Arco,osteriadellarco@gmail.com,"Via Giacomo Pagliari 11, 00168 Roma",+39  06 854 8438,https://www.osteriadellarco.net,restaurant,italian;wine
+roma,Osteria delle Coppelle,info@osteriadellecoppelle.com,"Piazza delle Coppelle 54, 00186 Roma",+3906 4550 2826,https://osteriadellecoppelle.com/,restaurant,italian;local
+roma,Osteria Olivia,info@bzarhotels.it,"Via dei Serpenti 110, 00184 Roma",+393425828879,https://bzarhotels.it/osteria-oliva/,restaurant,italian;local
+roma,Osteria Scaloni,info@osteriascaloni.it,Roma,+39 06 3721593,https://osteriascaloni.it/,restaurant,italian
+roma,Osteria St.Ana,ristorantestana@yahoo.it,"Via della Penna 68, 00186 Roma",+39 06 3610291,https://osteriastana.it/,restaurant,
+roma,Osteria V8 A'tipica,info@osteriav8.it,"Via Marco Valerio Corvo 135, 00174 Roma",+39 06 71072393,http://www.osteriav8.it/index.html,restaurant,
+roma,Ostia che pizza,ostiachepizza@hotmail.com,"Via Danilo Stiepovich 254, 00121 Roma",+39 06 5693215,https://www.ostiachepizza.it/,restaurant,pizza
+roma,Otello,info@trastevere-trattoria-otello.it,"Via della Pelliccia 47/53,  Roma",+39065896848,https://www.trastevere-trattoria-otello.it/,restaurant,italian;pizza;regional
+roma,Paglia e Fieno,pajaefieno@libero.it,"Via Casilina 1080, 00169 Roma",+39 06 262142,https://www.pagliaefieno.org/,restaurant,italian
+roma,pan divino,pandivinoroma@virgilio.it,"Via Del Paradiso 39, 00186 Roma",+393289481974,https://www.facebook.com/PanDivino-559613234140028/,restaurant,italian;spanish
+roma,Pane&Vino,fabio@landgroup.it,"Via Ostilia 10, 00184 Roma",,http://Facebook.com/colosseopanevino,cafe,italian
+roma,Papilla,papillaroma@gmail.com,"Via Veturia 43, 00181 Roma",+39 06 45430928,https://www.pizzeriapapilla.com/,restaurant,pizza
+roma,Papà non vole,info@papanonvole.it,"Via Tuscolana 454, 00181 Roma",+39 06 97276678,https://papanonvole.it/,restaurant,
+roma,Paradiso Terrestre,info@ristoranteparadisoterrestre.com,"Via delle Capannelle 142, 00178 Roma",+39 06 72900285,http://www.ristoranteparadisoterrestre.com/,restaurant,
+roma,Passpartout,info@passpartoutroma.it,"Borgo Pio 50, 00193 Roma",+390640412368,https://www.passpartoutroma.it/,restaurant,local;italian;mediterranean;salad;pasta;fish;burger
+roma,Pasta urbana,info@pastaurbana.it,"Via Urbana 126, 00184 Roma",+39 06 4873368,https://www.pastaurbana.it,restaurant,
+roma,Pasticceria Cinque Lune,info@5lune.com,"Corso del Rinascimento 89,  Roma",,http://www.5lune.net,cafe,
+roma,Pasticceria Dagnino,info@pasticceriadagnino.com,"Via Vittorio Emanuele Orlando 75, 00185 Roma",+39 06 4818660,https://www.pasticceriadagnino.com,cafe,cake;italian
+roma,Pasticceria Linari,info@pasticcerialinari.com,"Via Nicola Zabaglia 9/9A, 00153 Roma",+39 06 5782358,https://pasticcerialinari.com/,cafe,
+roma,Pastificio San Lorenzo,info@pastificiosanlorenzo.com,"Via Tiburtina 196, 00185 Roma",+39 06 504 2669,https://www.pastificiosanlorenzo.com/,restaurant,fusion;italian
+roma,Perdinci Bistrò,info@perdincibistro.it,"Via della Stazione di San Pietro 8,  Roma",+39 328 622 9980,https://www.perdincibistro.it/,restaurant,regional
+roma,Pescato&Mangiato,info@pescatoetmangiato.com,"Piazza Federico Marcello Lante 16,  Roma",+39 06 45652070,https://www.pescatoandmangiato.it/,restaurant,
+roma,Pescheria Agraja Ristorante al mercato,pescheria.agraja@yahoo.it,Roma,+39 06 89 87 01 76,http://www.pescefrescoroma.com/,restaurant,italian
+roma,Piacere,piacererestaurantroma@gmail.com,"Via Oslavia 33,  Roma",+39 0690216878,https://www.piacererestaurant.it/,restaurant,
+roma,Pigneto Quarantuno,info@pignetoquarantuno.it,"Via del Pigneto 41, 00176 Roma",+39 06 70399483,http://www.pignetoquarantuno.it/,restaurant,italian
+roma,Pinsallegra,pinsallegra@gmail.com,"Via Napoli 50, 00184 Roma",,http://www.pinsallegra.it,restaurant,italian;italian_pizza;pasta;pizza
+roma,Pirò,piroosteriadipesce@gmail.com,"Vicolo della Cancelleria 36, 00186 Roma",+39 06 6880 3140,https://www.piroosteriadipesce.it/,restaurant,fish
+roma,Pizza Forum,info@pizzaforumroma.it,"38,  Roma",+390677591158,https://www.pizzaforumroma.it/,restaurant,pizza;italian
+roma,Pizzadí di Flavio e Valeria,flaviospt83@gmail.com,"Largo dei Colli Albani 21, 00179 Roma",+39 06 83774581,https://pizzadidiflavioevaleria.it/,fast_food,pizza
+roma,pizzeria Baffetto 2,info@baffetto2.it,"Vicolo della Cancelleria 13, 00186 Roma",+39 0668210807; +39 3398807886,https://www.baffetto2.it/,restaurant,pizza;italian
+roma,Pizzeria Core de Roma,corederoma27@gmail.com,"Via Vetulonia 27, 00183 Roma",+39 06 7000475,https://corederoma27.wordpress.com,restaurant,pizza
+roma,Pizzeria Deus Pinsa,info@deuspinsa.it,"Via Selinunte 37,  Roma",+39 0664731552,https://www.deuspinsa.it/,restaurant,pizza
+roma,Pizzeria La Montecarlo,info@lamontecarlo.it,"Vicolo Savelli 13, 00186 Roma",+39 06 6861877;+390668600278,https://www.lamontecarlo.it/,restaurant,pizza
+roma,Podere Capanne,danielapagnotta@virgilio.it,"Via del Casale delle Pulci 95, 00166 Roma",+39 347 603 4673,https://www.poderecapanne.it/,restaurant,buschenschank;coffee_shop;diner;grill;italian;mediterranean;pasta
+roma,Poke House,maximo@pokehouse.it,"Via Laurentina 865, 00143 Roma",+39 06 86972492,https://www.pokehouse.it/,restaurant,poke
+roma,Ponypizza Pineta Sacchetti,info@ilsognocomodo.it,"Via Luigi Arbib Pascucci 22,24, 00168 Roma",+39 06 5987 5995,https://www.ilsognocomodo.it,restaurant,pizza
+roma,Popeyes,assistenza.clienti@plkitalia.it,"Via Laurentina 865, 00143 Roma",,https://popeyeschicken.it/it/,restaurant,chicken
+roma,Porto Corallo,portocoralloroma@gmail.com,"Via di Santa Croce in Gerusalemme 26a, 00185 Roma",+39 06 7049 2411,https://www.portocoralloristorante.it/,restaurant,italian
+roma,Porto Fluviale,info@portofluviale.com,"Via del Porto Fluviale 22, 00154 Roma",+39 06 5743199,https://www.portofluviale.com/,restaurant,italian
+roma,PUROSUD,info@purosud.com,"Via della Giuliana 52-56,  Roma",+39 06 451 3047,https://purosud.com/,restaurant,
+roma,Quattordicesimo Piano - Il Fungo,info@ristoranteilfungo.it,"Piazza Pakistan , 00144 Roma",+39 06 5921980,https://www.ristoranteilfungo.it/quattordicesimo-piano/,restaurant,regional
+roma,RAMEN BAR AKIRA,marketing@ramenbarakira.com,"Via Laurentina 865, 00143 Roma",,https://ramenbarakira.com/,restaurant,ramen
+roma,rgb46 - relax gallery books,info@rgb46.it,"Piazza di Santa Maria Liberatrice 46, 00153 Roma",+39 06 45421608,http://www.rgb46.it/,cafe,
+roma,Rifugio romano,rifugioromano@gmail.com,"Via Volturno 41, 00185 Roma",+39 06 4880945,http://rifugioromano.com/,restaurant,
+roma,Risto Pescheria Consoli,info@ristopercheriaconsoli.it,Roma,+39 06 45423991,http://www.ristopescheriaconsoli.it/,restaurant,
+roma,Ristorante Al Pompiere,nmonteferri@libero.it,"Via di Santa Maria de' Calderari 38, 00186 Roma",+39 06 6868377,https://www.alpompiereroma.com/,restaurant,italian
+roma,Ristorante da Michele,marco.pignotta@gmail.com,"Via Tiberio Imperatore 95-97, 00145 Roma",+39 065404352,https://www.ristorantedamicheleroma.it,restaurant,seafood
+roma,Ristorante Doney,restaurant.doney@westin.com,"Via Vittorio Veneto 141,  Roma",+39 06 4708 2783,https://www.ristorantedoney.it/,restaurant,
+roma,Ristorante Festoavieno,info@festoavieno.com,"Via Festo Avieno 52, 00136 Roma",+39 0635420478,https://www.festoavieno.com,restaurant,
+roma,Ristorante il Focolare,ilfocolareristorante@yahoo.it,"Via Gabriele Rossetti 40, 00152 Roma",+39 06 5818395,http://www.ristorante-ilfocolare.it,restaurant,italian
+roma,Ristorante Indiano Bombay Palace,bombayraj45@yahoo.it,"Via Cerveteri 25, 00183 Roma",+39 067001945,http://www.restaurantindianobombay.com/#_=_,restaurant,indian
+roma,Ristorante Isidoro,ristoranteisidoro@gmail.com,"Via di San Giovanni in Laterano 59a, 00184 Roma",+39067008266,https://www.hostariaisidoro.com/,restaurant,seafood;mediterranean;pasta;italian
+roma,Ristorante Julie's,ristorantejulies@gmail.com,"Via Palestro 65, 00185 Roma",+39 06 64871024,https://ristorantejulies.metro.bar/,restaurant,italian
+roma,Ristorante Merulana,info@merulana.it,"Via Merulana 138, 00185 Roma",+39 06 700 4221,https://www.merulana.it/,restaurant,italian
+roma,Ristorante Puntarella,puntarella@ostepercaso.com,"Piazza del Drago 10, 00153 Roma",+393394516959,https://ristorantepuntarella.it/,restaurant,italian;regional
+roma,Ristorante Sahara,info@ristorante-sahara.com,"Viale Ippocrate 63, 00161 Roma",+39 06 4424 2583,https://www.ristorante-sahara.com,restaurant,international;african;erithrean;ethiopian
+roma,Ristorante Tacito,tacitoroma@gmail.com,"Via Tacito 18,  Roma",+39 06 42990584,https://www.tacitoroma.it/,restaurant,apulian
+roma,Roma in bocca,info@ristoranteromainbocca.it,"Via Raffaella La Crociera 21, 00133 Roma",+39 06 7230886,https://www.ristoranteromainbocca.it/,restaurant,italian;regional;pizza
+roma,Romeo,info@romeo.roma.it,"Via Silla 26a, 00186 Roma",+39 06 32110120,https://www.romeo.roma.it/,restaurant,
+roma,Romeow Cat Bistrot,info@romeowcatbistrot.com,"Via Francesco Negri 15, 00154 Roma",+39 06 57289203,https://www.romeowcatbistrot.com,restaurant,
+roma,Rosemary,info@rosemary.bio,"Via Modena 17, 00184 Roma",+39 06 4891 3645,https://rosemary.bio/,restaurant,italian
+roma,Rosti,rosti@rostialpigneto.it,"Via Bartolomeo d'Alviano 65, 00176 Roma",+39 06 2752608,https://www.rostialpigneto.it/,restaurant,italian;burger
+roma,Royal art café,info@royalartcafe.it,"Piazza del Colosseo 1, 00184 Roma",+390688805383,https://www.royalartcafe.it/,restaurant,italian
+roma,Ruma,info@rumabottegaecucina.it,"Via di Parione 13,  Roma",+39 0689471435,https://www.rumabottegaecucina.com/,restaurant,
+roma,Sa Posada,saposadasnc@gmail.com,"Via Elvia Recina 36, 00183 Roma",+39 06 7002923,http://www.saposada.it/,restaurant,sardinian
+roma,Saaz,saaz.roma@gmail.com,"Via Cavour 162, 00184 Roma",,https://saazrestobar.com,restaurant,indian
+roma,Salumeria Roscioli,info@anticofornoroscioli.com,"Via dei Giubbonari 21, 00186 Roma",+39 06 6875287,https://www.salumeriaroscioli.com/,restaurant,
+roma,Sant'Eustachio,info@santeustachioilcaffe.it,"Piazza di Sant'Eustachio 82, 00186 Roma",+39 06 68802048,http://www.santeustachioilcaffe.it/,cafe,coffee_shop
+roma,Santa Maria,santamariaosteriaromana@gmail.com,"Via Gioberti 28, 00185 Roma",+39 06 4467297,https://www.santamariaosteriaromana.com/,restaurant,
+roma,Santa Maria Bistrot,santamariabistrot@gmail.com,"Via Arenula 20, 00186 Roma",+39 06 8767 9930,https://santamariabistrot.com/,restaurant,
+roma,Santo Palato,info@santopalatoroma.it,"Piazza Tarquinia 4, 00183 Roma",+39 06 77207354,https://www.santopalatoroma.it/,restaurant,italian
+roma,Sapori dal Mondo,restaurant.aroma@ldchotels.com,"Via Giorgio Zoega 59, 00164 Roma",+39 06 8781 2885,https://saporidalmondoroma.it,restaurant,american;arab;asian;barbecue;burger;cake;chinese
+roma,Sardegna,info@ristorantesardegna.it,"Via Sardegna 34-36, 00187 Roma",,https://www.sardegnarestaurant.com/,restaurant,
+roma,Semola,info@semolapizza.it,"Via Pan 54, 00158 Roma",+39 0691511333,https://www.semolapizza.it/,restaurant,pizza;burger
+roma,Sensus,info@sensusrestaurant.com,"Vicolo del Giglio 22, 00186 Roma",+39 06 45420325,http://www.sensusrestaurant.com,restaurant,
+roma,Shakespeare & Co.,info@shakespeareandcompany.it,"Via dei Savorgnan 72, 00176 Roma",+39 333 3600506,http://shakespeareandcompany.it,cafe,
+roma,Sikelia Restaurant,rosario_barone@hotmail.it,"Via Ludovico Micara 37-39, 00165 Roma",,http://www.sikeliaristorante.com,restaurant,
+roma,Sorelle Giordano,giordanosorelle@gmail.com,"Viale Giulio Agricola 129, 00174 Roma",+39 06 71583853,https://www.sorellegiordano.it,cafe,breakfast;cake;coffee_shop;tea;pizza
+roma,Speedy Pinsa Tavola Calda,marcoroberti1993@libero.it,"Largo Guido Cencetti 20,  Roma",+39 06 8538 7653,https://www.speedypinsa.it,restaurant,
+roma,Spirito Divino,info@spiritodivino.com,"Via dei Genovesi 13А, 00153 Roma",+39 06 5896689,http://www.ristorantespiritodivino.com/,restaurant,italian
+roma,Strada romana,info@stradaromana.com,"Via Vicenza 21, 00185 Roma",+39 06 90283119,https://stradaromana.com/,restaurant,
+roma,Strega,info@ristorantestrega.it,"Piazza del Viminale 29, 00184 Roma",+39 06 485670,https://www.ristorantestrega.eu/,restaurant,italian
+roma,SuShe,info@sushe.it,"Via Giuseppe Candeo 16, 00154 Roma",+39 06 57302315,https://www.sushe.it,restaurant,sushi;fusion
+roma,Sushi House Roma,sushihouseromacassia@gmail.com,"Via Domenico Falcioni 23-37, 00123 Roma",+390630894674,https://www.sushihouseroma.com/,restaurant,asian;japanese;sushi
+roma,Sushiko,101.sushimaximo@gmail.com,"Via Laurentina 865, 00143 Roma",+39 06 87565386,https://sushiko.it/,restaurant,sushi
+roma,Taberna Persiana,taberna.persiana@gmail.com,"Via Ostiense 36G, 00154 Roma",+39 06 8110 9052,http://www.tabernapersiana.it,restaurant,persian
+roma,Target,target@targetrestaurant.it,"Via Torino 33, 00184 Roma",+39 06 4740066,https://www.targetrestaurant.it/,restaurant,italian;pizza
+roma,Tatà,tatapizzeriaristorante@gmail.com,"Piazza Guglielmo Marconi 11/A, 00144 Roma",+39 065920105,https://tataeur.com,restaurant,pizza;italian
+roma,Taverna Abruzzese,graziani.armando@tiscali.it,"Via Migiurtinia 35, 00199 Roma",+39 06 86208577,https://www.tavernabruzzese.com,restaurant,
+roma,Taverna Antonina,info@tavernaantonina.it,"Via della Colonna Antonina 48, 00186 Roma",+39 06 678 3717,http://www.tavernaantonina.it/,restaurant,italian
+roma,Taverna Cestia,cestiataverna@gmail.com,"Viale della Piramide Cestia 67, 00153 Roma",+39 06 5743754,https://www.tavernacestia.com/,restaurant,italian
+roma,Taverna Giulia,info@tavernagiulia.it,"Vicolo dell'Oro 23, 00186 Roma",+39 06 6869768,http://www.tavernagiulia.it/,restaurant,italian
+roma,Taverna Urbana,tavernaurbana@gmail.com,"Via Urbana 137, 00184 Roma",+39 06 4884439,https://www.tavernaurbana.com/,restaurant,regional
+roma,Tegamino,info@tegaminopiazzanavona.it,"52,  Roma",+39 3517326736,https://www.tegaminopiazzanavona.it/,restaurant,
+roma,Tema,ristorantetema@gmail.com,"Via Panisperna 98, 00184 Roma",+39 06 486484,http://www.ristorantetema.com/,restaurant,italian;mediterranean
+roma,Temakinho Sushi Roma Ponte Milvio,pontemilvio@temakinho.com,"Piazzale di Ponte Milvio 9,  Roma",+390633220598,https://www.temakinho.com/pages/rome-ponte-milvio,restaurant,spanish
+roma,Tempio Di Bacco,ristorantetempiodibacco.roma@gmail.com,"Via Lombardia 36/38, 00187 Roma",+39 06 4814625,http://www.tempiodibaccoroma.com,restaurant,italian
+roma,That's Amore,info.thatsamorerestaurant@gmail.com,"Via degli Avignonesi 34,  Roma",,https://thatsamore-restaurant.com,restaurant,italian
+roma,The Bramble,welcome@thebramblebar.com,"Via Vicenza 40, 00185 Roma",+39 06 8410 2062,https://bramblebar.com,restaurant,italian
+roma,The Meat Market Grill,info@themeatmarket.it,"Corso Vittorio Emanuele II 318;320;322, 00186 Roma",+39 345 779 2010,http://themeatmarket.it,restaurant,steak_house;burger;italian
+roma,The Meatball Family,maximo@themeatballfamily.com,"Via Laurentina 865, 00143 Roma",+39 06 45449792,https://www.themeatballfamily.com/,restaurant,meatballs
+roma,the roof - foodlab&co.,rooftop@dotcampus.it,"Via Suessola 5, 00183 Roma",+39 345 2960600,https://www.dotcampus.it/ristorante/,restaurant,
+roma,Tian Ci Chong Qing Farm Hotpot,tiancihotpot@gmail.com,"Via Barberini 57, 00187 Roma",,https://www.facebook.com/tiancihotpot,restaurant,chinese
+roma,Tomoko Tudini,info@ristorantetudini.it,"Via Principe Amedeo , 00185 Roma",+39 06 4817596,https://tomoko-tudini.com/,restaurant,italian
+roma,Tonnarello,info@cajoegajo.it,"Piazza di San Calisto 9,  Roma",+39 065818256,https://cajoegajo.it,restaurant,italian;italian_pizza;pasta
+roma,Tram Tram,info@tramtram.it,"Via dei Reti 46,  Roma",+39 06 490416,http://www.tramtram.it,restaurant,local
+roma,Trattoria D'Azeglio,reservation@ristorantedazeglio.com,"Via Massimo D'Azeglio 5, 00184 Roma",+39 06 69327516,https://ristorantedazeglio.com/,restaurant,
+roma,Trattoria dal cordaro,prenotazioni@dalcordaro.it,"Piazzale Portuense 4, 00153 Roma",+39065836751,https://www.dalcordaro.it/,restaurant,italian;regional
+roma,Trattoria de Gli Amici,info@trattoriadegliamici.org,"Piazza di Sant'Egidio 6,  Roma",+33 06 5806033,https://www.trattoriadegliamici.org/,restaurant,italian
+roma,Trattoria La Pancia Felice,panciafelicesanpietro@gmail.com,"Via di Porta Castello 10, 00193 Roma",+39066861819,https://www.panciafelice.it/,restaurant,italian;italian_pizza
+roma,Ugo,info@ugoristorante.it,"Via Ugo Ojetti 95,97, 00137 Roma",+39 06824199,https://www.ugoristorante.it/,restaurant,italian;breakfast;coffee_shop
+roma,Vanni,info@vanni.it,Roma,+39 0632649012; +39 0632649013,https://www.vanni.it/,cafe,gelato
+roma,Vega Food,vegafood0@gmail.com,"Via di Monte Giordano 1, 00186 Roma",,https://vegafood.it/,restaurant,
+roma,Vero food,info@verofood.com,"Via Venti Settembre 26, 00187 Roma",+ 39 06 42010227,https://www.verofood.com,restaurant,
+roma,VOY Restaurant,info@voy.it,"Via Flaminia 496B3, 00191 Roma",+39 06 33222179,http://www.voy.it/,restaurant,
+roma,Wani,info@wani.bio,"Via Gabriello Chiabrera 162/b, 00145 Roma",+390694356110,https://www.wani.bio/,cafe,
+roma,Zi Gaetana,info@zigaetana.com,"Via Cola di Rienzo 263, 00192 Roma",+39 06 32 12 342,https://www.zigaetana.com/IT,restaurant,pizza
+roma,Zi Rosetta - Ristorante Osteria Romana,info.prenota.zirosetta@gmail.com,"Via della Rosetta 8, 00186 Roma",+39 06 686 1002,https://linktr.ee/zirosetta,restaurant,italian;italian_pizza
+roma,Zia Restaurant,info@ziarestaurant.com,"Via Goffredo Mameli 45, 00153 Roma",,https://ziarestaurant.com/en/,restaurant,italian
+roma,Zizzi Pizza,zizzipizza@gmail.com,"Piazza di San Martino ai Monti 5,7, 00184 Roma",+39 366 410 73 76,https://www.zizzipizza.com,fast_food,italian_pizza
+roma,Antica Trattoria Angelino,info.angelino36@gmail.com,"Piazza Margana 37, 00186 Roma",+390669920637;+390623488059,,restaurant,
+roma,Antica Trattoria Pasqualino Al Colosseo,pasqualinoalcolosseo@gmail.it,"Via dei Santi Quattro 66,  Roma",+39 06 700 45 76,,restaurant,regional
+roma,Bar 99,olgakoval12385@gmail.com,"Corso Vittorio Emanuele Secondo 99, 00186 Roma",+390698181404,,cafe,
+roma,Bar Coccinus,coccinus.srl@gmail.com,Roma,,,cafe,
+roma,Bottega Romana,bottegaromana@contifood.it,"Via Laurentina 865, 00143 Roma",+39 06 90236805,,restaurant,
+roma,Caffè Tomeucci,caffetomeucci@tiscali.it,"Viale Europa 54, 00144 Roma",+39 06 5924899,,cafe,
+roma,Carlo Menta,carlomenta@inwind.it,"Via della Lungaretta 101, 00153 Roma",+39 065803733,,restaurant,italian
+roma,Casanova,info@casanovarestaurant.it,"Via Rodi 18,  Roma",,,restaurant,
+roma,Caucaso Associazione Culturale,associazionematrioska@yahoo.it,"Via della Collina Volpi 6, 00145 Roma",+39 329 8460532,,restaurant,russian;ukrainian;moldovan
+roma,Culinaria,culinaria81@gmail.com,"Via Gaeta 81, 00185 Roma",+39 06 4880509,,restaurant,italian;regional
+roma,Dal Garbante,dalgarbante@gmail.com,Roma,+39 06 575 5378,,restaurant,
+roma,Enqutatash,ristorante.enqutatash@gmail.com,"Viale della Stazione Prenestina 55, 00177 Roma",+39 334 8083965;+39 06 273767,,restaurant,african
+roma,Fjco,info@fjco.it,"Piazza Monte Grappa 1, 00195 Roma",+39 06 6401 4652,,restaurant,ice_cream;italian;bistro;wine
+roma,Gandiglio Cafè,dlatronico67@gmail.com,Roma,+39 328 0824907,,cafe,
+roma,Giano Bistrò,giano@zaccardihotels.it,"Circonvallazione Gianicolense 222, 00152 Roma",,,restaurant,
+roma,Giselda Forno,giseldasrl@gmail.com,"Viale di Trastevere 52, 00153 Roma",+39 06 45665090,,restaurant,pizza
+roma,Gran Caffè Mazzini,info@grancaffemazzini.it,"Piazza Giuseppe Mazzini 10, 00195 Roma",,,cafe,
+roma,Hostaria Romana,info@hostariaromana.it,"Via del Boccaccio 1, 00187 Roma",+39 06 4745284,,restaurant,
+roma,Iari the Vino,iarithevino@hotmail.com,"Via del Colosseo 5,  Roma",+39 06 69191069,,restaurant,italian
+roma,Il Baccanale,baccanaleroma@gmail.com,"Campo de' Fiori 32,  Roma",+39 06 6476 1077,,restaurant,pizza;regional
+roma,Il Colibri,ilcolibriristorantepizzeria@gmail.com,Roma,+39 06 3751 4767,,restaurant,italian
+roma,Incontro,incontroristopub@gmail.com,"Via Milazzo 3/b, 00185 Roma",,,restaurant,latin_american
+roma,La caletta napoletana,lacalettanapoletana@gmail.com,"Via Eurialo 94, 00181 Roma",+39 06 78147130,,restaurant,
+roma,La locanda Coppedè,lalocandacoppede@gmail.com,"Via Taro 28/a, 00199 Roma",+39 06 77250844,,restaurant,seafood
+roma,La Salumeria,salumeriaroma@gmail.com,"Via del Banco di Santo Spirito 24,  Roma",+390645427187,,restaurant,sausage
+roma,La Taverna dei Quaranta,prenota@tavernadeiquaranta.com,Roma,+39 067000550,,restaurant,
+roma,"La Tavola, il vino e la dispensa",info.tvd.mercatocentrale@gmail.com,"Via Giovanni Giolitti 36, 00185 Roma",,,restaurant,italian;gourmet
+roma,Le Papere,info@ristorantelepapere.net,"Via del Casale di San Basilio 213, 00156 Roma",+39 06 4120 5790,,restaurant,
+roma,Mada Fish,mada.fishrestaurant@gmail.com,"Via San Giorgio Morgeto 179, 00173 Roma",+39 06 89530844,,restaurant,italian
+roma,Masto . Pranzo . Aperitivo . Cena,mastotestaccio@gmail.com,"Via Galvani 41,  Roma",,,restaurant,
+roma,Mok,mail@mokcoffeebar.com,"Piazza Fiume 77, 00198 Roma",+39 06 84241134,,restaurant,
+roma,Mr. 100 Tiramisu,mr100tiramisu@gmail.com,"Via dei Sediari 11/12, 00186 Roma",+39 06 8797 9667,,cafe,
+roma,Mucca pazza,prenotazioni.muccapazza2@gmail.com,"Via del Casale Ferranti 39, 00173 Roma",+39 06 7216358,,restaurant,
+roma,Oh Dog,hey@ohdog.it,"Via Tuscolana 59, 00182 Roma",,,restaurant,burger;hot_dog
+roma,Old Wild West,romanina@oldwildwest.it,"Via Bernardino Alimena 18, 00173 Roma",+39 06 7232618,,restaurant,american
+roma,Osteria der tempo perso,osteriadertempoperso@gmail.com,"Via dei Fulvi 38, 00174 Roma",+39 06 7615960,,restaurant,regional;italian;pizza
+roma,Pizza e Mozzarella,pizzaemozzarella32@gmail.com,"Via del Piè di Marmo 32,  Roma",,,fast_food,pizza
+roma,Pizza Florida,florida25pizzeria@libero.it,"Via Florida 25, 00186 Roma",+39 06 68803236,,fast_food,pizza
+roma,Poké Poké,pokepoke.roma@gmail.com,"Viale Eritrea 72h,  Roma",+39379 204 4644,,restaurant,sushi
+roma,Replatz sport bar since 1960,epolitano707@gmail.com,"Via Benigno Crespi 26, 00133 Roma",+39 3497700784,,cafe,
+roma,Riccioli d'Oro,ricciolidorosrl32@gmail.com,"Via Conca d'Oro 38, 00141 Roma",+39 06 8379 7040; +39 331 809 7135,,restaurant,
+roma,Ristorante Georgiano Aisi,aisi.ristorante@gmail.com,Roma,+39 0687693394,,restaurant,georgian
+roma,Ristorante Imperium,imperium.ristorante@gmail.com,"Via Giovanni Amendola 71, 00185 Roma",+39 06 487 5321,,restaurant,italian
+roma,Ristorante Salus,info@salusostia.it,Roma,+39 0656338410,,restaurant,italian
+roma,Sacco segreto,saccosegreto@gmail.com,"Via di Santa Maria Ausiliatrice 45b, 00181 Roma",,,restaurant,chinese
+roma,Soleluna Cafè,mariodelmoro@libero.it,"Via Nomentana 972, 00137 Roma",+39 338 3699448,,cafe,
+roma,Sora Lucía,ristorantesoralucia@gmail.com,"Via Rasella 138, 00187 Roma",+39 06 679 4078,,restaurant,italian
+roma,Stella d'oro,stellahdoro2013@gmail.com,"Via Marianna Dionigi 3,  Roma",+39063203252,,restaurant,chinese
+roma,Su e Giù,suegiucucinaromana@gmail.com,"Via Tacito 42,  Roma",+39 06 32650352,,restaurant,regional
+roma,Timothy,info@timotyristorante.it,"Via Torino 46, 00184 Roma",+39 06 9686 0080,,restaurant,burger
+roma,Tuba,info@cybertuba.org,"Via del Pigneto 39, 00176 Roma",+39 06 70399437,,cafe,
+roma,Wall Street,wallstreetcafe@outlook.it,"Via Domenico De Dominicis 29, 00159 Roma",+3906491633,,cafe,
+torino,2J Modern Cuisine,info@2jmoderncuisine.it,"Vicolo Giachetti 8, 10010 Azeglio",,https://www.2jmoderncuisine.it/,restaurant,
+torino,3 da 3,malitomichele.rongioletti@libero.it,"Via Giuseppe Verdi 33c, 10124 Torino",+39 011 839 1312,http://www.tredatre.it/,restaurant,pizza
+torino,Agriturismo A Casa di Giò - Progetto Agrible,info@acasadigio.com,"Via Campagnette 10, 10035 Mazzè",+39 011 9835567,www.acasadigio.com,restaurant,regional
+torino,Agriturismo Altavista,info@agriturismoaltavista.it,"Strada dei Losani 63, 10064 Torino",+393408253814,https://www.agriturismoaltavista.it/,restaurant,italian;regional
+torino,Agriturismo Antico Casale - Progetto Agriable,agriturismo.anticocasale@hotmail.it,"Via Tetti Ratti 10, 10022 Carmagnola",+39 011 97 28 142;+39 333 41 36 342,https://www.agriturismoanticocasale.it/,restaurant,regional
+torino,Agriturismo Cascina Barbassa,info@barbassa.it,"Via Quattro Novembre 2, 10010 Tavagnasco",+39 0125 658310,http://www.barbassa.it,restaurant,regional
+torino,Agriturismo Cascina Gaio,info@agriturismogaio.it,"Strada Aronco 2b, 10010 Piverone",,https://www.agriturismogaio.it/,restaurant,italian
+torino,Agriturismo La Canavera,info@lacanavera.it,"Strada Muno 2, 10010 San Martino Canavese",+39 0125 640246,http://www.lacanavera.it,restaurant,italian
+torino,Agriturismo La Cinciallegra,info@agriturismolacinciallegra.it,"25, 10020 Riva presso Chieri",+39 347 2992 395,http://www.agriturismolacinciallegra.it/,restaurant,regional;italian
+torino,Agriturismo La Schiavenza,laschiavenza@bybagnod.it,Torino,+39 0125 687 541,https://www.laschiavenza.it/,restaurant,regional
+torino,Al Mulino,info@almulinoplan.it,"Via Rohrbach 13, 10060 Pragelato",+39 0122 78002,https://www.almulinoplan.it/,restaurant,pizza;regional
+torino,Albergo Ristorante Bar Grand'Usseglio,info@hotelgrandusseglio.com,"Via Roma 21, 10070 Usseglio",+39 0123 83740,https://www.hotelgrandusseglio.com/,restaurant,regional
+torino,Alla Modina,allamodina.ivrea@gmail.com,"Via Lago San Michele 38, 10015 Ivrea",+39 0125 618865,https://www.allamodina.it/,restaurant,italian
+torino,Antico Convento,info@anticoconvento.biz,"Via Roma 4/bis, 10010 San Martino Canavese",+39 0125 640505,https://www.anticoconvento.biz/,restaurant,
+torino,Antico Ristorante Porto di Savona,info@portodisavona.com,"Piazza Vittorio Veneto 2, 10131 Torino",+39 011 8173500,https://www.foodandcompany.com/ristorante-portodisavona/,restaurant,italian;regional
+torino,Antonio Chiodi Latini,info@antoniochiodilatini.com,"Via Antonio Giuseppe Bertola 20b, 10122 Torino",+39 011 0260053,https://www.antoniochiodilatini.com/ristorante/,restaurant,
+torino,Au Lapin Agile,info@aulapinagile.it,"Via Ghemme 1bis, 10145 Torino",+39 335 7516868,https://www.ristoranteaulapinagile.com/,restaurant,pizza
+torino,Augusto - Ristorante Pizzeria,info@augustotorino.com,"Via San Quintino 11, 10121 Torino",+39 011 5623173,https://www.augustotorino.com,restaurant,regional;italian;seafood;pizza;italian_pizza
+torino,Bar Alimentari Stella Alpina,info@lastellalpina.it,"Via Domenico De Palo 6, 10080 Prascorsano",,https://www.lastellalpina.it/,bar,
+torino,Bar BalOk!,contatti@adsn-vialfre.it,"Via per Aglié ,  Torino",,https://www.adsn-vialfre.it/,cafe,
+torino,Bar del Centro,famasncleini@gmail.com,"Via Carlo Alberto 100, 10040 Leini",+390114833326,https://www.bardelcentroleini.it,cafe,
+torino,Bar Enoteca La Branda,labrandabar@gmail.com,"Via Levone 54, 10070 Rocca Canavese",,https://labrandabar.com/,bar,
+torino,Bar Ristorante Alpette,ristorantealpette@gmail.com,Torino,+39 0122 755505,http://www.rifugioalpette.it,restaurant,
+torino,Bar Trattoria l'Mulin,trattorialmulin@gmail.com,"Via Beratto 38, 10089 Valchiusa",+39 0125 749 033,https://www.trattorialmulin.it/,restaurant,regional
+torino,Bardosteria,bardosteria@gmail.com,"Via Giuseppe Francesco Medail 33, 10052 Bardonecchia",+39 0122 99862,http://www.bardosteria.com/,restaurant,italian
+torino,BEFeD Brew Pub Settimo Torinese Mulino,brewpubtorino@befed.it,"Via Ludovico Ariosto 36/bis, 10036 Settimo Torinese",+39 011 553 9000,https://www.befedpub.com/befed-settimo-torinese-mulino/,restaurant,burger;chicken
+torino,Bella Napoli,bellanapolisusa@gmail.com,"Via Venti Settembre 1, 10059 Susa",+39 0122 622203,http://www.bellanapolisusa.it/,restaurant,italian;pizza;regional
+torino,Bere In Tipografia,bereintipografia@gmail.com,"Piazza Santa Giulia 10, 10124 Torino",+39 334 7879 235,https://bereintipografia.it,bar,
+torino,BiFrò - La Bistecca Frollata,info@bifro.it,"Via Giuseppe Mazzini 23c, 10123 Torino",+393466986115,https://bifroit.wixsite.com/bifro,restaurant,steak_house
+torino,Birrificio Torino,info@birrificiotorino.com,"Via Parma 30, 10152 Torino",+39 011 2876562,https://www.birrificiotorino.com/,pub,burger;sandwich;steak;fried_food;pizza
+torino,Bloody Mary,bostanmaria85@gmail.com,"Via Circonvallazione 6, 10090 Gassino Torinese",+39 388 4774347,https://bloody-mary.eatbu.com/,cafe,
+torino,Bottega Mia,bottegamiatorino@gmail.com,Torino,,https://www.facebook.com/bottegamia/,restaurant,italian
+torino,Bowie,bowietorino@gmail.com,"Lungo Dora Firenze 131, 10153 Torino",+39011233553,https://www.bowietorino.it/,cafe,bistro
+torino,Ca' Mia,camia@camia.it,"Strada Revigliasco 138, 10024 Moncalieri",+39 011 647 2808,https://www.camia.it/,restaurant,regional;pizza
+torino,Caffè Gelateria Fiorio,info@fioriocaffegelateria.com,"Via Po 8c, 10123 Torino",+39 011 8173225,http://www.fioriocaffegelateria.com/,cafe,ice_cream;coffee_shop
+torino,Caffè Rocciamelone,karen.giacobino@outlook.it,"6, 10070 Viù",+39 0123 696170,https://it-it.facebook.com/CaffeRocciamelone/,cafe,
+torino,Cantavin,gabriele@cantavin.it,"Via Guglielmo Marconi 1, 10010 Quincinetto",,https://cantavin.it/,restaurant,
+torino,Cantina Alpina,info@cantinaalpina.it,"Via Chabrieres 2, 10050 Salbertrand",+39 0122 854536,https://www.cantinaalpina.it/,restaurant,regional;italian
+torino,Cantina degli Alpini,cantinadeglialpini@yahoo.it,"Via Nazionale 1, 10054 Cesana Torinese",+39 0122 89545,https://www.cantinadeglialpini.it,restaurant,regional
+torino,Cantine Risso,cantinerisso@libero.it,"Corso Casale 79, 10132 Torino",+39 011 8195531,https://www.cantinerisso.com/,restaurant,regional
+torino,Carlo e Camillo,bistrot@ristorantecarignano.it,Torino,+390115170171,https://www.ristorantecarignano.it/bistrot,cafe,
+torino,Cascina Dell'Allaas,cascinaallaas@libero.it,"Via Statale 18, 10012 Bollengo",+39 0125 57545,https://www.cascinallaas.it/,restaurant,
+torino,Cascina Gorgia,agriturismo@cascina-gorgia.it,"Strada Stupinigi 80, 10043 Orbassano",+39 011 900 2384; +39 339 590 9665,http://www.cascina-gorgia.it/,restaurant,regional
+torino,Cascina Marcellina,info@cascinamarcellina.it,"Via Camposanto 11, 10080 Cintano",+39 0124 699 879,http://www.cascinamarcellina.it/,restaurant,
+torino,Cascina Parisio,info@cascinaparisio.com,"Strada per Mattie 2 bis, 10059 Susa",,http://www.cascinaparisio.com/,restaurant,
+torino,Cascina Roland,info@cascinaroland.com,"Via Antica di Francia 11, 10050 Villar Focchiardo",+39 011 19323183,http://www.cascinaroland.com/,restaurant,
+torino,Catullo - Ristorante Pizzeria,info@ristorantecatullo.com,"Corso Moncalieri 176, 10133 Torino",+39 011 6618336,https://www.ristorantecatullo.com/,restaurant,pizza;international;seafood;steak_house
+torino,Centro Amor Bairo,info@amorbairo.it,"Via Agliè 2, 10010 Bairo",,https://amorbairo.it/,bar,
+torino,Chalet del Lago,info@chalet-ceresolereale.it,"10, 10080 Ceresole Reale",+39 0124 953128,https://chalet-ceresolereale.it/,restaurant,
+torino,Cheers Birreria-Bistrot,info.cheersbotero@gmail.com,"Via Giovanni Botero 16, 10122 Torino",+39 011 242 8831,https://www.cheersbirreriagourmet.it/via-botero,restaurant,
+torino,Cheers Bistrot Superga,info.cheerssuperga@gmail.com,"Strada alla basilica di Superga 45,  Torino",+39 011 411 0742,https://www.cheerssuperga.it/,restaurant,italian
+torino,Cinepizza,cinepizzatorino@gmail.com,"Via Reggio 19d,  Torino",+393293616492,https://www.facebook.com/CinepizzaTorino,restaurant,
+torino,Circle,circletorino2024@gmail.com,"Largo Montebello 38e, 10124 Torino",+390112073631,https://circletorino.it/,restaurant,
+torino,Circolo Arci Jigeenyi,ricettedafrica@gmail.com,"Via Borgo Dora 3o, 10152 Torino",+39 353 311 3671,https://www.ricettedafrica.com/,restaurant,african
+torino,Combo  Bar - Restaurant,hello.torino@thisiscombo.com,"Corso Regina Margherita 128, 10152 Torino",+39 011 0888210,https://thisiscombo.com/food/bar-and-restaurant/,restaurant,
+torino,Convitto Café,infoconvittocafe@gmail.com,Torino,+39 011 8154070,https://www.convittocafe.it/,cafe,italian
+torino,Corner Caffè,info@cornercaffe.it,"Corso Vittorio Emanuele II 100, 10121 Torino",,https://cornercateringtorino.com,cafe,
+torino,Cré Seren,info@creseren.it,"10, 10050 Giaglione",+39 0122 629264,https://www.creseren.it/,restaurant,regional
+torino,Cà Praudin,moni-val@libero.it,"Via Praudino 25, 10089 Valchiusa",,http://capraudin.altervista.org/,restaurant,regional
+torino,Da Dino,info@dadinoristorante.it,"Corso canonico Giuseppe Allamano 75, 10095 Grugliasco",,https://www.dadinoristorante.it/,restaurant,
+torino,Da Pecchia,pecchiaunione@gmail.com,"Corso Unione Sovietica 244,  Torino",+390112673261,https://www.dapecchia.it/corso-unione-sovietica,restaurant,pizza
+torino,Da Pecchia,info@dapecchia.com,"Piazza Bengasi 25c, 10024 Moncalieri",+39 011 3199872,https://www.dapecchia.com/,restaurant,pizza
+torino,Da Peppino,francesco.colosi@hotmail.it,"Via Mercanti 7h, 10122 Torino",+39 011 530570,http://www.ristorantepizzeriacentro.torino.it/,restaurant,pizza;italian
+torino,Darmagi,info@ristorantedarmagi.it,Torino,+39 0125 710094,https://www.ristorantedarmagi.it/,restaurant,regional
+torino,DB,enoteca@dbtorino.it,"Via Madama Cristina 82c, 10126 Torino",+39 011 6505146,http://www.dbwinetorino.it,restaurant,pasta;italian;grill;fish_and_chips;coffee_shop
+torino,Dehors della Caffetteria del RIstoro del Priore,info@ristorodelpriore.com,"Strada comunale alla Basilica di Superga 73, 10132 Torino",+39 011 8997456,http://www.ristorodelpriore.com/it/caffetteria/,cafe,coffee_shop
+torino,Donaya Food & Culture,info@donaya.it,"Via del Castello 15, 10042 Torino",+39 011 4174908,https://donaya.it/,restaurant,
+torino,Duca Centodue,info@ducacentodue.net,"Corso Duca degli Abruzzi 102, 10129 Torino",+39 011 5817273,http://www.ducacentodue.net/,restaurant,italian
+torino,Eataly Lagrange,lagrange@eataly.it,"Via Giuseppe Luigi Lagrange 3, 10123 Torino",+39 011 0373221,https://www.eataly.net/it_it/negozi/torino-lagrange/,restaurant,italian
+torino,Enò,enotorino@gmail.com,"Via Bernardino Galliari 12, 10125 Torino",+39 011 6596031,https://enoristorante.it/,restaurant,pasta;regional;italian;seafood;mediterranean;local
+torino,ErikPizza di Petti Vincenzo,info.erikpizza@gmail.com,"Via Strusiglia 24d, 10015 Ivrea",,https://erikpizza.xmenu.it/,restaurant,pizza
+torino,Esedra Harihama,esedraharihama13@gmail.com,"Strada Baldissero 7, 10010 Torre Canavese",,https://esedraharihama.com/,cafe,
+torino,Fanfaluch,info@fanfaluch.it,"8, 10124 Torino",,https://www.fanfaluch.it,restaurant,regional;italian
+torino,Focacceria Genovese Sant'Agostino Gran Torino,focacceriegrantorino@gmail.com,"Via Sant'Agostino 6, 10122 Torino",+39 011 4365091,http://www.focacceriegrantorino.it/,fast_food,italian_pizza
+torino,Foravia - Bottega e Cucina,bottegaforavia@gmail.com,"Via Arduino 89, 10015 Ivrea",,https://www.bottegaforavia.it/,restaurant,
+torino,Forchetta e Scarpetta,info@forchettaescarpetta.it,"Corso Inghilterra 23b, 10138 Torino",+39 0114472952,https://www.forchettaescarpetta.it/,restaurant,
+torino,Foresteria Massello,lory@foresteriamassello.it,"via Molino 4, 10060 Massello",+39 0121 808678,http://www.foresteriamassello.com/,restaurant,
+torino,Fumi,yinyuwei1017@qq.com,"Via Costantino Nigra 11, 10081 Castellamonte",+39 0124 442914,https://fumisushi.it/?fbclid=IwY2xjawIjwwFleHRuA2FlbQIxMAABHb7ICN9LW7HZLFg4kwE5RPKlArmBQhsdoaZOnbyhi2w9p3tJuBsz0y9QxQ_aem_xI57bL2j3MjBmLLoJrnPMw,restaurant,sushi
+torino,Fumi,fumirestaurant.ivrea@gmail.com,"Via Cascinette 20, 10015 Ivrea",+39 0125 1891193,https://fumisushi.it/,restaurant,sushi
+torino,FuoriLuogo,torino@fuoriluogo.org,"Via Dante Di Nanni 120a, 10141 Torino",+393514173233,https://www.fuoriluogo.org/,bar,
+torino,Galant Hotel Turin,info@hotelgalant.it,"Corso Giuseppe Garibaldi 155, 10078 Venaria Reale",+39 011 4551021,https://www.hotelgalant.it/,restaurant,
+torino,Gallery RistoBar,galleryristobar@gmail.com,"Viale Liguria 1/3, 10010 Burolo",,https://galleryristobar-burolo.it/,bar,
+torino,Gardenia,info@gardeniacaluso.it,Torino,+39 011 9832249,http://www.gardeniacaluso.it/,restaurant,regional
+torino,Girardi,gg234@libero.it,"Piazza Credenza 2, 10015 Ivrea",+39 0125 49778,https://bar-di-girardi-giovanni-ivrea.eatbu.com/?lang=it,cafe,
+torino,Goustò,gousto@gousto.eu,"Piazza della Repubblica 4, 10122 Torino",+39 329 941 5437,https://www.gousto.eu/,restaurant,regional
+torino,Gran Bar Ala di Stura,ga.gianlucaantonietti@gmail.com,"Via Pian del Tetto 5, 10070 Ala di Stura",+39345 532 5660,https://it-it.facebook.com/pg/granbarala/about/?ref=page_internal,restaurant,
+torino,Grange Tachier,info@hotelmartin.com,"Via Prarion 0, 10050 Sauze d'Oulx",+39 3356089733,https://www.grangetachier.com,restaurant,regional
+torino,Grano e Gusto,info@granoegusto.it,"Via Torino 27, 10050 Sant'Antonino di Susa",+39 334 918 4922,https://www.granoegusto.it/,restaurant,pizza;italian
+torino,Griglia22,info@griglia22.it,"Via Casale 2c, 10015 Ivrea",,https://griglia22.it/,restaurant,steak_house
+torino,HARE Restaurant Burolo,info@harerestaurant.com,"Strada Statale 228 del Lago di Viverone 4, 10010 Burolo",,https://harerestaurant.com/home/,restaurant,sushi
+torino,Hostaria Barbagia di Ollolai,barbagiadiollolai@gmail.com,"Via Francesco Millio 57, 10141 Torino",,http://www.barbagiadiollolai.com/,restaurant,italian;sardinian
+torino,Hotel Ristorante della Posta,albergodellaposta@yahoo.it,"Via Maestra 115, 10050 Novalesa",+39 0122 653245,http://www.ristorantealbergodellaposta.com/,restaurant,
+torino,Hotel Ristorante Taverna Verde,info@tavernaverde.it,Torino,+39 0125 687965,https://www.tavernaverde.it/,restaurant,italian
+torino,I soliti amici,ristoranteisolitiamici@gmail.com,"Corso Unione Sovietica 383, 10135 Torino",+390113175168,http://www.isolitiamici.it/,restaurant,pizza;italian
+torino,Il Barbabuc,info@ristoranteilbarbabuc.it,"Via Principe Tommaso 16a, 10125 Torino",+39 011 276 2804,https://www.ristoranteilbarbabuc.it/,restaurant,regional
+torino,Il Bisogno,info@ilbisogno.it,"Via Primo Maggio 18, 10098 Rivoli",,https://ilbisogno.it/,restaurant,pizza;italian
+torino,Il Bric,info@barbric.it,"Strada esterna della Vetta della Maddalena 170, 10024 Moncalieri",,https://il-bric.it/,restaurant,italian;regional
+torino,Il Brusafer,info@ilbrusafer.com,"Frazione Combe 31, 10050 Mattie",+39 3343044333,https://www.ilbrusafer.com,restaurant,
+torino,Il Caminetto,info@ilcaminettomargone.it,"Via Balma 5, 10070 Usseglio",+39 347 8188856,https://ilcaminettomargone.jimdo.com,restaurant,regional
+torino,IL Leone,direzione@ristoranteilleone.com,"Via Val della Torre 120, 10149 Torino",+39 011 733442,http://www.ristoranteilleone.com/sito/,restaurant,pizza;italian
+torino,Il Mandorlo,ilmandorlo@email.it,"Via Chivasso 24, 10080 Torino",+390119959454,http://www.ristoranteilmandorlo.it,restaurant,italian;local
+torino,IL PATIO PIZZERIA OSTERIA ALBERGO DI CAPRA BARBARA,info@ilpatioalbergoristorante.it,"Via Casale 146, 10099 San Mauro Torinese",0118221028,https://http://www.ilpatioalbergoristorante.com/,restaurant,
+torino,Il Punto... A Capo,f.minopoli@email.it,"Piazza Tonello 1, 10060 San Secondo di Pinerolo",+39 0121 501954,http://www.ristoranteilpuntoacapo.com/,restaurant,pizza;italian;neapolitan
+torino,Il rosso di sera,info@ilrossodisera.com,Torino,+39 011 349 9005,https://ilrossodisera.com/,restaurant,
+torino,Il Runch,info@ilrunch.biz,"60, 10070 Viù",+39 333 3762418;+39 340 5034425,http://www.ilrunch.biz,restaurant,regional
+torino,Il Valentino,ilvalentino@alice.it,"Strada per Castelnuovo Nigra 21, 10081 Castellamonte",+39 0124 515 476,https://ristoranteilvalentino.it/,restaurant,piemontese
+torino,Il Vecchio Borgo,info@ilvecchioborgo.to.it,"Via Villa Inferiore 52,  Torino",+39 0123 581809,http://ilvecchioborgo.to.it,restaurant,regional
+torino,Infinity ristobar,a.elsavy.tfi@gmail.com,"Via Ceretta Inferiore 32, 10077 San Maurizio Canavese",,https://www.infinityristobar.it/,restaurant,pizza;italian
+torino,Katuma Ciboteca,info@katumaciboteca.it,"Via Cossavella 44, 10012 Bollengo",,https://www.katumaciboteca.it/,bar,
+torino,Kensho,kenshorestaurant@gmail.com,"Via Mercanti 16, 10122 Torino",+39 01119781256,https://kenshorestaurant.com/,restaurant,sushi
+torino,Kirkuk Kaffé,kirkuk@tiscali.it,"Via Carlo Alberto 16/BIS-18, 10123 Torino",+39 011 530657,https://www.kirkukkaffe.com/,restaurant,turkish
+torino,Koivu,info@koivusaunaecucina.com,"Strada Provinciale per Trausella 20, 10089 Valchiusa",,https://koivusaunaecucina.com/il-ristorante/,restaurant,
+torino,l'alveare bar città,francesco.alveare@gmail.com,"Piazza Riccardo Cattaneo 16a, 10137 Torino",+39 011 3119053,https://www.alvearebarcitta.it/,cafe,regional;italian
+torino,L'arte del croissant,boutique@artedelcroissant.it,Torino,,https://artedelcroissant.it,cafe,
+torino,L'Erbi,lerbiristorante@gmail.com,"6, 10069 Villar Perosa",+39012151103,https://lerbi.com,restaurant,regional
+torino,L'Incanto,ristorantegarino.snc@gmail.com,"Piazza Andrea Mensa 3, 10072 Caselle Torinese",+39 333 223 5676,https://lincantoristorante.it,restaurant,
+torino,L'incontro,incontro.ristorante@gmail.com,"Regione Lago 1, 10089 Valchiusa",+39 0125 74594,https://incontro-ristorante.it/,restaurant,
+torino,L'Oragiusta,borgonavilesrl@gmail.com,"Piazza Caduti per la libertà 15,  Moncalieri",+39 011 640 8546,https://loragiusta-moncalieri.eatbu.com/,cafe,bar;pizza;burger;regional
+torino,L'orto di Alice,ortodialicecollegno@gmail.com,Torino,+39 011 264 7301,https://lorto-di-alice-vegan.eatbu.com/,restaurant,
+torino,L'Orto Già Salsamentario - Ristorante Vegetale Plant-Based,prenotazioni@lortogiasalsamentario.it,"Via Monferrato 14a, 10131 Torino",+3901119941740,https://www.lortogiasalsamentario.it,restaurant,
+torino,L'Osteria di Pavaglione,ristorante@ostoedpavajon.it,"Strada per Pavaglione 140, 10050 Pavaglione",+39 0122 49158,http://www.ostoedpavajon.it/,restaurant,regional;italian
+torino,La Betola D'L'uva Frola,betolauvafrola@tiscali.it,"Via Gran Borgata 1, 10050 Meana di Susa",+39 339 813 0502,https://www.betolameana.it/,restaurant,regional;italian
+torino,La Buca di San Giovanni,info@canavesecountryclub.it,Torino,+39 0124 514948,http://www.canavesecountryclub.it/,restaurant,italian
+torino,La Capannina - Ristorante Pizzeria,info@lacapanninatorino.com,Torino,+39 011 545405,https://www.lacapanninatorino.com,restaurant,regional;pizza;italian;italian_pizza;international;piedmontese
+torino,La capricciosa,info@lacapricciosa.com,"Via Genova 13, 10126 Torino",+39 011 6965000,https://www.ristorantelacapricciosa.it/,restaurant,pizza;italian
+torino,La casetta del Gad,info@lacasettadelgad.it,"Via Riccardo Ghiotti 19, 10056 Torino",+39 0122 831087,https://www.lacasettadelgad.it/,restaurant,regional
+torino,La Cipolla Caramellata,carlofarina25@gmail.com,"Piazza della Pace 5, 10040 Rivalta di Torino",+39 393 0005490,https://www.lacipollacaramellata.com/,restaurant,
+torino,La Cooperativa,info@trattorialacooperativa.it,"Piazza don Oreste Cantore 15, 10050 Sant'Antonino di Susa",+39 3518838556,https://www.trattorialacooperativa.it,restaurant,
+torino,La Diga dei Sapori,ladigadeisapori@gmail.com,"Regione Selva 1, 10080 Vistrorio",,https://ladigadeisapori.it/?fbclid=IwY2xjawIjxV9leHRuA2FlbQIxMAABHZS_h4QQu2V_y4sahLIi6vxV8idzNeJHkShHuTiZpcvkr4zp08jvmBqNcQ_aem_FAjemU_QzogNtR28AtKo_w,restaurant,italian;pizza;regional
+torino,La Favola,massimiliano.rolfo@gmail.com,"Via Cigliano 20, 10015 Ivrea",,https://lafavolapizzeriagourmet.eatbu.com/,restaurant,pizza
+torino,La Gastronomia Veg,nfo@gastronomiaveg.it,"Via Dante Di Nanni 116, 10141 Torino",+39 011 382 8605,http://gastronomiaveg.it,restaurant,
+torino,La Granaja,info@lagranaja.it,"Via Circonvallazione 6, 10015 Ivrea",,https://www.lagranaja.it/,restaurant,pizza
+torino,La Kascina Ristorante,info@lakascina.it,"Strada Statale 228 57, 10010 Piverone",+39 0125 643270,https://sites.google.com/view/lakascinadirect/,restaurant,pizza;italian
+torino,La locanda della mandria,locandadellamandria@gmail.com,Torino,+39 011 4993324,https://www.lalocandadellamandria.it/,restaurant,
+torino,La Locanda nel Parco,locanda@cooperativamirafiori.com,"Via Modesto Panetti 1,  Torino",+39 345 6878874,https://www.casanelparco.it/,restaurant,
+torino,La Primula,cristina.amici2009@gmail.com,"Via Frazione S. Antonio 214, 10081 Castellamonte",+39 349 420 6088,https://www.ristorantepizzerialaprimula.com/,restaurant,italian;pizza
+torino,La Ramasse,polenterialaramasse@gmail.com,"Ruà Trieste 15, 10050 Moncenisio",,http://polenterialaramasse.com/,restaurant,
+torino,La Rosa Blu,info@bluhoteltorino.it,"via torino 154, 10093 Collegno",+39 011 401 8700,https://www.bluhoteltorino.it/ita/hotel-collegno-3stelle.html,restaurant,italian;pizza
+torino,La Sella,itala.andreotti@outlook.it,"Strada Piscina 43,  Torino",+39 011 9070113,https://www.trattorialasella.it/,restaurant,regional
+torino,La Soldanella,lasoldanella@lasoldanella.it,"Corso Moncenisio 96, 10090 Rosta",+39 011 9567816,https://www.lasoldanella.it/,restaurant,regional
+torino,La Stadèra,info@ristorantelastadera.it,"Corso Dante Alighieri 85g, 10126 Torino",+39 011 669 8690,https://www.ristorantelastadera.it/,restaurant,italian;pizza
+torino,La Tisaneria di Ivrea,luisa.garavet@libero.it,"Via Quattro Martiri 33, 10015 Ivrea",+39 0125 635049,https://luisagaravet.wixsite.com/latisaneriadiivrea,cafe,
+torino,La Vecchia Europa,vecchiaeuropa@gmail.com,"Via Gorizia 144, 10137 Torino",,https://www.vecchiaeuropa.it,restaurant,italian;pizza
+torino,Laghetto Nais,laghettonais@gmail.com,Bobbio Pellice,+39 0121 957776,https://www.laghettonais.it/,restaurant,
+torino,Le Rondini,info@le-rondini.net,"Piazza della Repubblica 1bis, 10132 Torino",+39 011 4338743,https://www.le-rondini.net/,restaurant,pizza;italian;fish
+torino,Locanda Fermata Alpi Graie,fermatalpigraie@gmail.com,Torino,+39 0123 738128,https://www.fermatalpigraie.com/,restaurant,regional
+torino,Locanda La Posta,posta@locandalaposta.it,"Via dei Fossi 7,  Cavour",+39 0121 69989,https://www.locandalaposta.it/,restaurant,regional
+torino,Long Da,info@ristorantelongda.it,"Via Torino 50, 10082 Cuorgnè",+39 0124 629 528,https://ristorantelongda.it/,restaurant,chinese
+torino,Luna'sTorta,info@lunastorta.eu,"Via Belfiore 50/e, 10125 Torino",+39 0116690577,http://www.lunastorta.eu/wordpress/,cafe,regional;italian
+torino,L’ fouie,info@chaletdellaguida.it,"Frazione Rochemolles 56,  Rochemolles",+39 0122 999670,https://www.chaletdellaguida.it,restaurant,regional
+torino,MACHA CAFÈ,hello@machacafe.it,"Via Giovanni Amendola 9,  Torino",+39 0116185084,https://www.machacafe.it/piemonte,cafe,sushi;poke
+torino,Maharaja,maharaja.chivasso@gmail.com,"Stradale Torino 79a, 10034 Chivasso",+39 3887805199;+39 011 2631338,https://maharaja-indiano-chivasso.eatbu.com/,restaurant,indian
+torino,Mai dire no,info@maidireno.it,"Largo Montebello 40;40e, 10124 Torino",+39 011 8390549,https://www.maidireno.it,cafe,sandwich
+torino,Mamasita,info@mamasitatorino.it,"Corso Carlo e Nello Rosselli 1, 10128 Torino",+39 011 5538214,https://www.mamasitatorino.it/,restaurant,mexican;spanish;argentinian
+torino,Maps Osteria,mapsosteria@hotmail.it,"Via Giuseppe Garibaldi 5, 10089 Valchiusa",+39 0125 74111,https://mapsosteria.wordpress.com/,restaurant,regional
+torino,Mar Rosso,info@marrossotorino.com,Torino,+39 347 1439202,https://www.marrossotorino.com/,restaurant,african
+torino,Mezzaluna,info@mezzalunabio.it,"Piazza Emanuele Filiberto 8d, 10122 Torino",+39 011 4367622,https://www.mezzalunabio.it,restaurant,
+torino,Ogimomo,info@ogimomo.it,"Corso Moncalieri 214, 10133 Torino",+39 011 2074508,https://www.ogimomo.it/,cafe,cake;italian
+torino,Old Wild West,parcodora@oldwildwest.it,Torino,+39 011 4372915,https://www.oldwildwest.it/ristoranti/old-wild-west-torino-parco-dora,restaurant,american
+torino,Open Time2,open@fondazionetime2.it,"Corso Stati Uniti 62b, 10128 Torino",+39 011 78 65 45,https://open.fondazionetime2.it/,cafe,
+torino,Ospitalità rurale San Grato,naturalmente.ceres@libero.it,10070 Ceres,+39 0123 521100,https://www.naturalmentebiologico.it/,restaurant,
+torino,Osteria della Marchesa,osteriadellamarchesa@libero.it,"Via Montenero 4, 10059 Susa",+39 0122 32803,https://www.osteriadellamarchesa.it/,restaurant,regional
+torino,Osteria di campagna di Cudine,osteriadicampagna@mail.com,"10, 10070 Corio",+39 011 928384,https://osteria-di-campagna.blogspot.com/,restaurant,
+torino,Osteria In vino veritas,eglantinaduci@yahoo.it,"Via Giulia di Barolo 50a, 10124 Torino",+39 388 1860 397,http://www.osteriainvinoveritas.it,restaurant,
+torino,Osteria le putrelle,giovanni.foresto@gmail.com,"Via Tommaso Valperga di Caluso 11, 10125 Torino",+39 011 6599630,https://www.leputrelle.it/,restaurant,italian;regional
+torino,Osteria Nonno Mario,prenotazioni@osterianonnomario.it,"Via Martiri della Libertà 41, 10060 Osasco",+39 346 6196976,https://www.osterianonnomario.it/,restaurant,
+torino,Osteria Rabezzana,info@osteriarabezzana.it,"Via San Francesco d'Assisi 23/C,  Torino",+39 011 543070,https://www.osteriarabezzana.it/,restaurant,italian;regional
+torino,Osteria San Maurizio,osteriasanmaurizio@gmail.com,"Via Elio Guarnotta 1, 10015 Ivrea",,https://osteriasanmaurizio.it/,restaurant,regional;fish;italian
+torino,Paloma,comunicazioni.paloma@gmail.com,"Via Giacomo Matteotti 24, 10077 Torino",+3901118896047,https://www.paloma-ristopubgourmet.it/,restaurant,
+torino,Panperfocaccia,info@panxfocaccia.com,"Via Conte Verde 7, 10122 Torino",+39 346 8520279;+39 011 4396610,http://www.panperfocacciatorino.it,restaurant,pizza;italian
+torino,Pietrini,info@pietrinisusa.it,"Via Palazzo di Città 10, 10059 Susa",+39 0122 622303,http://www.pietrinisusa.it/,cafe,
+torino,Pizza Vip,info@pizzavip.com,Torino,+39 0125 253341,https://pizzavipivrea.it/,restaurant,pizza
+torino,Pizzeria Cecchi,pizzeria@tradizionececchi.it,"Via Madama Cristina 92/c, 10126 Torino",+39 011 6507030,https://tradizionececchi.it/pizzeria-cecchi/,restaurant,pizza
+torino,Pizzeria La Tana,latanadisara@gmail.com,"Via Quassolo 6, 10010 Tavagnasco",+39 0125 659061,https://www.pizzerialatana.it/,restaurant,
+torino,Pizzeria Ristorante La Collina,collinasanmartino@hotmail.it,"Via Roma 5, 10010 San Martino Canavese",+39 0125 627808,http://www.ristorantelacollinacanavese.it,restaurant,pizza
+torino,Pummarò,pummarotorino@gmail.com,"Via Caraglio 130, 10141 Torino",+39 011 336755,https://www.pizzeria-pummaro.it/,restaurant,italian;pizza
+torino,Quadre,contact@quadrefood.it,"Via Perugia 41, 10152 Torino",+39 011 7650373,https://quadrefood.it/,restaurant,italian;local
+torino,Quadrifoglio,info@quadrifogliowinebar.com,Torino,+39 011 796456,http://www.quadrifogliowinebar.com/,bar,
+torino,Quattro Soldi,info@ristorantequattrosoldi.it,"Corso Castelfidardo 7b, 10128 Torino",+39 011 562 1290,https://www.ristorantequattrosoldi.com/,restaurant,italian
+torino,Quelli del Busi,busipub@gmail.com,"Via San Secondo 81,  Torino",+39 3334414759,http://www.busipub.com/,pub,burger;local;pizza
+torino,Radio Blackout,redazione@radioblackout.org,"Via Antonio Cecchi 21a, 10100 Torino",+390112495669,https://radioblackout.org/,bar,
+torino,Ramo Verde,info@ramoverde.it,"Viale dei Mille , 10082 Cuorgnè",+39 0124 657219,http://www.ramoverde.it/,restaurant,regional
+torino,Residenza del Lago,info@residenzadelago.it,Torino,+39 011 9834885,https://www.residenzadelago.it/,restaurant,regional
+torino,Rifugio Scarfiotti,info@rifugioscarfiotti.com,Torino,+39 349 0093144,http://www.rifugioscarfiotti.com,cafe,
+torino,Ristorante Aquila Nera,aquilanera.ditony@gmail.com,"Corso Costantino Nigra 56, 10015 Ivrea",+39 0125 641416,https://www.aquilanera-ivrea.it/Il-ristorante.htm,restaurant,pizza
+torino,Ristorante Cantine Morbelli,info@morbelli.it,"Via Dora Baltea 20a, 10015 Ivrea",+39 0125 641675,https://www.morbelli.it/it/home.html,restaurant,italian
+torino,Ristorante Carignano,miglioli@ristorantecarignano.it,Torino,+390115170172,https://www.ristorantecarignano.it/,restaurant,regional
+torino,Ristorante Castello di Pavone,info@castellodipavone.com,Torino,+39 0125 672111,http://www.ristorantecastellodipavone.com/,restaurant,italian
+torino,Ristorante del Monte,ristdelmonte@libero.it,"Via Torino 7/11, 10010 Colleretto Giacosa",+39 0125 76426,http://www.ristorantedelmonte.com,restaurant,regional
+torino,Ristorante della Torre,info@ristorantedellatorre.it,"Via Venti Settembre 2, 10059 Susa",+39 0122 32359,http://ristorantedellatorre.it/,restaurant,italian
+torino,Ristorante Della Valle,info@ristorantedellavalle.it,"Via Case Vignè 98, 10070 Coassolo Torinese",+39 334 6337286,https://www.ristorantedellavalle.it,restaurant,regional
+torino,Ristorante Enoteca La Marenda Sinoira,lamarendasinoira@tiscali.it,"74, 10010 Settimo Vittone",+39 0125 658 470,https://www.lamarendasinoira.com/,restaurant,
+torino,Ristorante Freidour,freidour@gmail.com,"37, 10040 Cumiana",+39 011 9050844,http://www.freidour.it/,restaurant,italian
+torino,Ristorante Giapponese Sushi Miko,huangtingting265@gmail.com,Torino,+39 011 2420061,https://ristorantemiko.com/,restaurant,japanese
+torino,Ristorante Il Balmetto,info@ilbalmetto.com,"Via Fratelli Savio 7, 10013 Borgofranco d'Ivrea",,https://sites.google.com/view/ilbalmetto/,restaurant,
+torino,Ristorante il Cigno,ristoranteilcignoivrea@gmail.com,"Via Lago Sirio 3, 10010 Chiaverano",+39 0125 45476,http://www.ristoranteilcignoivrea.it/,restaurant,italian
+torino,Ristorante la Locanda,ristorantelalocanda@gmail.com,"SP32 14, 10070 Germagnano",+39 0123 320752,https://sites.google.com/site/locandapianbausano/home-bis,restaurant,regional
+torino,Ristorante Moderno,an.cors@tiscali.it,"4, 10070 Viù",,https://www.ristorantemoderno.eu,restaurant,italian;pizza;regional
+torino,Ristorante Pizzeria Alberoni,contatti@alberonipizzeria.it,"Corso Moncalieri 288, 10100 Torino",+39 011 6615433,https://www.alberonipizzeria.it/,restaurant,italian;pizza
+torino,Ristorante Pizzeria Jolly,info@pizzeriajolly.net,"Via Costantino Nigra 22, 10081 Castellamonte",+39 0124 582 037,https://pizzeriajolly.net/,restaurant,pizza;seafood;italian
+torino,Ristorante Pizzeria L'Escalier,info@lescalier.it,"Via Circonvallazione 22, 10020 Pecetto Torinese",+39 011 860 9845,https://www.lescalierpecetto.com/,restaurant,pizza;italian
+torino,Ristorante Pizzeria La Luna,info@ristorantelaluna.it,"Via Guglielmo Marconi 29, 10010 Azeglio",+39 0125 72110,http://www.ristorantelaluna.it/,restaurant,
+torino,Ristorante Pizzeria Mirò,mirotorino@libero.it,"Strada Settimo 154, 10156 Torino",+39 011 2731033,http://www.ristorantemirotorino.com/,restaurant,pizza
+torino,Ristorante Residence La Rosa dei Venti,larosadeiventi2011@tiscali.it,"Via San Giovanni 12, 10010 Parella",+39 0125 76852,www.larosadeiventicanavese.it/,restaurant,
+torino,Ristorante San Genesio,info@ristorantesangenesio.com,Torino,,http://www.ristorantesangenesio.com/,restaurant,
+torino,Ristorante Società Prascorsano,sdm_prascorsano@yahoo.it,Torino,+39 0124 698135,www.ristorantesocietaprascorsano.it,restaurant,italian
+torino,Ristorante Susa & Stazione,info@ristorantesusastazione.it,"Corso Stati Uniti 4, 10059 Susa",+39 0122 622226,http://www.ristorantesusastazione.it,restaurant,regional;italian
+torino,Ristotrattoria La Monella,ristotrattolamonella@gmail.com,"Regione Vauda 1, 10015 Montalto Dora",+39 0125 225 103,https://infolamonella.com/,restaurant,italian
+torino,Rivalta Inforna,info@rivaltainforna.it,"Via Can Candido Balma 54, 10040 Rivalta di Torino",+39 389 6060 611,https://www.rivaltainforna.it/,restaurant,pizza
+torino,Ryogin,chieri@ryogin.it,"Corso Torino 39, 10023 Chieri",+39 3391427694,https://ryogin.it/ristorante-giapponese-chieri/,restaurant,japanese;sushi
+torino,San Rock Cafè,sanrockcafe57@gmail.com,Torino,,https://san-rock-cafe.eatbu.com/,cafe,
+torino,Santuzzi,info@santuzzifood.it,"Via Corte d'Assise 17, 10015 Ivrea",+39 0125 540222,https://santuzzifood.it/,restaurant,sicilian
+torino,Selezione Naturale,info@selezionenaturale.net,"Via Andrea Provana 3d, 10123 Torino",+390118170709,https://www.selezionenaturale.net,restaurant,
+torino,Sfashion Cafè,info@sfashioncafe.com,"Via Cesare Battisti 13, 10123 Torino",+39 011 5160085,https://www.foodandcompany.com/,restaurant,italian_pizza;italian
+torino,Shabu,torino@shabufusion.it,Torino,+39 011 19712797,https://www.shabufusion.it/,restaurant,japanese
+torino,Solera,solera.adf@gmail.com,"Corso Moncalieri 18,  Torino",+39 011 7606308,https://www.soleratorino.it/,restaurant,italian;mediterranean
+torino,Sorsi & Morsi,sorsi.emorsi@libero.it,"Via Stazione 81, 10052 Bardonecchia",+39 0122 999915,https://www.sorsiemorsi-bardonecchia.it/,restaurant,pizza;italian;regional
+torino,Sun Sushi - All you can eat,sunsushichieri@gmail.com,"Via Andezeno 59, 10023 Chieri",+39 011 19178189,https://www.sunsushi.it/,restaurant,sushi
+torino,Taberna Libraria,info@tabernalibraria.to.it,"Via Giambattista Bogino 5,  Torino",+39 011 812802,https://www.tabernalibraria.to.it/,restaurant,
+torino,Tacos Locos,tacoslocostorino@gmail.com,"Corso Casale 296, 10132 Torino",+39 011 8995926,https://tacoslocos.it/,restaurant,mexican
+torino,Tassobarbasso,tassobarbasso@vodafone.it,"Corso Lombardia 75, 10099 San Mauro Torinese",+39 011 2731933,http://www.ristorantetassobarbasso.com,restaurant,
+torino,Taverna Verde,m.tutela@libero.it,"Regione Gogliasso 3, 10090 Montalenghe",+39 011 9839205,https://www.datutela.it/,restaurant,italian
+torino,Tenuta Sant'Anna,info@tenutasantannapiemonte.it,Torino,,https://www.tenutasantannapiemonte.it/,restaurant,regional
+torino,The Joker,thejokercirie@gmail.com,"Via delle Spine 17, 10073 Ciriè",,https://www.menudigitale.io/ntwyt,restaurant,pizza
+torino,Torteria Berlicabarbis,info@belicabarbis.com,"Via Catania 10, 10153 Torino",+39 011 231032,https://www.berlicabarbis.com/,cafe,
+torino,Trattoria Alba,edmondo-dagata@libero.it,Torino,+39 011 8171579,https://trattoriaalba.eatbu.com,restaurant,regional
+torino,Trattoria Alpina,info@trattorialpina.it,"Località Pian della Mussa , 10070 Balme",+39 0123 820010,http://www.trattorialpina.it/,restaurant,regional
+torino,Trattoria Bar degli amici,trattoriaamici83@gmail.com,"14, 10070 Traves",+39 0123 40226,http://www.cooperativatraves.it/,restaurant,
+torino,Trattoria Barba Toni,info@barbatoni.it,"Via Torino 9, 10010 Orio Canavese",+39 011 9898085,www.barbatoni.it,restaurant,regional
+torino,Trattoria dei Tigli,claudio.garzone@libero.it,"Viale Monte Stella 6b, 10015 Ivrea",+39 338 5425890,http://www.trattoriadeitigliivrea.it/,restaurant,
+torino,Trattoria della posta,info@trattoriadellaposta.com,"Strada Mongreno 16b, 10132 Torino",+39 011 898 0193,http://www.trattoriadellaposta.com/,restaurant,regional
+torino,Trattoria L'Oca Fola,info@ocafola.it,"Via Bernardino Drovetti 6g,  Torino",+39 011 433 7422,https://www.ocafola.it/,restaurant,italian;regional
+torino,Trattoria La Stellina,info@anticatrattorialastellina.it,"Via Carlo Emanuele I 17b, 10050 Bruzolo",+39 011 963 7205,https://www.anticatrattorialastellina.it/,restaurant,regional;italian
+torino,Trattoria Moderna - Il Simposio,info@trattoriamodernailsimposio.it,"Via Circonvallazione 4f, 10010 Banchette",+39 0125 610210,http://www.trattoriamodernailsimposio.it/,restaurant,italian
+torino,Trattoria Monferrato,trattoria@trattoriamonferrato.it,"Via Gariglietti 1, 10015 Ivrea",+39 0125 641012,https://monferrato-trattoria.eatbu.com/?lang=it,restaurant,regional
+torino,Trattoria San Giovanni,info@trattoriasangiovanni.it,"Corso Vercelli 45, 10015 Ivrea",+39 0125 189 6173,https://trattoriasangiovanni.it/,restaurant,italian
+torino,Trattoria San Martin di Bruno Luca,info@trattoriasanmartin.it,"Via San Martino 19/1, 10010 Settimo Rottaro",+39 0125 720 110,https://www.trattoriasanmartin.it/,restaurant,italian
+torino,Trattoria San Pietro,trattoriasanpietro4@libero.it,"Strada Virana 4, 10020 Pecetto Torinese",+393285948822,https://trattoriasanpietropecetto.eatbu.com,restaurant,regional;italian
+torino,Trattoria Scudo di Francia,info@scudodifrancia.it,"Via Principe Amedeo 30, 10011 Agliè",+39 0124 33354,http://www.scudodifrancia.it,restaurant,italian
+torino,Trattoria Subrich,trattoriasubrich@gmail.com,"Via Maestra 21, 10015 Ivrea",+39 0125 616557,https://trattoriasubrich.metro.bar/?lang=it,restaurant,
+torino,Trattoria Toscana Ala,info@trattoria-ala.it,"Via Santa Giulia 24d, 10124 Torino",+39 011 8174778,https://trattoria-ala.it/,restaurant,tuscan;italian
+torino,Trattoria Valpellice,info@trattoriavalpellice.it,Torino,+39 0121 500218,http://www.trattoriavalpellice.com/,restaurant,regional
+torino,Trattoria Vecchio Cipresso,info@vecchiocipresso.com,"Via Lago Sirio 19, 10010 Chiaverano",+39 0125 45555,https://www.vecchiocipresso.com/,restaurant,italian
+torino,Tre Qvevri,treqvevri@gmail.com,"Via San Domenico 12, 10122 Torino",,https://treqvevri.eatbu.com/,restaurant,georgian
+torino,Trivè Time,info@trivetime.it,"Via Giovanni Amendola 12, 10121 Torino",+39 011 08 64 985,https://trivetime.it/,cafe,
+torino,Vecchio Mulino Bar Osteria Pizzeria,info@vecchiomulinorueglio.it,"Strada della Gora , 10010 Rueglio",,https://www.vecchiomulinorueglio.it/,restaurant,italian;pizza
+torino,Via Baltea - Laboratori di Barriera,info@viabaltea.it,"Via Baltea 3, 10155 Torino",+39 011 2074514,https://www.viabaltea.it/,restaurant,italian;coffee_shop
+torino,Vibes,info@vibestorino.com,"Montebello 22,  Torino",+39 0112078067,https://vibestorino.com/,restaurant,
+torino,Viridian Restaurant & Gourmet Pizza,viridianrestaurant@gmail.com,"Regione Mezzanetti 2, 10010 Quassolo",,https://www.viridianevents.it/,restaurant,
+torino,Wi.De,widequadrilatero@gmail.com,Torino,+39 331 9813382,https://widequadrilatero.it/,restaurant,fusion;cocktail
+torino,Zza Maria,zzamarialab@gmail.com,"Via Spalato 88b, 10141 Torino",,https://www.zzamaria.it/,cafe,coffee_shop;italian
+torino,"""The Wolf"" Trattoria Grisolano",thewolf.luciano@gmail.com,"46, 10080 Ribordone",+39 0124 818 015,,restaurant,casalinga;regional;pizza
+torino,'L Burnel,lburnel@libero.it,"Via Maestra 31, 10010 Nomaglio",+39 0125 604051,,restaurant,regional
+torino,8 sapori,carpediem.28@libero.it,"Via Po 28, 10123 Torino",+39 011 8174533,,restaurant,chinese
+torino,A La Ressia,trattoriaressia@libero.it,"Via Loreto 118, 10074 Lanzo Torinese",+39 340 676 9984,,restaurant,italian
+torino,Acquamossa bar del Canoa,acquamossaivrea@gmail.com,"Via Dora Baltea 1d, 10015 Ivrea",,,cafe,
+torino,Agriturismo Al Mulin,almulin2005@libero.it,"Canton Bronzo 1, 10010 San Martino Canavese",+39 0125 640231,,restaurant,italian
+torino,Agriturismo Cascina La Desiderata,agriturismoladesiderata@gmail.com,"Strada per Feletto 2, 10011 Agliè",+39 0124 33522,,restaurant,italian
+torino,Agriturismo Cascina Teitot,cascina@teitot.it,10060 Scalenghe,+39 350 1273860,,restaurant,regional
+torino,Agriturismo La Sosta,lodojac@libero.it,"Via Casotto 4, 10090 Villarbasse",+39 011 9528434;+39 340 8562656,,restaurant,regional
+torino,Al Cämp at Frasinei,alcampatfrasinei@gmail.com,10080 Frassinetto,+39 0124 418 237,,restaurant,regional
+torino,Al Filatoio,alfilatoio@gmail.com,"Via Torino 64, 10040 Druento",,,restaurant,italian;pizza
+torino,Amici della Tora,amicidellatora@gmail.com,"Borgata Tora 1,  Torino",+390110241674,,restaurant,
+torino,Arielvo,arielvosc@damanhur.org,"Via Baldissero 21, 10080 Vidracco",+39 0125 789921,,bar,
+torino,Ballatoio,info@ballatoiobistrot.it,"Via Principe Amedeo 22c, 10123 Torino",+39 011 19640771,,restaurant,
+torino,Balmetto Mercando,balmetto.mercando.vinosteria@gmail.com,"Via del Buonumore 71, 10013 Borgofranco d'Ivrea",,,restaurant,italian
+torino,Bar Martassina,teonis81@gmail.com,"112, 10070 Balme",,,cafe,
+torino,Bar Ristorante La Piazzetta,barristorantelapiazzetta@yahoo.it,"Piazza Repubblica 3, 10080 Brosso",+39 0125 639538,,restaurant,
+torino,Bar Trattoria Arditè,patriziaardite@gmail.com,San Pietro Val Lemina,+39 0121 543322,,bar,
+torino,Bar Trattoria San Giovanni,trattorias.giovanni@libero.it,"Via Centrale 53, 10081 San Giovanni Canavese",+39 0124 513287,,restaurant,italian
+torino,Bar Wine & Food,barwinefood@gmail.com,"Via Poirino 35, 10064 Pinerolo",+39 0121 480054,,bar,italian
+torino,Beive e Mangè,beivemange@gmail.com,"Piazza Unità D'Italia , 10080 Valprato Soana",,,restaurant,pizza
+torino,Bon Parej,ristorante@bonparej.it,"Via Eusebio Bava 1 G,  Torino",+39 011 839 7897,,restaurant,
+torino,Borgovecchio,alice.malengo@gmail.com,"Via Des Ambrois 48, 10056 Oulx",+39 0122 831017,,fast_food,pizza;burger
+torino,Caffetteria Bistrot,giovannilacognata@gmail.com,"Via Luigi Salvatore Cherubini 68d, 10154 Torino",+39 366 5232770,,restaurant,italian;regional
+torino,Caffetteria Gourmant,gourmant.caffetteria@gmail.com,"Via Nazionale 73, 10060 Pragelato",+39 3246870371,,cafe,
+torino,Caffè del Tribunale,caffedeltribunale.ivrea@gmail.com,"Via Cesare Pavese 6, 10015 Ivrea",+39 0125 540853;+39 0125 1897765,,cafe,
+torino,Caffè Elena,caffe.elena@gmail.com,Torino,,,cafe,
+torino,Caffè Gioberti,caffegioberti@gmail.com,"Piazza Vincenzo Gioberti 13, 10015 Ivrea",,,cafe,italian
+torino,Caffè Moretti,labaitadiceresole@gmail.com,"12, 10080 Ceresole Reale",,,cafe,
+torino,Caffè Torino,info@caffe-torino.it,"Piazza San Carlo 204, 10121 Torino",+39 011 545118,,cafe,
+torino,Centro Sportivo Claviere,centrosportivo.claviere@coop-iris.it,Torino,+39 335 8150583,,restaurant,
+torino,Circolo Amici del Mulino,cirmulino@gmail.com,"Casale Molino 1, 10080 Rivara",,,restaurant,regional
+torino,Crema & cioccolato,cremaecioccolatosusa@gmail.com,"Via Roma 69, 10059 Susa",,,cafe,ice_cream
+torino,Da Giò,pizzeriadagio2022@gmail.com,"Via Montenero 13, 10082 Cuorgnè",,,restaurant,pizza
+torino,Divina Pizza,divinapizzaitalia@gmail.com,"Via Carlo Alberto 28,  Torino",+39 0121 04 10 07,,restaurant,pizza
+torino,E Cucina Torino,ecucinatorino@gmail.com,Torino,+39 011 562 9038,,restaurant,italian;regional
+torino,E'den,edensanquintino@gmail.com,"Via San Quintino 8H,  Torino",,,restaurant,italian
+torino,Fior di Loto,luca.caserio84@gmail.com,"Strada Statale 228 41, 10010 Piverone",,,restaurant,italian;seafood
+torino,Fòl alla locanda matta,cipollams@gmail.com,"Largo Montebello 31b, 10124 Torino",+393403694094,,restaurant,
+torino,Garavot,coopgaravot@hotmail.it,Torino,+39 0125 783143,,restaurant,regional
+torino,Giacu d'Nota,giacu@live.it,Torino,+39 0123 346380,,restaurant,regional
+torino,Greek Passion,info@greekpassion.it,"Corso Francia 201, 10139 Torino",+39 011 5827605,,restaurant,greek
+torino,Gustavo Pizzeria Macelleria Griglieria,gustavoivrea@gmail.com,Torino,+39 0125 641155,,restaurant,pizza;kebab;tacos
+torino,Gusto Madre,torino@gustomadre.it,Torino,+39 011 18894434,,restaurant,regional
+torino,I 3 Motivi,arcangelo.iannone@gmail.com,"Corso Regina Margherita 280 bis, 10144 Torino",,,bar,
+torino,Il Baguccio,ilbaguccio@gmail.com,"Corso Vercelli 318, 10015 Ivrea",,,cafe,
+torino,Il Bivacco Matematico,ilbivacco@tiscali.it,"Via Roma 6, 10070 Usseglio",+39 349 3826899,,restaurant,
+torino,Il Buongustaio,info@ilbuongustaiobollengo.it,"Via Statale 45, 10012 Bollengo",,,restaurant,
+torino,Il Gallo,info@albergodelgallo.it,"36, 10070 Corio",+39 011 928844,,restaurant,
+torino,Il Pontile 3.0,ilpontile3puntozero@gmail.com,"Via Provinciale per Lessolo 27, 10010 Alice Superiore",,,cafe,
+torino,Il Ritrovo,ilritrovowinebar@gmail.com,"Via Guglielmo Marconi 33a, 10085 Pont Canavese",,,restaurant,
+torino,Ingrosso Minuto,panapagalleria@gmail.com,"Galleria Umberto I 1,  Torino",+39 011 7609045,,bar,
+torino,Kami Wok,ristorantekamiwok@gmail.com,"Via Friuli 14, 10010 Burolo",+39 0125 196 0447,,restaurant,sushi;chinese;seafood;asian;italian
+torino,l'Esagono food & drink,adamoeric22@gmail.com,"Via Guglielmo Jervis 22, 10015 Ivrea",+39 0125 634 130,,bar,
+torino,L'Eva d'Or,levador.camere@gmail.com,"Strada Provinciale 460 del Gran Paradiso 24, 10080 Sparone",+39 0124 818025,,cafe,
+torino,L'oca Fòla Bistrot,l.ocafolabistrot@gmail.com,"Via Lago Sirio 12, 10015 Ivrea",,,restaurant,seafood
+torino,L'Ultima Follia 2.0,ultima.follia2.0@gmail.com,"Via Umberto I 29, 10070 Rocca Canavese",+39 011 924 0474,,restaurant,pizza
+torino,La Barrìca,labarrica@libero.it,"Via Faure Rolland 5, 10056 Oulx",+39 0122 830794,,restaurant,regional
+torino,La Chispa,lachispasnc@gmail.com,"Piazza P. Lucca 8, 10010 Piverone",,,restaurant,seafood
+torino,La Ciancia,info@florideegallery.com,Torino,+39 0121 502758,,restaurant,
+torino,La Duja D'Or,ladujador2010@yahoo.com,Torino,+39 0125 641479,,restaurant,
+torino,La Filanda,ocampo.lazaro69@gmail.com,"Via Giuseppe Francesco Medail 100, 10052 Bardonecchia",+39 0122 999780,,restaurant,regional
+torino,La Lanterna del Duca,lalanternadelduca11@gmail.com,"Borgata Villa 11, 10080 Ceresole Reale",,,restaurant,
+torino,La Lazzarella,lalazzarellapizzeria@gmail.com,"Via Generale Luigi Damiano 11, 10152 Torino",+39 011 2420990,,restaurant,pizza
+torino,La Montanara,lamontanara@baitalamontanara.it,"Via Villar 81, 10070 Ala di Stura",+39 324 6096418,,restaurant,italian
+torino,La Moretta,lamoretta.oulx@libero.it,"Regione Moretta 3, 10056 Oulx",+39 0122 832196,,restaurant,regional
+torino,La Taverna di Frà Fiusch,info@frafiusch.it,"Via Maurizio Beria 32,  Revigliasco",+39 011 8608224,,restaurant,italian
+torino,Le Vele,bistrotlevele@gmail.com,"Via Torino 84d,  Torino",,,cafe,
+torino,Locanda sul Fiume,locandasulfiume@gmail.com,"Lungo Dora Napoli 22a,  Torino",+390110413068;+393756644150,,restaurant,
+torino,Mamma Ester,locandamammaester@gmail.com,"Via Giordano Bruno 168, 10134 Torino",+39 011 2976258,,restaurant,italian;pizza;fish
+torino,Marcello bistrot,marcellobistrit@gmail.com,"Via Cavour 84, 10123 Torino",,,cafe,
+torino,Mezbaan biryani,mezbaanbiryani.torino@gmail.com,"Corso Giulio Cesare 20,  Torino",+393274224925,,restaurant,indian
+torino,Monnalisa Bistrot,monnalisabistrot@gmail.com,"Località San Carlo 1, 10090 Montalenghe",+39 011 089 7607,,restaurant,
+torino,Monti,info@ristorantemonti.it,"Via Lombriasco 4, 10139 Torino",+39 011 4332210,,restaurant,regional
+torino,Nora Book & Coffee,norabookecoffee@gmail.com,"Via delle Orfane 24d, 10122 Torino",+393278017090,,cafe,
+torino,Nuovo Bar Torino,vesciocristian@libero.it,"Piazza Alfonso La Marmora 19, 10015 Ivrea",,,cafe,
+torino,Osteria degli Archibugi,info@osteriadegliarchibugi.it,"Frazione Plantï 3, 10052 Exilles",+39 0122 58199,,restaurant,italian
+torino,Osteria dei sapori,osteriadeisapo@gmail.com,"Via Vittorio Veneto 210, 10010 Lessolo",+39 0125 639 495,,restaurant,
+torino,Osteria La Masca,aurora.27.palu@gmail.com,"Via Roma 32, 10080 Frassinetto",,,restaurant,italian;regional
+torino,Oui Baguette,ouibaguette.torino@gmail.com,"Via Borgosesia 88, 10145 Torino",+39 011 0262040,,restaurant,kebab
+torino,Panificio Alpino,antal.alina@yahoo.it,"Largo Grand'Hoche 3, 10056 Oulx",+39 329 067 9907,,cafe,coffee_shop;pizza;deli
+torino,Pepino,carignano@gelatipepino.it,"Piazza Carignano 8, 10123 Torino",+39 011 542009,,cafe,ice_cream
+torino,Peynett,peynett@gmail.com,"Strada Vecchio Mulino 27, 10012 Bollengo",+39 0125  579079,,restaurant,italian
+torino,Pian del Sole,info@ristorantepiandelsole.com,"Località Granges Hippolytes 1, 10052 Bardonecchia",+39 0122 999266,,restaurant,regional;italian
+torino,Pizza al Volo,pizzaalvolo@outlook.it,"Frazione Crosi 4/bis, 10084 Forno Canavese",+39 0124 77788,,restaurant,pizza
+torino,Pizza In,pizzainsnc@libero.it,"Corso Vercelli 336, 10015 Ivrea",+39 0125 253352,,restaurant,pizza
+torino,Pizzarium,pizzariumpizzeriadasp@gmail.com,"Via Aosta 3, 10016 Montalto Dora",,,restaurant,pizza
+torino,"Pizzeria ""Ciro""",ciroconiglio89@gmail.com,"Via Milite Ignoto 3, 10082 Cuorgnè",,,restaurant,pizza
+torino,Pizzeria Italia,ris.italia@libero.it,"Via Francesco Rolando 54, 10059 Susa",+39 0122 622259,,restaurant,italian;pizza;regional
+torino,Pizzeria Settimo Cielo,settimo.cielosas@libero.it,"Via Bridola 5, 10010 Burolo",+39 0125 57361,,restaurant,pizza
+torino,Polipazzo,polipazzorist@gmail.com,"Via Torino 43, 10013 Borgofranco d'Ivrea",,,restaurant,seafood
+torino,Poormanger,poormanger@gmail.com,Torino,,,restaurant,jacket_potato;potato
+torino,Rifugio Rocca Sella,rifugio@turismocolledellys.it,"Piazza Santa Maria della Stella 2,  Torino",,,restaurant,
+torino,Risto pub la Nuova Sosta Alpina,sostaalpina2019@gmail.com,10080 Alpette,,,restaurant,italian
+torino,Ristorante Avetta,ristoranteavetta@gmail.com,"Via Torino 5, 10010 Cossano Canavese",+39 0125 779937,,restaurant,
+torino,Ristorante Berta,ristorantebertapertusio@yahoo.it,"Via San Firmino 9, 10080 Pertusio",+39  0124 617206,,restaurant,
+torino,Ristorante Cavour,inforistorantecavour@libero.it,"Via Cascinette 42, 10015 Ivrea",+39 0125 76199,,restaurant,seafood
+torino,Ristorante La Baracca,la.baracca.1970@gmail.com,"68, 10010 Settimo Vittone",,,restaurant,
+torino,Ristorante La Tettoia,info@ristorantelatettoia.com,"V. I. Peronetto 8, 10010 Chiaverano",+39 0125 798 008,,restaurant,regional
+torino,Ristorante Michel,info@ristorantemichel.it,"Via Venti Settembre 9, 10010 Quagliuzzo",+39 0125 76204,,restaurant,
+torino,Ristorante Oasi Gallenca,info@oasigallenca.it,"Frazione Gallenca 100, 10087 Valperga",+39  0124 440319,,restaurant,
+torino,Ristorante Oriente,ristorante-loriente@libero.it,"Strada per Castelnuovo Nigra 28, 10081 Castellamonte",+39 0124 515472,,restaurant,italian;mediterranean
+torino,Ristorante Stella Alpina,ristorantestellaalpina@virgilio.it,"Via Giuseppe Francesco Medail 96, 10052 Bardonecchia",+39 0122 99007,,restaurant,italian;regional
+torino,Ristorante-Catering Della Luna,www.ristorantedellaluna.am@gmail.com,"Piazza Ippolito San Giorgio 12, 10090 San Giorgio Canavese",+39 0124 32184,,restaurant,
+torino,Safarà,safarabalun@gmail.com,"Via Borgo Dora 14, 10152 Torino",+39 011 0197422,,restaurant,
+torino,Saint Vincent,yemflavie@yahoo.fr,"Via Milanere 59, 10040 Torino",+39 320 069 1067,,restaurant,african;barbecue;breakfast;caribbean;coffee_shop;diner;french
+torino,Stella Alpina,pensionestellalpina@gmail.com,"Borgata Villa 13, 10080 Ceresole Reale",+39 0124 953 154;+39 0124 953 132,,restaurant,
+torino,Trattoria Alpina,trattoria.alpina@gmail.com,"Corso Vittorio Emanuele 192/3,  Torino",+393895627410,,restaurant,
+torino,Trattoria Bar Val Servin,dematteisbruno@libero.it,"76, 10070 Balme",+39 0123 820067; +39 0123 820007,,restaurant,regional;pizza
+torino,Trattoria Cavallo Grigio,trattoriacavallogrigio@gmail.com,"Via Torino 549, 10015 Ivrea",,,restaurant,regional
+torino,Wall Street Cafè,wallstreetcafe24@gmail.com,"Corso Francia 24b, 10093 Collegno",,,cafe,coffee_shop

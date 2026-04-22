@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Admin/OneDrive/RISTOAGENT/**)",
+      "Bash(cat .claude/settings.local.json)",
+      "Bash(nslookup -type=TXT resend._domainkey.ristoagent.com 8.8.8.8)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('step1:', len\\(d.get\\('step1',[]\\)\\), 'step2:', len\\(d.get\\('step2',[]\\)\\), 'step3:', len\\(d.get\\('step3',[]\\)\\)\\)\")",
+      "Bash(python3 invia_email.py --send --step 1 --tier ALL)",
+      "Bash(ollama list *)",
+      "Bash(pip install *)",
+      "Bash(aider --version)",
+      "Bash(pip show *)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(powershell.exe *)"
+    ]
+  }
+}

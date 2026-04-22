@@ -276,7 +276,7 @@ function InteractiveDemo() {
           {done && (
             <div style={{ textAlign: "center", marginTop: "1rem", padding: "0 0.5rem" }}>
               <div style={{
-                background: "linear-gradient(135deg, #0f1a10, #0a120a)",
+                background: "linear-gradient(135deg, #172019, #111a13)",
                 border: "1px solid rgba(34,197,94,0.3)",
                 borderRadius: "0.8rem", padding: "1rem 1.2rem", marginBottom: "0.6rem",
               }}>

@@ -23,10 +23,10 @@ html {
 }
 
 :root {
-  --bg: #0a0f0d;
-  --surface: #0f1610;
-  --surface2: #131a14;
-  --border: #1e2b20;
+  --bg: #111a13;
+  --surface: #172019;
+  --surface2: #1c2a1e;
+  --border: #263829;
   --green: #0EA5E9;
   --green-dim: #0284C7;
   --green-glow: rgba(14, 165, 233, 0.12);
@@ -66,7 +66,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(10, 15, 13, 0.85);
+  background: rgba(17, 26, 19, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }

@@ -38,7 +38,7 @@ SS = {
     "bot_prenot2":  f"{SCREENSHOTS}/Screenshot 2026-04-13 001420.png",
 }
 
-OUTPUT = "marketing/RistoAgent_Guida_v4.pdf"
+OUTPUT = "RistoAgent_Guida_v5.pdf"
 
 # ─── COLORI ────────────────────────────────────────────────────────────────────
 BLUE      = colors.HexColor("#0EA5E9")
@@ -297,6 +297,39 @@ def genera():
         "Il bot raccoglie data, orario, numero di persone e nome — poi conferma la prenotazione in automatico. Nessun intervento da parte tua.",
         s_body))
 
+    story.append(Spacer(1, 0.8*cm))
+
+    # ── SEZIONE: MESSAGGI VOCALI ─────────────────────────────────────────────────
+    story.append(Paragraph("Funziona anche con i messaggi vocali", s_h1))
+    story.append(HRFlowable(width=M, thickness=1, color=LIGHTGRAY, spaceAfter=10))
+    story.append(Paragraph(
+        "I tuoi clienti possono mandare un <b>messaggio vocale</b> su Telegram — RistoAgent capisce cosa dicono, elabora la richiesta e risponde. Esattamente come farebbe un cameriere al telefono, ma in automatico.",
+        s_body))
+    story.append(Spacer(1, 0.4*cm))
+
+    vocali = [
+        ["🎙️  Il cliente manda un vocale", "\"Ciao, vorrei prenotare per venerdì sera, siamo in 3\""],
+        ["🧠  L'AI trascrive e capisce", "Elabora la richiesta in tempo reale con Whisper AI"],
+        ["✅  Risponde e prenota", "Conferma la prenotazione e la inserisce nel calendario"],
+    ]
+    t_voc = Table(vocali, colWidths=[M*0.40, M*0.60],
+        style=TableStyle([
+            ("FONTNAME",      (0,0), (-1,-1), "Helvetica"),
+            ("FONTSIZE",      (0,0), (-1,-1), 10),
+            ("FONTNAME",      (0,0), (0,-1), "Helvetica-Bold"),
+            ("TEXTCOLOR",     (0,0), (0,-1), BLUE),
+            ("TOPPADDING",    (0,0), (-1,-1), 8),
+            ("BOTTOMPADDING", (0,0), (-1,-1), 8),
+            ("LEFTPADDING",   (0,0), (-1,-1), 10),
+            ("ROWBACKGROUNDS",(0,0), (-1,-1), [WHITE, LIGHTGRAY, WHITE]),
+            ("LINEBELOW",     (0,0), (-1,-2), 0.3, colors.HexColor("#E5E7EB")),
+        ]))
+    story.append(t_voc)
+    story.append(Spacer(1, 0.3*cm))
+    story.append(Paragraph(
+        "Funziona con qualsiasi lingua. Zero configurazione — attivo da subito per tutti i piani.",
+        s_small))
+
     story.append(PageBreak())
 
     # ── PAGINA 4: COME INIZIARE ──────────────────────────────────────────────────
@@ -442,7 +475,7 @@ def genera():
     story.append(Spacer(1, 1*cm))
 
     story.append(Paragraph("Tutti i piani includono:", s_h2))
-    incluso = ["1 Bot Telegram personalizzato", "Google Calendar integrato", "FAQ automatiche", "QR code per i clienti", "Dashboard di controllo"]
+    incluso = ["1 Bot Telegram personalizzato", "Google Calendar integrato", "FAQ automatiche", "QR code per i clienti", "Dashboard di controllo", "Messaggi vocali (risponde anche ai vocali Telegram)", "Supporto via chat dedicato"]
     for item in incluso:
         story.append(Paragraph(f"✓  {item}", style("inc", fontSize=10, fontName="Helvetica", textColor=BLACK, leading=16, leftIndent=10)))
     story.append(Spacer(1, 1*cm))

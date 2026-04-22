@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RistoAgent — Preview Arancione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── COMPARE BAR ── */
+.compare-bar {
+  background: #1a0f00; color: #fed7aa; text-align: center;
+  padding: 10px; font-size: 13px; font-weight: 500;
+  position: sticky; top: 0; z-index: 200;
+  border-bottom: 1px solid rgba(249,115,22,0.3);
+}
+.compare-bar strong { color: #f97316; }
+
+/* ── PALETTE: dark bg, orange accent (replaces blue) ── */
+:root {
+  --bg:        #0a0f0d;
+  --surface:   #0f1610;
+  --surface2:  #131a14;
+  --border:    #1e2b20;
+  --green:     #f97316;   /* was #0EA5E9 — all blue → orange */
+  --green-dim: #ea6c0e;   /* was #0284C7 */
+  --green-glow:rgba(249,115,22,0.12); /* was rgba(14,165,233,0.12) */
+  --text:      #e8f0e9;
+  --muted:     #7a9b7e;
+  --accent:    #fed7aa;   /* was #BAE6FD (light blue) → light orange/peach */
+}
+
+@keyframes bounce {
+  0%,60%,100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.3; }
+}
+
+html { font-size: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+@media (min-width: 768px) { html { font-size: 108%; } }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: sticky; top: 40px;
+  width: 100%; z-index: 100;
+  padding: 1.2rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(10,15,13,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.4rem; color: var(--accent);
+  letter-spacing: -0.02em; text-decoration: none;
+}
+.logo-accent { color: var(--green); }
+.nav-cta {
+  background: var(--green); color: #fff;
+  font-weight: 500; font-size: 0.85rem;
+  padding: 0.55rem 1.2rem; border-radius: 999px;
+  text-decoration: none; transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--accent); color: #0a0f0d; transform: translateY(-1px); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 8rem 1.5rem 4rem; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero-glow {
+  position: absolute; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(249,115,22,0.09) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -55%);
+  pointer-events: none;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--green-glow);
+  border: 1px solid rgba(249,115,22,0.25);
+  color: var(--green); font-size: 0.78rem; font-weight: 500;
+  padding: 0.35rem 0.9rem; border-radius: 999px;
+  margin-bottom: 2rem; letter-spacing: 0.04em;
+  text-transform: uppercase; animation: fadeUp 0.6s ease both;
+}
+.hero-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); animation: pulse 2s infinite;
+}
+h1 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.1; letter-spacing: -0.03em;
+  max-width: 960px; animation: fadeUp 0.7s 0.1s ease both;
+}
+h1 em { font-style: italic; color: var(--green); }
+.subheadline {
+  margin-top: 1.5rem; font-size: clamp(1rem, 2.2vw, 1.25rem);
+  color: var(--muted); max-width: 860px; font-weight: 300;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+.cta-group {
+  margin-top: 2.5rem; display: flex; gap: 1rem;
+  flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.btn-primary {
+  background: var(--green); color: #fff;
+  font-weight: 500; font-size: 1rem;
+  padding: 0.9rem 2.2rem; border-radius: 999px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  background: var(--green-dim); transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(249,115,22,0.3);
+}
+.btn-secondary {
+  background: transparent; color: var(--text);
+  font-weight: 500; font-size: 1rem;
+  padding: 0.9rem 2.2rem; border-radius: 999px;
+  text-decoration: none; border: 1px solid var(--border); cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-secondary:hover { border-color: var(--green); transform: translateY(-2px); }
+.btn-ghost {
+  color: var(--muted); font-size: 0.95rem;
+  padding: 0.9rem 1.8rem; border-radius: 999px;
+  text-decoration: none; border: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+.hero-note {
+  margin-top: 1rem; font-size: 0.78rem; color: var(--muted);
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+
+/* ─── CHAT MOCK ─── */
+.chat-window {
+  margin-top: 4rem; background: var(--surface2);
+  border: 1px solid var(--border); border-radius: 1.2rem;
+  padding: 1.5rem; width: min(380px, 90vw);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  animation: fadeUp 0.8s 0.5s ease both; text-align: left;
+}
+.chat-header {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding-bottom: 1rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem;
+}
+.chat-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--green);
+  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+}
+.chat-name { font-size: 0.9rem; font-weight: 500; }
+.chat-status { font-size: 0.7rem; color: var(--green); }
+.msg-user { display: flex; justify-content: flex-end; margin-bottom: 0.7rem; }
+.bubble {
+  max-width: 80%; padding: 0.6rem 0.9rem;
+  border-radius: 1rem; font-size: 0.82rem; line-height: 1.4; margin-bottom: 0.7rem;
+}
+.bubble-user {
+  background: var(--green); color: #fff;
+  border-bottom-right-radius: 0.2rem;
+}
+.bubble-bot {
+  background: rgba(249,115,22,0.12);
+  border: 1px solid rgba(249,115,22,0.2);
+  color: var(--text);
+  border-bottom-left-radius: 0.2rem;
+}
+.typing {
+  display: flex; gap: 3px; padding: 0.6rem 0.9rem;
+  background: rgba(249,115,22,0.12);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 1rem; border-bottom-left-radius: 0.2rem; width: fit-content;
+}
+.dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--muted); animation: bounce 1.2s infinite;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ─── SHARED ─── */
+.divider {
+  border: none; border-top: 1px solid var(--border);
+  max-width: 1100px; margin: 0 auto;
+}
+.section { padding: 6rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--green); font-weight: 500; margin-bottom: 1rem;
+}
+h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.025em; line-height: 1.15;
+}
+
+/* ─── BENEFITS ─── */
+.benefits-grid {
+  margin-top: 2.5rem; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 1.2rem; overflow: hidden;
+}
+.benefit-card {
+  background: var(--surface2); padding: 2.5rem 2rem; transition: background 0.2s;
+}
+.benefit-card:hover { background: #1a1208; }
+.benefit-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+.benefit-card h3 {
+  font-family: "Instrument Serif", serif; font-size: 1.4rem;
+  letter-spacing: -0.02em; margin-bottom: 0.6rem;
+}
+.benefit-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+/* ─── STEPS ─── */
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--green); display: flex; align-items: center;
+  justify-content: center; font-weight: 700; font-size: 0.9rem; color: #fff;
+}
+
+/* ─── PRICING ─── */
+.pricing-section { text-align: center; }
+.pricing-sub { color: var(--muted); margin-bottom: 3rem; }
+.trial-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #1a0f00, #0f0700);
+  border: 1px solid var(--green-dim);
+  border-radius: 1.2rem; padding: 1.8rem 2rem;
+  max-width: 1020px; margin: 0 auto 2.5rem; flex-wrap: wrap;
+}
+.trial-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--green);
+  background: rgba(249,115,22,0.12);
+  padding: 0.2rem 0.7rem; border-radius: 999px; margin-bottom: 0.6rem;
+}
+.trial-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+.trial-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem; max-width: 1020px; margin: 0 auto;
+}
+.plan {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 1.2rem; padding: 2rem 1.8rem; text-align: left;
+  position: relative; transition: border-color 0.2s, transform 0.2s;
+}
+.plan:hover { border-color: var(--green-dim); transform: translateY(-3px); }
+.plan-featured {
+  border-color: var(--green);
+  background: linear-gradient(145deg, #1a0f00, #0a0700);
+}
+.plan-badge {
+  position: absolute; top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--green); color: #fff;
+  font-size: 0.7rem; font-weight: 500;
+  padding: 0.25rem 0.8rem; border-radius: 999px;
+  letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;
+}
+.plan-name {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); margin-bottom: 0.8rem;
+}
+.plan-price {
+  font-family: "Instrument Serif", serif; font-size: 3rem;
+  letter-spacing: -0.04em; line-height: 1;
+}
+.plan-price sup { font-size: 1.2rem; vertical-align: super; }
+.plan-price small { font-size: 0.9rem; color: var(--muted); font-family: "DM Sans", sans-serif; }
+.plan-billing-note { font-size: 0.72rem; color: var(--green-dim); margin-top: 0.4rem; letter-spacing: 0.02em; }
+.plan-desc { color: var(--muted); font-size: 0.85rem; margin: 0.6rem 0 1.5rem; }
+.plan-features { list-style: none; margin-bottom: 2rem; }
+.plan-features li {
+  font-size: 0.85rem; color: var(--muted); padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.5rem;
+}
+.plan-features li::before { content: "✓"; color: var(--green); font-weight: 500; }
+.plan .btn-primary, .plan .btn-ghost { width: 100%; text-align: center; display: block; }
+.plan .btn-ghost {
+  color: var(--muted); font-size: 0.95rem; padding: 0.9rem 1.8rem;
+  border-radius: 999px; text-decoration: none; border: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s;
+}
+.plan .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+
+/* ─── FOOTER ─── */
+.footer {
+  border-top: 1px solid var(--border); padding: 2.5rem 2rem;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.75rem; max-width: 1100px; margin: 0 auto; text-align: center;
+}
+.footer p { font-size: 0.78rem; color: var(--muted); }
+.footer-logo {
+  font-family: "Instrument Serif", serif; font-size: 1.4rem;
+  color: var(--accent); letter-spacing: -0.02em;
+}
+.footer-logo span { color: var(--green); }
+.footer-link { font-size: 0.72rem; color: #3a5c3e; text-decoration: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 640px) {
+  .nav { padding: 1rem 1.2rem; }
+  .hero { padding: 6rem 1.2rem 3rem; }
+  h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .subheadline { font-size: 0.95rem; }
+  .cta-group { flex-direction: column; align-items: stretch; }
+  .cta-group a { text-align: center; }
+  .section { padding: 3rem 1.2rem; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .trial-banner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .trial-banner a { width: 100%; text-align: center; }
+  .plan { padding: 1.5rem 1.2rem; }
+  .footer { padding: 2rem 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="compare-bar">
+  Anteprima <strong>tema arancione</strong> — stessa grafica scura, blu sostituito con arancione. Dimmi cosa ne pensi!
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="logo">Risto<span class="logo-accent">Agent</span></a>
+  <a href="#" class="nav-cta">Prova gratis</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <span class="hero-tag">
+    <span class="hero-dot"></span>
+    L'agente AI per ristoranti — prenotazioni, messaggi e clienti automatizzati
+  </span>
+
+  <h1>
+    Non hai tempo<br>
+    per rispondere<br>
+    <em>ai tuoi clienti?</em>
+  </h1>
+
+  <p class="subheadline">
+    RistoAgent è l'agente AI per il tuo ristorante — risponde al posto tuo 24 ore su 24, 7 giorni su 7.<br>
+    Gestisce prenotazioni, cancellazioni, messaggi scritti e vocali su Telegram<br>
+    mentre tu pensi al tuo lavoro.
+  </p>
+
+  <div class="cta-group">
+    <a href="#" class="btn-primary">Inizia ora →</a>
+    <a href="#come-funziona" class="btn-ghost">Come funziona</a>
+  </div>
+  <p class="hero-note">Nessuna carta di credito · Setup in 10 minuti</p>
+
+  <!-- Chat preview -->
+  <div class="chat-window">
+    <div class="chat-header">
+      <div class="chat-avatar">🏪</div>
+      <div>
+        <p class="chat-name">La tua attività</p>
+        <p class="chat-status">● online</p>
+      </div>
+    </div>
+    <div class="msg-user">
+      <div class="bubble bubble-user">Ciao! Siete disponibili sabato sera per 4 persone?</div>
+    </div>
+    <div class="bubble bubble-bot">
+      Ciao! 😊 Sì, abbiamo disponibilità sabato sera. Preferisci le 19:30 o le 21:00?
+    </div>
+    <div class="msg-user">
+      <div class="bubble bubble-user">Le 19:30 perfetto!</div>
+    </div>
+    <div class="bubble bubble-bot">
+      Perfetto, ho prenotato per 4 persone sabato alle 19:30. Ti aspettiamo! 📍
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROBLEM -->
+<section class="section" id="problema">
+  <p class="section-label">Il problema</p>
+  <h2>
+    Ogni messaggio<br>
+    senza risposta<br>
+    è un cliente perso.
+  </h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">😤</div>
+      <h3>Rispondi sempre tu</h3>
+      <p>Weekend, sera, durante il servizio — il telefono non smette mai di suonare. E se non rispondi in tempo, il cliente va altrove.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">📋</div>
+      <h3>Le prenotazioni si perdono</h3>
+      <p>Messaggi su Telegram, chiamate, Instagram — tenerli tutti sotto controllo è impossibile. Qualcosa sfugge sempre.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🔁</div>
+      <h3>Sempre le stesse domande</h3>
+      <p>"Siete aperti domenica?" "Accettate carte?" "C'è il parcheggio?" — rispondi le stesse cose decine di volte al giorno.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SOLUTION -->
+<section class="section" id="come-funziona">
+  <p class="section-label">La soluzione</p>
+  <h2>
+    Un assistente che<br>
+    non si stanca mai.
+  </h2>
+  <p style="color:var(--muted);margin-top:0.75rem;margin-bottom:3rem;font-size:1.05rem">
+    RistoAgent impara la tua attività e risponde ai clienti del tuo ristorante come faresti tu —<br>
+    in italiano o in inglese, a qualsiasi ora.
+  </p>
+
+  <div style="display:flex;flex-direction:column;gap:1.5rem;max-width:600px;margin:0 auto">
+    <div style="display:flex;gap:1.2rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.6rem">
+      <div class="step-num">1</div>
+      <div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.3rem">Configura la tua attività</h3>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.6">Inserisci i tuoi servizi, orari e collega Google Calendar. Ci vogliono 10 minuti.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:1.2rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.6rem">
+      <div class="step-num">2</div>
+      <div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.3rem">Attiva il tuo agente AI su Telegram</h3>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.6">Ricevi una guida passo-passo. In 5 minuti il tuo bot Telegram è attivo e risponde ai clienti del ristorante.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:1.2rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.6rem">
+      <div class="step-num">3</div>
+      <div>
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.3rem">I clienti scrivono, l'agente risponde</h3>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.6">Prenotazioni, domande, conferme — tutto gestito in automatico. Tu guardi i risultati dalla dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- QR CODE -->
+<section class="section" id="qrcode">
+  <div style="display:flex;gap:3rem;align-items:center;flex-wrap:wrap;justify-content:center;max-width:820px;margin:0 auto">
+    <!-- QR mockup -->
+    <div style="background:#ffffff;border-radius:1.2rem;padding:1.5rem;display:flex;flex-direction:column;align-items:center;gap:0.8rem;box-shadow:0 0 60px rgba(249,115,22,0.15);flex-shrink:0">
+      <div style="width:120px;height:120px;background:#f0f0f0;border-radius:0.6rem;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:10px">
+        <div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div>
+        <div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div>
+        <div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#f97316;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div>
+        <div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div>
+        <div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div><div style="background:#f0f0f0;border-radius:2px"></div><div style="background:#1a1a2e;border-radius:2px"></div>
+      </div>
+      <p style="font-size:0.7rem;color:#64748b;font-family:monospace">t.me/tuoristorante_bot</p>
+    </div>
+
+    <!-- Testo -->
+    <div style="flex:1;min-width:260px">
+      <p class="section-label">QR Code incluso</p>
+      <h2 style="margin-bottom:1rem">
+        Un QR code che porta<br>i clienti direttamente<br>al tuo bot.
+      </h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:1.5rem">
+        Appena crei il tuo account ricevi un QR code personalizzato.
+        Mettilo ovunque i tuoi clienti ti trovano — lo inquadrano
+        e atterrano direttamente sulla chat Telegram con il tuo assistente.
+        Zero app da scaricare, zero attriti.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:0.6rem">
+        <div style="display:flex;align-items:center;gap:0.6rem"><span style="color:var(--green);font-size:0.75rem">✓</span><span style="color:var(--muted);font-size:0.9rem">Sul menu, sui tavoli e alla cassa</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem"><span style="color:var(--green);font-size:0.75rem">✓</span><span style="color:var(--muted);font-size:0.9rem">Sui volantini e nelle campagne social</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem"><span style="color:var(--green);font-size:0.75rem">✓</span><span style="color:var(--muted);font-size:0.9rem">Scaricabile in alta risoluzione dalla dashboard</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem"><span style="color:var(--green);font-size:0.75rem">✓</span><span style="color:var(--muted);font-size:0.9rem">Funziona con qualsiasi fotocamera</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing">
+  <p class="section-label">Prezzi</p>
+  <h2>Semplice e trasparente</h2>
+
+  <div class="trial-banner">
+    <div>
+      <span class="trial-tag">Prova gratuita</span>
+      <p class="trial-title">15 giorni gratis — nessuna carta richiesta</p>
+      <p class="trial-desc">Un'unica prova per attività. Dopo 15 giorni scegli il piano più adatto.</p>
+    </div>
+    <a href="#" class="btn-primary" style="white-space:nowrap">Scegli →</a>
+  </div>
+
+  <!-- Founding Members -->
+  <div style="background:linear-gradient(135deg,#1a0f00,#0f0700);border:1px solid #f97316;border-radius:1rem;padding:1.5rem 2rem;margin-bottom:2rem;text-align:center">
+    <p style="color:#f97316;font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem">
+      🔥 Offerta Founding Members — Solo 20 posti
+    </p>
+    <p style="color:#fde68a;font-size:1.1rem;font-weight:600;margin-bottom:0.3rem">
+      Entra adesso e blocca il prezzo per sempre
+    </p>
+    <p style="color:#92400e;font-size:0.85rem;margin-bottom:1.2rem">
+      Starter a <strong style="color:#fde68a">€19/mese</strong> (invece di €29) ·
+      Pro a <strong style="color:#fde68a">€29/mese</strong> (invece di €49)
+    </p>
+    <a href="#" class="btn-primary">Approfitta dell'offerta →</a>
+  </div>
+
+  <div class="pricing-grid">
+    <!-- Starter -->
+    <div class="plan">
+      <p class="plan-name">Starter</p>
+      <p class="plan-price"><sup>€</sup>29<small>/mese</small></p>
+      <p class="plan-billing-note">Rinnovo mensile automatico</p>
+      <p class="plan-desc">Per ristoranti con flusso regolare di prenotazioni.</p>
+      <ul class="plan-features">
+        <li>300 messaggi/mese</li>
+        <li>1 Bot Telegram</li>
+        <li>Prenotazioni con Google Calendar</li>
+        <li>FAQ automatiche</li>
+      </ul>
+      <a href="#" class="btn-ghost">Scegli</a>
+    </div>
+
+    <!-- Pro (featured) -->
+    <div class="plan plan-featured">
+      <span class="plan-badge">Più scelto</span>
+      <p class="plan-name">Pro</p>
+      <p class="plan-price"><sup>€</sup>49<small>/mese</small></p>
+      <p class="plan-billing-note">Rinnovo mensile automatico</p>
+      <p class="plan-desc">Per chi vuole zero limiti.</p>
+      <ul class="plan-features">
+        <li>Messaggi illimitati</li>
+        <li>1 Bot Telegram</li>
+        <li>Prenotazioni con Google Calendar</li>
+        <li>Analisi e report</li>
+        <li>Supporto prioritario</li>
+      </ul>
+      <a href="#" class="btn-primary">Scegli</a>
+    </div>
+
+    <!-- Flessibile -->
+    <div class="plan">
+      <p class="plan-name">Flessibile</p>
+      <p class="plan-price"><sup>€</sup>39<small>/mese</small></p>
+      <p class="plan-billing-note">Nessun rinnovo automatico</p>
+      <p class="plan-desc">Paghi solo i mesi che usi.</p>
+      <ul class="plan-features">
+        <li>500 messaggi/mese</li>
+        <li>1 Bot Telegram</li>
+        <li>Prenotazioni con Google Calendar</li>
+        <li>FAQ automatiche</li>
+      </ul>
+      <a href="#" class="btn-ghost">Scegli</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <p class="section-label">Visione futura</p>
+  <h2>Oggi gestisce i clienti.<br>Domani gestisce il tuo business.</h2>
+  <p style="color:var(--muted);margin-top:0.75rem;margin-bottom:3rem;font-size:1.05rem;text-align:center">
+    RistoAgent diventerà una piattaforma integrata per ogni aspetto della tua attività.
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;max-width:900px;margin:0 auto">
+    <div style="background:var(--surface);border:1px solid rgba(249,115,22,0.35);border-radius:1rem;padding:1.4rem 1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem">
+        <span style="font-size:1.4rem">🎙️</span>
+        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#f97316;background:rgba(249,115,22,0.1);padding:0.2rem 0.6rem;border-radius:999px">Disponibile ora</span>
+      </div>
+      <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.5rem">Messaggi vocali</h3>
+      <p style="color:var(--muted);font-size:0.85rem;line-height:1.6">L'agente capisce e risponde anche ai messaggi vocali su Telegram. Il cliente parla, l'agente trascrive, elabora e risponde.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem">
+        <span style="font-size:1.4rem">🛒</span>
+        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);background:rgba(249,115,22,0.1);padding:0.2rem 0.6rem;border-radius:999px">In arrivo</span>
+      </div>
+      <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.5rem">Ordinazioni dirette</h3>
+      <p style="color:var(--muted);font-size:0.85rem;line-height:1.6">I clienti potranno ordinare direttamente via Telegram — antipasti, piatti, bevande — con il tuo menù digitale integrato.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem">
+        <span style="font-size:1.4rem">🎯</span>
+        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);background:rgba(249,115,22,0.1);padding:0.2rem 0.6rem;border-radius:999px">In arrivo</span>
+      </div>
+      <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.5rem">Promozioni mirate</h3>
+      <p style="color:var(--muted);font-size:0.85rem;line-height:1.6">Invia offerte personalizzate ai clienti che hai già servito: sconti sul compleanno, happy hour, promozioni last-minute.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem">
+        <span style="font-size:1.4rem">📊</span>
+        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);background:rgba(249,115,22,0.1);padding:0.2rem 0.6rem;border-radius:999px">In arrivo</span>
+      </div>
+      <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.5rem">Analisi fatturato</h3>
+      <p style="color:var(--muted);font-size:0.85rem;line-height:1.6">Dashboard con andamento vendite, piatti più ordinati, fasce orarie più redditizie e confronto settimana su settimana.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem">
+        <span style="font-size:1.4rem">🧠</span>
+        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);background:rgba(249,115,22,0.1);padding:0.2rem 0.6rem;border-radius:999px">In arrivo</span>
+      </div>
+      <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.5rem">Strategia di marketing AI</h3>
+      <p style="color:var(--muted);font-size:0.85rem;line-height:1.6">L'agente analizza i tuoi dati e genera un piano d'azione concreto: quali clienti recuperare, quando fare promozioni, cosa comunicare.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:1rem;padding:1.4rem 1.5rem">
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem">
+        <span style="font-size:1.4rem">📈</span>
+        <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);background:rgba(249,115,22,0.1);padding:0.2rem 0.6rem;border-radius:999px">In arrivo</span>
+      </div>
+      <h3 style="font-size:0.95rem;font-weight:600;margin-bottom:0.5rem">Analisi di mercato</h3>
+      <p style="color:var(--muted);font-size:0.85rem;line-height:1.6">Dati aggregati anonimi su clienti, preferenze e abitudini nel tuo quartiere. Capisci il mercato locale prima dei tuoi competitor.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:2.5rem">
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.2rem">
+      Chi entra ora come Founding Member avrà accesso prioritario a tutte le nuove funzionalità.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="#" class="btn-primary">Entra ora →</a>
+      <a href="#" class="btn-secondary">Vedi roadmap completa</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Risto<span>Agent</span></div>
+  <p>© 2026 RistoAgent — Alessandro Bernabé · IČO 06043194 · Praha, CZ</p>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+    <a href="#" class="footer-link">Note legali</a>
+    <a href="#" class="footer-link">Privacy Policy</a>
+    <a href="#" class="footer-link">Cookie Policy</a>
+    <a href="#" class="footer-link">Termini di Servizio</a>
+    <span style="font-size:0.72rem;color:#3a5c3e">Made for local businesses 🇮🇹</span>
+  </div>
+</footer>
+
+</body>
+</html>

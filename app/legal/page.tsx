@@ -9,7 +9,7 @@ export default function LegalPage() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "#0a0f0d",
+      background: "#111a13",
       color: "#e8f0e9",
       fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
       padding: "6rem 1.5rem 4rem",

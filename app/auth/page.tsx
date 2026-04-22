@@ -83,7 +83,7 @@ export default function AuthPage() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "radial-gradient(ellipse at top, #0f1f2e 0%, #0a0f0d 60%)",
+      background: "radial-gradient(ellipse at top, #0f1f2e 0%, #111a13 60%)",
       display: "flex", flexDirection: "column", alignItems: "center",
       justifyContent: "center", padding: "2rem 1rem",
       fontFamily: "'DM Sans', 'Segoe UI', sans-serif", color: "#e8f0e9",
