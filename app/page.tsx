@@ -205,7 +205,7 @@ function InteractiveDemo() {
   }
 
   return (
-    <div style={{ maxWidth: 440, margin: "0 auto" }}>
+    <div style={{ maxWidth: 560, margin: "0 auto" }}>
       <div style={{
         background: "var(--surface2)", border: "1px solid var(--border)",
         borderRadius: "1.4rem", overflow: "hidden",
@@ -234,7 +234,7 @@ function InteractiveDemo() {
         </div>
 
         {/* Messages */}
-        <div style={{ padding: "1.2rem", minHeight: 220, maxHeight: 320, overflowY: "auto" }}>
+        <div style={{ padding: "1.4rem", minHeight: 300, maxHeight: 420, overflowY: "auto" }}>
           {messages.map((m, i) => (
             <div key={i} style={{
               display: "flex",
@@ -245,8 +245,8 @@ function InteractiveDemo() {
                 maxWidth: "80%", padding: "0.6rem 0.9rem",
                 borderRadius: m.from === "user" ? "1rem 1rem 0.2rem 1rem" : "1rem 1rem 1rem 0.2rem",
                 background: m.from === "user" ? "var(--green)" : "#1c2b1e",
-                color: m.from === "user" ? "#0a0f0d" : "var(--text)",
-                fontSize: "0.85rem", lineHeight: 1.5,
+                color: m.from === "user" ? "#111a13" : "var(--text)",
+                fontSize: "0.95rem", lineHeight: 1.5,
               }}>{m.text}</div>
             </div>
           ))}
