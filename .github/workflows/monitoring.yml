@@ -88,7 +88,7 @@ jobs:
 
       - name: Fetch metrics
         run: |
-          curl -s --max-time 15 \
+          curl -s --max-time 30 --retry 2 --retry-delay 5 \
             -H "x-monitor-secret: ${{ secrets.MONITOR_SECRET }}" \
             "${{ secrets.APP_URL }}/api/monitor/report" \
             -o /tmp/report.json
