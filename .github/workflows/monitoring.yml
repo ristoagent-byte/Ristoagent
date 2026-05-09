@@ -75,6 +75,7 @@ jobs:
   daily-report:
     name: Daily Report
     runs-on: ubuntu-latest
+    if: github.event.schedule == '0 7 * * *'
     steps:
       - name: Check uptime
         id: uptime

@@ -9,11 +9,11 @@
 ### Shortcut "g"
 Quando l'utente scrive solo **"g"** (anche con testo aggiuntivo tipo "g cosa devo fare"), leggere automaticamente lo screenshot più recente:
 ```
-C:\Users\Admin\Pictures\Screenshots\YYYY-MM\
+C:\Users\Admin\Pictures\Screenshots\
 ```
-Gli screenshot sono organizzati in sottocartelle per anno-mese. Per trovare il più recente:
-1. `ls -t C:/Users/Admin/Pictures/Screenshots/` → trova la cartella più recente (es. `2026-04`)
-2. `ls -t C:/Users/Admin/Pictures/Screenshots/2026-04/ | head -1` → trova il file più recente
+I nuovi screenshot di Windows vanno sempre nella root. Per trovare il più recente:
+1. `ls -t "C:/Users/Admin/Pictures/Screenshots/" | head -3` → cerca prima nella root
+2. Se non ci sono .png recenti nella root, controlla le sottocartelle (`2026-04/` ecc.)
 3. Leggilo con il tool Read
 
 ### Stile risposte
@@ -86,7 +86,7 @@ Vedi dettagli completi in `docs/context/ROADMAP.md`
 | Risorsa | Percorso |
 |---|---|
 | Progetto | `C:\Users\Admin\OneDrive\RISTOAGENT\` |
-| Screenshot | `C:\Users\Admin\Pictures\Screenshots\YYYY-MM\` |
+| Screenshot | `C:\Users\Admin\Pictures\Screenshots\` (root per nuovi, sottocartelle per archivio) |
 | Logo | `public/logo.png` · `public/icon.png` |
 | Email templates Supabase | `marketing/supabase_email_templates/` |
 | Email templates marketing | `marketing/email_template.html` · `email_followup.html` · `email_lastcall.html` |
