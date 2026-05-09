@@ -1,9 +1,7 @@
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
 import type { Business, Message } from "@/types";
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY!,
-});
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 function buildSystemPrompt(business: Business, language: "it" | "en"): string {
   const now = new Date();
@@ -47,16 +45,16 @@ Your responsibilities:
 - If you don't know something, say so honestly`;
 }
 
-const tools: Anthropic.Tool[] = [
+const functionDeclarations = [
   {
     name: "check_availability",
     description: "Check if a date and time slot is available in the business calendar",
-    input_schema: {
-      type: "object" as const,
+    parameters: {
+      type: SchemaType.OBJECT,
       properties: {
-        date: { type: "string", description: "Date in YYYY-MM-DD format" },
-        time: { type: "string", description: "Time in HH:MM format (24h)" },
-        duration_minutes: { type: "number", description: "Duration in minutes (default 90)" },
+        date: { type: SchemaType.STRING, description: "Date in YYYY-MM-DD format" },
+        time: { type: SchemaType.STRING, description: "Time in HH:MM format (24h)" },
+        duration_minutes: { type: SchemaType.NUMBER, description: "Duration in minutes (default 90)" },
       },
       required: ["date", "time"],
     },
@@ -64,15 +62,15 @@ const tools: Anthropic.Tool[] = [
   {
     name: "create_booking",
     description: "Create a confirmed booking in the business calendar",
-    input_schema: {
-      type: "object" as const,
+    parameters: {
+      type: SchemaType.OBJECT,
       properties: {
-        date: { type: "string", description: "Date in YYYY-MM-DD format" },
-        time: { type: "string", description: "Time in HH:MM format (24h)" },
-        duration_minutes: { type: "number", description: "Duration in minutes (default 90)" },
-        customer_name: { type: "string", description: "Customer full name" },
-        party_size: { type: "number", description: "Number of people" },
-        notes: { type: "string", description: "Optional notes" },
+        date: { type: SchemaType.STRING, description: "Date in YYYY-MM-DD format" },
+        time: { type: SchemaType.STRING, description: "Time in HH:MM format (24h)" },
+        duration_minutes: { type: SchemaType.NUMBER, description: "Duration in minutes (default 90)" },
+        customer_name: { type: SchemaType.STRING, description: "Customer full name" },
+        party_size: { type: SchemaType.NUMBER, description: "Number of people" },
+        notes: { type: SchemaType.STRING, description: "Optional notes" },
       },
       required: ["date", "time", "customer_name"],
     },
@@ -97,60 +95,42 @@ export async function chat(
 ): Promise<ChatResult> {
   const systemPrompt = buildSystemPrompt(business, language);
 
-  const claudeMessages: Anthropic.MessageParam[] = history.slice(-20).map((m) => ({
-    role: m.sender === "customer" ? "user" : "assistant",
-    content: m.text,
-  }));
-  claudeMessages.push({ role: "user", content: newMessage });
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    systemInstruction: systemPrompt,
+    tools: [{ functionDeclarations }],
+  });
 
+  const geminiHistory = history.slice(-20).map((m) => ({
+    role: m.sender === "customer" ? "user" : ("model" as "user" | "model"),
+    parts: [{ text: m.text }],
+  }));
+
+  const chatSession = model.startChat({ history: geminiHistory });
   const toolCalls: ChatResult["toolCalls"] = [];
-  let messages = claudeMessages;
+  let result = await chatSession.sendMessage(newMessage);
 
   while (true) {
-    const response = await anthropic.messages.create({
-      model: "claude-sonnet-4-6",
-      max_tokens: 1024,
-      system: systemPrompt,
-      tools,
-      messages,
-    });
+    const parts = result.response.candidates?.[0]?.content?.parts ?? [];
+    const functionCallParts = parts.filter((p) => p.functionCall);
 
-    if (response.stop_reason === "end_turn") {
-      const textBlock = response.content.find((b) => b.type === "text");
-      return {
-        reply: textBlock?.type === "text" ? textBlock.text : "",
-        toolCalls,
-      };
+    if (functionCallParts.length === 0) {
+      return { reply: result.response.text(), toolCalls };
     }
 
-    if (response.stop_reason === "tool_use") {
-      const toolResults: Anthropic.ToolResultBlockParam[] = [];
-
-      for (const block of response.content) {
-        if (block.type === "tool_use") {
-          const input = block.input as Record<string, unknown>;
-          const result = await toolHandler(block.name, input);
-          toolCalls.push({ name: block.name, input, result });
-          toolResults.push({
-            type: "tool_result",
-            tool_use_id: block.id,
-            content: JSON.stringify(result),
-          });
-        }
-      }
-
-      messages = [
-        ...messages,
-        { role: "assistant", content: response.content },
-        { role: "user", content: toolResults },
-      ];
-      continue;
+    const functionResponseParts = [];
+    for (const part of functionCallParts) {
+      const { name, args } = part.functionCall!;
+      const input = (args ?? {}) as Record<string, unknown>;
+      const toolResult = await toolHandler(name, input);
+      toolCalls.push({ name, input, result: toolResult });
+      functionResponseParts.push({
+        functionResponse: { name, response: { result: toolResult } },
+      });
     }
 
-    break;
+    result = await chatSession.sendMessage(functionResponseParts);
   }
-
-  return { reply: "", toolCalls };
 }
 
 export function detectLanguage(text: string): "it" | "en" {

@@ -1,16 +1,19 @@
 import fs from "fs";
 import path from "path";
-import type Anthropic from "@anthropic-ai/sdk";
 
 const KNOWLEDGE_DIR = path.join(process.cwd(), "knowledge");
 const SCREENSHOTS_DIR = path.join(KNOWLEDGE_DIR, "screenshots");
 const MAX_KNOWLEDGE_BYTES = 100 * 1024; // 100 KB per file
 
-// Cached at module load time — re-reads only once per process lifetime
 let _knowledgeText: string | null = null;
-let _screenshots: Anthropic.ImageBlockParam[] | null = null;
+let _screenshots: ScreenshotData[] | null = null;
 
-/** Reads all .md files from knowledge/ and concatenates them for use in Claude's system prompt. */
+export interface ScreenshotData {
+  mimeType: "image/png" | "image/jpeg";
+  data: string; // base64
+}
+
+/** Reads all .md files from knowledge/ and concatenates them for use in the system prompt. */
 export function loadKnowledgeText(): string {
   if (_knowledgeText !== null) return _knowledgeText;
 
@@ -39,8 +42,8 @@ export function loadKnowledgeText(): string {
   return _knowledgeText;
 }
 
-/** Reads up to 5 images from knowledge/screenshots/ and returns them as base64 ImageBlockParams. */
-export function loadScreenshots(): Anthropic.ImageBlockParam[] {
+/** Reads up to 5 images from knowledge/screenshots/ and returns them as base64 data. */
+export function loadScreenshots(): ScreenshotData[] {
   if (_screenshots !== null) return _screenshots;
 
   if (!fs.existsSync(SCREENSHOTS_DIR)) {
@@ -55,16 +58,11 @@ export function loadScreenshots(): Anthropic.ImageBlockParam[] {
 
   _screenshots = files.map((f) => {
     const ext = path.extname(f).toLowerCase();
-    const media_type: "image/png" | "image/jpeg" =
+    const mimeType: "image/png" | "image/jpeg" =
       ext === ".jpg" || ext === ".jpeg" ? "image/jpeg" : "image/png";
-
     return {
-      type: "image" as const,
-      source: {
-        type: "base64" as const,
-        media_type,
-        data: fs.readFileSync(path.join(SCREENSHOTS_DIR, f)).toString("base64"),
-      },
+      mimeType,
+      data: fs.readFileSync(path.join(SCREENSHOTS_DIR, f)).toString("base64"),
     };
   });
 

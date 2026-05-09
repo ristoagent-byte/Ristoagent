@@ -1,8 +1,8 @@
 import { NextRequest } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { loadKnowledgeText, loadScreenshots } from "@/lib/knowledge";
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 const SENTINEL = "Non ho informazioni su questo";
 const MAX_MESSAGE_CHARS = 2000;
@@ -23,7 +23,6 @@ function isRateLimited(ip: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
-  // Rate limiting
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
   if (isRateLimited(ip)) {
     return new Response(JSON.stringify({ error: "Troppe richieste, riprova tra un minuto" }), {
@@ -31,7 +30,6 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  // Parse body safely
   let body: { message?: unknown; history?: unknown };
   try {
     body = await req.json();
@@ -48,7 +46,6 @@ export async function POST(req: NextRequest) {
     return new Response(JSON.stringify({ error: "Messaggio troppo lungo" }), { status: 400 });
   }
 
-  // Validate and sanitize history
   const history: Array<{ role: "user" | "assistant"; content: string }> = Array.isArray(rawHistory)
     ? (rawHistory as Array<unknown>)
         .filter(
@@ -84,40 +81,38 @@ Qui sotto trovi tutta la documentazione di RistoAgent e alcuni screenshot del pr
 
 ${knowledgeText}`;
 
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    systemInstruction: systemPrompt,
+  });
+
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream({
     async start(controller) {
       try {
-        // Only send screenshots on the first turn — saves tokens on follow-up messages
         const isFirstTurn = history.length === 0;
-        const userContent: Anthropic.ContentBlockParam[] = [
-          ...(isFirstTurn ? screenshots : []),
-          { type: "text", text: message },
-        ];
 
-        const messages: Anthropic.MessageParam[] = [
-          ...history.slice(-6).map((h) => ({
-            role: h.role,
-            content: h.content,
-          })),
-          { role: "user", content: userContent },
-        ];
+        const screenshotParts = isFirstTurn
+          ? screenshots.map((s) => ({
+              inlineData: { mimeType: s.mimeType, data: s.data },
+            }))
+          : [];
 
-        const claudeStream = anthropic.messages.stream({
-          model: "claude-sonnet-4-6",
-          max_tokens: 600,
-          system: systemPrompt,
-          messages,
-        });
+        const userParts = [...screenshotParts, { text: message }];
 
-        for await (const event of claudeStream) {
-          if (
-            event.type === "content_block_delta" &&
-            event.delta.type === "text_delta"
-          ) {
-            const chunk = JSON.stringify({ delta: event.delta.text });
-            controller.enqueue(encoder.encode(`data: ${chunk}\n\n`));
+        const geminiHistory = history.slice(-6).map((h) => ({
+          role: h.role === "user" ? "user" : ("model" as "user" | "model"),
+          parts: [{ text: h.content }],
+        }));
+
+        const chatSession = model.startChat({ history: geminiHistory });
+        const streamResult = await chatSession.sendMessageStream(userParts);
+
+        for await (const chunk of streamResult.stream) {
+          const text = chunk.text();
+          if (text) {
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ delta: text })}\n\n`));
           }
         }
 
