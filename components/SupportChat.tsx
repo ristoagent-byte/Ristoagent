@@ -157,8 +157,12 @@ export default function SupportChat() {
                 updated[updated.length - 1] = { role: "assistant", content: fullText };
                 return updated;
               });
+            } else if (parsed.error) {
+              throw new Error(parsed.error);
             }
-          } catch { /* ignore parse errors */ }
+          } catch (parseErr) {
+            if (parseErr instanceof Error && parseErr.message !== "Unexpected token") throw parseErr;
+          }
         }
       }
 
