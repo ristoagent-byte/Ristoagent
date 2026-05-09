@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
+import { GoogleGenerativeAI, SchemaType, type FunctionDeclaration } from "@google/generative-ai";
 import type { Business, Message } from "@/types";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
@@ -45,6 +45,7 @@ Your responsibilities:
 - If you don't know something, say so honestly`;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const functionDeclarations = [
   {
     name: "check_availability",
@@ -98,7 +99,7 @@ export async function chat(
   const model = genAI.getGenerativeModel({
     model: "gemini-2.0-flash",
     systemInstruction: systemPrompt,
-    tools: [{ functionDeclarations }],
+    tools: [{ functionDeclarations: functionDeclarations as unknown as FunctionDeclaration[] }],
   });
 
   const geminiHistory = history.slice(-20).map((m) => ({
