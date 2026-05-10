@@ -1,8 +1,9 @@
 import { NextRequest } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { loadKnowledgeText, loadScreenshots } from "@/lib/knowledge";
+import Groq from "groq-sdk";
+import { loadKnowledgeText } from "@/lib/knowledge";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY_RISTOAGENT_BOT });
+const MODEL = "llama-3.3-70b-versatile";
 
 const SENTINEL = "Non ho informazioni su questo";
 const MAX_MESSAGE_CHARS = 2000;
@@ -63,7 +64,6 @@ export async function POST(req: NextRequest) {
     : [];
 
   const knowledgeText = loadKnowledgeText();
-  const screenshots = loadScreenshots();
 
   const systemPrompt = `Sei l'assistente di supporto di RistoAgent, un servizio che crea bot Telegram automatici per attività locali italiane.
 
@@ -77,40 +77,32 @@ Se non hai informazioni sufficienti per rispondere, di' esattamente questa frase
 
 Non inventare mai informazioni. Non rispondere a domande non legate a RistoAgent.
 
-Qui sotto trovi tutta la documentazione di RistoAgent e alcuni screenshot del prodotto:
+Qui sotto trovi tutta la documentazione di RistoAgent:
 
 ${knowledgeText}`;
 
-  const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
-    systemInstruction: systemPrompt,
-  });
+  const messages: Groq.Chat.ChatCompletionMessageParam[] = [
+    { role: "system", content: systemPrompt },
+    ...history.slice(-6).map((h): Groq.Chat.ChatCompletionMessageParam => ({
+      role: h.role,
+      content: h.content,
+    })),
+    { role: "user", content: message },
+  ];
 
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream({
     async start(controller) {
       try {
-        const isFirstTurn = history.length === 0;
+        const streamResult = await groq.chat.completions.create({
+          model: MODEL,
+          messages,
+          stream: true,
+        });
 
-        const screenshotParts = isFirstTurn
-          ? screenshots.map((s) => ({
-              inlineData: { mimeType: s.mimeType, data: s.data },
-            }))
-          : [];
-
-        const userParts = [...screenshotParts, { text: message }];
-
-        const geminiHistory = history.slice(-6).map((h) => ({
-          role: h.role === "user" ? "user" : ("model" as "user" | "model"),
-          parts: [{ text: h.content }],
-        }));
-
-        const chatSession = model.startChat({ history: geminiHistory });
-        const streamResult = await chatSession.sendMessageStream(userParts);
-
-        for await (const chunk of streamResult.stream) {
-          const text = chunk.text();
+        for await (const chunk of streamResult) {
+          const text = chunk.choices[0]?.delta?.content ?? "";
           if (text) {
             controller.enqueue(encoder.encode(`data: ${JSON.stringify({ delta: text })}\n\n`));
           }
@@ -120,9 +112,7 @@ ${knowledgeText}`;
         controller.close();
       } catch (err) {
         const msg = err instanceof Error ? err.message : "Errore";
-        controller.enqueue(
-          encoder.encode(`data: ${JSON.stringify({ error: msg })}\n\n`)
-        );
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: msg })}\n\n`));
         controller.close();
       }
     },

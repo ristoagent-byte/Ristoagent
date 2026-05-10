@@ -1,11 +1,13 @@
-import { GoogleGenerativeAI, SchemaType, type FunctionDeclaration } from "@google/generative-ai";
+import Groq from "groq-sdk";
 import type { Business, Message } from "@/types";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY_RISTOAGENT_BOT });
+
+const MODEL = "llama-3.3-70b-versatile";
 
 function buildSystemPrompt(business: Business, language: "it" | "en"): string {
   const now = new Date();
-  const today = now.toLocaleDateString("en-CA", { timeZone: "Europe/Rome" }); // YYYY-MM-DD in Italy
+  const today = now.toLocaleDateString("en-CA", { timeZone: "Europe/Rome" });
   const todayFormatted = now.toLocaleDateString("it-IT", { timeZone: "Europe/Rome", weekday: "long", year: "numeric", month: "long", day: "numeric" });
   const langInstruction =
     language === "it"
@@ -45,35 +47,40 @@ Your responsibilities:
 - If you don't know something, say so honestly`;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const functionDeclarations = [
+const tools: Groq.Chat.ChatCompletionTool[] = [
   {
-    name: "check_availability",
-    description: "Check if a date and time slot is available in the business calendar",
-    parameters: {
-      type: SchemaType.OBJECT,
-      properties: {
-        date: { type: SchemaType.STRING, description: "Date in YYYY-MM-DD format" },
-        time: { type: SchemaType.STRING, description: "Time in HH:MM format (24h)" },
-        duration_minutes: { type: SchemaType.NUMBER, description: "Duration in minutes (default 90)" },
+    type: "function",
+    function: {
+      name: "check_availability",
+      description: "Check if a date and time slot is available in the business calendar",
+      parameters: {
+        type: "object",
+        properties: {
+          date: { type: "string", description: "Date in YYYY-MM-DD format" },
+          time: { type: "string", description: "Time in HH:MM format (24h)" },
+          duration_minutes: { type: "number", description: "Duration in minutes (default 90)" },
+        },
+        required: ["date", "time"],
       },
-      required: ["date", "time"],
     },
   },
   {
-    name: "create_booking",
-    description: "Create a confirmed booking in the business calendar",
-    parameters: {
-      type: SchemaType.OBJECT,
-      properties: {
-        date: { type: SchemaType.STRING, description: "Date in YYYY-MM-DD format" },
-        time: { type: SchemaType.STRING, description: "Time in HH:MM format (24h)" },
-        duration_minutes: { type: SchemaType.NUMBER, description: "Duration in minutes (default 90)" },
-        customer_name: { type: SchemaType.STRING, description: "Customer full name" },
-        party_size: { type: SchemaType.NUMBER, description: "Number of people" },
-        notes: { type: SchemaType.STRING, description: "Optional notes" },
+    type: "function",
+    function: {
+      name: "create_booking",
+      description: "Create a confirmed booking in the business calendar",
+      parameters: {
+        type: "object",
+        properties: {
+          date: { type: "string", description: "Date in YYYY-MM-DD format" },
+          time: { type: "string", description: "Time in HH:MM format (24h)" },
+          duration_minutes: { type: "number", description: "Duration in minutes (default 90)" },
+          customer_name: { type: "string", description: "Customer full name" },
+          party_size: { type: "number", description: "Number of people" },
+          notes: { type: "string", description: "Optional notes" },
+        },
+        required: ["date", "time", "customer_name"],
       },
-      required: ["date", "time", "customer_name"],
     },
   },
 ];
@@ -96,41 +103,44 @@ export async function chat(
 ): Promise<ChatResult> {
   const systemPrompt = buildSystemPrompt(business, language);
 
-  const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
-    systemInstruction: systemPrompt,
-    tools: [{ functionDeclarations: functionDeclarations as unknown as FunctionDeclaration[] }],
-  });
+  const messages: Groq.Chat.ChatCompletionMessageParam[] = [
+    { role: "system", content: systemPrompt },
+    ...history.slice(-20).map((m): Groq.Chat.ChatCompletionMessageParam => ({
+      role: m.sender === "customer" ? "user" : "assistant",
+      content: m.text,
+    })),
+    { role: "user", content: newMessage },
+  ];
 
-  const geminiHistory = history.slice(-20).map((m) => ({
-    role: m.sender === "customer" ? "user" : ("model" as "user" | "model"),
-    parts: [{ text: m.text }],
-  }));
-
-  const chatSession = model.startChat({ history: geminiHistory });
   const toolCalls: ChatResult["toolCalls"] = [];
-  let result = await chatSession.sendMessage(newMessage);
 
   while (true) {
-    const parts = result.response.candidates?.[0]?.content?.parts ?? [];
-    const functionCallParts = parts.filter((p) => p.functionCall);
+    const response = await groq.chat.completions.create({
+      model: MODEL,
+      messages,
+      tools,
+      tool_choice: "auto",
+    });
 
-    if (functionCallParts.length === 0) {
-      return { reply: result.response.text(), toolCalls };
+    const choice = response.choices[0];
+    const assistantMessage = choice.message;
+    messages.push(assistantMessage);
+
+    if (!assistantMessage.tool_calls || assistantMessage.tool_calls.length === 0) {
+      return { reply: assistantMessage.content ?? "", toolCalls };
     }
 
-    const functionResponseParts = [];
-    for (const part of functionCallParts) {
-      const { name, args } = part.functionCall!;
-      const input = (args ?? {}) as Record<string, unknown>;
-      const toolResult = await toolHandler(name, input);
-      toolCalls.push({ name, input, result: toolResult });
-      functionResponseParts.push({
-        functionResponse: { name, response: { result: toolResult } },
+    for (const tc of assistantMessage.tool_calls) {
+      const name = tc.function.name;
+      const input = JSON.parse(tc.function.arguments) as Record<string, unknown>;
+      const result = await toolHandler(name, input);
+      toolCalls.push({ name, input, result });
+      messages.push({
+        role: "tool",
+        tool_call_id: tc.id,
+        content: JSON.stringify(result),
       });
     }
-
-    result = await chatSession.sendMessage(functionResponseParts);
   }
 }
 

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase-server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import Groq from "groq-sdk";
 
 export const runtime = "nodejs";
 
@@ -19,18 +19,21 @@ export async function GET() {
     results.db = `error: ${e instanceof Error ? e.message : String(e)}`;
   }
 
-  // Gemini check
-  const key = process.env.GEMINI_API_KEY;
+  // Groq check
+  const key = process.env.GROQ_API_KEY_RISTOAGENT_BOT;
   if (!key) {
-    results.gemini = "error: GEMINI_API_KEY mancante";
+    results.groq = "error: GROQ_API_KEY_RISTOAGENT_BOT mancante";
   } else {
     try {
-      const genAI = new GoogleGenerativeAI(key);
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-      const result = await model.generateContent("reply with just the word 'ok'");
-      results.gemini = `ok: ${result.response.text().slice(0, 30)}`;
+      const groq = new Groq({ apiKey: key });
+      const result = await groq.chat.completions.create({
+        model: "llama-3.3-70b-versatile",
+        messages: [{ role: "user", content: "reply with just the word ok" }],
+        max_tokens: 5,
+      });
+      results.groq = `ok: ${result.choices[0]?.message?.content?.slice(0, 30)}`;
     } catch (e) {
-      results.gemini = `error: ${e instanceof Error ? e.message : String(e)}`;
+      results.groq = `error: ${e instanceof Error ? e.message : String(e)}`;
     }
   }
 
