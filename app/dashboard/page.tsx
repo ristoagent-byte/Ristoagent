@@ -761,13 +761,13 @@ export default function Dashboard() {
               <p style={{ fontSize: 12, color: "#5a6a62", marginBottom: 16, lineHeight: 1.5 }}>
                 Carica un file con il menu, i prezzi, le offerte speciali o qualsiasi altra informazione utile.
                 Più dettagli fornisci, più preciso sarà il bot nel rispondere ai clienti.
-                Formati supportati: PDF, Word (.docx), Excel (.xlsx), TXT — max 5 MB.
+                Formati supportati: PDF, Word (.docx), Excel (.xlsx), TXT, immagini (JPG, PNG) — max 5 MB.
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
                 <label style={{ cursor: uploadLoading ? "not-allowed" : "pointer" }}>
                   <input
                     type="file"
-                    accept=".pdf,.doc,.docx,.xls,.xlsx,.txt"
+                    accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.jpg,.jpeg,.png,.webp"
                     style={{ display: "none" }}
                     disabled={uploadLoading}
                     onChange={handleFileUpload}

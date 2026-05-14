@@ -4,11 +4,29 @@ import { createServerClient } from "@/lib/supabase-server";
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 const MAX_TEXT_LENGTH = 20000; // characters stored in DB
 
+const IMAGE_EXTS = ["jpg", "jpeg", "png", "webp", "gif"];
+const IMAGE_MIME: Record<string, string> = {
+  jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png",
+  webp: "image/webp", gif: "image/gif",
+};
+
 async function extractText(file: File): Promise<string> {
   const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
 
   if (ext === "txt") {
     return await file.text();
+  }
+
+  if (IMAGE_EXTS.includes(ext)) {
+    const { GoogleGenerativeAI } = await import("@google/generative-ai");
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const buffer = Buffer.from(await file.arrayBuffer());
+    const result = await model.generateContent([
+      "Estrai tutto il testo visibile in questa immagine nel modo più fedele possibile. Se è un menu, elenca tutti i piatti con prezzi e descrizioni. Rispondi solo con il testo estratto, senza commenti.",
+      { inlineData: { data: buffer.toString("base64"), mimeType: IMAGE_MIME[ext] } },
+    ]);
+    return result.response.text();
   }
 
   const buffer = Buffer.from(await file.arrayBuffer());
@@ -61,9 +79,9 @@ export async function POST(request: NextRequest) {
   }
 
   const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
-  if (!["txt", "pdf", "docx", "doc", "xlsx", "xls"].includes(ext)) {
+  if (!["txt", "pdf", "docx", "doc", "xlsx", "xls", ...IMAGE_EXTS].includes(ext)) {
     return NextResponse.json(
-      { error: "Formato non supportato. Usa PDF, Word (.docx), Excel (.xlsx) o TXT" },
+      { error: "Formato non supportato. Usa PDF, Word (.docx), Excel (.xlsx), TXT o immagine (JPG, PNG)" },
       { status: 400 }
     );
   }
