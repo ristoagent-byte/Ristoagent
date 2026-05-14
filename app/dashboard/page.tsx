@@ -315,12 +315,12 @@ export default function Dashboard() {
   }
 
   const card: React.CSSProperties = {
-    background: "#0f1a12", borderRadius: 16, padding: 24, border: "1px solid #1e3022",
+    background: "#1a2820", borderRadius: 16, padding: 24, border: "1px solid #2e4a38",
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at top, #0f1f2e 0%, #111a13 60%)",
-      fontFamily: "'DM Sans','Segoe UI',sans-serif", color: "#e8f0e9", zoom: 1.4 }}>
+    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at top, #1a3040 0%, #1a2820 60%)",
+      fontFamily: "'DM Sans','Segoe UI',sans-serif", color: "#f0f8f2", zoom: 1.4 }}>
 
       {trialDaysLeft !== null && (
         <div style={{ background: trialDaysLeft <= 3 ? "rgba(255,107,107,0.08)" : "rgba(14,165,233,0.08)",
@@ -341,25 +341,25 @@ export default function Dashboard() {
       )}
 
       <header style={{ padding: "16px 24px", display: "flex", alignItems: "center",
-        justifyContent: "space-between", borderBottom: "1px solid #1e3022",
+        justifyContent: "space-between", borderBottom: "1px solid #2e4a38",
         background: "rgba(10,15,13,0.8)", backdropFilter: "blur(8px)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <img src="/logo.png" alt="RistoAgent" style={{ height: 52, width: "auto", }} />
           {business && (
-            <span style={{ fontSize: 13, color: "#8696a0" }}>— {business.name}</span>
+            <span style={{ fontSize: 13, color: "#a8bab4" }}>— {business.name}</span>
           )}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <span style={{ fontSize: 12, color: "#0EA5E9" }}>● Attivo</span>
           <button onClick={handleSignOut} style={{ background: "transparent",
-            border: "1px solid #1a2620", borderRadius: 8, color: "#8696a0",
+            border: "1px solid #2a3e30", borderRadius: 8, color: "#a8bab4",
             fontSize: 12, padding: "6px 12px", cursor: "pointer", fontFamily: "inherit" }}>
             Esci
           </button>
         </div>
       </header>
 
-      <div style={{ padding: "16px 24px 0", borderBottom: "1px solid #1e3022",
+      <div style={{ padding: "16px 24px 0", borderBottom: "1px solid #2e4a38",
         display: "flex", gap: 4 }}>
         {([
           { id: "oggi", label: "📅 Oggi" },
@@ -370,7 +370,7 @@ export default function Dashboard() {
           <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
             padding: "10px 20px", background: "transparent", border: "none",
             borderBottom: `2px solid ${activeTab === tab.id ? "#0EA5E9" : "transparent"}`,
-            color: activeTab === tab.id ? "#0EA5E9" : "#8696a0",
+            color: activeTab === tab.id ? "#0EA5E9" : "#a8bab4",
             fontSize: 14, fontWeight: 600, fontFamily: "inherit", cursor: "pointer",
           }}>
             {tab.label}
@@ -392,16 +392,16 @@ export default function Dashboard() {
                   <span style={{ fontSize: 24 }}>{m.icon}</span>
                   <p style={{ fontSize: 36, fontWeight: 700, marginTop: 8,
                     fontFamily: "monospace" }}>{m.value}</p>
-                  <p style={{ fontSize: 13, color: "#8696a0", marginTop: 2 }}>{m.label}</p>
+                  <p style={{ fontSize: 13, color: "#a8bab4", marginTop: 2 }}>{m.label}</p>
                 </div>
               ))}
             </div>
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#8696a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#a8bab4" }}>
                 Prenotazioni di oggi
               </h3>
               {bookings.length === 0 ? (
-                <div style={{ textAlign: "center", padding: "2rem", color: "#5a6a62" }}>
+                <div style={{ textAlign: "center", padding: "2rem", color: "#8aaa96" }}>
                   <p style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>📭</p>
                   <p>Nessuna prenotazione per oggi.</p>
                   <p style={{ fontSize: "0.82rem", marginTop: "0.3rem" }}>
@@ -411,10 +411,10 @@ export default function Dashboard() {
               ) : (
                 bookings.map((b) => (
                   <div key={b.id} style={{ display: "flex", justifyContent: "space-between",
-                    alignItems: "center", padding: "12px 0", borderBottom: "1px solid #1a2620" }}>
+                    alignItems: "center", padding: "12px 0", borderBottom: "1px solid #2a3e30" }}>
                     <div>
                       <p style={{ fontSize: 14, fontWeight: 600 }}>{b.customer_name}</p>
-                      <p style={{ fontSize: 12, color: "#8696a0" }}>{b.party_size} persone</p>
+                      <p style={{ fontSize: 12, color: "#a8bab4" }}>{b.party_size} persone</p>
                     </div>
                     <div style={{ textAlign: "right" }}>
                       <p style={{ fontSize: 14, fontWeight: 600 }}>{b.time.slice(0, 5)}</p>
@@ -433,11 +433,11 @@ export default function Dashboard() {
           <div style={{ display: "grid",
             gridTemplateColumns: selectedConv ? "1fr 1.5fr" : "1fr", gap: 16 }}>
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#8696a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#a8bab4" }}>
                 Conversazioni recenti
               </h3>
               {conversations.length === 0 ? (
-                <div style={{ textAlign: "center", padding: "2rem", color: "#5a6a62" }}>
+                <div style={{ textAlign: "center", padding: "2rem", color: "#8aaa96" }}>
                   <p>Nessuna conversazione ancora.</p>
                   <p style={{ fontSize: "0.82rem", marginTop: "0.3rem" }}>
                     I clienti che scriveranno al bot appariranno qui.
@@ -446,7 +446,7 @@ export default function Dashboard() {
               ) : (
                 conversations.map((c) => (
                   <div key={c.id} onClick={() => loadConversationMessages(c.id)}
-                    style={{ padding: "12px 0", borderBottom: "1px solid #1a2620",
+                    style={{ padding: "12px 0", borderBottom: "1px solid #2a3e30",
                       cursor: "pointer",
                       paddingLeft: selectedConv === c.id ? 8 : 0,
                       background: selectedConv === c.id ? "rgba(14,165,233,0.05)" : "transparent",
@@ -458,7 +458,7 @@ export default function Dashboard() {
                         color: c.language === "it" ? "#0EA5E9" : "#ffc800",
                         fontWeight: 600 }}>{c.language.toUpperCase()}</span>
                     </div>
-                    <p style={{ fontSize: 11, color: "#5a6a62", marginTop: 2 }}>
+                    <p style={{ fontSize: 11, color: "#8aaa96", marginTop: 2 }}>
                       {new Date(c.last_message_at).toLocaleString("it-IT")}
                     </p>
                   </div>
@@ -480,7 +480,7 @@ export default function Dashboard() {
                         <p style={{ fontSize: 13, lineHeight: 1.45, whiteSpace: "pre-wrap" }}>
                           {m.text}
                         </p>
-                        <p style={{ fontSize: 10, color: "#5a6a62", textAlign: "right", marginTop: 4 }}>
+                        <p style={{ fontSize: 10, color: "#8aaa96", textAlign: "right", marginTop: 4 }}>
                           {new Date(m.created_at).toLocaleTimeString("it-IT",
                             { hour: "2-digit", minute: "2-digit" })}
                           {m.sender === "ai" && " · 🤖"}
@@ -497,14 +497,14 @@ export default function Dashboard() {
         {activeTab === "feedback" && (
           <div style={{ display: "grid", gap: 16 }}>
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#9ab8a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#b8d4c0" }}>
                 Feedback clienti
               </h3>
-              <p style={{ fontSize: 12, color: "#5a6a62", marginBottom: 20, lineHeight: 1.5 }}>
+              <p style={{ fontSize: 12, color: "#8aaa96", marginBottom: 20, lineHeight: 1.5 }}>
                 Dopo ogni prenotazione il bot chiede automaticamente un feedback al cliente. Eccoli tutti.
               </p>
               {feedbacks.length === 0 ? (
-                <div style={{ textAlign: "center", padding: "2.5rem", color: "#5a6a62" }}>
+                <div style={{ textAlign: "center", padding: "2.5rem", color: "#8aaa96" }}>
                   <p style={{ fontSize: "1.8rem", marginBottom: 8 }}>⭐</p>
                   <p>Nessun feedback ricevuto ancora.</p>
                   <p style={{ fontSize: "0.82rem", marginTop: 4 }}>
@@ -521,12 +521,12 @@ export default function Dashboard() {
                         <>
                           <div style={{ ...card, padding: "16px 24px", flex: "1 1 120px", textAlign: "center" }}>
                             <p style={{ fontSize: 32, fontWeight: 700, fontFamily: "monospace" }}>{feedbacks.length}</p>
-                            <p style={{ fontSize: 12, color: "#8696a0" }}>Feedback totali</p>
+                            <p style={{ fontSize: 12, color: "#a8bab4" }}>Feedback totali</p>
                           </div>
                           {avg && (
                             <div style={{ ...card, padding: "16px 24px", flex: "1 1 120px", textAlign: "center" }}>
                               <p style={{ fontSize: 32, fontWeight: 700, fontFamily: "monospace" }}>{avg} ⭐</p>
-                              <p style={{ fontSize: 12, color: "#8696a0" }}>Media voto</p>
+                              <p style={{ fontSize: 12, color: "#a8bab4" }}>Media voto</p>
                             </div>
                           )}
                         </>
@@ -534,20 +534,20 @@ export default function Dashboard() {
                     })()}
                   </div>
                   {feedbacks.map((f) => (
-                    <div key={f.id} style={{ padding: "14px 0", borderBottom: "1px solid #1a2620", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
+                    <div key={f.id} style={{ padding: "14px 0", borderBottom: "1px solid #2a3e30", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                       <div style={{ flex: 1 }}>
                         <p style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>
                           {f.conversations?.customer_name ?? "Cliente"}
                         </p>
                         {f.comment && (
-                          <p style={{ fontSize: 13, color: "#9ab8a0", lineHeight: 1.5 }}>&ldquo;{f.comment}&rdquo;</p>
+                          <p style={{ fontSize: 13, color: "#b8d4c0", lineHeight: 1.5 }}>&ldquo;{f.comment}&rdquo;</p>
                         )}
                       </div>
                       <div style={{ textAlign: "right", flexShrink: 0 }}>
                         {f.rating && (
                           <p style={{ fontSize: 20 }}>{"⭐".repeat(f.rating)}</p>
                         )}
-                        <p style={{ fontSize: 11, color: "#5a6a62", marginTop: 4 }}>
+                        <p style={{ fontSize: 11, color: "#8aaa96", marginTop: 4 }}>
                           {new Date(f.created_at).toLocaleDateString("it-IT")}
                         </p>
                       </div>
@@ -558,10 +558,10 @@ export default function Dashboard() {
             </div>
 
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#9ab8a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#b8d4c0" }}>
                 Invia promozione ai clienti
               </h3>
-              <p style={{ fontSize: 12, color: "#5a6a62", marginBottom: 16, lineHeight: 1.5 }}>
+              <p style={{ fontSize: 12, color: "#8aaa96", marginBottom: 16, lineHeight: 1.5 }}>
                 Scrivi un messaggio e invialo via Telegram a tutti i clienti che hanno interagito con il bot.
               </p>
               <textarea
@@ -569,8 +569,8 @@ export default function Dashboard() {
                 onChange={(e) => setBroadcastMsg(e.target.value)}
                 placeholder={"Ciao! 🎉 Questo weekend -15% su tutto il menù degustazione.\nPrenota ora: https://t.me/tuobot"}
                 rows={4}
-                style={{ width: "100%", padding: "10px 14px", background: "#131a14",
-                  border: "1px solid #1e3022", borderRadius: 10, color: "#e8f0e9",
+                style={{ width: "100%", padding: "10px 14px", background: "#1e2e22",
+                  border: "1px solid #2e4a38", borderRadius: 10, color: "#e8f0e9",
                   fontSize: 13, fontFamily: "inherit", outline: "none",
                   boxSizing: "border-box", resize: "vertical", lineHeight: 1.5 }}
               />
@@ -600,17 +600,17 @@ export default function Dashboard() {
             {/* Account */}
             <div style={card}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                <h3 style={{ fontSize: 15, fontWeight: 600, color: "#9ab8a0" }}>Account</h3>
+                <h3 style={{ fontSize: 15, fontWeight: 600, color: "#b8d4c0" }}>Account</h3>
                 {!editingBiz ? (
                   <button onClick={() => setEditingBiz(true)} style={{
-                    background: "transparent", border: "1px solid #1e3022", borderRadius: 8,
-                    color: "#7a9b7e", fontSize: 12, padding: "5px 12px", cursor: "pointer", fontFamily: "inherit",
+                    background: "transparent", border: "1px solid #2e4a38", borderRadius: 8,
+                    color: "#9ab8a0", fontSize: 12, padding: "5px 12px", cursor: "pointer", fontFamily: "inherit",
                   }}>✏️ Modifica attività</button>
                 ) : (
                   <div style={{ display: "flex", gap: 8 }}>
                     <button onClick={() => setEditingBiz(false)} style={{
-                      background: "transparent", border: "1px solid #1e3022", borderRadius: 8,
-                      color: "#7a9b7e", fontSize: 12, padding: "5px 12px", cursor: "pointer", fontFamily: "inherit",
+                      background: "transparent", border: "1px solid #2e4a38", borderRadius: 8,
+                      color: "#9ab8a0", fontSize: 12, padding: "5px 12px", cursor: "pointer", fontFamily: "inherit",
                     }}>Annulla</button>
                     <button onClick={handleSaveEditForm} disabled={editSaving} style={{
                       background: "#0EA5E9", border: "none", borderRadius: 8,
@@ -622,46 +622,46 @@ export default function Dashboard() {
               </div>
               <div style={{ display: "grid", gap: 12 }}>
                 <div>
-                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: 4 }}>Email account</p>
+                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#9ab8a0", marginBottom: 4 }}>Email account</p>
                   <p style={{ fontSize: 14, color: "#e8f0e9" }}>{userEmail ?? "—"}</p>
                 </div>
                 <div>
-                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: 4 }}>Nome attività</p>
+                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#9ab8a0", marginBottom: 4 }}>Nome attività</p>
                   {editingBiz ? (
                     <input value={editForm.name} onChange={(e) => setEditForm(f => ({ ...f, name: e.target.value }))}
-                      style={{ width: "100%", padding: "8px 12px", background: "#131a14", border: "1px solid #1e3022",
+                      style={{ width: "100%", padding: "8px 12px", background: "#1e2e22", border: "1px solid #2e4a38",
                         borderRadius: 8, color: "#e8f0e9", fontSize: 14, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }} />
                   ) : (
                     <p style={{ fontSize: 14, color: "#e8f0e9" }}>{business.name}</p>
                   )}
                 </div>
                 <div>
-                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: 4 }}>Servizi e informazioni</p>
+                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#9ab8a0", marginBottom: 4 }}>Servizi e informazioni</p>
                   {editingBiz ? (
                     <textarea value={editForm.services} onChange={(e) => setEditForm(f => ({ ...f, services: e.target.value }))}
-                      rows={4} style={{ width: "100%", padding: "8px 12px", background: "#131a14", border: "1px solid #1e3022",
+                      rows={4} style={{ width: "100%", padding: "8px 12px", background: "#1e2e22", border: "1px solid #2e4a38",
                         borderRadius: 8, color: "#e8f0e9", fontSize: 13, fontFamily: "inherit", outline: "none",
                         boxSizing: "border-box", resize: "vertical" }} />
                   ) : (
-                    <p style={{ fontSize: 13, color: "#9ab8a0", whiteSpace: "pre-wrap", lineHeight: 1.5 }}>{business.services ?? "—"}</p>
+                    <p style={{ fontSize: 13, color: "#b8d4c0", whiteSpace: "pre-wrap", lineHeight: 1.5 }}>{business.services ?? "—"}</p>
                   )}
                 </div>
                 <div>
-                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: 4 }}>Orari</p>
+                  <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#9ab8a0", marginBottom: 4 }}>Orari</p>
                   {editingBiz ? (
                     <textarea value={editForm.opening_hours} onChange={(e) => setEditForm(f => ({ ...f, opening_hours: e.target.value }))}
-                      rows={2} style={{ width: "100%", padding: "8px 12px", background: "#131a14", border: "1px solid #1e3022",
+                      rows={2} style={{ width: "100%", padding: "8px 12px", background: "#1e2e22", border: "1px solid #2e4a38",
                         borderRadius: 8, color: "#e8f0e9", fontSize: 13, fontFamily: "inherit", outline: "none",
                         boxSizing: "border-box", resize: "vertical" }} />
                   ) : (
-                    <p style={{ fontSize: 13, color: "#9ab8a0" }}>{business.opening_hours ?? "—"}</p>
+                    <p style={{ fontSize: 13, color: "#b8d4c0" }}>{business.opening_hours ?? "—"}</p>
                   )}
                 </div>
               </div>
             </div>
 
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#9ab8a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#b8d4c0" }}>
                 Bot Telegram
               </h3>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -680,8 +680,8 @@ export default function Dashboard() {
                 {business.telegram_bot_username && (
                   <button onClick={() => navigator.clipboard.writeText(
                     `https://t.me/${business.telegram_bot_username}`
-                  )} style={{ background: "transparent", border: "1px solid #1a2620",
-                    borderRadius: 8, color: "#8696a0", fontSize: 12,
+                  )} style={{ background: "transparent", border: "1px solid #2a3e30",
+                    borderRadius: 8, color: "#a8bab4", fontSize: 12,
                     padding: "6px 12px", cursor: "pointer", fontFamily: "inherit" }}>
                     📋 Copia link
                   </button>
@@ -691,10 +691,10 @@ export default function Dashboard() {
 
             {qrDataUrl && (
               <div style={card}>
-                <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 8, color: "#8696a0" }}>
+                <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 8, color: "#a8bab4" }}>
                   QR Code
                 </h3>
-                <p style={{ fontSize: 12, color: "#5a6a62", marginBottom: 16 }}>
+                <p style={{ fontSize: 12, color: "#8aaa96", marginBottom: 16 }}>
                   Scarica e usa su volantini, social, menu, vetrina — i clienti lo scansionano
                   e aprono direttamente il bot Telegram.
                 </p>
@@ -710,16 +710,16 @@ export default function Dashboard() {
                       ⬇ Scarica PNG
                     </button>
                     {business?.telegram_bot_username && (
-                      <div style={{ background: "#0d1a10", border: "1px solid #1a2620", borderRadius: 10, padding: "10px 14px" }}>
-                        <div style={{ fontSize: 11, color: "#5a6a62", marginBottom: 4 }}>Oppure cerca su Telegram</div>
+                      <div style={{ background: "#1a2820", border: "1px solid #2a3e30", borderRadius: 10, padding: "10px 14px" }}>
+                        <div style={{ fontSize: 11, color: "#8aaa96", marginBottom: 4 }}>Oppure cerca su Telegram</div>
                         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                           <span style={{ fontSize: 16, fontWeight: 700, color: "#e8f0e9", letterSpacing: 0.3 }}>
                             @{business.telegram_bot_username}
                           </span>
                           <button
                             onClick={() => navigator.clipboard.writeText(`@${business!.telegram_bot_username}`)}
-                            style={{ background: "transparent", border: "1px solid #1a2620", borderRadius: 6,
-                              color: "#5a6a62", fontSize: 11, padding: "2px 8px", cursor: "pointer", fontFamily: "inherit" }}
+                            style={{ background: "transparent", border: "1px solid #2a3e30", borderRadius: 6,
+                              color: "#8aaa96", fontSize: 11, padding: "2px 8px", cursor: "pointer", fontFamily: "inherit" }}
                           >
                             copia
                           </button>
@@ -736,7 +736,7 @@ export default function Dashboard() {
             )}
 
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#8696a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16, color: "#a8bab4" }}>
                 Google Calendar
               </h3>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -747,7 +747,7 @@ export default function Dashboard() {
                 </span>
                 <a href={`/api/google/auth?userId=${userId}`} style={{
                   padding: "6px 16px", background: "transparent",
-                  border: "1px solid #1a2620", borderRadius: 8, color: "#8696a0",
+                  border: "1px solid #2a3e30", borderRadius: 8, color: "#a8bab4",
                   fontSize: 12, textDecoration: "none" }}>
                   {business.google_access_token ? "Ricollegare" : "Collega"}
                 </a>
@@ -755,10 +755,10 @@ export default function Dashboard() {
             </div>
 
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#8696a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#a8bab4" }}>
                 Informazioni aggiuntive per il bot
               </h3>
-              <p style={{ fontSize: 12, color: "#5a6a62", marginBottom: 16, lineHeight: 1.5 }}>
+              <p style={{ fontSize: 12, color: "#8aaa96", marginBottom: 16, lineHeight: 1.5 }}>
                 Carica un file con il menu, i prezzi, le offerte speciali o qualsiasi altra informazione utile.
                 Più dettagli fornisci, più preciso sarà il bot nel rispondere ai clienti.
                 Formati supportati: PDF, Word (.docx), Excel (.xlsx), TXT, immagini (JPG, PNG) — max 5 MB.
@@ -794,8 +794,8 @@ export default function Dashboard() {
                 )}
                 {business.custom_info && (
                   <button onClick={downloadCustomInfo} style={{
-                    background: "transparent", border: "1px solid #1e3022",
-                    borderRadius: 8, color: "#9ab8a0", fontSize: 12,
+                    background: "transparent", border: "1px solid #2e4a38",
+                    borderRadius: 8, color: "#b8d4c0", fontSize: 12,
                     padding: "6px 12px", cursor: "pointer", fontFamily: "inherit",
                   }}>
                     ⬇ Scarica procedure
@@ -811,7 +811,7 @@ export default function Dashboard() {
             </div>
 
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 12, color: "#8696a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 12, color: "#a8bab4" }}>
                 Piano attivo
               </h3>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
@@ -823,7 +823,7 @@ export default function Dashboard() {
                   color: business.plan === "pro" ? "#0EA5E9"
                     : business.plan === "starter" ? "#4ade80"
                     : business.plan === "flexible" ? "#fbbf24"
-                    : "#8696a0" }}>
+                    : "#a8bab4" }}>
                   {business.plan === "pro" ? "⭐ Pro"
                     : business.plan === "starter" ? "Starter"
                     : business.plan === "flexible" ? "Flessibile"
@@ -843,7 +843,7 @@ export default function Dashboard() {
                       else alert(json.error ?? "Errore");
                     }}
                     style={{ fontSize: 12, padding: "6px 14px", background: "transparent",
-                      border: "1px solid #1a2620", borderRadius: 8, color: "#8696a0",
+                      border: "1px solid #2a3e30", borderRadius: 8, color: "#a8bab4",
                       cursor: "pointer", fontFamily: "inherit" }}>
                     Gestisci abbonamento
                   </button>
@@ -858,10 +858,10 @@ export default function Dashboard() {
             </div>
 
             <div style={card}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#9ab8a0" }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4, color: "#b8d4c0" }}>
                 Fatturazione
               </h3>
-              <p style={{ fontSize: 12, color: "#5a6a62", marginBottom: 20, lineHeight: 1.5 }}>
+              <p style={{ fontSize: 12, color: "#8aaa96", marginBottom: 20, lineHeight: 1.5 }}>
                 Inserisci i tuoi dati fiscali per generare una fattura PDF del tuo abbonamento mensile corrente.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
@@ -874,12 +874,12 @@ export default function Dashboard() {
                   { label: "Città", key: "citta", full: false },
                 ].map(({ label, key, full }) => (
                   <div key={key} style={{ gridColumn: full ? "1 / -1" : "auto" }}>
-                    <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#7a9b7e", marginBottom: 4 }}>{label}</p>
+                    <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.07em", color: "#9ab8a0", marginBottom: 4 }}>{label}</p>
                     <input
                       value={invoiceForm[key as keyof typeof invoiceForm]}
                       onChange={(e) => setInvoiceForm(f => ({ ...f, [key]: e.target.value }))}
-                      style={{ width: "100%", padding: "8px 12px", background: "#131a14",
-                        border: "1px solid #1e3022", borderRadius: 8, color: "#e8f0e9",
+                      style={{ width: "100%", padding: "8px 12px", background: "#1e2e22",
+                        border: "1px solid #2e4a38", borderRadius: 8, color: "#e8f0e9",
                         fontSize: 13, fontFamily: "inherit", outline: "none", boxSizing: "border-box" }}
                     />
                   </div>
@@ -894,7 +894,7 @@ export default function Dashboard() {
                   opacity: !invoiceForm.ragioneSociale.trim() ? 0.5 : 1 }}>
                 🧾 Genera fattura PDF
               </button>
-              <p style={{ fontSize: 11, color: "#5a6a62", marginTop: 10 }}>
+              <p style={{ fontSize: 11, color: "#8aaa96", marginTop: 10 }}>
                 Si aprirà una nuova finestra — usa "Stampa → Salva come PDF" per scaricarla.
               </p>
             </div>
@@ -903,7 +903,7 @@ export default function Dashboard() {
               <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 8, color: "#ff6b6b" }}>
                 Elimina account
               </h3>
-              <p style={{ fontSize: 12, color: "#8696a0", marginBottom: 16, lineHeight: 1.5 }}>
+              <p style={{ fontSize: 12, color: "#a8bab4", marginBottom: 16, lineHeight: 1.5 }}>
                 Questa azione è irreversibile. Verranno eliminati il tuo account, il business, tutte le conversazioni, prenotazioni e feedback.
               </p>
               {!deleteConfirm ? (
@@ -942,8 +942,8 @@ export default function Dashboard() {
                     {deleting ? "Eliminazione..." : "Conferma eliminazione"}
                   </button>
                   <button onClick={() => setDeleteConfirm(false)} style={{
-                    background: "transparent", border: "1px solid #1e3022", borderRadius: 8,
-                    color: "#7a9b7e", fontSize: 12, padding: "6px 14px", cursor: "pointer", fontFamily: "inherit",
+                    background: "transparent", border: "1px solid #2e4a38", borderRadius: 8,
+                    color: "#9ab8a0", fontSize: 12, padding: "6px 14px", cursor: "pointer", fontFamily: "inherit",
                   }}>
                     Annulla
                   </button>
